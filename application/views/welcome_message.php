@@ -66,7 +66,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-
+<?php phpinfo(); ?>
+	
 <div id="container">
 	<h1>Welcome to CodeIgniter running on Edward Riley's Raspberry Pi 3 machine!</h1>
 
