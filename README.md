@@ -15,6 +15,8 @@
 
 **MySQL Version:** Ver 14.14 Debian-Linux-GNU
 
+**MySQL Username:** root@localhost
+
 **MySQL Password:** student
 
 **Python Version:** Python 3.6.3
