@@ -1,4 +1,4 @@
-# Senior Project Development - Rochester Honor Flight
+```# Senior Project Development - Rochester Honor Flight
 ## The Raspberry Pi 3 Server Requirement Specifications
 
 **Linux OS:** Raspbian 8
@@ -11,7 +11,7 @@
 
 **Localhost:** raspberrypi
 
-**PHP Version**: 5.6.40-0+deb8u12
+**PHP Version**: 7.3.19-1~deb10u1
 
 **MySQL Version:** Ver 14.14 Debian-Linux-GNU
 
