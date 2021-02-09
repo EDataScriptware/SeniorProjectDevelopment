@@ -1,2 +1,2 @@
-cd /var/www/html/SeniorProjectDevelopment/gitpull.sh
+cd /var/www/html/SeniorProjectDevelopment/
 sudo git pull
