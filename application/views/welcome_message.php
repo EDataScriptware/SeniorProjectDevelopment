@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-<?php
 $servername = "localhost";
 $username = "pi";
 $password = "password";
@@ -26,8 +25,6 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 $conn->close();
-?>
-
 
 ?><!DOCTYPE html>
 <html lang="en">
