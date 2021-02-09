@@ -1,7 +1,7 @@
 ```# Senior Project Development - Rochester Honor Flight
 ## The Raspberry Pi 3 Server Requirement Specifications
 
-**Linux OS:** Raspbian 8
+**Linux OS:** Raspbian 10 (Buster)
 
 **URL:** http://129.21.148.6/ 
 
@@ -13,13 +13,13 @@
 
 **PHP Version**: 7.3.19-1~deb10u1
 
-**MySQL Version:** Ver 14.14 Debian-Linux-GNU
+**MySQL/MariaDB Version:** Ver 15.1
 
-**MySQL Username:** root@localhost
+**MySQL/MariaDB Username:** pi@localhost
 
-**MySQL Password:** student
+**MySQL/MariaDB Password:** password
 
-**Python Version:** Python 3.6.3
+**Python Version:** Python 3.7.3
 
 
 ## Updating the Raspberry Pi 3 Server
