@@ -1,8 +1,10 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter on Edward Riley's Server</title>
+	<title>Welcome to CodeIgniter</title>
 
 	<style type="text/css">
 
@@ -64,10 +66,9 @@
 	</style>
 </head>
 <body>
-<?php phpinfo(); ?>
-	
+
 <div id="container">
-	<h1>Welcome to CodeIgniter running on Edward Riley's Raspberry Pi 3 machine!</h1>
+	<h1>Welcome to CodeIgniter!</h1>
 
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>

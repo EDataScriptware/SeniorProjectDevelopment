@@ -27,4 +27,4 @@
 Current Process: 
 1. Cron will be triggered and create a process what is called a "cronjob."
 2. The cronjob will initiate bash tasks in the script. 
-3. Bash task will pull the recent changes from the master branch to the Raspberry Pi 3 database. 
+3. Bash task will pull the recent changes from the master branch to the Raspberry Pi 3 database.
