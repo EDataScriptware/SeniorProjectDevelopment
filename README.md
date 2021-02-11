@@ -17,7 +17,7 @@
 
 **MySQL/MariaDB Username:** pi@localhost
 
-**MySQL/MariaDB Password:** password
+**MySQL/MariaDB Password:** raspberry
 
 **Python Version:** Python 3.7.3
 
