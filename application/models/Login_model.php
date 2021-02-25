@@ -12,9 +12,9 @@ class Login_model extends CI_Model {
         $this->db->select("*");
         $this->db->from('veteran');
 
-        $query = $this->db->get()->result_array();
+        $query = $this->db->get()->result();
         
-        echo implode(" | ",$query);
+        echo json_encode($query);
 
         return $query;
 	}
