@@ -73,12 +73,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['default'] = array(
+
+//Tunneling test
+// $db['default'] = 
+
+// $connection = ssh2_connect('shell.example.com', 22);
+// ssh2_auth_pubkey_file($connection, 'username', 'id_dsa.pub', 'id_dsa');
+
+// $tunnel = ssh2_tunnel($connection, '10.0.0.101', 12345);
+
+
+// Database classic
+$db['default'] = array( 
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'username' => 'raspberry',
+	'password' => 'pi',
+	'database' => 'honor_flight',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -94,3 +105,4 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
