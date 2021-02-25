@@ -13,7 +13,6 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-
 		$data['login'] = $this->Login_model->get_loginInfo();
 
 		$this->load->view('template/header');
@@ -23,7 +22,7 @@ class Login extends CI_Controller {
 
 	public function get_vetNames() {
         $data = $this->Login_model->get_loginInfo()
-		$dom = new DOMDocument('1.0');
+		$dom = new DOMDocument();
 
 		foreach($data as $name) {
 			$vet_name = $dom->createElement('h2', $name->first_name.' '.$name->middle_inital.' '.$name->last_name);
