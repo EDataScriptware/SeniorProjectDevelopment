@@ -23,7 +23,20 @@ class Login extends CI_Controller {
 
 	public function get_vetNames() {
         $data = $this->Login_model->get_loginInfo()
+		$dom = new DOMDocument('1.0');
 
-		return $data;
+		foreach($data as $name) {
+			$vet_name = $dom->createElement('h2', $name->first_name.' '.$name->middle_inital.' '.$name->last_name);
+			$dom->appendChild($vet_name);
+		}
+
+		return $dom;
     }
 }
+
+
+// $my_anchor = new html_element('a');
+// $my_anchor->set('href','https://davidwalsh.name');
+// $my_anchor->set('title','David Walsh Blog');
+// $my_anchor->set('text','Click here!');
+// $my_anchor->output();
