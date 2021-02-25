@@ -12,7 +12,7 @@ class Login_model extends CI_Model {
         $this->db->select("*");
         $this->db->from('veteran');
 
-        $query = $this->db->get()->result();
+        $query = $this->db->get()->result_array();
         
         echo implode(" | ",$query);
 
