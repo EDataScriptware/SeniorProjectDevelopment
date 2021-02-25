@@ -1,7 +1,6 @@
+<?php foreach ($login as $log): ?>
 
-<?php foreach($login as $log) ?>
-
-<p><?php echo $log->first_name?> </p>
+	<p><?php echo $log->first_name?> </p>
 
 
-<?php endforeach; ?>
+		<?php endforeach; ?>
