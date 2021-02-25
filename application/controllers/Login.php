@@ -7,13 +7,14 @@ class Login extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Login_model');
+		$this->load->helper('url_helper');
 	}
 
 
 	public function index()
 	{
 
-		$data['login'] = $this->$Login_model->get_loginInfo();
+		$data['login'] = $this->Login_model->get_loginInfo();
 
 		$this->load->view('template/header');
 		$this->load->view('login',$data);
