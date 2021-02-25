@@ -14,7 +14,7 @@ class Login_model extends CI_Model {
 
         $query = $this->db->get()->result();
         
-        echo json_encode($query);
+        // echo json_encode($query);
 
         return $query;
 	}
