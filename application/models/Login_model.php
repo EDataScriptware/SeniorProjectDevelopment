@@ -2,10 +2,11 @@
 
 class Login_model {
 
-	public function __construct()
-	{
-		parent::__construct();
-	}
+	// public function __construct()
+	// {
+	// 	__construct();
+	// }
+    
 	public function get_loginInfo() {
         
         $this->db->select("*");
