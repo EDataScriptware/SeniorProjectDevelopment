@@ -1,6 +1,18 @@
-<?php foreach ($login as $log): ?>
-
-	<p><?php echo $log->first_name?> </p>
+<button type="button" onclick = "getName()">Get Veteran Names</button>
 
 
-		<?php endforeach; ?>
+<script>
+  function getName() {
+
+               $.ajax({
+                   type: "POST",
+                   url: "<?php echo base_url('get_vetNames')?>",
+                   data: {},
+                   complete: function (DATA) {
+                       console.log(DATA);
+                   }
+               });
+           }
+
+
+	</script>

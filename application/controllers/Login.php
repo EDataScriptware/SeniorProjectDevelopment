@@ -20,4 +20,15 @@ class Login extends CI_Controller {
 		$this->load->view('login',$data);
 		$this->load->view('template/footer');
 	}
+
+	public function get_vetNames() {
+        $data = $this->Login_model->get_loginInfo()
+
+        foreach ($data as $log): 
+            ?>
+            <h2><?php echo $log->first_name $log->middle_initial $log->first_name?></h2>
+            <?php
+        
+        endforeach; 
+    }
 }
