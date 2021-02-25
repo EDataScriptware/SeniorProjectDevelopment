@@ -13,7 +13,7 @@ class Login_model extends MY_Model {
 
         $query = $this->db->get()->result();
         
-        echo $query
+        echo $query;
 
         return $query;
 	}
