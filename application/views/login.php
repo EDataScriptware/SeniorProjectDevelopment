@@ -6,7 +6,7 @@
 
                $.ajax({
                    type: "POST",
-                   url: "<?php echo base_url('get_vetNames')?>",
+                   url: "<?php echo base_url('get_loginInfo')?>",
                    data: {},
                    complete: function (DATA) {
                        console.log(DATA);
