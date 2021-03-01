@@ -9,7 +9,7 @@ class Login_model extends CI_Model {
     
 	public function get_loginInfo() {
         
-        $this->db->select("first_name , middle_initial , last_name , nickname");
+        $this->db->select("*");
         $this->db->from('veteran');
 
         $query = $this->db->get()->result();

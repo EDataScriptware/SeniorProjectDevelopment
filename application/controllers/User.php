@@ -11,8 +11,10 @@ class User extends CI_Controller {
 
     public function vetList() //Veterins List
 	{
+		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
+
         $this->load->view('user/template/header');
-		$this->load->view('user/vetList');
+		$this->load->view('user/vetList', $data);
 		$this->load->view('user/template/footer');
 	}
 

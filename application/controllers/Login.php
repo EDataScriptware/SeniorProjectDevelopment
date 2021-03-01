@@ -20,17 +20,17 @@ class Login extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
-	public function get_vetNames() {
-        $data = $this->Login_model->get_loginInfo()
-		$dom = new DOMDocument();
+	// public function get_vetNames() {
+    //     $data = $this->Login_model->get_loginInfo()
+	// 	$dom = new DOMDocument();
 
-		foreach($data as $name) {
-			$vet_name = $dom->createElement('h2', $name->first_name.' '.$name->middle_inital.' '.$name->last_name);
-			$dom->appendChild($vet_name);
-		}
+	// 	foreach($data as $name) {
+	// 		$vet_name = $dom->createElement('h2', $name->first_name.' '.$name->middle_inital.' '.$name->last_name);
+	// 		$dom->appendChild($vet_name);
+	// 	}
 
-		return $dom;
-    }
+	// 	return $dom;
+    // }
 }
 
 
