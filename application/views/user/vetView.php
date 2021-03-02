@@ -1,8 +1,6 @@
 <p> vet view </p>
 
-<?php // echo json_encode($veteran)?>
-
-
+<?php console.log (json_encode($veteran))?>
 
 <h2> <?php echo $veteran[0]->first_name $veteran[0]->middle_initial $veteran[0]->last_name ?> </h2>
 
