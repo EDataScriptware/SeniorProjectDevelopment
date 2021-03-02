@@ -1,11 +1,11 @@
-<button type="button" onclick = "getName()">Get Veteran Names</button>
+<!-- <button type="button" onclick = "getName()">Get Veteran Names</button>
 
 
 <script>
   function getName() {
 
                $.ajax({
-                   type: "POST",
+                   type: "GET",
                    url: "<?php echo base_url('get_loginInfo')?>",
                    data: {},
                    dataType: 'jsonp',
@@ -18,4 +18,4 @@
                    }
                });
            }
-</script>
+</script> -->
