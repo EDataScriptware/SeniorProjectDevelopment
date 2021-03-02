@@ -19,6 +19,6 @@
   </tr>
 </a>
 
-</table>
-
 <?php endforeach ?>
+
+</table>
