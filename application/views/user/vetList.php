@@ -11,13 +11,13 @@
 
 <?php foreach ($veteran as $vet): ?>
 
-    <a href = '<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>' >
-  <tr>
+    <!-- <a href = '' > -->
+  <tr class = "clickable-row" data-href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>">
     <td><?php echo $vet->first_name ?></td>
     <td><?php echo$vet->last_name?></td>
     <td><?php echo$vet->veteran_id?></td>
   </tr>
-</a>
+<!-- </a> -->
 
 <?php endforeach ?>
 
