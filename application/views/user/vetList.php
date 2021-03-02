@@ -1,3 +1,3 @@
 <p> Vet List </p>
 
-<?php echo $veteran?>
+<?php echo $veteran->first_name?>
