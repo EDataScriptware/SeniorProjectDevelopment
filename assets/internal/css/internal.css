@@ -2,3 +2,13 @@
    width: 300px;
  
 }
+
+#userList .clickable-row {
+border: 1px white solid;
+background-color: #e3f2fd;
+}
+
+#userList .clickable-row td {
+    padding:5px;
+    border: 1px white solid;
+}
