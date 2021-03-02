@@ -31,7 +31,6 @@ class User extends CI_Controller {
 		// $id = $_GET["vet_id"];
 		$this->load->model('Veteran_model');
 	
-
 		$data['veteran'] = $this->Veteran_model->get_one_veteran($id);
 
 		$this->load->view('user/template/header');
