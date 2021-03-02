@@ -27,9 +27,9 @@ class User extends CI_Controller {
 
     public function vetView() //Individual Veterin View
 	{
-		$id = $this->uri->segment(3);
+		// $id = $this->uri->segment(3);
 
-		$data['veteran'] = $this->Veteran_model->get_one_veteran($id);
+		$data['veteran'] = $this->Veteran_model->get_one_veteran(4489);
 
         $this->load->view('user/template/header');
 		$this->load->view('user/vetView', $data);
