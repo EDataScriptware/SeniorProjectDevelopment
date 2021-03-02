@@ -29,10 +29,10 @@ class User extends CI_Controller {
 	{
 		$id = $this->uri->segment(3);
 		$this->load->model('Veteran_model');
+		echo $id;
 
 		$data['veteran'] = $this->Veteran_model->get_one_veteran($id);
 
-        $this->load->view('user/template/header');
 		$this->load->view('user/vetView', $data);
 		$this->load->view('user/template/footer');
 	}
