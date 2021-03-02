@@ -11,12 +11,12 @@
   </tr>
 
 <?php foreach ($veteran as $vet): ?>
-    
+
   <tr class = "clickable-row">
     <td><?php echo $vet->first_name ?></td>
     <td><?php echo$vet->last_name?></td>
     <td><?php echo$vet->veteran_id?></td>
-    <td><button href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" type="button" class="btn btn-primary">Primary</button></td>
+    <td><a role="button" href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" type="button" class="btn btn-primary btn-sm">View</a></td>
   </tr>
 
 <?php endforeach ?>
