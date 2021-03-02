@@ -24,8 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-// $config['base_url'] = getenv('CI_BASEURL');
-$config['base_url'] = 'http://rwby.student.rit.edu/SeniorProjectDevelopment/';
+$config['base_url'] = getenv('CI_BASEURL');
 
 /*
 |--------------------------------------------------------------------------
