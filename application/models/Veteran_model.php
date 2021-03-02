@@ -22,7 +22,7 @@ class Veteran_model extends CI_Model {
     public function get_one_veteran($id) {
         $this->db->select("*");
         $this->db->from('veteran');
-        $this->db->where($id,'veteran_id');
+        $this->db->where('veteran_id',$id);
 
         $query = $this->db->get()->result();
 
