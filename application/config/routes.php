@@ -59,7 +59,7 @@ $route['user'] = 'User'; //User Home screen
 
 //User Routes
 
-$route['vetList'] = 'User/vetList'; 
+$route['vet_list'] = 'User/vetList'; 
 $route['vetView/:num'] = 'User/vetView'; 
 $route['crewView'] = 'User/crewView'; 
 $route['crisisView'] = 'User/crisisView'; 
