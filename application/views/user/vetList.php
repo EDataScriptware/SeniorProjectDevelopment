@@ -11,7 +11,7 @@
 
 <?php foreach ($veteran as $vet): ?>
 
-    <a href = <?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>>
+    <a href = '<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>' >
   <tr>
     <td><?php echo $vet->first_name ?></td>
     <td><?php echo$vet->last_name?></td>
