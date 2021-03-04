@@ -1,6 +1,6 @@
 #userList {
-   width: 300px;
- 
+   width: auto;
+    font-size: 15vh;
 }
 
 #userList .clickable-row {
