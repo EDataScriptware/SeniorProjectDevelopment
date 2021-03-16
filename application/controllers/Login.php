@@ -34,7 +34,7 @@ class Login extends CI_Controller {
 			echo json_encode($credentials);
 			echo $postData;
 
-			if(password_verify($postData['password'], $credentials->password)) {
+			if(password_verify($postData['password'], $credentials->password) == 1) {
 				$data['confirm'] = true;
 
 				// Start a session here
