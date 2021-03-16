@@ -23,6 +23,7 @@ class Login extends CI_Controller {
 
 	public function loginCheck() {
 
+
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();
 
@@ -40,8 +41,6 @@ class Login extends CI_Controller {
 				// Start a session here
 				
 				redirect('user');
-
-
 			}
 			else {
 				// $this->load->view('template/header');
@@ -52,7 +51,7 @@ class Login extends CI_Controller {
 		} // check form data not null
 
 		else {
-			echo "Form Incomplete.";
+			redirect('user');
 		}
 	}
 }

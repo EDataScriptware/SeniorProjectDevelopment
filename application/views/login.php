@@ -1,5 +1,6 @@
 
   <form method='post' action= '<?php base_url('Login/loginCheck/'); ?>'>
+    
   
     <label for="username">Username:</label>
     <input type="text" id="uName" name="username" required><br><br>
