@@ -1,7 +1,7 @@
 
-  <form method='post' action= '<?php base_url('Login/loginCheck/'); ?>'>
+  <form method='post' action= '<?php echo base_url('Login/loginCheck/'); ?>'>
     
-  
+
     <label for="username">Username:</label>
     <input type="text" id="uName" name="username" required><br><br>
     <label for="password">Password:</label>
