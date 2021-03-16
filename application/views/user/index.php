@@ -1,7 +1,6 @@
-<p> user </p>
 
-<form action="id-post.php" method="post">
-  <label for="identifier">ID Lookup:</label>
-  <input type="text" id="identifier" name="identifier"><br><br>
-  <input type="submit" value="Search ID">
-</form>
+<div id = "teamBox">
+<?php foreach ($teams as $team): ?>
+<a href = "<?php echo base_url('vetList'. '/'. $team->team_id) ?>"><div  id = "<?php echo strtolower($team->color) ?>" class = "teamCube"><p><?php echo $team->color ?> Team</p></div></a>
+	<?php endforeach; ?>
+</div>

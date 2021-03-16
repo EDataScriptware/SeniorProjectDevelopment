@@ -53,13 +53,10 @@ $route['default_controller'] = 'Login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['admin'] = 'Admin'; //admin home screen
-$route['user'] = 'User'; //User Home screen
-
-
 //User Routes
-
-$route['vetList'] = 'User/vetList'; 
+$route['user'] = 'User'; //User Home screen
+$route['vetList'] = 'User/vetList';
+$route['vetList/:num'] = 'User/vetList';
 $route['vetView/:num'] = 'User/vetView'; 
 $route['crewView'] = 'User/crewView'; 
 $route['crisisView'] = 'User/crisisView'; 
@@ -67,4 +64,10 @@ $route['factView'] = 'User/factView';
 $route['itineraryView'] = 'User/itineraryView'; 
 
 //Admin Routes
+$route['admin'] = 'Admin'; //admin home screen
+$route['teams'] = 'Admin/teamView';
+$route['documents'] = 'Admin/docView';
+$route['reservations'] = 'Admin/resView';
+$route['users'] = 'Admin/userView';
+
 

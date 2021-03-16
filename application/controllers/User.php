@@ -10,8 +10,10 @@ class User extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->model('Index_model');
+		$data['teams'] = $this->Index_model->get_TeamList();
         $this->load->view('user/template/header');
-		$this->load->view('user/index');
+		$this->load->view('user/index', $data);
 		$this->load->view('user/template/footer');
 	}
 

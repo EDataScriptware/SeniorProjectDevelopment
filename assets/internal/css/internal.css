@@ -1,14 +1,107 @@
 #userList {
    width: auto;
-    font-size: 4.5vh;
+    font-size: 4vh;
 }
 
-#userList .clickable-row {
-border: 1px white solid;
-background-color: #e3f2fd;
+.teamListView {
+	max-width: 85%;
+	margin:0 auto;
 }
 
-#userList .clickable-row td {
-    padding:5px;
-    border: 1px white solid;
+.teamListElement {
+	display: inline-block;
+	text-align: justify;
+	background: #F4F4F4;
+	border-radius: 15px;
+	width: 100%;
+	height: 88px;
+	padding: 16px;
+	margin-bottom: 14px;
+	font-size: 225%;
 }
+
+.teamListElement:link {
+	color: black;
+	text-decoration: none;
+}
+
+.teamListElement:visited {
+	color: black;
+	text-decoration: none;
+}
+
+.teamListElement:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.teamListElement:active {
+	color: black;
+	text-decoration: none;
+}
+
+#teamBox {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select:none;
+	user-select:none;
+	-o-user-select:none;
+}
+
+#teamBox a:link {
+	color: black;
+	text-decoration: none;
+}
+
+#teamBox a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+#teamBox a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+#teamBox a:active {
+	color: black;
+	text-decoration: none;
+}
+
+.teamCube {
+	border-radius: 10px;
+	border: 1px black solid;
+	height: 15vh;
+	width: 15vh;
+	background-color: grey;
+	display: inline-block;
+	font-size: 2.0vh;
+	line-height: 14vh;
+	margin: 1vh;
+	cursor: pointer;
+
+}
+
+.teamCube p {
+	text-align: center;
+}
+
+/*Box Colors*/
+#red {background: #F03434;}
+#blue {background: #1E8BC3;}
+#green {background: #00B16A;}
+#yellow {background: #F4F776;}
+#purple {background: #9B59B6;}
+#orange {background: #F39C12;}
+#gold {background: #FFD700;}
+#silver {background: #BEC2CB;}
+#teal {background: teal;}
+
+/* Vet View Sections */
+#reservations {display: none;}
+#medicalInfo {display: none;}
+#accommodations {display: none;}
+

@@ -2,23 +2,17 @@
 
 <?php // echo json_encode($veteran)?>
 
-<table id = 'userList'>
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>id</th>
-    <th>Action </th>
-  </tr>
+
+
+
+
+<div class = "teamListView">
+	<input type="text" id="name" name="search">
+
+	<h3> Team View </h3>
 
 <?php foreach ($veteran as $vet): ?>
-
-  <tr class = "clickable-row">
-    <td><?php echo $vet->first_name ?></td>
-    <td><?php echo$vet->last_name?></td>
-    <td><?php echo$vet->veteran_id?></td>
-    <td><a role="button" href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" type="button" class="btn btn-primary btn-sm">View</a></td>
-  </tr>
-
+	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="teamListElement"><?php echo $vet->first_name ?> <?php echo$vet->last_name?></a>
 <?php endforeach ?>
+</div>
 
-</table>
