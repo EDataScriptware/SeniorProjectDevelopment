@@ -29,6 +29,8 @@ class Login extends CI_Controller {
 			$credentials = $this->Login_model->get_loginInfo($username);
 			$confirm = false;
 
+			echo json_encode($credentials);
+
 			if(password_verify($password, $credentials->password)) {
 				$data['confirm'] = true;
 
