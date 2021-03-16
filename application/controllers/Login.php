@@ -18,23 +18,35 @@ class Login extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
-	public function loginCheck($username, $password) {
-		$data['login'] = $this->Login_model->get_loginInfo($username);
-		$confirm = false;
+	public function loginCheck() {
 
-		if(password_verify($password, $data['login']->password)) {
-			$data['confirm'] = true;
+		if($this->input->post('submit') != NULL) {
+			$postData = $this->input->post();
 
-			// Start a session here
+			$username = $postData['username'];
+			$password = password_hash($postData['password'], PASSWORD_DEFAULT);
 
-			$this->load->view('template/header');
-			$this->load->view("vetView");
-			$this->load->view('template/footer');
-		}
+			$credentials = $this->Login_model->get_loginInfo($username);
+			$confirm = false;
+
+			if(password_verify($password, $credentials->password)) {
+				$data['confirm'] = true;
+
+				// Start a session here
+				
+				header('Location:' . base_url('/user') );
+
+
+			}
+			else {
+				$this->load->view('template/header');
+				$this->load->view('login',$data);
+				$this->load->view('template/footer');
+			}
+		} // form data not null
+
 		else {
-			$this->load->view('template/header');
-			$this->load->view('login',$data);
-			$this->load->view('template/footer');
+			echo "Form Incomplete."
 		}
 	}
 }

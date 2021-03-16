@@ -1,20 +1,27 @@
 
-  <label for="username">Username:</label>
-  <input type="text" id="uName" name="username"><br><br>
-  <label for="password">Password:</label>
-  <input type="text" id="pWord" name="password"><br><br>
+  <form method='post' action= '<?php base_url('Login/loginCheck/'); ?>'>
+  
+    <label for="username">Username:</label>
+    <input type="text" id="uName" name="username"><br><br>
+    <label for="password">Password:</label>
+    <input type="text" id="pWord" name="password"><br><br>
 
-  <button href = <?php echo base_url('Login/loginCheck/'. document.getElementById("uName").value . '/' . password_hash( document.getElementById("pWord").value ) ) ?>> Login </button>
+    <button input type='submit' name='submit' value='Submit'> Login </button>
+  </form
 
   <?php 
+
+    if($confirm != NULL && $confirm == false) {
+      echo "Login Incorrect";
+    }
   
-    $hash = password_hash("this is a test", PASSWORD_DEFAULT); 
+    $hash = password_hash("test", PASSWORD_DEFAULT); 
     
-    if(password_verify("this is a test", $hash)) {
-        echo "Password is valid!";
+    if(password_verify("test", $hash)) {
+        echo "Password is valid! | Hash: " . $hash ;
     }
     else {
-        echo "Password is invalid.";
+        echo "Password is invalid. | Hash: " . $hash;
     }
 
   ?>
