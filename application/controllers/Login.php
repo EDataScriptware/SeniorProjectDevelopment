@@ -40,7 +40,7 @@ class Login extends CI_Controller {
 
 				// Start a session here
 				
-				redirect('user');
+				header("Location:", base_url("user"));
 			}
 			else {
 				// $this->load->view('template/header');
@@ -51,7 +51,7 @@ class Login extends CI_Controller {
 		} // check form data not null
 
 		else {
-			redirect('user');
+			header("Location:", base_url("user"));
 		}
 	}
 }
