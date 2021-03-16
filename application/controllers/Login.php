@@ -39,8 +39,8 @@ class Login extends CI_Controller {
 				$data['confirm'] = true;
 
 				// Start a session here
-				
-				header("Location:", base_url("user"));
+				redirect('user');
+				// header("Location:", base_url("user"));
 			}
 			else {
 				// $this->load->view('template/header');
@@ -51,7 +51,7 @@ class Login extends CI_Controller {
 		} // check form data not null
 
 		else {
-			// header("Location:", base_url("user"));
+			echo "Form Submission Failed.";
 		}
 	}
 }
