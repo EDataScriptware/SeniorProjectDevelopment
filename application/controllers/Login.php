@@ -39,7 +39,7 @@ class Login extends CI_Controller {
 
 				// Start a session here
 				
-				redirect(base_url('user'));
+				redirect('user/');
 
 
 			}
