@@ -32,8 +32,8 @@ class Login extends CI_Controller {
 			$credentials = $this->Login_model->get_loginInfo($username);
 			$confirm = false;
 
-			echo json_encode($credentials);
-			echo $postData;
+			// echo json_encode($credentials);
+			// echo $postData;
 
 			if(password_verify($postData['password'], $credentials->password)) {
 				$data['confirm'] = true;
@@ -51,7 +51,7 @@ class Login extends CI_Controller {
 		} // check form data not null
 
 		else {
-			header("Location:", base_url("user"));
+			// header("Location:", base_url("user"));
 		}
 	}
 }
