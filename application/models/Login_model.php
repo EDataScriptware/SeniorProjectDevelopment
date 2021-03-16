@@ -15,7 +15,7 @@ class Login_model extends CI_Model {
 
         $query = $this->db->get()->result();
 
-        return $query;
+        return $query[0];
 	}
 
 }

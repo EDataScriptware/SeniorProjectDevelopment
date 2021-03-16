@@ -13,7 +13,11 @@
 
   echo json_encode($test);
   echo $verify;
+  ?>
+
   </br>
+
+  <?php
 
     // if($confirm != NULL) {
     //   if($confirm == false) {
