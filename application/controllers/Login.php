@@ -29,6 +29,7 @@ class Login extends CI_Controller {
 			$confirm = false;
 
 			echo json_encode($credentials);
+			echo $postData;
 
 			if(password_verify($postData['password'], $credentials->password)) {
 				$data['confirm'] = true;
@@ -45,7 +46,7 @@ class Login extends CI_Controller {
 				// $this->load->view('template/footer');
 				echo "Password Incorrect.";
 			}
-		} // form data not null
+		} // check form data not null
 
 		else {
 			echo "Form Incomplete.";
