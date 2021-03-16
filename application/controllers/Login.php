@@ -40,9 +40,9 @@ class Login extends CI_Controller {
 
 			}
 			else {
-				$this->load->view('template/header');
-				$this->load->view('login',$data);
-				$this->load->view('template/footer');
+				// $this->load->view('template/header');
+				// $this->load->view('login',$data);
+				// $this->load->view('template/footer');
 				echo "Password Incorrect.";
 			}
 		} // form data not null
