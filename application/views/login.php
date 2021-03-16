@@ -2,15 +2,18 @@
   <form method='post' action= '<?php base_url('Login/loginCheck/'); ?>'>
   
     <label for="username">Username:</label>
-    <input type="text" id="uName" name="username"><br><br>
+    <input type="text" id="uName" name="username" required><br><br>
     <label for="password">Password:</label>
-    <input type="text" id="pWord" name="password"><br><br>
+    <input type="password" id="pWord" name="password" required><br><br>
 
     <button input type='submit' name='submit' value='Submit'> Login </button>
   </form>
 
   <?php 
 
+  echo json_encode($test);
+  echo $verify;
+  </br>
 
     // if($confirm != NULL) {
     //   if($confirm == false) {
