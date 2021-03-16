@@ -11,10 +11,10 @@
     $hash = password_hash("this is a test", PASSWORD_DEFAULT); 
     
     if(password_verify("this is a test", $hash)) {
-        echo "Password is valid!"
+        echo "Password is valid!";
     }
     else {
-        echo "Password is invalid."
+        echo "Password is invalid.";
     }
 
   ?>
