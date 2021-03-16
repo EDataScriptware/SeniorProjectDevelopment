@@ -11,11 +11,11 @@
 
   <?php 
 
-    if($confirm != NULL) {
-      if($confirm == false) {
-        echo "Login Incorrect";
-      }
-    }
+    // if($confirm != NULL) {
+    //   if($confirm == false) {
+    //     echo "Login Incorrect";
+    //   }
+    // }
   
     $hash = password_hash("test", PASSWORD_DEFAULT); 
     
