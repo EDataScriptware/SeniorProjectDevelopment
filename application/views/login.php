@@ -11,6 +11,8 @@
 
   <?php 
 
+    echo "help!";
+
     // if($confirm != NULL) {
     //   if($confirm == false) {
     //     echo "Login Incorrect";
