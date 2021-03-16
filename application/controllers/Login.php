@@ -14,7 +14,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$data['test'] = $this->Login_model->get_loginInfo("test");
-		$data['verify'] = password_verify('testy', $data['test']->password);
+		$data['verify'] = password_verify('test', $data['test']->password);
 
 		$this->load->view('template/header');
 		$this->load->view('login', $data);
