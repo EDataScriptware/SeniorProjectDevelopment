@@ -13,29 +13,28 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$data['login'] = $this->Login_model->get_loginInfo();
-
 		$this->load->view('template/header');
-		$this->load->view('login',$data);
+		$this->load->view('login');
 		$this->load->view('template/footer');
 	}
 
-	// public function get_vetNames() {
-    //     $data = $this->Login_model->get_loginInfo()
-	// 	$dom = new DOMDocument();
+	public function loginCheck($username, $password) {
+		$data['login'] = $this->Login_model->get_loginInfo($username);
+		$confirm = false;
 
-	// 	foreach($data as $name) {
-	// 		$vet_name = $dom->createElement('h2', $name->first_name.' '.$name->middle_inital.' '.$name->last_name);
-	// 		$dom->appendChild($vet_name);
-	// 	}
+		if(password_verify($password, $data['login']->password)) {
+			$data['confirm'] = true;
 
-	// 	return $dom;
-    // }
+			// Start a session here
+
+			$this->load->view('template/header');
+			$this->load->view("vetView");
+			$this->load->view('template/footer');
+		}
+		else {
+			$this->load->view('template/header');
+			$this->load->view('login',$data);
+			$this->load->view('template/footer');
+		}
+	}
 }
-
-
-// $my_anchor = new html_element('a');
-// $my_anchor->set('href','https://davidwalsh.name');
-// $my_anchor->set('title','David Walsh Blog');
-// $my_anchor->set('text','Click here!');
-// $my_anchor->output();

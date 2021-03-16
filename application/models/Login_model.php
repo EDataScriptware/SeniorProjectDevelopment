@@ -7,14 +7,13 @@ class Login_model extends CI_Model {
 		parent::__construct();
 	}
     
-	public function get_loginInfo() {
+	public function get_loginInfo($username) {
         
         $this->db->select("*");
-        $this->db->from('veteran');
+        $this->db->from('user');
+		$this->db->where('username', $username);
 
         $query = $this->db->get()->result();
-        
-        // echo json_encode($query);
 
         return $query;
 	}
