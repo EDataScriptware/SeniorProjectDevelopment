@@ -18,9 +18,11 @@
     // }
   
     $hash = password_hash("test", PASSWORD_DEFAULT); 
+
+      echo $hash;
     
     if(password_verify("test", $hash)) {
-        echo "Password is valid! | Hash: " . $hash ;
+        echo "Password is valid! | Hash: " . $hash;
     }
     else {
         echo "Password is invalid. | Hash: " . $hash;
