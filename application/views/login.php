@@ -18,6 +18,8 @@
     //     echo "Login Incorrect";
     //   }
     // }
+
+    echo "help!";
   
     $hash = password_hash("test", PASSWORD_DEFAULT); 
 
