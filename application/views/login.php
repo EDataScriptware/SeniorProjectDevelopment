@@ -10,22 +10,7 @@
     <button input type='submit' name='submit' value='Submit'> Login </button>
   </form>
 
-  <?php 
-
-  echo json_encode($test);
-  echo $verify;
-  ?>
-
-  </br>
-
   <?php
-
-    // if($confirm != NULL) {
-    //   if($confirm == false) {
-    //     echo "Login Incorrect";
-    //   }
-    // }
-
   
     $hash = password_hash("test", PASSWORD_DEFAULT); 
 
