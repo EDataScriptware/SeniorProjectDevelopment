@@ -46,7 +46,7 @@ class Login extends CI_Controller {
 		} // form data not null
 
 		else {
-			echo "Form Incomplete."
+			echo "Form Incomplete.";
 		}
 	}
 }
