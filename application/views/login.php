@@ -1,5 +1,5 @@
 
-  <form method='post' action= '<?php base_url('Login/loginCheck/'); ?>'>
+  <form method='post' action= '<?= base_url('Login/loginCheck/'); ?>'>
   
     <label for="username">Username:</label>
     <input type="text" id="uName" name="username"><br><br>
@@ -12,18 +12,8 @@
   <?php 
 
     echo "help!";
-
-    // if($confirm != NULL) {
-    //   if($confirm == false) {
-    //     echo "Login Incorrect";
-    //   }
-    // }
-
-    echo "help!";
   
     $hash = password_hash("test", PASSWORD_DEFAULT); 
-
-      echo $hash;
     
     if(password_verify("test", $hash)) {
         echo "Password is valid! | Hash: " . $hash;
