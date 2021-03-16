@@ -4,7 +4,7 @@
   <label for="password">Password:</label>
   <input type="text" id="pWord" name="password"><br><br>
 
-  <button href = <?php echo base_url('Login/loginCheck') ?>> Login </button>
+  <button href = <?php echo base_url('Login/loginCheck/'. document.getElementById("uName").value . '/' . password_hash( document.getElementById("pWord").value ) ) ?>> Login </button>
 
   <?php 
   
