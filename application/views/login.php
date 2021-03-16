@@ -11,19 +11,15 @@
 
   <?php 
 
-    echo "help!";
-
     // if($confirm != NULL) {
     //   if($confirm == false) {
     //     echo "Login Incorrect";
     //   }
     // }
 
-    echo "help!";
   
     $hash = password_hash("test", PASSWORD_DEFAULT); 
 
-      echo $hash;
     
     if(password_verify("test", $hash)) {
         echo "Password is valid! | Hash: " . $hash;
