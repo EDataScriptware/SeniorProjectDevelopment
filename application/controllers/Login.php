@@ -14,7 +14,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$data['test'] = $this->Login_model->get_loginInfo("test");
-		$data['verify'] = password_verify('test', $data['test']->password);
+		$data['verify'] = password_verify('testy', $data['test']->password);
 
 		$this->load->view('template/header');
 		$this->load->view('login', $data);
@@ -34,12 +34,12 @@ class Login extends CI_Controller {
 			echo json_encode($credentials);
 			echo $postData;
 
-			if(password_verify($postData['password'], $credentials->password) == 1) {
+			if(password_verify($postData['password'], $credentials->password)) {
 				$data['confirm'] = true;
 
 				// Start a session here
 				
-				header('Location:' . base_url('/user') );
+				redirect(base_url('user'));
 
 
 			}
