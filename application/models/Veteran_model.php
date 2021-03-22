@@ -32,7 +32,7 @@ class Veteran_model extends CI_Model {
     }
 
     # POST
-    public function createVetObj($id) {
+    public function getFields($id) {
         // create object that stores all veteran data.  Must be dynamically created (in case new DB fields are added)
         
         
@@ -60,12 +60,20 @@ class Veteran_model extends CI_Model {
        
         // return $query->fieldData();
 
+        // foreach ($fields as $field)
+        // {
+        //     echo $field;
+        // }
+        
         $fields = $this->db->list_fields('veteran');
+        $veteran = $this->get_one_veteran($id);
 
-        foreach ($fields as $field)
-        {
-            echo $field;
-        }
+        $data['fields'] = $fields;
+        $data['veteran'] = $veteran;
+        
+        
+
+        return $data;
     }
 
     # PUT

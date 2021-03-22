@@ -45,7 +45,7 @@
 
 	<h2>Veteran Object JSON</h3>
 	<?php 
-		echo $vetObj;
+		echo json_encode($vetObj);
 	?>
 
 </div>
