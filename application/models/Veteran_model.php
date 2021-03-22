@@ -56,10 +56,16 @@ class Veteran_model extends CI_Model {
             }
         */
 
-        $query = $this->db->query('SELECT * FROM veteran WHERE veteran_id = '.$id);
-        $fieldData = $this->db->query->fieldData();
+        // $query = $this->get_one_veteran($id);
        
-        return json_encode($fieldData);
+        // return $query->fieldData();
+
+        $fields = $this->db->list_fields('veteran');
+
+        foreach ($fields as $field)
+        {
+            echo $field;
+        }
     }
 
     # PUT
