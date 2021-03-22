@@ -35,6 +35,8 @@ class User extends CI_Controller {
 	
 		$data['veteran'] = $this->Veteran_model->get_one_veteran($id);
 
+		$data['vetObj'] = $this->Veteran_model->createVetObj($id);
+		// $data['vetObj2'] = $this->Veteran_model->updateVetEntry($id);
 		$this->load->view('user/template/header');
 		$this->load->view('user/vetView', $data);
 		$this->load->view('user/template/footer');

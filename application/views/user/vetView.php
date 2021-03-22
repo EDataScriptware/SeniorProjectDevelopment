@@ -43,6 +43,11 @@
 
 	<p> Alt Phone: <?php echo $guardian[0]->cell_phone ?>  </p>
 
+	<h2>Veteran Object JSON</h3>
+	<?php 
+		echo $vetObj;
+	?>
+
 </div>
 
 <div id = "reservations">
