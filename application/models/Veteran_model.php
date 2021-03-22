@@ -55,9 +55,11 @@ class Veteran_model extends CI_Model {
                 echo $field;
             }
         */
+
+        $query = $this->db->query('SELECT * FROM veteran WHERE veteran_id = '.$id);
         $fieldData = $this->db->query->fieldData();
        
-        return $fieldData;
+        return json_encode($fieldData);
     }
 
     # PUT
