@@ -34,9 +34,30 @@ class Veteran_model extends CI_Model {
     # POST
     public function createVetObj($id) {
         // create object that stores all veteran data.  Must be dynamically created (in case new DB fields are added)
-        $json = $this->get_one_veteran($id);
+        
+        
+        // $vetQuery = $this->db->query('SELECT * FROM veteran WHERE veteran_id = '.$id);
+        // $numberOfFields = $vetQuery->num_fields();
+        
+        /*
+            $fieldData = $query->fieldData();
+            name - column name
+            max_length - maximum length of the column
+            primary_key - 1 if the column is a primary key
+            type - the type of the column
 
-        return json_encode($json[0]);
+       ------------------------------------------------------
+
+            $query = $this->db->query('SELECT * FROM veteran WHERE veteran_id = '.$id);
+
+            foreach ($query->list_fields() as $field)
+            {
+                echo $field;
+            }
+        */
+        $fieldData = $this->db->query->fieldData();
+       
+        return $fieldData;
     }
 
     # PUT
