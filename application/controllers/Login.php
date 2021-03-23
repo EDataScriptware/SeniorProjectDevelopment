@@ -39,6 +39,7 @@ class Login extends CI_Controller {
 			}
 			else {
 				if(isset($_SESSION["userId"])) {
+					session_unset();
 					session_destroy();
 				}
 
@@ -48,6 +49,7 @@ class Login extends CI_Controller {
 
 		else {
 			if(isset($_SESSION["userId"])) {
+				session_unset();
 				session_destroy();
 			}
 
