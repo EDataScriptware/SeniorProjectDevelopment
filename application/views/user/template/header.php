@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 	<title>Honor Flight - User</title>
 
+  <?php session_start(); ?>
+
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css')?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap-grid.css')?>" />
