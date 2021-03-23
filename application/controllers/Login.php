@@ -25,21 +25,28 @@ class Login extends CI_Controller {
 
 			$username = $postData['username'];
 
-			$credentials = $this->Login_model->get_loginInfo($username);
+			$userObj = $this->Login_model->get_loginInfo($username);
 			$confirm = false;
 
-			if(password_verify($postData['password'], $credentials->password)) {
+			if(password_verify($postData['password'], $userObj->password)) {
 				$data['confirm'] = true;
+
+				$_SESSION["userId"] = $userObj->iduser;
+				$_SESSION["userPerm"] = $userObj->user_permissions;
 
 				// Start a session here
 				redirect('user');
 			}
 			else {
+				$_SESSION["userId"] = null;
+				$_SESSION["userPerm"] = null;
 				echo "Password Incorrect.";
 			}
 		} // check form data not null
 
 		else {
+			$_SESSION["userId"] = null;
+			$_SESSION["userPerm"] = null;
 			echo "Form Submission Failed.";
 		}
 	}
