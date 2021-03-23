@@ -40,19 +40,19 @@ class Login extends CI_Controller {
 				redirect('user');
 			}
 			else {
-				session_destroy();
+				if(isset($_SESSION["userId"])) {
+					session_destroy();
+				}
 
-				$_SESSION["userId"] = null;
-				$_SESSION["userPerm"] = null;
 				echo "Password Incorrect.";
 			}
 		} // check form data not null
 
 		else {
-			session_destroy();
+			if(isset($_SESSION["userId"])) {
+				session_destroy();
+			}
 
-			$_SESSION["userId"] = null;
-			$_SESSION["userPerm"] = null;
 			echo "Form Submission Failed.";
 		}
 	}
