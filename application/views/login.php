@@ -11,6 +11,8 @@
   </form>
 
   <?php
+
+    session_start();
   
     $hash = password_hash("test", PASSWORD_DEFAULT); 
 

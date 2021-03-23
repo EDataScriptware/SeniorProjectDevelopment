@@ -32,8 +32,6 @@ class Login extends CI_Controller {
 				$data['confirm'] = true;
 
 				// Start a session here
-				session_start();
-
 				$_SESSION["userId"] = $userObj->iduser;
 				$_SESSION["userPerm"] = $userObj->user_permissions;
 
