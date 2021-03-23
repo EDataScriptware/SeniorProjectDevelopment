@@ -6,9 +6,9 @@ echo "</pre>";
 if(isset($_SESSION["userPerm"])) {
 	// display this page
 }
-else {
-	redirect("");
-}
+// else {
+// 	redirect("");
+// }
 ?>
 
 <div id = "teamBox">
