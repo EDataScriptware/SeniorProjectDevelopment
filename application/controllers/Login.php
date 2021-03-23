@@ -31,13 +31,17 @@ class Login extends CI_Controller {
 			if(password_verify($postData['password'], $userObj->password)) {
 				$data['confirm'] = true;
 
+				// Start a session here
+				session_start();
+
 				$_SESSION["userId"] = $userObj->iduser;
 				$_SESSION["userPerm"] = $userObj->user_permissions;
 
-				// Start a session here
 				redirect('user');
 			}
 			else {
+				session_destroy();
+
 				$_SESSION["userId"] = null;
 				$_SESSION["userPerm"] = null;
 				echo "Password Incorrect.";
@@ -45,6 +49,8 @@ class Login extends CI_Controller {
 		} // check form data not null
 
 		else {
+			session_destroy();
+
 			$_SESSION["userId"] = null;
 			$_SESSION["userPerm"] = null;
 			echo "Form Submission Failed.";
