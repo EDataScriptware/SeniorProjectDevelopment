@@ -31,56 +31,36 @@ class Veteran_model extends CI_Model {
         return $query;
     }
 
-    # POST
+    # GET
     public function getFields($id) {
-        // create object that stores all veteran data.  Must be dynamically created (in case new DB fields are added)
-        
-        
-        // $vetQuery = $this->db->query('SELECT * FROM veteran WHERE veteran_id = '.$id);
-        // $numberOfFields = $vetQuery->num_fields();
-        
-        /*
-            $fieldData = $query->fieldData();
-            name - column name
-            max_length - maximum length of the column
-            primary_key - 1 if the column is a primary key
-            type - the type of the column
 
-       ------------------------------------------------------
-
-            $query = $this->db->query('SELECT * FROM veteran WHERE veteran_id = '.$id);
-
-            foreach ($query->list_fields() as $field)
-            {
-                echo $field;
-            }
-        */
-
-        // $query = $this->get_one_veteran($id);
-       
-        // return $query->fieldData();
-
-        // foreach ($fields as $field)
-        // {
-        //     echo $field;
-        // }
-        
         $fields = $this->db->list_fields('veteran');
         $veteran = $this->get_one_veteran($id);
 
-        $data['fields'] = $fields;
-        $data['veteran'] = $veteran;
-        
-        
-
-        return $data;
+        return $fields;
     }
 
-    # PUT
-    public function updateVetEntry($vetObj) {
+    # PUT/Update
+    public function updateVetEntry($vet) {
         // the update statement to the DB that changes a veteran entry.
         $bool = false;
 
+        // updated values are passed in.
+        $vetID = $vet->veteran_id;
+      
+        try
+        {
+            $this->db->where('id', $vetID);
+            $this->db->update('veteran', $vet); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
+            $bool = true;
+        } 
+        catch (Exception $e)
+        {
+            // REMOVE AFTER DEVELOPMENT FOR SECURITY REASONS:
+            echo "Exception: " . $e;            
+            $bool = false;
+        }
+        
         return $bool; // failed or successful
     }
 
