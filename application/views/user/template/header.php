@@ -5,7 +5,16 @@
 	<meta charset="utf-8">
 	<title>Honor Flight - User</title>
 
-  <?php session_start(); ?>
+  <?php 
+    session_start(); 
+
+    if(isset($_SESSION["userPerm"])) {
+      // display this page
+    }
+    else {
+      redirect("");
+    }
+  ?>
 
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css')?>" />

@@ -1,14 +1,8 @@
 <?php
-echo "<pre>";
-var_dump($_SESSION);
-echo "</pre>";
+// echo "<pre>";
+// var_dump($_SESSION);
+// echo "</pre>";
 
-if(isset($_SESSION["userPerm"])) {
-	// display this page
-}
-else {
-	redirect("");
-}
 ?>
 
 <div id = "teamBox">
