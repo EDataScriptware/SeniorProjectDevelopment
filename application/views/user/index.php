@@ -1,6 +1,6 @@
 <?php
 echo "<pre>";
-print_r($_SESSION);
+print_r($_SESSION, TRUE);
 echo "</pre>";
 
 if(isset($_SESSION["userPerm"])) {
