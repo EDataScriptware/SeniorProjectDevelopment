@@ -28,7 +28,7 @@ class Login extends CI_Controller {
 			$userObj = $this->Login_model->get_loginInfo($username);
 			$confirm = false;
 
-			if(password_verify($postData['password'], $userObj->password)) {
+			if($userObj && password_verify($postData['password'], $userObj->password)) {
 				$data['confirm'] = true;
 
 				// Start a session here
