@@ -30,6 +30,8 @@ class Login extends CI_Controller {
 
 			if($userObj && password_verify($postData['password'], $userObj->password)) {
 				$data['confirm'] = true;
+				
+				session_start();
 
 				// Start a session here
 				$_SESSION["userId"] = $userObj->iduser;
