@@ -14,6 +14,8 @@
 
     session_start();
     session_unset();
+
+    var_dump($_SESSION);
   
     $hash = password_hash("test", PASSWORD_DEFAULT); 
 
