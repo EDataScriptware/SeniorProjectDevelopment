@@ -15,7 +15,7 @@ class Login_model extends CI_Model {
 
         $query = $this->db->get()->result();
 
-		if($query[0] != null) {
+		if($query) {
 			return $query[0];
 		}
 		else {
