@@ -1,0 +1,68 @@
+<?php
+
+class BusBook_Model extends CI_Model {
+
+	public function __construct()
+	{
+		parent::__construct();
+	}
+    
+    # GET ALL
+	public function get_all_busbook_data() {
+        
+        $this->db->select("*");
+        $this->db->from('bus_book');
+
+        $query = $this->db->get()->result();
+        
+        // echo json_encode($query);
+
+        return $query;
+	}
+
+    # GET SPECIFIC
+    public function get_one_busbook($id) {
+        $this->db->select("*");
+        $this->db->from('bus_book');
+        $this->db->where('bus_book_id',$id);
+
+        $query = $this->db->get()->result();
+
+        return $query;
+    }
+
+    # GET
+    public function getFields($id) {
+
+        $fields = $this->db->list_fields('bus_book');
+        $bus_book = $this->get_one_busbook($id);
+
+        return $fields;
+    }
+
+    # PUT/Update
+    public function updateBusBookEntry($bus_book) {
+        // the update statement to the DB that changes a bus entry.
+        $bool = false;
+
+        // updated values are passed in.
+        $bus_bookID = $bus_book->bus_book_id;
+      
+        try
+        {
+            $this->db->where('bus_book_id', $bus_bookID);
+            $this->db->update('bus_book', $bus_book); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
+            $bool = true;
+        }
+        catch (Exception $e)
+        {
+            // REMOVE AFTER DEVELOPMENT FOR SECURITY REASONS:
+            echo "Exception: " . $e;            
+            $bool = false;
+        }
+        
+        return $bool; // failed or successful
+    }
+    
+
+}
