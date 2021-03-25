@@ -14,17 +14,15 @@
 
     session_start();
     session_unset();
-
-    var_dump($_SESSION);
   
-    $hash = password_hash("test", PASSWORD_DEFAULT); 
+    // $hash = password_hash("test", PASSWORD_DEFAULT); 
 
     
-    if(password_verify("test", $hash)) {
-        echo "Password is valid! | Hash: " . $hash;
-    }
-    else {
-        echo "Password is invalid. | Hash: " . $hash;
-    }
+    // if(password_verify("test", $hash)) {
+    //     echo "Password is valid! | Hash: " . $hash;
+    // }
+    // else {
+    //     echo "Password is invalid. | Hash: " . $hash;
+    // }
 
   ?>

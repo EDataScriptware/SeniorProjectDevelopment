@@ -2,10 +2,6 @@
 
 <?php // echo json_encode($veteran)?>
 
-
-
-
-
 <div class = "teamListView">
 	<input type="text" id="name" name="search">
 
