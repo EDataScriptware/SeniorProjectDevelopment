@@ -48,6 +48,15 @@ class User extends CI_Controller {
 			$data['team'] = $this->db->get()->result();
 		}
 
+
+		$this->db->select("*");
+		$this->db->from('bus');
+		$this->db->where('mission_id', $currMission_id);
+
+		$data['bus'] = $this->db->get()->result();
+
+
+
         $this->load->view('user/template/header');
 		$this->load->view('user/vetList', $data);
 		$this->load->view('user/template/footer');

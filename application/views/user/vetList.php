@@ -1,11 +1,11 @@
 
 
-<?php // echo json_encode($veteran)
+<?php // echo json_encode($veteran)?>
 
+<button id = "teamButton" class = "userViewButton" onClick ="showTeam()"> Team View</button>
+<button id = "busButton" class = "userViewButton" onClick ="showBus()"> Bus view </button>
 
-
-
-?>
+<div id = "teamView"> 
 <?php if ($id != null) { ?>
 <div class = "teamListView">
 	<input type="text" id="name" name="search">
@@ -31,3 +31,35 @@
 	<?php } ?>
 </div>
 
+</div>
+
+<div id = "busView">
+	<?php foreach ($bus as $b): ?>
+
+<h3> <?php echo $b->name ?> View </h3>
+
+<?php foreach ($veteran as $vet): ?>
+<?php if ($vet->bus_id === $b->bus_id) { ?>
+<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="teamListElement"><?php echo $vet->first_name ?> <?php echo$vet->last_name?></a>
+	<?php  }?>
+	<?php endforeach ?>
+
+	<?php endforeach ?>
+
+	</div>
+
+
+	<script>
+			function showTeam() {
+		document.getElementById("teamView").style.display = "inline-block";
+		document.getElementById("busView").style.display = "none";
+
+	}
+
+	function showBus() {
+		document.getElementById("teamView").style.display = "none";
+		document.getElementById("busview").style.display = "inline-block";
+
+	}
+
+	</script>

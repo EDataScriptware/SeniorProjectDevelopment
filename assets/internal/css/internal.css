@@ -100,6 +100,9 @@
 #silver {background: #BEC2CB;}
 #teal {background: teal;}
 
+
+#busView {display: none;}
+
 /* Vet View Sections */
 #reservations {display: none;}
 #medicalInfo {display: none;}
