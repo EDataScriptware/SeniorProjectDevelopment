@@ -20,6 +20,36 @@ class Veteran_model extends CI_Model {
         return $query;
 	}
 
+        # GET MISSION SPECIFIC
+	public function get_mission_veteran_data($mission) {
+        
+        $this->db->select("*");
+        $this->db->from('veteran');
+        $this->db->where('mission_id',$mission);
+
+        $query = $this->db->get()->result();
+        
+        // echo json_encode($query);
+
+        return $query;
+	}
+
+
+        # GET TEAM SPECIFIC
+	public function get_team_veteran_data($mission, $team) {
+        
+        $this->db->select("*");
+        $this->db->from('veteran');
+        $this->db->where('mission_id',$mission);
+        $this->db->where('team_id',$team);
+
+        $query = $this->db->get()->result();
+        
+        // echo json_encode($query);
+
+        return $query;
+	}
+
     # GET SPECIFIC
     public function get_one_veteran($id) {
         $this->db->select("*");

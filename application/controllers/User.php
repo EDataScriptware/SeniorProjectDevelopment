@@ -31,15 +31,12 @@ class User extends CI_Controller {
 
 		if ($id != null) {
 			$data['id'] = $id;
-			$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
+			$data['veteran'] = $this->Veteran_model->get_team_veteran_data($currMission_id, $id);
 		}
 		else {
 			$data['id'] = null;
-			$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
+			$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
 		}
-
-		
-		
 
         $this->load->view('user/template/header');
 		$this->load->view('user/vetList', $data);
