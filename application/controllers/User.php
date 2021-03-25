@@ -19,6 +19,10 @@ class User extends CI_Controller {
 
     public function vetList() //Veterins List
 	{
+		$id = $this->uri->segment(2);
+
+		echo $id;
+
 		$this->load->model('Veteran_model');
 		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
 
