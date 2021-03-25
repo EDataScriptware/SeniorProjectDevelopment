@@ -20,11 +20,26 @@ class User extends CI_Controller {
     public function vetList() //Veterins List
 	{
 		$id = $this->uri->segment(2);
-
-		echo $id;
-
 		$this->load->model('Veteran_model');
-		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
+
+		$this->db->select_max("mission_id");
+		$this->db->from('team');
+
+		$currMission_id = implode($this->db->get()->row_array());
+
+		echo $currMission_id;
+
+		if ($id != null) {
+			$data['id'] = $id;
+			$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
+		}
+		else {
+			$data['id'] = null;
+			$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
+		}
+
+		
+		
 
         $this->load->view('user/template/header');
 		$this->load->view('user/vetList', $data);
