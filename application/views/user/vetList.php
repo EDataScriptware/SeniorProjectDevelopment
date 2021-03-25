@@ -64,7 +64,7 @@
 
 	function showBus() {
 		document.getElementById("teamView").style.display = "none";
-		document.getElementById("busview").style.display = "inline-block";
+		document.getElementById("busView").style.display = "inline-block";
 
 	}
 
