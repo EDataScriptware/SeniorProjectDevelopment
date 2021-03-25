@@ -27,8 +27,6 @@ class User extends CI_Controller {
 
 		$currMission_id = implode($this->db->get()->row_array());
 
-		echo $currMission_id;
-
 		if ($id != null) {
 			$data['id'] = $id;
 			$data['veteran'] = $this->Veteran_model->get_team_veteran_data($currMission_id, $id);
