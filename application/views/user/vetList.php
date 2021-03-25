@@ -5,10 +5,16 @@
 <button id = "teamButton" class = "userViewButton" onClick ="showTeam()"> Team View</button>
 <button id = "busButton" class = "userViewButton" onClick ="showBus()"> Bus view </button>
 
+<input type="text" id="name" name="search">
+
+
 <div id = "teamView"> 
+
+
+
 <?php if ($id != null) { ?>
 <div class = "teamListView">
-	<input type="text" id="name" name="search">
+
 
 	<h3> <?php echo $team->color ?> Team View </h3>
 
