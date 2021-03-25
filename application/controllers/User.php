@@ -33,7 +33,7 @@ class User extends CI_Controller {
 
 			$this->db->select("*");
 			$this->db->from('team');
-			$this->db->where('mission_id', $currMission_id);
+			$this->db->where('team_id', $id);
 	
 			$data['team'] = $this->db->get()->result()[0];
 		}
