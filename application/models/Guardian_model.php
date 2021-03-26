@@ -32,10 +32,9 @@ class Guardian_Model extends CI_Model {
     }
 
     # GET
-    public function getFields($id) {
+    public function getFields() {
 
         $fields = $this->db->list_fields('guardian');
-        $guardian = $this->get_one_guardian($id);
 
         return $fields;
     }

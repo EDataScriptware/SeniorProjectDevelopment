@@ -32,10 +32,9 @@ class Team_Model extends CI_Model {
     }
 
     # GET
-    public function getFields($id) {
+    public function getFields() {
 
         $fields = $this->db->list_fields('team');
-        $team = $this->get_one_team($id);
 
         return $fields;
     }

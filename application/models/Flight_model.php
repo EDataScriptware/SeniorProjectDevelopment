@@ -32,10 +32,9 @@ class Flight_Model extends CI_Model {
     }
 
     # GET
-    public function getFields($id) {
+    public function getFields() {
 
         $fields = $this->db->list_fields('flight');
-        $flight = $this->get_one_flight($id);
 
         return $fields;
     }

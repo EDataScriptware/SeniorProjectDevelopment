@@ -32,10 +32,9 @@ class Mission_Model extends CI_Model {
     }
 
     # GET
-    public function getFields($id) {
+    public function getFields() {
 
         $fields = $this->db->list_fields('mission');
-        $mission = $this->get_one_mission($id);
 
         return $fields;
     }

@@ -32,10 +32,9 @@ class User_Model extends CI_Model {
     }
 
     # GET
-    public function getFields($id) {
+    public function getFields() {
 
         $fields = $this->db->list_fields('user');
-        $user = $this->get_one_user($id);
 
         return $fields;
     }

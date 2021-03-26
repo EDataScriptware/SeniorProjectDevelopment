@@ -32,10 +32,9 @@ class BusBookTeam_Model extends CI_Model {
     }
 
     # GET
-    public function getFields($id) {
+    public function getFields() {
 
         $fields = $this->db->list_fields('bus_book_team');
-        $bus_book_team = $this->get_one_busbookteam($id);
 
         return $fields;
     }
