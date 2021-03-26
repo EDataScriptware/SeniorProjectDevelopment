@@ -45,6 +45,8 @@ class Admin extends CI_Controller {
 	}
 
 	public function updateVet() {
+		echo "updateVet()" ;
+
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();
 
