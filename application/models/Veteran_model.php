@@ -63,10 +63,9 @@ class Veteran_model extends CI_Model {
     }
 
     # GET
-    public function getFields($id) {
+    public function getFields() {
 
         $fields = $this->db->list_fields('veteran');
-        $veteran = $this->get_one_veteran($id);
 
         return $fields;
     }
