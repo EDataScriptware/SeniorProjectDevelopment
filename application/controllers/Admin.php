@@ -50,7 +50,7 @@ class Admin extends CI_Controller {
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();
 
-			echo $postData;
+			echo json_encode($postData);
 
 		// 	$username = $postData['username'];
 
