@@ -84,6 +84,8 @@ class Admin extends CI_Controller {
 
 		// 	echo "Form Submission Failed.";
 		// }
+		}
+
 	}
 
 
