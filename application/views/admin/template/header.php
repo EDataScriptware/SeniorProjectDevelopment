@@ -1,4 +1,13 @@
 <?php
+	session_start(); 
+
+    if(isset($_SESSION["userPerm"]) && $_SESSION["userPerm"] == 1) {
+      // display this page
+    }
+    else {
+      redirect("");
+    }
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,5 +28,3 @@
 
 </head>
 <body>
-
-<?php session_start(); ?>

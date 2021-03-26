@@ -10,8 +10,12 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->model('Veteran_model');
+		$data['vetData'] = $this->Veteran_model->get_all_veteran_data();
+		$data['fields'] = $this->Veteran_model->getFields();
+
         $this->load->view('admin/template/header');
-		$this->load->view('admin/index');
+		$this->load->view('admin/index', $data);
 		$this->load->view('admin/template/footer');
 	}
 
