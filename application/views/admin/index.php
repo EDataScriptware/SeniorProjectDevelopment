@@ -11,9 +11,9 @@
     <?php
         foreach($vetData as $vet) {
             echo "<tr>" ;
-            ?>
-            <td><form id='<?php $vet->veteran_id ?>' class='vet_entry_edit' method='post' action='<?php echo base_url('Admin/updateVet/'); ?>'></td>;
-            <?php
+        ?>
+            <form id='<?php $vet->veteran_id ?>' class='vet_entry_edit' method='post' action='<?php echo base_url('Admin/updateVet/'); ?>'>;
+        <?php
 
             foreach($vet as $key => $value) {
                 echo  "<td><input form=".$vet->veteran_id." type='text' name='".$key."' value='".$value."'></td>" ;
