@@ -6,8 +6,13 @@
 <div id = "buttonScrollView">
 	<button id = "aboutButton" class = "userViewButton" onClick ="showAbout()"> About </button>
 	<button id = "resButton" class = "userViewButton" onClick ="showRes()"> Reservations </button>
-	<?php if (in_array($_SESSION["userPerm"], $allowed) {?>	<button id = "medButton" class = "userViewButton" onClick ="showMed()"> Medical Info </button> <?php } ?>
-	<?php if (in_array($_SESSION["userPerm"], $allowed) {?>	<button id = "acomButton" class = "userViewButton" onClick ="showAcc()"> Accommodations </button> <?php } ?>
+	<?php if (in_array($_SESSION["userPerm"], $allowed) { ?>	
+		<button id = "medButton" class = "userViewButton" onClick ="showMed()"> Medical Info </button>
+	<?php } ?>
+	
+	<?php if (in_array($_SESSION["userPerm"], $allowed) { ?>	
+	<button id = "acomButton" class = "userViewButton" onClick ="showAcc()"> Accommodations </button> 
+	<?php } ?>
 
 </div>
 
