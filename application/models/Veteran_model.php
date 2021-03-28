@@ -20,6 +20,26 @@ class Veteran_model extends CI_Model {
         return $query;
 	}
 
+    #GET ALL SPECIFIC
+    public function get_veterans_by_fields($fields, $mission = null, $team = null) {
+        // $this->db->select($FIELDS);
+        $this->db->from('veteran');
+
+        if($mission != null) {
+            // $this->db->where('mission', $mission);
+        }
+
+        if($team != null) {
+            // $this->db->where('team',$team);
+        }
+
+        $query = $this->db->get()->result();
+        
+        // echo json_encode($query);
+
+        return $query;
+    }
+
         # GET MISSION SPECIFIC
 	public function get_mission_veteran_data($mission) {
         
@@ -86,8 +106,7 @@ class Veteran_model extends CI_Model {
         } 
         catch (Exception $e)
         {
-            // REMOVE AFTER DEVELOPMENT FOR SECURITY REASONS:
-            echo "Exception: " . $e;            
+            echo "Exception: " . $e; // <-- REMOVE AFTER DEVELOPMENT FOR SECURITY REASONS
             $bool = false;
         }
         
