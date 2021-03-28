@@ -37,11 +37,11 @@ class Login extends CI_Controller {
 				$_SESSION["userId"] = $userObj->iduser;
 				$_SESSION["userPerm"] = $userObj->user_permissions;
 				
-				if ($_SESSION["userPerm"] === 1) {
-					redirect('user');
+				if ($_SESSION["userPerm"] === 2) {
+					redirect('admin');
 				}
 				else {
-					redirect('admin');
+					redirect('user');
 				}
 				
 			}
