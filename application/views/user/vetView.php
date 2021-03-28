@@ -1,5 +1,5 @@
 <?php // echo json_encode($veteran)
-$allowed = array(2, 3, 4)?>
+$allowed = array(2, 3, 4);
 
 <h2> <?php echo $veteran[0]->first_name ?> <?php echo $veteran[0]->middle_initial ?>  <?php echo $veteran[0]->last_name ?> </h2>
 
