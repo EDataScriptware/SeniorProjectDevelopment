@@ -1,4 +1,5 @@
-<?php // echo json_encode($veteran)?>
+<?php // echo json_encode($veteran)
+$allowed = (2, 3, 4)?>
 
 <h2> <?php echo $veteran[0]->first_name ?> <?php echo $veteran[0]->middle_initial ?>  <?php echo $veteran[0]->last_name ?> </h2>
 
@@ -6,8 +7,8 @@
 <div id = "buttonScrollView">
 	<button id = "aboutButton" class = "userViewButton" onClick ="showAbout()"> About </button>
 	<button id = "resButton" class = "userViewButton" onClick ="showRes()"> Reservations </button>
-	<?php if ($_SESSION["userPerm"] = 2)  ?>	<button id = "medButton" class = "userViewButton" onClick ="showMed()"> Medical Info </button> <?php } ?>
-	<?php if ($_SESSION["userPerm"] = 2)  ?>	<button id = "acomButton" class = "userViewButton" onClick ="showAcc()"> Accommodations </button> <?php } ?>
+	<?php if (in_array($_SESSION["userPerm"], $allowed)  ?>	<button id = "medButton" class = "userViewButton" onClick ="showMed()"> Medical Info </button> <?php } ?>
+	<?php if (in_array($_SESSION["userPerm"], $allowed) ?>	<button id = "acomButton" class = "userViewButton" onClick ="showAcc()"> Accommodations </button> <?php } ?>
 
 </div>
 
