@@ -1,6 +1,6 @@
 
-<?php $allowed = array(2, 3, 4); ?>
-<?php echo json_encode($veteran)?>
+
+<?php // echo json_encode($veteran)?>
 
 <button id = "teamButton" class = "userViewButton" onClick ="showTeam()"> Team View</button>
 <button id = "busButton" class = "userViewButton" onClick ="showBus()"> Bus view </button>
