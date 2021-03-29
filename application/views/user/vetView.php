@@ -110,7 +110,12 @@
 <h3>Accommodations </h3>
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
-			echo str_replace('_', ' ',ucfirst(substr($accomidations,4)));
+			if ($veteran[0]->$accomidations == "Walk bus steps") {
+				echo "Needs help" str_replace('_', ' ',ucfirst(substr($accomidations,4)));
+			}
+			else {
+				echo str_replace('_', ' ',ucfirst(substr($accomidations,4)));
+			}
 			echo '<br>';
 		}
 
