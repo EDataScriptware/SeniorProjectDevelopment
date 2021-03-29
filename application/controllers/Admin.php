@@ -45,6 +45,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function updateVet() {
+		$this->load->model('Veteran_model');
 
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();
