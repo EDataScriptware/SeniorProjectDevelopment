@@ -73,11 +73,12 @@
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
 			echo $medication;
+			echo '<br>';
 		}
 
 		?>
 
-		<br>
+		
 
 	<?php endforeach ?>
 
