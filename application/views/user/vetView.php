@@ -72,10 +72,12 @@
 
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
-			echo 'test';
+			echo $medication;
 		}
 
 		?>
+
+		<br>
 
 	<?php endforeach ?>
 
@@ -85,10 +87,12 @@
 <h3>Accommodations </h3>
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
-			echo 'test';
+			echo $accomidations;
 		}
 
 		?>
+
+		<br>
 
 	<?php endforeach ?>
 </div>
