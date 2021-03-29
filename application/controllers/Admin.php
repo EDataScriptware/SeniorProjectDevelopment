@@ -49,6 +49,8 @@ class Admin extends CI_Controller {
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();
 
+			$postData = json_decode($postData);
+
 			if(isset($postData->submit)) {
 				unset($postData->submit) ;
 			}
