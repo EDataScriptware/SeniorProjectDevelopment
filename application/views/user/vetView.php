@@ -5,6 +5,8 @@
 <?php if ($_SESSION["userPerm"] === '2') { ?>	
 <button> EDIT </button>
 <?php } ?>
+<?php $medAccomidations = array("cane","walker","wheelchair","chair_loc","scooter",'transport_airport','transport_trip','stairs','stand_30min','walk_bus_steps','use_mobility'); ?>
+<?php $medMedication = array('list','emphysema','falls','heart_disease','pacemaker','colostomy','cancer','dnr','hbp','joint_replacement','kidney', 'diabetes','seizusres','urostomy','dimentia','nebulizer','oxygen','football','stroke','urinary','cpap','flow_rate','others') ?>
 
 <div id = "buttonScrollView">
 	<button id = "aboutButton" class = "userViewButton" onClick ="showAbout()"> About </button>

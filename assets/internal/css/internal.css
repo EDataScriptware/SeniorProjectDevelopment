@@ -101,6 +101,18 @@
 #teal {background: teal;}
 
 
+/*Med Colors*/
+#medRed {background:red;}
+#medYellow{background:yellow;}
+#medGreen{background: green;}
+.medCircle{
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+
 #busView {display: none;}
 
 /* Vet View Sections */
