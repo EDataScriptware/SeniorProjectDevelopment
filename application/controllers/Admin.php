@@ -49,7 +49,13 @@ class Admin extends CI_Controller {
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();
 
+			if(isset($postData->submit)) {
+				unset($postData->submit) ;
+			}
+
 			echo json_encode($postData);
+
+			// $this->Veteran_model->updateVetEntry($postData);
 
 		// 	$username = $postData['username'];
 
