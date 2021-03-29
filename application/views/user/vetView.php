@@ -70,7 +70,7 @@
 
 	<p> DOB: <?php echo $veteran[0]->dob ?>  </p>
 
-	<p> Conditions </p>
+	<h4> Conditions </h4>
 
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
@@ -83,7 +83,7 @@
 	<?php if ($veteran[0]->med_list != '') {
 			echo '<h4> Medication List </h4>';
 			echo '<br>';
-			echo $veteran[0]->med_list;
+			echo str_replace(',', '<br />',$veteran[0]->med_list);
 		} ?>
 
 		<?php if ($veteran[0]->med_when_use != '') {
