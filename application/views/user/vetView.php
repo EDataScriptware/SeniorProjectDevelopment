@@ -70,17 +70,23 @@
 
 	<p> DOB: <?php echo $veteran[0]->dob ?>  </p>
 
+	<p> Conditions </p>
+
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
-			echo ucfirst(substr($medication,4)).': True';
+			echo str_replace('_', ' ',ucfirst(substr($medication,4)).': True');
 			echo '<br>';
-		}
-
-		?>
-
-		
+		} ?>
 
 	<?php endforeach ?>
+
+
+		<?php if ($veteran[0]->med_when_use != '') {
+			echo '<p> When to use Medication </p>'
+			echo '<br>'
+			echo $veteran[0]->med_when_use;
+		} ?>
+
 
 </div>
 
@@ -88,7 +94,7 @@
 <h3>Accommodations </h3>
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
-			echo ucfirst(substr($accomidations,4)).': True';
+			echo str_replace('_', ' ',ucfirst(substr($accomidations,4)).': True');
 			echo '<br>';
 		}
 
