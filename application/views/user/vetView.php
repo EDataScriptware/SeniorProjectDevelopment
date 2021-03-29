@@ -68,7 +68,16 @@
 <div id = "medicalInfo">
 <h3>Medical Information</h3>
 
-	<p> DOB: <?php echo $guardian[0]->dob ?>  </p>
+	<p> DOB: <?php echo $veteran[0]->dob ?>  </p>
+
+	<?php foreach ($medMedication as $medication): ?>
+		<?php if ($veteran[0]->'med_'.$medication == 1) {
+			echo 'test';
+		}
+		
+		?>
+
+	<?php endforeach ?>
 
 </div>
 
