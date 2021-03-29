@@ -5,8 +5,8 @@
 <?php if ($_SESSION["userPerm"] === '2') { ?>	
 <button> EDIT </button>
 <?php } ?>
-<?php $medAccomidations = array("cane","walker","wheelchair","chair_loc","scooter",'transport_airport','transport_trip','stairs','stand_30min','walk_bus_steps','use_mobility'); ?>
-<?php $medMedication = array('list','emphysema','falls','heart_disease','pacemaker','colostomy','cancer','dnr','hbp','joint_replacement','kidney', 'diabetes','seizusres','urostomy','dimentia','nebulizer','oxygen','football','stroke','urinary','cpap','flow_rate','others') ?>
+<?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_chair_loc","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
+<?php $medMedication = array('med_list','med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizusres','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap','med_flow_rate','med_others') ?>
 
 <div id = "buttonScrollView">
 	<button id = "aboutButton" class = "userViewButton" onClick ="showAbout()"> About </button>
@@ -71,10 +71,10 @@
 	<p> DOB: <?php echo $veteran[0]->dob ?>  </p>
 
 	<?php foreach ($medMedication as $medication): ?>
-		<?php if ($veteran[0]->'med_'.$medication == 1) {
+		<?php if ($veteran[0]->$medication == 1) {
 			echo 'test';
 		}
-		
+
 		?>
 
 	<?php endforeach ?>
