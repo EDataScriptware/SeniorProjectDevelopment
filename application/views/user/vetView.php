@@ -83,7 +83,14 @@
 
 <div id = "accommodations">
 <h3>Accommodations </h3>
+<?php foreach ($medAccomidations as $accomidations): ?>
+		<?php if ($veteran[0]->$accomidations == 1) {
+			echo 'test';
+		}
 
+		?>
+
+	<?php endforeach ?>
 </div>
 
 <script>
