@@ -1,6 +1,5 @@
 <?php
 	session_start(); 
-	$allowed = array(2, 3, 4);
 
     if(isset($_SESSION["userPerm"]) && $_SESSION["userPerm"] == 2) {
       // display this page
@@ -29,3 +28,5 @@
 
 </head>
 <body>
+
+<?php $allowed = array(2, 3, 4); ?>

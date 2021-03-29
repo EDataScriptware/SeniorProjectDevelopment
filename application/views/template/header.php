@@ -19,3 +19,5 @@
 
 </head>
 <body>
+
+<?php $allowed = array(2, 3, 4); ?>

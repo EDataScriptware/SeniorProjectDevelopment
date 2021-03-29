@@ -7,7 +7,7 @@
 
   <?php 
     session_start(); 
-    $allowed = array(2, 3, 4);
+    
 
     if(isset($_SESSION["userPerm"])) {
       // display this page
@@ -69,3 +69,6 @@
     </form>
   </div>
 </nav>
+
+
+<?php $allowed = array(2, 3, 4); ?>
