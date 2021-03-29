@@ -85,7 +85,7 @@
 
 	<?php if ($veteran[0]->med_list != '') {
 			echo '<h4> Medication List </h4>';
-			echo str_replace(',', '<br />',$veteran[0]->med_list);
+			echo str_replace(',', '<br>',$veteran[0]->med_list);
 		} ?>
 
 		<?php if ($veteran[0]->med_when_use != '') {
@@ -110,7 +110,12 @@
 <h3>Accommodations </h3>
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
-			echo str_replace('_', ' ',ucfirst(substr($accomidations,4)));
+			if ($veteran[0]->$accomidations == "Walk bus steps") {
+				echo "Needs help with walking up/down bus steps";
+			}
+			else {
+				echo str_replace('_', ' ',ucfirst(substr($accomidations,4)));
+			}
 			echo '<br>';
 		}
 
