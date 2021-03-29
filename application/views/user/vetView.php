@@ -70,6 +70,8 @@
 
 	<p> DOB: <?php echo $veteran[0]->dob ?>  </p>
 
+	<h3> Med Code: <div id = 'med<?php echo $veteran[0]->med_code ?>' class = 'medCircle' > </div> <?php echo $veteran[0]->med_code ?>
+
 	<h4> Conditions </h4>
 
 	<?php foreach ($medMedication as $medication): ?>
