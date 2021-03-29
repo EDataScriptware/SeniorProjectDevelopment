@@ -56,7 +56,7 @@ class Admin extends CI_Controller {
 
 			echo json_encode($postData);
 
-			echo $this->Veteran_model->updateVetEntry($postData);
+			echo $this->Veteran_model->updateVetEntry(json_encode($postData));
 
 		// 	$username = $postData['username'];
 
