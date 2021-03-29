@@ -95,10 +95,10 @@ class Veteran_model extends CI_Model {
 
         // updated values are passed in.
         $vetID = $vet->veteran_id;
-      
+    
         try
         {
-            $this->db->where('id', $vetID);
+            $this->db->where('veteran_id', $vetID);
             $this->db->update('veteran', $vet); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
             $bool = true;
         } 
@@ -110,5 +110,4 @@ class Veteran_model extends CI_Model {
         
         return $bool; // failed or successful
     }
-
 }
