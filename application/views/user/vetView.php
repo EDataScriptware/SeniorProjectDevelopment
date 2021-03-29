@@ -87,19 +87,16 @@
 
 		<?php if ($veteran[0]->med_when_use != '') {
 			echo '<h4> When to use Medication </h4>';
-			echo '<br>';
 			echo $veteran[0]->med_when_use;
 		} ?>
 
 <?php if ($veteran[0]->med_flow_rate != '') {
 			echo '<h4> Flow Rate </h4>';
-			echo '<br>';
 			echo $veteran[0]->med_flow_rate;
 		} ?>
 
 		<?php if ($veteran[0]->med_others != '') {
 			echo '<h4> Other Conditions </h4>';
-			echo '<br>';
 			echo $veteran[0]->med_others;
 		} ?>
 
