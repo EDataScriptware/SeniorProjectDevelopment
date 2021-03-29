@@ -72,7 +72,7 @@
 
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
-			echo $medication;
+			echo ucfirst(substr($medication,4)).': True';
 			echo '<br>';
 		}
 
@@ -88,7 +88,7 @@
 <h3>Accommodations </h3>
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
-			echo $accomidations;
+			echo ucfirst(substr($accomidations,4)).': True';
 			echo '<br>';
 		}
 
