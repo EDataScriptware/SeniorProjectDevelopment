@@ -51,10 +51,10 @@
 
 	<p> Alt Phone: <?php echo $guardian[0]->cell_phone ?>  </p>
 
-	<h2>Veteran Object JSON</h3>
+	<!-- <h2>Veteran Object JSON</h3>
 	<?php 
-		echo json_encode($fields);
-	?>
+	//	echo json_encode($fields);
+	?> -->
 
 </div>
 
