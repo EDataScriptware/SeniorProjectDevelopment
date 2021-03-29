@@ -6,7 +6,7 @@
 <button> EDIT </button>
 <?php } ?>
 <?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_chair_loc","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
-<?php $medMedication = array('med_list','med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap','med_flow_rate','med_others') ?>
+<?php $medMedication = array('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
 
 <div id = "buttonScrollView">
 	<button id = "aboutButton" class = "userViewButton" onClick ="showAbout()"> About </button>
@@ -80,11 +80,28 @@
 
 	<?php endforeach ?>
 
+	<?php if ($veteran[0]->med_list != '') {
+			echo '<h4> Medication List </h4>'
+			echo '<br>'
+			echo $veteran[0]->med_list;
+		} ?>
 
 		<?php if ($veteran[0]->med_when_use != '') {
-			echo '<p> When to use Medication </p>'
+			echo '<h4> When to use Medication </h4>'
 			echo '<br>'
 			echo $veteran[0]->med_when_use;
+		} ?>
+
+<?php if ($veteran[0]->med_flow_rate != '') {
+			echo '<h4> Flow Rate </h4>'
+			echo '<br>'
+			echo $veteran[0]->med_flow_rate;
+		} ?>
+
+		<?php if ($veteran[0]->med_others != '') {
+			echo '<h4> Other Conditions </h4>'
+			echo '<br>'
+			echo $veteran[0]->med_others;
 		} ?>
 
 
