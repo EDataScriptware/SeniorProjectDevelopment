@@ -6,7 +6,7 @@
 <button> EDIT </button>
 <?php } ?>
 <?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_chair_loc","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
-<?php $medMedication = array('med_list','med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizusres','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap','med_flow_rate','med_others') ?>
+<?php $medMedication = array('med_list','med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap','med_flow_rate','med_others') ?>
 
 <div id = "buttonScrollView">
 	<button id = "aboutButton" class = "userViewButton" onClick ="showAbout()"> About </button>
