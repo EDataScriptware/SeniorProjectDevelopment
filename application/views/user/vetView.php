@@ -111,7 +111,7 @@
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
 			if ($veteran[0]->$accomidations == "Walk bus steps") {
-				echo "Needs help" str_replace('_', ' ',ucfirst(substr($accomidations,4)));
+				echo "Needs help with walking up/down bus steps";
 			}
 			else {
 				echo str_replace('_', ' ',ucfirst(substr($accomidations,4)));
