@@ -1,7 +1,9 @@
-<?php $allowed = array(2, 3, 4); ?>
+
 
 <h2> <?php echo $veteran[0]->first_name ?> <?php echo $veteran[0]->middle_initial ?>  <?php echo $veteran[0]->last_name ?> </h2>
-
+<?php if ($_SESSION["userPerm"] === 2)) { ?>	
+<button> EDIT </button>
+<?php } ?>
 
 <div id = "buttonScrollView">
 	<button id = "aboutButton" class = "userViewButton" onClick ="showAbout()"> About </button>
