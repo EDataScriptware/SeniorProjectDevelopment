@@ -89,11 +89,10 @@
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
 			echo $accomidations;
+			echo '<br>';
 		}
 
 		?>
-
-		<br>
 
 	<?php endforeach ?>
 </div>
