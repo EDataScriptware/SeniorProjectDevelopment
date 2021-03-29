@@ -49,12 +49,10 @@ class Veteran_model extends CI_Model {
 
         $query = $this->db->get()->result();
         
-        
         // echo json_encode($query);
 
         return $query;
 	}
-
 
         # GET TEAM SPECIFIC
 	public function get_team_veteran_data($mission, $team) {
