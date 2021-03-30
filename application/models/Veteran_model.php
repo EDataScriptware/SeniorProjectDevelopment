@@ -107,6 +107,10 @@ class Veteran_model extends CI_Model {
         if($vet["mission_id"] === "") {
             $vet["mission_id"] = null;
         }
+
+        if($vet["team_id"] === "") {
+            $vet["team_id"] = null;
+        }
     
         try
         {

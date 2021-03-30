@@ -57,42 +57,12 @@ class Admin extends CI_Controller {
 
 			echo json_encode($postData);
 
-			$this->Veteran_model->updateVetEntry($postData);
-
-		// 	$username = $postData['username'];
-
-		// 	$userObj = $this->Login_model->get_loginInfo($username);
-		// 	$confirm = false;
-
-		// 	if($userObj && password_verify($postData['password'], $userObj->password)) {
-		// 		$data['confirm'] = true;
-				
-		// 		session_start();
-
-		// 		// Start a session here
-		// 		$_SESSION["userId"] = $userObj->iduser;
-		// 		$_SESSION["userPerm"] = $userObj->user_permissions;
-
-		// 		redirect('user');
-		// 	}
-		// 	else {
-		// 		if(isset($_SESSION["userId"])) {
-		// 			session_unset();
-		// 			session_destroy();
-		// 		}
-
-		// 		echo "Password Incorrect.";
-		// 	}
-		// } // check form data not null
-
-		// else {
-		// 	if(isset($_SESSION["userId"])) {
-		// 		session_unset();
-		// 		session_destroy();
-		// 	}
-
-		// 	echo "Form Submission Failed.";
-		// }
+			if($this->Veteran_model->updateVetEntry($postData)) {
+				echo "Veteran Updated Successfully |  Route Admin Somewhere.";
+			}
+			else {
+				echo "Veteran Updated Unsuccessfully | Route Admin Somewhere.";
+			}
 		}
 
 	}
