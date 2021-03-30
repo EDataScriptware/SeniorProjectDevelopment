@@ -95,10 +95,21 @@ class Veteran_model extends CI_Model {
 
         // updated values are passed in.
         $vetID = $vet["veteran_id"];
+
+        if($vet["guardian_id"] === "") {
+            $vet["guardian_id"] = null;
+        }
+
+        if($vet["bus_id"] === "") {
+            $vet["bus_id"] = null ;
+        }
+
+        if($vet["mission_id"] === "") {
+            $vet["mission_id"] = null;
+        }
     
         try
         {
-            $this->db->join('bus', 'bus.bus_id = veteran.bus_id');
             $this->db->where('veteran_id', $vetID);
             $this->db->update('veteran', $vet); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
             $bool = true;
