@@ -113,11 +113,12 @@ class Veteran_model extends CI_Model {
         // }
 
         // Not quite working, no real issue though.  The above works.
-        foreach($vet as $key => $value) {
+        $i = 0;
+        foreach($vet as $value) {
             if($value === "") {
-                echo  $key." | ".$value;
-                $value = null;
+                $vet[$i] = null;
             }
+            $i++;
         }
     
         try
