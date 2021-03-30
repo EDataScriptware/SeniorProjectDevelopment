@@ -110,7 +110,7 @@
 <h3>Accommodations </h3>
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
-			if ($veteran[0]->$accomidations == "Walk bus steps") {
+			if ($veteran[0]->$accomidations === "med_walk_bus_steps") {
 				echo "Needs help with walking up/down bus steps";
 			}
 			else {
