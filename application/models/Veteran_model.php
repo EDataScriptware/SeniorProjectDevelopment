@@ -112,7 +112,7 @@ class Veteran_model extends CI_Model {
         //     $vet["team_id"] = null;
         // }
 
-        // Not quite working, no real issue though.  The above works.
+        // The below sets all empty strings to NULL
         foreach($vet as $key => $value) {
             if($value === "") {
                 $vet[$key] = null;
