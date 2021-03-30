@@ -94,7 +94,7 @@ class Veteran_model extends CI_Model {
         $bool = false;
 
         // updated values are passed in.
-        $vetID = $vet->veteran_id;
+        $vetID = $vet["veteran_id"];
     
         try
         {
