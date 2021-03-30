@@ -112,8 +112,10 @@ class Veteran_model extends CI_Model {
         //     $vet["team_id"] = null;
         // }
 
+        // Not quite working, no real issue though.  The above works.
         foreach($vet as $key => $value) {
             if($value === "") {
+                echo  $key." | ".$value;
                 $value = null;
             }
         }
@@ -121,7 +123,7 @@ class Veteran_model extends CI_Model {
         try
         {
             $this->db->where('veteran_id', $vetID);
-            $this->db->update('veteran', $vet); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
+            $this->db->update('veteran', $vet); 
             $bool = true;
         } 
         catch (Exception $e)
