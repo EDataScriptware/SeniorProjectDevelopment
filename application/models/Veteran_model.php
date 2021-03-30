@@ -23,7 +23,7 @@ class Veteran_model extends CI_Model {
     #GET ALL SPECIFIC
     public function get_veterans_by_fields($fieldList, $mission = null, $team = null) {
         $selectString = "";
-        $maxVal = count($fieldList);
+        $maxVal = count($fieldList)-1;
         $counter = 0; 
         foreach($fieldList as $field)
         {
