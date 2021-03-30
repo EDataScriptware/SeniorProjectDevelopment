@@ -21,16 +21,33 @@ class Veteran_model extends CI_Model {
 	}
 
     #GET ALL SPECIFIC
-    public function get_veterans_by_fields($fields, $mission = null, $team = null) {
-        // $this->db->select($FIELDS);
+    public function get_veterans_by_fields($fieldList, $mission = null, $team = null) {
+        $selectString = "";
+        $maxVal = count($fieldList);
+        $counter = 0; 
+        foreach($fieldList as $field)
+        {
+            
+            if ($counter != $maxVal)
+            {
+                $selectString += $field + ",";
+            }
+            else
+            {
+                $selectString += $field;
+            }
+            $counter += 1;
+        }
+        
+        $this->db->select($selectString);
         $this->db->from('veteran');
 
         if($mission != null) {
-            // $this->db->where('mission', $mission);
+            $this->db->where('mission', $mission);
         }
 
         if($team != null) {
-            // $this->db->where('team',$team);
+            $this->db->where('team',$team);
         }
 
         $query = $this->db->get()->result();
