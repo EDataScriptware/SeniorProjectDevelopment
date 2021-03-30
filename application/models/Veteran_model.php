@@ -96,20 +96,26 @@ class Veteran_model extends CI_Model {
         // updated values are passed in.
         $vetID = $vet["veteran_id"];
 
-        if($vet["guardian_id"] === "") {
-            $vet["guardian_id"] = null;
-        }
+        // if($vet["guardian_id"] === "") {
+        //     $vet["guardian_id"] = null;
+        // }
 
-        if($vet["bus_id"] === "") {
-            $vet["bus_id"] = null ;
-        }
+        // if($vet["bus_id"] === "") {
+        //     $vet["bus_id"] = null ;
+        // }
 
-        if($vet["mission_id"] === "") {
-            $vet["mission_id"] = null;
-        }
+        // if($vet["mission_id"] === "") {
+        //     $vet["mission_id"] = null;
+        // }
 
-        if($vet["team_id"] === "") {
-            $vet["team_id"] = null;
+        // if($vet["team_id"] === "") {
+        //     $vet["team_id"] = null;
+        // }
+
+        foreach($vet as $key => $value) {
+            if($value === "") {
+                $value = null;
+            }
         }
     
         try
