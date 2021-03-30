@@ -85,7 +85,7 @@
 
 	<?php if ($veteran[0]->med_list != '') {
 			echo '<h4> Medication List </h4>';
-			echo str_replace(',', '<br>',$veteran[0]->med_list);
+			echo $veteran[0]->med_list;
 		} ?>
 
 		<?php if ($veteran[0]->med_when_use != '') {
@@ -110,7 +110,7 @@
 <h3>Accommodations </h3>
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
-			if ($veteran[0]->$accomidations == "Walk bus steps") {
+			if ($accomidations === "med_walk_bus_steps") {
 				echo "Needs help with walking up/down bus steps";
 			}
 			else {
