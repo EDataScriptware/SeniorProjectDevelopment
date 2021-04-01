@@ -57,6 +57,17 @@ class Admin extends CI_Controller {
 
 			echo json_encode($postData);
 
+			echo "<br>";
+
+			foreach($postData as $key => $value) {
+				if($key == "veteran_id") {
+					echo "Vet ID key:".$key. " value: ".$value."<br>";
+				}
+				else {
+					echo "Key: ".$key." value: ".$value."<br>";
+				}
+			}
+
 			// $data['vetData'] = $this->Veteran_model->get_veterans_by_fields(); 
 
 		}
