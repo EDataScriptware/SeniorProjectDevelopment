@@ -11,8 +11,8 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('Veteran_model');
-		$data['vetData'] = $this->Veteran_model->get_all_veteran_data(); //3700
-		$data['fields'] = $this->Veteran_model->getFields();
+		$data['queryData'] = $this->Veteran_model->get_all_veteran_data(); //3700
+		$data['vetFields'] = $this->Veteran_model->getFields();
 
         $this->load->view('admin/template/header');
 		$this->load->view('admin/index', $data);
@@ -42,6 +42,24 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/reservations');
 		$this->load->view('admin/template/footer');
+	}
+
+	public function vetQueryView() {
+		$this->load->model('Veteran_model');
+
+		if($this->input->post('submit') != NULL) {
+			$postData = $this->input->post();
+
+
+			if(isset($postData["submit"])) {
+				unset($postData["submit"]) ;
+			}
+
+			echo json_encode($postData);
+
+			// $data['vetData'] = $this->Veteran_model->get_veterans_by_fields(); 
+
+		}
 	}
 
 	public function updateVet() {
