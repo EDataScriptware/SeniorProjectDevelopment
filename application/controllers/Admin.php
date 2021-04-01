@@ -65,12 +65,10 @@ class Admin extends CI_Controller {
 
 			foreach($postData as $key => $value) {
 				if($key == "mission_query") {
-					echo "mission ID key:".$key. " value: ".$value."<br>";
 					if(is_numeric($value)) {
 						$mission_id = $value;
 					}
 				} else if($key == "team_query") {
-					echo "team ID key:".$key. " value: ".$value."<br>";
 					if(is_numeric($value)) {
 						$team_id = $value;
 					}
@@ -80,7 +78,7 @@ class Admin extends CI_Controller {
 				}
 			}
 
-			$data['vetData'] = $this->Veteran_model->get_veterans_by_fields($fields, $mission_id, $team_id));
+			$data['vetData'] = $this->Veteran_model->get_veterans_by_fields($fields, $mission_id, $team_id);
 			$data['fields'] = $fields;
 
 			$this->load->view('admin/template/header');
