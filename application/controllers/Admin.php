@@ -55,10 +55,6 @@ class Admin extends CI_Controller {
 				unset($postData["submit"]) ;
 			}
 
-			echo json_encode($postData);
-
-			echo "<br>";
-
 			$fields = [];
 			$mission_id = null;
 			$team_id = null;
@@ -85,6 +81,10 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/vetQuery', $data);
 			$this->load->view('admin/template/footer');
 
+		} else {
+			$this->load->view('admin/template/header');
+			$this->load->view('admin/index');
+			$this->load->view('admin/template/footer');
 		}
 	}
 
