@@ -59,14 +59,27 @@ class Admin extends CI_Controller {
 
 			echo "<br>";
 
+			$fields = [];
+			$mission_id = null;
+			$team_id = null;
+
 			foreach($postData as $key => $value) {
-				if($key == "veteran_id") {
-					echo "Vet ID key:".$key. " value: ".$value."<br>";
+				if($key == "mission_id") {
+					echo "mission ID key:".$key. " value: ".$value."<br>";
+					$mission_id = $value;
+				} else if($key == "team_id") {
+					echo "team ID key:".$key. " value: ".$value."<br>";
+					$team_id = $value;
 				}
 				else {
 					echo "Key: ".$key." value: ".$value."<br>";
+					array_push($fields, $key);
 				}
 			}
+
+			print_r($fields);
+			echo "<br>";
+			echo $mission_id."<br>".$team_id;
 
 			// $data['vetData'] = $this->Veteran_model->get_veterans_by_fields(); 
 
