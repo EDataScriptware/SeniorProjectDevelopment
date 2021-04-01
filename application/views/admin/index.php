@@ -11,8 +11,8 @@
     <span class="close">&times;</span>
     <p>What veteran fields would you like to query? </p>
     <form method='post' action='<?php echo base_url('Admin/vetQueryView/'); ?>' >
-        <input type='text' name='mission_id' placeholder='optional: enter mission id'>Mission ID:</input>
-        <input type='text' name='team_id' placeholder='optional: enter team id'>Team ID:</input>
+        Mission ID: <input type='text' name='mission_id' placeholder='optional: enter mission id'><br>
+        Team ID: <input type='text' name='team_id' placeholder='optional: enter team id'><br>
         <?php
             foreach($vetFields as $field) {
                 echo "<input type='checkbox' name='".$field."' value='".$field."'> ".$field." </input><br>";
