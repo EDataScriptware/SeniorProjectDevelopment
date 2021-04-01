@@ -43,11 +43,11 @@ class Veteran_model extends CI_Model {
         $this->db->from('veteran');
 
         if($mission != null) {
-            $this->db->where('mission', $mission);
+            $this->db->where('mission_id', $mission);
         }
 
         if($team != null) {
-            $this->db->where('team',$team);
+            $this->db->where('team_id',$team);
         }
 
         $query = $this->db->get()->result();
