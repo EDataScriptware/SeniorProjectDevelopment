@@ -84,7 +84,7 @@ class Admin extends CI_Controller {
 			echo "<br>";
 			echo $mission_id."<br>".$team_id."<br>";
 
-			echo $data['vetData'] = $this->Veteran_model->get_veterans_by_fields($fields, $mission_id, $team_id); 
+			echo json_encode($data['vetData'] = $this->Veteran_model->get_veterans_by_fields($fields, $mission_id, $team_id)); 
 
 		}
 	}
