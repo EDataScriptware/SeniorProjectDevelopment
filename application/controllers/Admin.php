@@ -76,7 +76,6 @@ class Admin extends CI_Controller {
 					}
 				}
 				else {
-					echo "Key: ".$key." value: ".$value."<br>";
 					array_push($fields, $key);
 				}
 			}

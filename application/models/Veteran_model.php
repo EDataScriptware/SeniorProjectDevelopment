@@ -30,11 +30,11 @@ class Veteran_model extends CI_Model {
             
             if ($counter != $maxVal)
             {
-                $selectString += $field + ",";
+                $selectString .= $field . ",";
             }
             else
             {
-                $selectString += $field;
+                $selectString .= $field;
             }
             $counter += 1;
         }
