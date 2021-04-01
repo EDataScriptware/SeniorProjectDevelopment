@@ -3,11 +3,13 @@
 
 **Linux OS:** Raspbian 10 (Buster)
 
-**URL:** http://129.21.148.6/ 
+**IP Address:** 129.21.148.57
+
+**Hostname:** http://rwby.student.rit.edu/
 
 **Username:** pi
 
-**Password:** raspberry
+**Password:** [REDACTED] - SECURITY REASONS
 
 **Localhost:** raspberrypi
 
