@@ -64,12 +64,12 @@ class Admin extends CI_Controller {
 			$team_id = null;
 
 			foreach($postData as $key => $value) {
-				if($key == "mission_id") {
+				if($key == "mission_query") {
 					echo "mission ID key:".$key. " value: ".$value."<br>";
 					if(is_numeric($value)) {
 						$mission_id = $value;
 					}
-				} else if($key == "team_id") {
+				} else if($key == "team_query") {
 					echo "team ID key:".$key. " value: ".$value."<br>";
 					if(is_numeric($value)) {
 						$team_id = $value;
