@@ -13,7 +13,7 @@
     <form method='post' action='<?php echo base_url('Admin/vetQueryView/'); ?>' >
         <?php
             foreach($vetFields as $field) {
-                echo "<input type='checkbox' name='".$field."' value='".$field."'>".$field."</input>";
+                echo "<input type='checkbox' name='".$field."' value='".$field."'> ".$field." </input><br>";
             }
         ?>
         <button input type='submit' name='submit' value='submit'> Query </button>
