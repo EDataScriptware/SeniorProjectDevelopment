@@ -80,11 +80,12 @@ class Admin extends CI_Controller {
 				}
 			}
 
-			print_r($fields);
-			echo "<br>";
-			echo $mission_id."<br>".$team_id."<br>";
+			$data['vetData'] = $this->Veteran_model->get_veterans_by_fields($fields, $mission_id, $team_id));
+			$data['fields'] = $fields;
 
-			echo json_encode($data['vetData'] = $this->Veteran_model->get_veterans_by_fields($fields, $mission_id, $team_id)); 
+			$this->load->view('admin/template/header');
+			$this->load->view('admin/vetQuery', $data);
+			$this->load->view('admin/template/footer');
 
 		}
 	}
