@@ -24,3 +24,7 @@ conn = pymysql.connect(host='127.0.0.1', user=username, passwd=password, port=tu
 def getVeteranNames():
     data = pd.read_sql_query("SELECT first_name, middle_initial, last_name, team_id FROM veteran ORDER BY team_id, last_name;", conn)
     return data.to_numpy()
+
+def getAllVeteran():
+    data = pd.read_sql_query("SELECT * FROM veteran ORDER BY team_id, last_name;", conn)
+    return data.to_numpy()
