@@ -53,10 +53,11 @@
 
 	<p> Alt Phone: <?php echo $guardian[0]->cell_phone ?>  </p>
 
-	<!-- <h2>Veteran Object JSON</h3>
-	<?php 
-	//	echo json_encode($fields);
-	?> -->
+	
+	<?php if ($veteran[0]->add_comments != "") { ?>
+	<h3> Additional Information: </h3>
+	<p> <?php echo $veteran[0]->add_comments ?> </p>
+	<?php } ?>
 
 </div>
 
@@ -102,37 +103,7 @@
 			echo '<h4> Other Conditions </h4>';
 			echo $veteran[0]->med_others;
 		} ?>
-
-
 </div>
-
-
-
-<!-- Button trigger modal -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
 <div id = "accommodations">
 <h3>Accommodations </h3>
@@ -151,6 +122,106 @@
 
 	<?php endforeach ?>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modify Veteran Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+	  <h3> About </h3>
+
+		<p> <b> Address: </b></p>
+		<p>  <label for="city"> City: </label> <input type="text" id="city" name="city" class = "infoInput" value = "<?php echo $veteran[0]->city ?>" > </p>
+		<p>  <label for="state">  State: </label> <input type="text" id="state" name="state" class = "infoInput" value ='<?php echo $veteran[0]->state ?>'> </p>
+		<p>  <label for="zip"> Zip: </label> <input type="text" id="zip" name="zip" class = "infoInput" value = '<?php echo $veteran[0]->zip ?>'> </p>
+		
+		<p> <b> Contact: </b></p>
+		<p> <label for="dPhone"> Day Phone: </label> <input type="text" id="dPhone" name="dPhone" class = "infoInput" value = "<?php echo $veteran[0]->day_phone ?>" >   </p>
+
+		<p> <label for="aPhone"> Alt Phone: </label> <input type="text" id="aPhone" name="aPhone" class = "infoInput" value = "<?php echo $veteran[0]->cell_phone ?>" >   </p>
+
+		<p> <b> Additional Information: </b></p>
+		<textarea id="flowRate" name="flowRate" rows="4" cols="50">
+		<?php 	echo $veteran[0]->$add_comments; ?>
+
+		</textarea>
+
+		<h3>Medical Information</h3>
+
+	<?php if ($veteran[0]->med_code != "") { ?>
+	<h3> Med Code: <div id = 'med<?php echo $veteran[0]->med_code ?>' class = 'medCircle' > </div> <?php echo $veteran[0]->med_code ?>
+		<?php  }?>
+	<h4> Conditions </h4>	
+
+	<?php foreach ($medMedication as $medication): ?>
+		<?php if ($veteran[0]->$medication == 1) {
+			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type="checkbox" id="$medication" name="$medication" checked value="1">"   ;
+			echo '<br>';
+		} else {
+			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type="checkbox" id="$medication" name="$medication"  value="1">"   ;
+			echo '<br>';
+
+		} ?>
+
+	<?php endforeach ?>
+
+	<h4> Medication List: </h4>
+	<textarea id="Medlist" name="medList" rows="4" cols="50">
+		<?php 	echo $veteran[0]->med_list; ?>
+
+	</textarea> 
+
+	<h4> When to use Medication: </h4>
+	<textarea id="Medlist" name="medList" rows="4" cols="50">
+		<?php 	echo $veteran[0]->med_when_use; ?>
+
+	</textarea>
+
+	<h4> Flow Rate: </h4>
+	<textarea id="flowRate" name="flowRate" rows="4" cols="50">
+		<?php 	echo $veteran[0]->med_flow_rate; ?>
+
+	</textarea>
+
+	<h4> Other Conditions: </h4>
+	<textarea id="otherMed" name="otherMed" rows="4" cols="50">
+		<?php 	echo $veteran[0]->med_others; ?>
+
+	</textarea>
+
+	<h3>Accommodations </h3>
+	<?php foreach ($medAccomidations as $accomidations): ?>
+		<?php if ($veteran[0]->$accomidations == 1) {
+				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type="checkbox" id="$accomidations" name="$accomidations" checked value="1">"   ;
+				echo '<br>';
+		}
+		else {
+			echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type="checkbox" id="$accomidations" name="$accomidations"  value="1">"   ;
+			echo '<br>';
+
+		}
+
+		?>
+
+	<?php endforeach ?>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 <script>
 	function showAbout() {
