@@ -21,11 +21,9 @@
 }
 
 .modal-xl {
-	width: 95%;
-}
-
-#exampleModalLong {
-	width: 95%;
+	width: auto;
+	max-width:900px;
+	z-index: 100;
 }
 
 .teamListElement:link {
