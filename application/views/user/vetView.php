@@ -147,7 +147,7 @@
 		<p> <label for="aPhone"> Alt Phone: </label> <input type="text" id="aPhone" name="aPhone" class = "infoInput" value = "<?php echo $veteran[0]->cell_phone ?>" >   </p>
 
 		<p> <b> Additional Information: </b></p>
-		<textarea id="flowRate" name="flowRate" rows="4" cols="50"><?php echo $veteran[0]->add_comments; ?></textarea>
+		<textarea id="addInfo" name="addInfo" rows="4" cols="50"><?php echo $veteran[0]->add_comments; ?></textarea>
 
 		<h3>Medical Information</h3>
 
@@ -199,9 +199,6 @@
     </div>
   </div>
 </div>
-
-
-
 
 <script>
 	function showAbout() {
