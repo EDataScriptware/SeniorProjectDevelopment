@@ -134,6 +134,7 @@
         </button>
       </div>
       <div class="modal-body">
+	  <form method ="post" action='<?php echo base_url('User/updateInfo/'); ?>'>
 
 	  <h3> About </h3>
 
@@ -162,10 +163,10 @@
 
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
-			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type="checkbox" id="$medication" name="$medication" checked value="1">"   ;
+			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type='checkbox' id='$medication' name='$medication' checked value='1'>";
 			echo '<br>';
 		} else {
-			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type="checkbox" id="$medication" name="$medication"  value="1">"   ;
+			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type='checkbox' id='$medication' name='$medication'  value='1'>";
 			echo '<br>';
 
 		} ?>
@@ -199,11 +200,11 @@
 	<h3>Accommodations </h3>
 	<?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
-				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type="checkbox" id="$accomidations" name="$accomidations" checked value="1">"   ;
+				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' name='$accomidations' checked value='1'>"   ;
 				echo '<br>';
 		}
 		else {
-			echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type="checkbox" id="$accomidations" name="$accomidations"  value="1">"   ;
+			echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' name='$accomidations'  value='1'>"   ;
 			echo '<br>';
 
 		}
@@ -211,7 +212,7 @@
 		?>
 
 	<?php endforeach ?>
-
+		</form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Save changes</button>
