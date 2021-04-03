@@ -169,10 +169,7 @@
 	<?php endforeach ?>
 
 	<h4> Medication List: </h4>
-	<textarea id="Medlist" name="medList" rows="4" cols="50">
-		<?php 	echo $veteran[0]->med_list; ?>
-
-	</textarea> 
+	<textarea id="Medlist" name="medList" rows="4" cols="50"><?php echo $veteran[0]->med_list; ?></textarea> 
 
 	<h4> When to use Medication: </h4>
 	<textarea id="Medlist" name="medList" rows="4" cols="50"> <?php echo $veteran[0]->med_when_use; ?></textarea>
