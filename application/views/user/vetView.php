@@ -56,7 +56,7 @@
 	
 	<?php if ($veteran[0]->add_comments != "") { ?>
 	<h3> Additional Information: </h3>
-	<p> <?php echo $veteran[0]->add_comments ?> </p>
+	<p> <?php echo $veteran[0]->add_comments?> </p>
 	<?php } ?>
 
 </div>
@@ -149,10 +149,7 @@
 		<p> <label for="aPhone"> Alt Phone: </label> <input type="text" id="aPhone" name="aPhone" class = "infoInput" value = "<?php echo $veteran[0]->cell_phone ?>" >   </p>
 
 		<p> <b> Additional Information: </b></p>
-		<textarea id="flowRate" name="flowRate" rows="4" cols="50">
-		<?php 	echo $veteran[0]->$add_comments; ?>
-
-		</textarea>
+		<textarea id="flowRate" name="flowRate" rows="4" cols="50"><?php echo $veteran[0]->add_comments; ?></textarea>
 
 		<h3>Medical Information</h3>
 
@@ -180,22 +177,13 @@
 	</textarea> 
 
 	<h4> When to use Medication: </h4>
-	<textarea id="Medlist" name="medList" rows="4" cols="50">
-		<?php 	echo $veteran[0]->med_when_use; ?>
-
-	</textarea>
+	<textarea id="Medlist" name="medList" rows="4" cols="50"> <?php echo $veteran[0]->med_when_use; ?></textarea>
 
 	<h4> Flow Rate: </h4>
-	<textarea id="flowRate" name="flowRate" rows="4" cols="50">
-		<?php 	echo $veteran[0]->med_flow_rate; ?>
-
-	</textarea>
+	<textarea id="flowRate" name="flowRate" rows="4" cols="50"><?php echo $veteran[0]->med_flow_rate; ?></textarea>
 
 	<h4> Other Conditions: </h4>
-	<textarea id="otherMed" name="otherMed" rows="4" cols="50">
-		<?php 	echo $veteran[0]->med_others; ?>
-
-	</textarea>
+	<textarea id="otherMed" name="otherMed" rows="4" cols="50"><?php echo $veteran[0]->med_others; ?></textarea>
 
 	<h3>Accommodations </h3>
 	<?php foreach ($medAccomidations as $accomidations): ?>
@@ -206,11 +194,7 @@
 		else {
 			echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' name='$accomidations'  value='1'>"   ;
 			echo '<br>';
-
-		}
-
-		?>
-
+		}?>
 	<?php endforeach ?>
 		</form>
       </div>
