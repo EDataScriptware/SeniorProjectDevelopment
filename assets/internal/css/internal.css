@@ -141,7 +141,7 @@
 
 }
 
-#adminHeader a #logout {
+#adminHeader #logout {
 	position: fixed;
     bottom: 0;
     left: 0;
