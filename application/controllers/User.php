@@ -110,7 +110,7 @@ class User extends CI_Controller {
 		$postData = $this->input->post();
 
 		$this->db->where('veteran_id', $vetId);
-		$this->db->update('veteran', $postData); 
+		$this->db->set('veteran', $postData); 
 
 		header("Refresh:0");
 
