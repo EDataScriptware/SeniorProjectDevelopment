@@ -215,16 +215,13 @@
 <script>
 
 $(document).ready(function() {
-	
-         // on form submit
+
+	  // on form submit
         $("#update").on('submit', function() {
             // to each unchecked checkbox
-			console.log('test');
-            $(this + 'input[type=checkbox]:not(:checked)').each(function () {
-                // set value 0 and check it
-                $(this).attr('checked', true).val(0);
-            });
-        })
+            $(this).find('input[type=checkbox]:not(:checked)').prop('checked', true).val(0);
+        })	
+ 
     });
 
 
