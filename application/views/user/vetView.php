@@ -165,10 +165,10 @@
 
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
-			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type='checkbox' id='$medication' name='$medication' checked='checked' value='1'>";
+			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type='checkbox' id='$medication' class='checker' name='$medication' checked='checked' value='1'>";
 			echo '<br>';
 		} else {
-			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type='checkbox' id='$medication' name='$medication'  value='1'>";
+			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type='checkbox' id='$medication' class='checker' name='$medication'  value='1'>";
 			echo '<br>';
 
 		} ?>
@@ -190,11 +190,10 @@
 	<h3>Accommodations </h3>
 	<?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
-				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' name='$accomidations' checked='checked' value='1'>"   ;
+				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' class='checker' name='$accomidations' checked='checked' value='1'>"   ;
 				echo '<br>';
-		}
-		else {
-			echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' name='$accomidations'  value='1'>"   ;
+		}else {
+			echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' class='checker' name='$accomidations'  value='1'>"   ;
 			echo '<br>';
 		}?>
 	<?php endforeach ?>
@@ -220,6 +219,7 @@ $(document).ready(function() {
          // on form submit
         $("#update").on('submit', function() {
             // to each unchecked checkbox
+			console.log('test');
             $(this + 'input[type=checkbox]:not(:checked)').each(function () {
                 // set value 0 and check it
                 $(this).attr('checked', true).val(0);
