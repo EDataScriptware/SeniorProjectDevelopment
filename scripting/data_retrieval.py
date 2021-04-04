@@ -28,3 +28,7 @@ def getVeteranNames():
 def getAllVeteran():
     data = pd.read_sql_query("SELECT * FROM veteran ORDER BY team_id, last_name;", conn)
     return data.to_numpy()
+
+def matchGuardianAndVet(guardianId):
+    data = pd.read_sql_query("SELECT guardian.first_name, guardian.middle_initial, guardian.last_name, guardian.address, guardian.city, guardian.state, guardian.zip, guardian.nickname, guardian.day_phone, guardian.cell_phone from veteran JOIN guardian ON veteran.guardian_id = guardian.guardian_id WHERE guardian.guardian_id = " + str(guardianId), conn)
+    return data.to_numpy()
