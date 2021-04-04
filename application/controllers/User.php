@@ -112,7 +112,7 @@ class User extends CI_Controller {
 		$this->db->where('veteran_id', $vetId);
 		$this->db->set('veteran', $postData); 
 
-		header(&quot;Location: {$_SERVER['HTTP_REFERER']}&quot;);
+		redirect('vetView'. '/'. $vetId);
 
 	}
 
