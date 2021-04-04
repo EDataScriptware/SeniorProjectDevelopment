@@ -29,4 +29,12 @@
 </head>
 <body>
 
-<?php $allowed = array(2, 3, 4); ?>
+<div id="adminHeader" class="sidenav">
+  <a href="#">Home</a>
+  <a href="#">Teams</a>
+  <a href="#">Documents</a>
+  <a href="#">Reservations</a>
+  <a href="#">Users</a>
+</div>
+
+

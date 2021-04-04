@@ -126,3 +126,32 @@
 #medicalInfo {display: none;}
 #accommodations {display: none;}
 
+
+/*admin Sidebar*/
+
+.adminHeader {
+	height: 100%;
+	width: 300px; 
+	position: fixed; 
+	z-index: 1; 
+	top: 0; 
+	left: 0;
+	background-color: teal; 
+	overflow-x: hidden; 
+	padding-top: 60px; 
+
+}
+
+.adminHeader a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: teal;
+	display: block;
+	transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+.adminHeader a:hover {
+	color: rgb(0, 153, 153);
+  }
