@@ -165,7 +165,7 @@
 
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
-			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type='checkbox' id='$medication' name='$medication' checked value='1'>";
+			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type='checkbox' id='$medication' name='$medication' checked='checked' value='1'>";
 			echo '<br>';
 		} else {
 			echo str_replace('_', ' ',ucfirst(substr($medication,4))).": <input type='checkbox' id='$medication' name='$medication'  value='1'>";
@@ -190,7 +190,7 @@
 	<h3>Accommodations </h3>
 	<?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
-				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' name='$accomidations' checked value='1'>"   ;
+				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' name='$accomidations' checked='checked' value='1'>"   ;
 				echo '<br>';
 		}
 		else {
