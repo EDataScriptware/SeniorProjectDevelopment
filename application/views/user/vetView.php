@@ -214,6 +214,19 @@
 </div>
 
 <script>
+
+$(document).ready(function() {
+         // on form submit
+        $("#update").on('submit', function() {
+            // to each unchecked checkbox
+            $(this + 'input[type=checkbox]:not(:checked)').each(function () {
+                // set value 0 and check it
+                $(this).attr('checked', true).val(0);
+            });
+        })
+    })
+
+
 	function showAbout() {
 		document.getElementById("about").style.display = "inline-block";
 		document.getElementById("reservations").style.display = "none";
