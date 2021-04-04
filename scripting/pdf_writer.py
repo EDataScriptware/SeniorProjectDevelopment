@@ -277,10 +277,8 @@ for veteranRow in veteranArray:
 
     additionalInformation = ""
     if additionalInformationArray.count != 0 and additionalInformationArray[0] != '':
-        print(first_name + " " + str(med_pacemaker))
         for additionalInformationItem in additionalInformationArray:
             additionalInformation += "- " + additionalInformationItem + "\n"
-            print(additionalInformationItem)
 
     pdf.add_page()
     name(pdf, veteranName)
