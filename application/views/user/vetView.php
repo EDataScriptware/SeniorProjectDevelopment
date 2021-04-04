@@ -139,7 +139,7 @@
         </button>
       </div>
       <div class="modal-body">
-	  <form method ="post" id = "update" action='<?php echo base_url('User/updateInfo/'.$veteran[0]->veteran_id); ?>'>
+	  <form method ="POST" id = "update" action='<?php echo base_url('User/updateInfo/'.$veteran[0]->veteran_id); ?>'>
 
 	  <h3> About </h3>
 
@@ -206,7 +206,7 @@
 	</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" form="update">Save changes</button>
+        <button type="submit" class="btn btn-primary" form="update">Save changes</button>
       </div>
 
     </div>
