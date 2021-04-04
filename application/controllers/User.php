@@ -112,7 +112,7 @@ class User extends CI_Controller {
 		$this->db->where('veteran_id', $vetId);
 		$this->db->set('veteran', $postData); 
 
-		echo $postData;
+		echo json_encode($postData);
 
 
 	}
