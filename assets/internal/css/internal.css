@@ -142,9 +142,10 @@
 }
 
 #adminHeader #logout {
-	position: fixed;
-    bottom: 0;
+	position: relative;
+    top: 65%;
     left: 0;
+	
 }
 
 #adminHeader a {
