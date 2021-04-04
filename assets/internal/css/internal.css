@@ -151,7 +151,6 @@
 	transition: 0.3s;
   }
   
-  /* When you mouse over the navigation links, change their color */
 .adminHeader a:hover {
 	color: rgb(0, 153, 153);
   }
