@@ -112,6 +112,8 @@ class User extends CI_Controller {
 		$this->db->where('veteran_id', $vetId);
 		$this->db->update('veteran', $postData); 
 
+		header("Refresh:0");
+
 	}
 
 
