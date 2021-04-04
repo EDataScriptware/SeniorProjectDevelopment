@@ -61,7 +61,7 @@
 </div>
 
 <div id = "reservations">
-<h3> reservations</h3>
+<h3> Reservations</h3>
 
 </div>
 
@@ -224,7 +224,7 @@ $(document).ready(function() {
                 $(this).attr('checked', true).val(0);
             });
         })
-    })
+    });
 
 
 	function showAbout() {
