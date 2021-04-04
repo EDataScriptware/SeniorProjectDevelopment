@@ -278,14 +278,15 @@ for veteranRow in veteranArray:
     additionalInformation = ""
     if additionalInformationArray.count != 0 and additionalInformationArray[0] != '':
         for additionalInformationItem in additionalInformationArray:
-            additionalInformation += "- " + additionalInformationItem + "\n"
+            if str(additionalInformationItem) != str(''):
+                additionalInformation += "- " + additionalInformationItem + "\n"
 
     pdf.add_page()
     name(pdf, veteranName)
     address(pdf, contactInformation)
     categoryB(pdf, "Additional Information")
     additionalInformationPdf(pdf, additionalInformation)
-    # categoryA(pdf, "Guardian Information")
+    categoryA(pdf, "Guardian Information")
 
 
 pdfFileName = "test.pdf"
