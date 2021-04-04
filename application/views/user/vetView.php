@@ -179,7 +179,7 @@
 	<textarea id="med_list" name="med_list" rows="4" cols="50"><?php echo $veteran[0]->med_list; ?></textarea> 
 
 	<h4> When to use Medication: </h4>
-	<textarea id="med_when_use" name="med_when_use" rows="4" cols="50"> <?php echo $veteran[0]->med_when_use; ?></textarea>
+	<textarea id="med_when_use" name="med_when_use" rows="4" cols="50"><?php echo $veteran[0]->med_when_use; ?></textarea>
 
 	<h4> Flow Rate: </h4>
 	<textarea id="med_flow_rate" name="med_flow_rate" rows="4" cols="50"><?php echo $veteran[0]->med_flow_rate; ?></textarea>
