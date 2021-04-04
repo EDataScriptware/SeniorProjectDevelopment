@@ -216,6 +216,7 @@
 <script>
 
 $(document).ready(function() {
+	console.log( "ready!" );
          // on form submit
         $("#update").on('submit', function() {
             // to each unchecked checkbox
