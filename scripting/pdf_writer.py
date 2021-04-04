@@ -109,6 +109,19 @@ def categoryA(self, string):
     self.multi_cell(w=210.0, h=5.0, txt=string)
     self.set_text_color(0, 0, 0)
 
+def categoryB(self, string):
+    self.set_xy(65.0,65.0)
+    self.set_font('Times', 'B', 12)
+    self.multi_cell(w=210.0, h=5.0, txt=string)
+    self.set_text_color(0, 0, 0)
+
+def additionalInformationPdf(self, string):
+    self.set_xy(65.0,70.0)
+    self.set_font('Times', 'B', 12)
+    self.multi_cell(w=210.0, h=5.0, txt=string)
+    self.set_text_color(0, 0, 0)
+
+
 for veteranRow in veteranArray:
     veteran_id              = veteranRow[0]
     guardian_id             = veteranRow[1]
@@ -194,21 +207,86 @@ for veteranRow in veteranArray:
     med_colostomy           = veteranRow[81]
     med_cancer              = veteranRow[82]
     med_dnr                 = veteranRow[83]
-    needsArray = []
+    additionalInformationArray = []
+    additionalInformationArray.clear()
 
-    if str(med_cane) == str("1"):
-        print("triggered")
-    print(med_walker)
-
+    if str(med_walker) == str("1"):
+        additionalInformationArray.append("Uses a walker.")
+    if str(med_wheelchair) == str("1"):
+        additionalInformationArray.append("Uses a wheelchair - located at " + str(med_chair_loc) + ".") 
+    if str(med_scooter) == str("1"): 
+        additionalInformationArray.append("Uses a scooter.")
+    if str(med_emphysema) == str("1"):
+        additionalInformationArray.append("Has emphysema.")
+    if str(med_falls) == str("1"):
+        additionalInformationArray.append("Prone to falling.")
+    if str(med_heart_disease) == str("1"):
+        additionalInformationArray.append("Has a heart disease.")
+    if str(med_pacemaker) == str("1"):
+        additionalInformationArray.append("Has a pacemaker.")
+    if str(med_joint_replacement) == str("1"):
+        additionalInformationArray.append("Has a joint replacement.")
+    if str(med_kidney) == str("1"):
+        additionalInformationArray.append("Has a kidney issue.")
+    if str(med_diabetes) == str("1"):
+        additionalInformationArray.append("Has diabetes.")
+    if str(med_seizures) == str("1"):
+        additionalInformationArray.append("Prone to seizures.")
+    if str(med_nebulizer) == str("1"):
+        additionalInformationArray.append("Has a nebulizer.")
+    if str(med_urostomy) == str("1"):
+        additionalInformationArray.append("Has a urostomy.")
+    if str(med_oxygen) == str("1"):
+        additionalInformationArray.append("Has an oxygen tank.")
+    if str(med_pacemaker) == str("1"):
+        additionalInformationArray.append("Has a football.")
+    if str(med_walk_bus_stops) == str("1"):
+        additionalInformationArray.append("Can walk on bus steps.")
+    if str(med_stroke) == str("1"):
+        additionalInformationArray.append("Prone to strokes.")
+    if str(med_urinary) == str("1"):
+        additionalInformationArray.append("Has bladder problems.")
+    if str(med_cpap) == str("1"):
+        additionalInformationArray.append("Has a CPAP machine.")
+    if str(med_use_mobility) == str("1"):
+        additionalInformationArray.append("Has good mobility.")
+    if str(add_other_vets) == str("1"):
+        additionalInformationArray.append("Other veterans are with this veteran.")
+    if str(diet_restrictions) == str("1"):
+        additionalInformationArray.append("Has diet restrictions.")
+    if str(med_stairs) == str("1"):
+        additionalInformationArray.append("Can use stairs.")
+    if str(med_stand_30min) == str("1"):
+        additionalInformationArray.append("Can stand for approximately 30 minutes.")
+    if str(med_hbp) == str("1"):
+        additionalInformationArray.append("Has high blood pressure.")
+    if str(med_transport_airport) == str("1"):
+        additionalInformationArray.append("Can transport to the airport.")
+    if str(med_transport_trip) == str("1"):
+        additionalInformationArray.append("Can transport on the trip.")
+    if str(med_colostomy) == str("1"):
+        additionalInformationArray.append("Has colostomy.")
+    if str(med_cancer) == str("1"):
+        additionalInformationArray.append("Has cancer.")
+    if str(med_dnr) == str("1"):
+        additionalInformationArray.append("Has a Do-Not-Resuscitate order")
+    additionalInformationArray.append(med_others)
+    
     veteranName = first_name + " " + '"' + str(nickname) + '"' + " " + middle_initial + " " + last_name
     contactInformation = str(street) + "\n" + str(city) + ", " + str(state) + "\n" + str(zipcode + "\nHome Phone: " + str(day_phone) + "\nCell Phone: " + str(cell_phone) + "\nDate Of Birth: " + str(dateofbirth) + "\nGender: " + str(gender) + "\nWeight: " + str(weight) + " lbs.")
-    additionalInformation = "The veteran has "
-    
 
+    additionalInformation = ""
+    if additionalInformationArray.count != 0 and additionalInformationArray[0] != '':
+        print(first_name + " " + str(med_pacemaker))
+        for additionalInformationItem in additionalInformationArray:
+            additionalInformation += "- " + additionalInformationItem + "\n"
+            print(additionalInformationItem)
 
     pdf.add_page()
     name(pdf, veteranName)
     address(pdf, contactInformation)
+    categoryB(pdf, "Additional Information")
+    additionalInformationPdf(pdf, additionalInformation)
     # categoryA(pdf, "Guardian Information")
 
 
