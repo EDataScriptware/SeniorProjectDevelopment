@@ -5,7 +5,7 @@
 <?php if ($_SESSION["userPerm"] === '2') { ?>	
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>
 <?php } ?>
-<?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_chair_loc","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
+<?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
 <?php $medMedication = array('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
 
 <div id = "buttonScrollView">
@@ -118,6 +118,14 @@
 		}
 		?>
 	<?php endforeach ?>
+
+	<?php if ($veteran[0]->med_chair_loc != '') {
+				echo "Medical Chair Location: ".$veteran[0]->med_chair_loc;
+			echo '<br>';
+		}
+		?>
+
+
 </div>
 
 <!-- Modal -->
@@ -131,7 +139,7 @@
         </button>
       </div>
       <div class="modal-body">
-	  <form method ="post" action='<?php echo base_url('User/updateInfo/'); ?>'>
+	  <form method ="post" id = "update" action='<?php echo base_url('User/updateInfo/'.$veteran[0]->veteran_id); ?>'>
 
 	  <h3> About </h3>
 
@@ -141,9 +149,9 @@
 		<p>  <label for="zip"> Zip: </label> <input type="text" id="zip" name="zip" class = "infoInput" value = '<?php echo $veteran[0]->zip ?>'> </p>
 		
 		<p> <b> Contact: </b></p>
-		<p> <label for="dPhone"> Day Phone: </label> <input type="text" id="dPhone" name="dPhone" class = "infoInput" value = "<?php echo $veteran[0]->day_phone ?>" >   </p>
+		<p> <label for="dPhone"> Day Phone: </label> <input type="text" id="day_phone" name="day_phone" class = "infoInput" value = "<?php echo $veteran[0]->day_phone ?>" >   </p>
 
-		<p> <label for="aPhone"> Alt Phone: </label> <input type="text" id="aPhone" name="aPhone" class = "infoInput" value = "<?php echo $veteran[0]->cell_phone ?>" >   </p>
+		<p> <label for="aPhone"> Alt Phone: </label> <input type="text" id="cell_phone" name="cell_phone" class = "infoInput" value = "<?php echo $veteran[0]->cell_phone ?>" >   </p>
 
 		<p> <b> Additional Information: </b></p>
 		<textarea id="addInfo" name="addInfo" rows="4" cols="50"><?php echo $veteran[0]->add_comments; ?></textarea>
@@ -168,16 +176,16 @@
 	<?php endforeach ?>
 
 	<h4> Medication List: </h4>
-	<textarea id="Medlist" name="medList" rows="4" cols="50"><?php echo $veteran[0]->med_list; ?></textarea> 
+	<textarea id="med_list" name="med_list" rows="4" cols="50"><?php echo $veteran[0]->med_list; ?></textarea> 
 
 	<h4> When to use Medication: </h4>
-	<textarea id="Medlist" name="medList" rows="4" cols="50"> <?php echo $veteran[0]->med_when_use; ?></textarea>
+	<textarea id="med_when_use" name="med_when_use" rows="4" cols="50"> <?php echo $veteran[0]->med_when_use; ?></textarea>
 
 	<h4> Flow Rate: </h4>
-	<textarea id="flowRate" name="flowRate" rows="4" cols="50"><?php echo $veteran[0]->med_flow_rate; ?></textarea>
+	<textarea id="med_flow_rate" name="med_flow_rate" rows="4" cols="50"><?php echo $veteran[0]->med_flow_rate; ?></textarea>
 
 	<h4> Other Conditions: </h4>
-	<textarea id="otherMed" name="otherMed" rows="4" cols="50"><?php echo $veteran[0]->med_others; ?></textarea>
+	<textarea id="med_others" name="med_others" rows="4" cols="50"><?php echo $veteran[0]->med_others; ?></textarea>
 
 	<h3>Accommodations </h3>
 	<?php foreach ($medAccomidations as $accomidations): ?>
@@ -190,11 +198,17 @@
 			echo '<br>';
 		}?>
 	<?php endforeach ?>
-		</form>
+
+	<h4> Medical Chair Location: </h4>
+	<textarea id="med_chair_loc" name="med_chair_loc" rows="4" cols="50"><?php echo $veteran[0]->med_chair_loc; ?></textarea>
+
+
+	</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" form="update">Save changes</button>
       </div>
+
     </div>
   </div>
 </div>

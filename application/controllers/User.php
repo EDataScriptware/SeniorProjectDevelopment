@@ -104,4 +104,15 @@ class User extends CI_Controller {
 		$this->load->view('user/itinerary');
 		$this->load->view('user/template/footer');
 	}
+
+	public function updateInfo($vetId) {
+
+		$postData = $this->input->post();
+
+		$this->db->where('veteran_id', $vetId);
+		$this->db->update('veteran', $postData); 
+
+	}
+
+
 }
