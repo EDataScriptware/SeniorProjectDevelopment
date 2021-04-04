@@ -110,15 +110,21 @@ def categoryA(self, string):
     self.set_text_color(0, 0, 0)
 
 def categoryB(self, string):
-    self.set_xy(65.0,65.0)
+    self.set_xy(85.0,65.0)
     self.set_font('Times', 'B', 12)
     self.multi_cell(w=210.0, h=5.0, txt=string)
     self.set_text_color(0, 0, 0)
 
 def additionalInformationPdf(self, string):
-    self.set_xy(65.0,70.0)
+    self.set_xy(85.0,70.0)
     self.set_font('Times', 'B', 12)
     self.multi_cell(w=210.0, h=5.0, txt=string)
+    self.set_text_color(0, 0, 0)
+
+def guardianInformationPdf(self, string):
+    self.set_xy(15.0,70.0)
+    self.set_font('Times', 'B', 12)
+    self.multi_cell(w=75.0, h=5.0, txt=string)
     self.set_text_color(0, 0, 0)
 
 
@@ -281,12 +287,37 @@ for veteranRow in veteranArray:
             if str(additionalInformationItem) != str(''):
                 additionalInformation += "- " + additionalInformationItem + "\n"
 
+    if str(guardian_id) != str("nan"):
+        guardianInformationArray = data_retrieval.matchGuardianAndVet(guardian_id)
+        for guardianInformationItem in guardianInformationArray:
+            print(guardianInformationArray)
+            guardian_firstname          = guardianInformationItem[0]
+            guardian_middleinitial      = guardianInformationItem[1]
+            guardian_lastname           = guardianInformationItem[2]
+            guardian_address            = guardianInformationItem[3]
+            guardian_city               = guardianInformationItem[4]
+            guardian_state              = guardianInformationItem[5]
+            guardian_zip                = guardianInformationItem[6]
+            guardian_nickname           = guardianInformationItem[7]
+            guardian_dayphone           = guardianInformationItem[8]
+            guardian_cellphone          = guardianInformationItem[9]
+    
+
+            guardianNameString = str(guardian_relation) + " : " + str(guardian_firstname) + " " + str(guardian_nickname) + " " + str(guardian_middleinitial) + " " + str(guardian_lastname) + "\n"
+            guardianAddressString = str(guardian_address) + ",\n" + str(guardian_city) + " " + str(guardian_state) + ",\n" + str(guardian_zip) + "\n"
+            guardianPhoneString = "Home Phone: " + str(guardian_dayphone) + "\nCell Phone: " + str(guardian_dayphone)
+            guardianInformationString = guardianNameString + guardianAddressString + guardianPhoneString
+    else:
+        guardianInformationString = "No guardian."
+        
     pdf.add_page()
     name(pdf, veteranName)
     address(pdf, contactInformation)
     categoryB(pdf, "Additional Information")
     additionalInformationPdf(pdf, additionalInformation)
     categoryA(pdf, "Guardian Information")
+    guardianInformationPdf(pdf, guardianInformationString)
+    
 
 
 pdfFileName = "test.pdf"
