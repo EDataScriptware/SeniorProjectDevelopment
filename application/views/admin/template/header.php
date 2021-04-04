@@ -35,6 +35,7 @@
   <a href="#">Documents</a>
   <a href="#">Reservations</a>
   <a href="#">Users</a>
+  <a id = "logout" href="#">< Logout</a>
 </div>
 
 <div id = 'main'> 

@@ -138,8 +138,13 @@
 	left: 0;
 	background-color: teal; 
 	overflow-x: hidden; 
-	padding-top: 60px; 
 
+}
+
+#adminHeader a #logout {
+	position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 #adminHeader a {
