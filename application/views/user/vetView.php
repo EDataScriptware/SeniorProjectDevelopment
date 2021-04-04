@@ -203,12 +203,12 @@
 	<textarea id="med_chair_loc" name="med_chair_loc" rows="4" cols="50"><?php echo $veteran[0]->med_chair_loc; ?></textarea>
 
 
-	
+	</form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" form="update">Save changes</button>
       </div>
-	  </form>
+
     </div>
   </div>
 </div>
