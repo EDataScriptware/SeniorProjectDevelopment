@@ -34,7 +34,6 @@
     <script>
 
         function editBlock($id) {
-            alert($id);
         $.post('Admin/getUser', {id: $id}, function (data) {
             var $result = data;
             alert($result)
