@@ -4,6 +4,13 @@
 } );
     </script>
 
+<?php $about = array('dob','gender','weight','city','state','zip','day_phone','cell_phone','email','shirt_size'); ?>
+<?php $emergency = array ('emergency_name','emergency_relationship','emergency_address', 'emergency_day_phone', 'emergency_cell_phone') ?>
+<?php $comments = array ('add_comments','admin_comments') ?>
+<?php $alternative = array ('alt_name','alt_email','alt_phone','alt_relationship') ?>
+<?php $mobility = array ("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility') ?>
+<?php $conditions = array ('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
+
 
 
 <div class = "scrunch"> 
@@ -32,7 +39,6 @@
             <td><?php if($vet->mission_id == $id) { echo 'Yes'; } else { echo 'No';} ?></td>
             <td><?php if($vet->mission_id == $id) {
                   
-
             foreach ($team as $tem):
                 if ($vet->team_id == $tem->team_id) {
                     echo $tem->color;
@@ -43,7 +49,8 @@
             $getter = "";  
             ?>
             </td>
-            <td> <button type="button" class="btn btn-primary" > EDIT </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $vet->veteran_id ?>)" > EDIT </button> 
+                 <button type="button" class="btn btn-primary" onclick = "editGuardBlock(<?php echo $vet->veteran_id ?>,<?php echo $vet->guardian_id ?>)" > GUARDIAN EDIT </button> </td>
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -55,38 +62,71 @@
 
         </div>
 
-
         <div id="whiteEdit" class="whiteEdit">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <form id = "update" method = "POST">
 
-    <p> <label for="username">Username:</label> <input type="text" id="username" name="username"> </p>
-    
-    <p id = "passAdd"> Password:  <input type="text" id="password" name="password"> </p>
-    <p id = "passBlock"> Password:  <button class="btn btn-primary" id ="reset" > Reset</button> </p>
+        <h3> About </h3>
 
-    <p> <label for="user_type">User Type:</label><input type="text" id="user_type" name="user_type"><br> </p>
+	<?php foreach ($about as $aboot): ?>
+		<?php 
+			echo str_replace('_', ' ',ucfirst($aboot)).": <input type='text' id='$aboot' name='$aboot' class = 'infoInput'>";
+			echo '<br>';
+	        ?>
+        <?php endforeach ?>
 
-  <label for="user_permissions">User Permissions:</label>
-  <select id="user_permissions" name="user_permissions">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-</select> <br>
+        <h3> Emergency Contact </h3>
 
-    <label for="team_id">Team Id:</label>
-    <select id="team_id" name="team_id">
-    <?php foreach($team as $tem): ?>
-    <?php if ($tem->mission_id === $id) { ?>
-    <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color?></option>
+        <?php foreach ($emergency as $emo): ?>
+		<?php 
+			echo str_replace('_', ' ',ucfirst($emo)).": <input type='text' id='$emo' name='$emo' class = 'infoInput'>";
+			echo '<br>';
+	        ?>
+        <?php endforeach ?>
 
-    <?php } ?>
-    <?php endforeach ?>
-    </select> <br>
+        <h3> Comments </h3>
 
-    <p>Notes: </p>
-    <textarea id="notes" name="notes" rows="4" cols="50"></textarea>
+        <?php foreach ($comments as $com): ?>
+		<?php 
+			echo str_replace('_', ' ',ucfirst($com)).": <textarea type='text' id='$com' name='$com' class = 'infoInput'></textarea>";
+			echo '<br>';
+	        ?>
+        <?php endforeach ?>
+
+
+        <h3> Alternate Info </h3>
+
+        <?php foreach ($alternative as $alt): ?>
+		<?php 
+			echo str_replace('_', ' ',ucfirst($alt)).": <input type='text' id='$alt' name='$alt' class = 'infoInput'>";
+			echo '<br>';
+	        ?>
+        <?php endforeach ?>
+
+
+        <h3> Mobility</h3>
+
+        <?php foreach ($mobility as $mob): ?>
+        <?php 
+            str_replace('_', ' ',ucfirst(substr($mob,4))).": <input type='checkbox' id='$mob' class='checker' name='$mob'  value='1'>";
+            echo '<br>';
+        ?>
+        <?php endforeach ?>
+
+
+
+        <h3> Conditions</h3>
+
+        <?php foreach ($conditions as $con): ?>
+        <?php 
+           str_replace('_', ' ',ucfirst(substr($con,4))).": <input type='checkbox' id='$con' class='checker' name='$con'  value='1'>";
+            echo '<br>';
+        ?>
+        <?php endforeach ?>
+
+
+
+
 
     </form>
 
@@ -100,47 +140,48 @@
         <script>
 
         function editBlock($id) {
-        $.post('Admin/getUser', {id: $id}, function (data) {
+        $.post('Admin/getVeteran', {id: $id}, function (data) {
             var $result = JSON.parse(data);
             console.log($result[0]);
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
             
-            document.getElementById("username").value = $result[0].username;
-            document.getElementById("user_type").value = $result[0].user_type;
-            document.getElementById("user_permissions").value = $result[0].user_permissions;
-            document.getElementById("team_id").value = $result[0].team_id;
-            document.getElementById("notes").value = $result[0].notes;
-            document.getElementById("update").action = "Admin/updateUser/"+$result[0].iduser;
-            document.getElementById("passBlock").style.display = "block";
-            document.getElementById("passAdd").style.display = "none";
-            document.getElementById("password").removeAttribute('name');
-            document.getElementById("reset").addEventListener("click", passwordReset($result[0].iduser));
+
+            document.getElementById("update").action = "Admin/updateVet/"+$result[0].iduser;
+
+        });       
+        }
+
+        
+        function editGuardBlock($id) {
+        $.post('Admin/getVeteranGuardian', {id: $id}, function (data) {
+            var $result = JSON.parse(data);
+            console.log($result[0]);
+            document.getElementById("whiteEdit").style.width = "550px";
+            document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
+            
+
+            document.getElementById("update").action = "Admin/updateVet/"+$result[0].iduser;
+
         });       
         }
 
         function addNew() {
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 90px 0px 60px";
-            document.getElementById("update").action = "Admin/addUser/";
+            document.getElementById("update").action = "Admin/addVet/";
             document.getElementById("passBlock").style.display = "none";
             document.getElementById("passAdd").style.display = "block";
             document.getElementById("password").name = 'password';
         }
 
         function passwordReset($id) {
-
+            
         }
 
         function closeNav() {
         document.getElementById("whiteEdit").style.width = "0";
         document.getElementById("whiteEdit").style.padding = "0px 0px 0px 0px";
-
-        document.getElementById("username").value = "";
-        document.getElementById("user_type").value = "";
-        document.getElementById("user_permissions").value = "";
-        document.getElementById("team_id").value = "";
-        document.getElementById("notes").value = "";
 
         }
 
