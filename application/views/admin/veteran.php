@@ -7,7 +7,7 @@
 
 <?php ?>
 
-<table id="vetTable" class="display">
+<table id="vetTable" class="table table-striped table-bordered scrunch">
     <thead>
         <tr>
             <th>Name</th>
