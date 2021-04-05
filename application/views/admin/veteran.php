@@ -24,7 +24,7 @@
             <td><?php echo $vet->first_name ?> <?php echo$vet->last_name?></td>
             <td><?php if($vet->service_ww2 == 1) { echo 'World War 2'; } ?> <?php if($vet->service_korea == 1) { echo 'Korean War'; } ?> <?php if($vet->service_cold_war == 1) { echo 'Cold War'; } ?> <?php if($vet->service_Vietnam == 1) { echo 'Vietnam'; } ?> </td>
             <td><?php echo $vet->dob ?></td>
-            <td><?php if($vet->mission_id == $id) { echo 'yes' } else { echo 'no'} ?></td>
+            <td><?php if($vet->mission_id == $id) { echo 'yes'; } else { echo 'no';} ?></td>
             <td><?php if($vet->mission_id == $id) {
             
             foreach ($team as $tem):
@@ -36,7 +36,7 @@
             endforeach    
             
             
-            } else { echo ''} ?></td>
+            } else { echo '';} ?></td>
         </tr>
         <?php endforeach ?>
     </tbody>
