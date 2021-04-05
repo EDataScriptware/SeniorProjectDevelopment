@@ -24,7 +24,7 @@
             <td> <?php echo $use->username ?>  </td>
             <td> <?php echo $use->team_id ?>  </td>
             <td> <?php echo $use->notes ?>  </td>
-            <td> <button type="button" class="btn btn-primary" onclick = 'editBlock(<?php echo $use->iduser ?>)'  > EDIT </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -36,4 +36,5 @@
             $.post( <?php echo base_url('Admin/getUser/'); ?>, { id: $id }).done(function( data ) {
             alert( "Data Loaded: " + data );
             });
+        }
     </script>
