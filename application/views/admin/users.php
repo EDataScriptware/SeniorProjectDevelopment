@@ -53,6 +53,9 @@
     <label for="username">Username:</label>
     <input type="text" id="username" name="username"><br>
 
+    <p id = "passAdd"> Password:  <input type="text" id="password" name="password"> </p>
+    <br>
+
     <label for="user_type">User Type:</label>
     <input type="text" id="user_type" name="user_type"><br>
 
@@ -76,12 +79,14 @@
 
     <p>Notes: </p>
     <textarea id="notes" name="notes" rows="4" cols="50">
-   
+        
     </textarea>
+
+
 
     </form>
 
-    <p> Password:  <button class="btn btn-primary" id ="reset" > Reset</button> </p>
+    <p id = "passBlock"> Password:  <button class="btn btn-primary" id ="reset" > Reset</button> </p>
 
     <button type="submit" class="btn btn-primary" form="update">Save changes</button>
 
@@ -103,7 +108,10 @@
             document.getElementById("team_id").value = $result[0].team_id;
             document.getElementById("notes").value = $result[0].notes;
             document.getElementById("update").action = "Admin/updateUser/"+$result[0].iduser;
-            document.getElementById("reset").addEventListener("click", displayDate);
+            document.getElementById("passBlock").style.visibility = "block";
+            document.getElementById("passAdd").style.visibility = "hidden";
+            document.getElementById("password").removeAttribute('name');
+            document.getElementById("reset").addEventListener("click", passwordReset($result[0].iduser));
         });       
         }
 
@@ -111,6 +119,9 @@
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
             document.getElementById("update").action = "Admin/addUser/";
+            document.getElementById("passBlock").style.visibility = "hidden";
+            document.getElementById("passAdd").style.visibility = "block";
+            document.getElementById("password").name = 'password';
         }
 
         function passwordReset($id) {
@@ -120,6 +131,13 @@
         function closeNav() {
         document.getElementById("whiteEdit").style.width = "0";
         document.getElementById("whiteEdit").style.padding = "0px 0px 0px 0px";
+
+        document.getElementById("username").value = "";
+        document.getElementById("user_type").value = "";
+        document.getElementById("user_permissions").value = "";
+        document.getElementById("team_id").value = "";
+        document.getElementById("notes").value = "";
+
         }
 
     </script>
