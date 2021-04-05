@@ -138,12 +138,13 @@ class Admin extends CI_Controller {
 	}
 
 	public function getUser() {
-		$this->load->model('User_model');
-		$id = $this->input->post('id');
-		
-		$data = $this->User_model->get_one_user($id);
-		
-		return json_encode($data);
+		$this->db->select("*");
+        $this->db->from('user');
+        $this->db->where('iduser',$id);
+
+        $query = $this->db->get()->result();
+
+        return $query;
 	}
 
 
