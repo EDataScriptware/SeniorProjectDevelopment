@@ -33,8 +33,15 @@
 
     <script>
         function editBlock($id) {
-            $.post( <?php echo base_url('Admin/getUser/'); ?>, { id: $id }).done(function( data ) {
-            alert( "Data Loaded: " + data );
-            });
+
+            $.ajax({
+         type: "POST",
+         url:  <?php echo base_url('Admin/getUser/'); ?>, 
+         data: {id: $id},
+         dataType: "text",  
+         success:  function(data){
+                alert(data);
+              }
+          });
         }
     </script>
