@@ -52,14 +52,12 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <form id = "update" method = "POST">
 
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username">
+    <p> <label for="username">Username:</label> <input type="text" id="username" name="username"> </p>
     
     <p id = "passAdd"> Password:  <input type="text" id="password" name="password"> </p>
     <p id = "passBlock"> Password:  <button class="btn btn-primary" id ="reset" > Reset</button> </p>
 
-    <label for="user_type">User Type:</label>
-    <input type="text" id="user_type" name="user_type"><br>
+    <p> <label for="user_type">User Type:</label><input type="text" id="user_type" name="user_type"><br> </p>
 
   <label for="user_permissions">User Permissions:</label>
   <select id="user_permissions" name="user_permissions">
