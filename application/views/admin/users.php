@@ -47,7 +47,7 @@
 
         $.post('Admin/getUser', {id: $id}, function (data) {
 
-            var $result = JSON.parse(data);
+            var $result = data;
             alert($result)
         });       
 
