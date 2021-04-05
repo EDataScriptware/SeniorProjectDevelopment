@@ -45,7 +45,7 @@
         $.post('Admin/getUser', {id: $id}, function (data) {
             var $result = data;
             alert($result);
-            document.getElementById("whiteEdit").style.width = "250px";
+            document.getElementById("whiteEdit").style.width = "400px";
         });       
         }
 

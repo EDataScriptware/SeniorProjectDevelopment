@@ -181,14 +181,14 @@
 	z-index: 1; 
 	top: 0; 
 	right: 0;
-	background-color: #111; 
+	background-color: rgb(212, 212, 212); 
 	overflow-x: hidden; 
 	padding-top: 60px; 
 	transition: 0.5s; 
   }
 
   .whiteEdit .closebtn {
-	position: relative;
+	position: absolute;
 	top: 0;
 	right: 25px;
 	font-size: 36px;
