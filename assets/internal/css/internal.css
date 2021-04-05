@@ -186,7 +186,6 @@
 	padding-top: 60px; 
 	padding-left: 60px;
 	transition: 0.5s; 
-	filter: drop-shadow(0px 5px 20px rgb(170, 170, 170));
   }
 
   .whiteEdit .closebtn {

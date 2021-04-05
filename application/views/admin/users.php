@@ -37,7 +37,7 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <form id = "update" method = "POST">
 
-    <label for="username">User Type:</label>
+    <label for="username">Username:</label>
     <input type="text" id="username" name="username"><br>
 
     <label for="user_type">User Type:</label>
@@ -61,7 +61,7 @@
     <?php endforeach ?>
     </select> <br>
 
-    <label for="notes">Notes:</label>
+    <p>Notes: </p>
     <textarea id="notes" name="notes" rows="4" cols="50">
    
     </textarea>
@@ -79,7 +79,7 @@
 
         function editBlock($id) {
         $.post('Admin/getUser', {id: $id}, function (data) {
-            var $result = data;
+            var $result = JSON.parse(data);
             alert($result);
             document.getElementById("whiteEdit").style.width = "550px";
         });       
