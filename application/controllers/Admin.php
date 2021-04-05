@@ -138,6 +138,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function getUser() {
+		$id = $this->input->post('id');
 		$this->db->select("*");
         $this->db->from('user');
         $this->db->where('iduser',$id);
