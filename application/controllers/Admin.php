@@ -66,7 +66,7 @@ class Admin extends CI_Controller {
 	
 
 		$this->load->view('admin/template/header');
-		$this->load->view('admin/veteran');
+		$this->load->view('admin/veteran', $data);
 		$this->load->view('admin/template/footer');
 	}
 
