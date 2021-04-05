@@ -186,3 +186,11 @@
 	padding-top: 60px; 
 	transition: 0.5s; 
   }
+
+  .whiteEdit .closebtn {
+	position: relative;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
