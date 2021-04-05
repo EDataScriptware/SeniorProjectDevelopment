@@ -40,6 +40,8 @@
     </tbody>
 </table>
 
+<hr>
+
 <button type="button" class="btn btn-primary" onclick = "addNew()"  > Add New User </button>
 
     </div>
@@ -84,7 +86,7 @@
 
     </form>
 
-    <br>
+    <hr>
 
     <button type="submit" class="btn btn-primary" form="update">Save changes</button>
 
