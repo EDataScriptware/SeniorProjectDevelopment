@@ -81,8 +81,10 @@
     <textarea id="notes" name="notes" rows="4" cols="50">
         
     </textarea>
-    
+
     </form>
+
+    <br>
 
     <button type="submit" class="btn btn-primary" form="update">Save changes</button>
 
@@ -104,7 +106,7 @@
             document.getElementById("team_id").value = $result[0].team_id;
             document.getElementById("notes").value = $result[0].notes;
             document.getElementById("update").action = "Admin/updateUser/"+$result[0].iduser;
-            document.getElementById("passBlock").style.visibility = "block";
+            document.getElementById("passBlock").style.visibility = "visible";
             document.getElementById("passAdd").style.visibility = "hidden";
             document.getElementById("password").removeAttribute('name');
             document.getElementById("reset").addEventListener("click", passwordReset($result[0].iduser));
@@ -116,7 +118,7 @@
             document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
             document.getElementById("update").action = "Admin/addUser/";
             document.getElementById("passBlock").style.visibility = "hidden";
-            document.getElementById("passAdd").style.visibility = "block";
+            document.getElementById("passAdd").style.visibility = "visible";
             document.getElementById("password").name = 'password';
         }
 
