@@ -83,6 +83,12 @@
             alert($result);
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "0px 0px 00px 60px";
+            
+            document.getElementById("username").value = $result->username;
+            document.getElementById("user_type").value = $result->user_type;
+
+            
+
         });       
         }
 
