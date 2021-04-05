@@ -108,7 +108,7 @@
 
         <?php foreach ($mobility as $mob): ?>
         <?php 
-            str_replace('_', ' ',ucfirst(substr($mob,4))).": <input type='checkbox' id='$mob' class='checker' name='$mob'  value='1'>";
+           echo str_replace('_', ' ',ucfirst(substr($mob,4))).": <input type='checkbox' id='$mob' class='checker' name='$mob'  value='1'>";
             echo '<br>';
         ?>
         <?php endforeach ?>
@@ -119,14 +119,10 @@
 
         <?php foreach ($conditions as $con): ?>
         <?php 
-           str_replace('_', ' ',ucfirst(substr($con,4))).": <input type='checkbox' id='$con' class='checker' name='$con'  value='1'>";
+          echo str_replace('_', ' ',ucfirst(substr($con,4))).": <input type='checkbox' id='$con' class='checker' name='$con'  value='1'>";
             echo '<br>';
         ?>
         <?php endforeach ?>
-
-
-
-
 
     </form>
 
@@ -170,9 +166,6 @@
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 90px 0px 60px";
             document.getElementById("update").action = "Admin/addVet/";
-            document.getElementById("passBlock").style.display = "none";
-            document.getElementById("passAdd").style.display = "block";
-            document.getElementById("password").name = 'password';
         }
 
         function passwordReset($id) {
