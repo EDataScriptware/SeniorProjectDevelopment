@@ -145,7 +145,7 @@ class Admin extends CI_Controller {
 
         $query = $this->db->get()->result();
 
-        return $query;
+        return $id;
 	}
 
 
