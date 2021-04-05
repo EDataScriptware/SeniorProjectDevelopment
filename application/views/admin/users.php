@@ -35,14 +35,21 @@
 
         function editBlock($id) {
 
-            $.ajax({
-         type: "POST",
-         url:  "<?php echo base_url('Admin/getUser/'); ?>", 
-         data: {id: $id},
-         dataType: "text",  
-         success:  function(data){
-                alert(data);
-              }
-          });
+        //     $.ajax({
+        //  type: "POST",
+        //  url:  "<?php // echo base_url('Admin/getUser/'); ?>", 
+        //  data: {id: $id},
+        //  dataType: "text",  
+        //  success:  function(data){
+        //         alert(data);
+        //       }
+        //   });
+
+        $.post('../../Admin/', {id: $id}, function (data) {
+
+            const $result = JSON.parse(data);
+        });       
+
+
         }
     </script>
