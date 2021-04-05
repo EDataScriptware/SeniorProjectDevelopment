@@ -20,11 +20,11 @@
     <tbody>
     <?php foreach ($user as $use): ?>
         <tr>
-            <td> <?php $use->user_type ?> </td>
-            <td> <?php $use->user_permissions ?>  </td>
-            <td> <?php $use->username ?>  </td>
-            <td> <?php $use->team_id ?>  </td>
-            <td> <?php $use->notes ?>  </td>
+            <td> <?php echo $use->user_type ?> </td>
+            <td> <?php echo $use->user_permissions ?>  </td>
+            <td> <?php echo $use->username ?>  </td>
+            <td> <?php echo $use->team_id ?>  </td>
+            <td> <?php echo $use->notes ?>  </td>
         </tr>
         <?php endforeach ?>
     </tbody>
