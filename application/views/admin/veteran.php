@@ -32,7 +32,7 @@
                     echo $tem->color;
                     break;
                 }
-            endforeach    
+            endforeach;    
             } else { 
             echo '';
             } ?>
