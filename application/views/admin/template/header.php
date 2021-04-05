@@ -23,19 +23,24 @@
 <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.js')?>"> </script>
 <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js')?>"> </script>
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/internal/css/internal.css')?>" />
-<script src="<?php echo base_url('assets/internal/js/internal.js')?>"> </script>
+
+<script src="<?php echo base_url('assets/internal/js/jquery-3.5.1.js')?>"> </script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css')?>" />
+
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/DataTables/datatables.css')?>" />
+<script src="<?php echo base_url('assets/DataTables/datatables.js')?>"> </script>
 
 </head>
 <body>
 
 <div id="adminHeader" class="sidenav">
-  <a href="#">Home</a>
-  <a href="#">Teams</a>
-  <a href="#">Documents</a>
-  <a href="#">Reservations</a>
-  <a href="#">Users</a>
-  <a id = "logout" href="#">< Logout</a>
+  <a href="<?php echo base_url('admin')?>">Home</a>
+  <a href="<?php echo base_url('teams')?>">Teams</a>
+  <a href="<?php echo base_url('documents')?>">Documents</a>
+  <a href="<?php echo base_url('reservations')?>">Reservations</a>
+  <a href="<?php echo base_url('users')?>">Users</a>
+  <a href="<?php echo base_url('user')?>">User View</a>
+  <a id = "logout" href="<?php echo base_url('')?>">< Logout</a>
 </div>
 
 <div id = 'main'> 
