@@ -38,7 +38,7 @@ class Admin extends CI_Controller {
 		$data['user'] = $this->User_model->get_all_user_data();
 
 		$this->load->view('admin/template/header');
-		$this->load->view('admin/users');
+		$this->load->view('admin/users', $data);
 		$this->load->view('admin/template/footer');
 	}
 	public function resView() //Crew View

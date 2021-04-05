@@ -4,7 +4,7 @@
 } );
     </script>
 <div class = "scrunch"> 
-<table id="userTable"  class="display">
+<table id="userTable"  class="table table-striped table-bordered">
     <thead>
         <tr>
             <th>User Type</th>
