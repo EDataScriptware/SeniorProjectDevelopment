@@ -115,7 +115,7 @@
 
         function addNew() {
             document.getElementById("whiteEdit").style.width = "550px";
-            document.getElementById("whiteEdit").style.padding = "60px 60px 0px 60px";
+            document.getElementById("whiteEdit").style.padding = "60px 90px 0px 60px";
             document.getElementById("update").action = "Admin/addUser/";
             document.getElementById("passBlock").style.display = "none";
             document.getElementById("passAdd").style.display = "block";
