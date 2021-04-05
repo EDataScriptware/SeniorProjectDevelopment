@@ -37,8 +37,7 @@
                     echo $tem->color;
                     break;
                 }
-            endforeach   
-            } else { 
+            endforeach } else { 
             echo 'None';
             } 
             
