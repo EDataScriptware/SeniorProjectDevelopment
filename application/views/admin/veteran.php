@@ -26,7 +26,7 @@
         <tr>
             <td><?php echo $vet->first_name ?> <?php echo$vet->last_name?></td>
             <td>  <?php if($vet->service_ww2 == 1) { $getter .='World War 2,'; } ?> <?php if($vet->service_korea == 1) { $getter .='Korean War,'; } ?> <?php if($vet->service_cold_war == 1) { $getter .='Cold War,'; } ?> <?php if($vet->service_vietnam == 1) { $getter .='Vietnam,'; } ?>
-                <p> <?php echo $getter; ?></p> </td>
+                <p> <?php echo substr($getter,0, -1); ?></p> </td>
             <td><?php echo $vet->dob ?></td>
             <td><?php if($vet->mission_id == $id) { echo 'Yes'; } else { echo 'No';} ?></td>
             <td><?php if($vet->mission_id == $id) {
