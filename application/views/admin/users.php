@@ -4,7 +4,7 @@
 } );
     </script>
 
-<table id="userTable" class="display">
+<table id="userTable"  class="display">
     <thead>
         <tr>
             <th>User Type</th>
