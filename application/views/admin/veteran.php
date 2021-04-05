@@ -11,7 +11,7 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>War</th>
+            <th>War(s)</th>
             <th>Date Of Birth</th>
             <th>On Current Mission?</th>
             <th>Current Team</th>
