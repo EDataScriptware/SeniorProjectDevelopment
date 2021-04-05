@@ -106,8 +106,8 @@
             document.getElementById("team_id").value = $result[0].team_id;
             document.getElementById("notes").value = $result[0].notes;
             document.getElementById("update").action = "Admin/updateUser/"+$result[0].iduser;
-            document.getElementById("passBlock").style.display = "none";
-            document.getElementById("passAdd").style.display = "block";
+            document.getElementById("passBlock").style.display = "block";
+            document.getElementById("passAdd").style.display = "none";
             document.getElementById("password").removeAttribute('name');
             document.getElementById("reset").addEventListener("click", passwordReset($result[0].iduser));
         });       
