@@ -161,7 +161,7 @@ class Admin extends CI_Controller {
 			'user_type' => $this->input->post('user_type'),
 			'user_permissions' => $this->input->post('user_permissions'),
 			'username' => $this->input->post('username'),
-			'password' => password_hash($this->input->post('user_type'), PASSWORD_DEFAULT),
+			'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 			'team_id' => $this->input->post('team_id'),
 			'notes' => $this->input->post('notes'),
 		);
