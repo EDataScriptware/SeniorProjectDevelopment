@@ -34,19 +34,8 @@
     <script>
 
         function editBlock($id) {
-
-        //     $.ajax({
-        //  type: "POST",
-        //  url:  "<?php // echo base_url('Admin/getUser/'); ?>", 
-        //  data: {id: $id},
-        //  dataType: "text",  
-        //  success:  function(data){
-        //         alert(data);
-        //       }
-        //   });
-
+            alert($id);
         $.post('Admin/getUser', {id: $id}, function (data) {
-
             var $result = data;
             alert($result)
         });       
