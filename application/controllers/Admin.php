@@ -137,5 +137,24 @@ class Admin extends CI_Controller {
 
 	}
 
+	public function getUser() {
+		$this->load->model('User_model');
+		$id = $this->input->post('id');
+		
+		$data = $this->User_model->get_one_user($id);
+		
+		return json_encode($data);
+	}
+
+
+	public function getVet() {
+		$this->load->model('Veteran_model');
+		$id = $this->input->post('id');
+		
+		$data = $this->User_model->get_one_veteran($id);
+		
+		return json_encode($data);
+	}
+
 
 }

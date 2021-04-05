@@ -15,6 +15,7 @@
             <th>Date Of Birth</th>
             <th>On Current Mission?</th>
             <th>Current Team</th>
+            <th> Action </th>
 
         </tr>
     </thead>
@@ -42,6 +43,7 @@
             $getter = "";  
             ?>
             </td>
+            <td> <button type="button" class="btn btn-primary" > EDIT </button> </td>
         </tr>
         <?php endforeach ?>
     </tbody>
