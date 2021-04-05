@@ -19,7 +19,7 @@
         <tr>
             <td> <?php $use->user_type ?> </td>
             <td> <?php $use->user_permissions ?>  </td>
-            <td> <?php $use->user_username ?>  </td>
+            <td> <?php $use->username ?>  </td>
             <td> <?php $use->team_id ?>  </td>
             <td> <?php $use->notes ?>  </td>
         </tr>
