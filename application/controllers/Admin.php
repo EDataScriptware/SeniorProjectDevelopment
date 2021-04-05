@@ -141,8 +141,8 @@ class Admin extends CI_Controller {
 		$this->load->model('User_model');
 		$id = $this->input->post('id');
 		$data = $this->User_model->get_one_user($id);
-		echo $id;
-        return $data;
+
+        echo json_encode($data);
 	}
 
 
@@ -152,7 +152,7 @@ class Admin extends CI_Controller {
 		
 		$data = $this->User_model->get_one_veteran($id);
 		
-		return json_encode($data);
+		echo json_encode($data);
 	}
 
 
