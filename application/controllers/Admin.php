@@ -157,7 +157,16 @@ class Admin extends CI_Controller {
 	public function addUser() {
 		$postData = $this->input->post();
 
-		$this->db->insert('user', $postData); 
+		$newUser = array(
+			'user_type' => $this->input->post('user_type'),
+			'user_permissions' => $this->input->post('user_permissions'),
+			'username' => $this->input->post('username'),
+			'password' => password_hash($this->input->post('user_type'), PASSWORD_DEFAULT); ,
+			'team_id' => $this->input->post('team_id'),
+			'notes' => $this->input->post('notes'),
+		)
+
+		$this->db->insert('user', $newUser); 
 
 		redirect('users');
 
