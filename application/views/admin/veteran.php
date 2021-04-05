@@ -32,10 +32,8 @@
                     echo $tem->color;
                     break;
                 }
-
             endforeach    
-            
-            
+
             } else { echo '';} ?></td>
         </tr>
         <?php endforeach ?>
