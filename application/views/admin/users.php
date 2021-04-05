@@ -49,15 +49,17 @@
   <option value="2">2</option>
   <option value="3">3</option>
   <option value="4">4</option>
-</select>
+</select> <br>
 
     <label for="team_id">Team Id:</label>
     <select id="team_id" name="team_id">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    </select>
+    <?php foreach($team as $tem): ?>
+    <?php if ($tem->mission_id === $id) { ?>
+    <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color?></option>
+
+    <?php } ?>
+    <?php endforeach ?>
+    </select> <br>
 
     <label for="notes">Notes:</label>
     <textarea id="notes" name="notes" rows="4" cols="50">

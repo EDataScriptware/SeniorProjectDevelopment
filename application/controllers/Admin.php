@@ -34,8 +34,16 @@ class Admin extends CI_Controller {
 	public function userView() //Crew View
 	{
 		$this->load->model('User_model');
+		$this->load->model('Team_model');
+
+		$this->db->select_max("mission_id");
+		$this->db->from('team');
+
+		$currMission_id = implode($this->db->get()->row_array());
 
 		$data['user'] = $this->User_model->get_all_user_data();
+		$data['team'] = $this->Team_model->get_all_team_data();
+		$data['id'] = $currMission_id;
 
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/users', $data);
