@@ -35,7 +35,7 @@ class Admin extends CI_Controller {
 	{
 		$this->load->model('User_model');
 
-		$data['user'] = $this->user_model->get_all_user_data();
+		$data['user'] = $this->User_model->get_all_user_data();
 
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/users');
