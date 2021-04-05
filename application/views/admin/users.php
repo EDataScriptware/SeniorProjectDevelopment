@@ -39,6 +39,9 @@
         <?php endforeach ?>
     </tbody>
 </table>
+
+<button type="button" class="btn btn-primary" onclick = "addNew()"  > Add New User </button>
+
     </div>
 
 
@@ -100,7 +103,7 @@
             document.getElementById("team_id").value = $result[0].team_id;
             document.getElementById("notes").value = $result[0].notes;
             document.getElementById("update").action = "Admin/updateUser/"+$result[0].iduser;
-            document.getElementById("myBtn").addEventListener("click", displayDate);
+            document.getElementById("reset").addEventListener("click", displayDate);
         });       
         }
 
