@@ -5,8 +5,6 @@
     </script>
 <div class = "scrunch"> 
 
-<?php echo json_encode($user) ?>
-
 <table id="userTable"  class="table table-striped table-bordered">
     <thead>
         <tr>
