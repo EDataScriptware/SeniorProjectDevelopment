@@ -80,7 +80,7 @@
         function editBlock($id) {
         $.post('Admin/getUser', {id: $id}, function (data) {
             var $result = JSON.parse(data);
-            console.log($result);
+            console.log($result[0]);
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "0px 0px 00px 60px";
             
