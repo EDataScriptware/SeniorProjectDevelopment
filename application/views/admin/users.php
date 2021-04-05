@@ -32,6 +32,7 @@
     </div>
 
     <script>
+
         function editBlock($id) {
 
             $.ajax({
