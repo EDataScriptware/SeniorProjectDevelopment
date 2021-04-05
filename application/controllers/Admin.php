@@ -35,6 +35,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->model('User_model');
 
+		$data['user'] = $this->user_model->get_all_user_data();
+
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/users');
 		$this->load->view('admin/template/footer');
@@ -48,6 +50,11 @@ class Admin extends CI_Controller {
 
 	public function vetView() //Crew View
 	{
+
+		$this->load->model('Veteran_model');
+
+		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
+
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/veteran');
 		$this->load->view('admin/template/footer');
