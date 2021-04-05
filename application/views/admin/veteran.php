@@ -33,7 +33,9 @@
                     break;
                 }
             endforeach    
-            } else { echo '';} ?>
+            } else { 
+            echo '';
+            } ?>
             </td>
         </tr>
         <?php endforeach ?>
