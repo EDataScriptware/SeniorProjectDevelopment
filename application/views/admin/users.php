@@ -4,6 +4,9 @@
 } );
     </script>
 <div class = "scrunch"> 
+
+<?php echo $user ?>
+
 <table id="userTable"  class="table table-striped table-bordered">
     <thead>
         <tr>
