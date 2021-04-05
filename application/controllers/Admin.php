@@ -145,6 +145,29 @@ class Admin extends CI_Controller {
 
 	}
 
+	public function updateUser() {
+		$this->load->model('Veteran_model');
+
+		if($this->input->post('submit') != NULL) {
+			$postData = $this->input->post();
+
+
+			if(isset($postData["submit"])) {
+				unset($postData["submit"]) ;
+			}
+
+			echo json_encode($postData);
+
+			if($this->Veteran_model->updateVetEntry($postData)) {
+				echo "Veteran Updated Successfully |  Route Admin Somewhere.";
+			}
+			else {
+				echo "Veteran Updated Unsuccessfully | Route Admin Somewhere.";
+			}
+		}
+
+	}
+
 	public function getUser() {
 		$this->load->model('User_model');
 		$id = $this->input->post('id');
