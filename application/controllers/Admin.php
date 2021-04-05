@@ -22,7 +22,7 @@ class Admin extends CI_Controller {
 	public function docView() //Crew View
 	{
 		$this->load->view('admin/template/header');
-		$this->load->view('admin/document');
+		$this->load->view('admin/documents');
 		$this->load->view('admin/template/footer');
 	}
 	public function teamView() //Crew View

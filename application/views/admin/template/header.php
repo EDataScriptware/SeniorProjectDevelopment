@@ -23,9 +23,8 @@
 <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.js')?>"> </script>
 <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js')?>"> </script>
 
-
-<script src="<?php echo base_url('assets/internal/js/jquery-3.5.1.js')?>"> </script>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css')?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/internal/css/internal.css')?>" />
+<script src="<?php echo base_url('assets/internal/js/internal.js')?>"> </script>
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/DataTables/datatables.css')?>" />
 <script src="<?php echo base_url('assets/DataTables/datatables.js')?>"> </script>
@@ -44,4 +43,3 @@
 </div>
 
 <div id = 'main'> 
-
