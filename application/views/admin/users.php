@@ -22,7 +22,21 @@
             <td> <?php echo $use->user_type ?> </td>
             <td> <?php echo $use->user_permissions ?>  </td>
             <td> <?php echo $use->username ?>  </td>
-            <td> <?php echo $use->team_id ?>  </td>
+            <td> <?php
+                        foreach ($team as $tem):
+                            if ($use->team_id == $tem->team_id) {
+                                echo $tem->color;
+                                if ($tem->mission_id != $id) {
+                                    echo "(Outdated)";
+                                }
+
+                                break;
+                            }
+                        endforeach; } else { echo 'None';} 
+            
+            
+            
+            echo $use->team_id ?>  </td>
             <td> <?php echo $use->notes ?>  </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
         </tr>
@@ -86,10 +100,22 @@
             
             document.getElementById("username").value = $result[0].username;
             document.getElementById("user_type").value = $result[0].user_type;
+            document.getElementById("user_permissions").value = $result[0].user_permissions;
+            document.getElementById("team_id").value = $result[0].team_id;
+            document.getElementById("notes").value = $result[0].notes;
             document.getElementById("update").action = "Admin/updateUser/"+$result[0].iduser;
-            
-
+            document.getElementById("myBtn").addEventListener("click", displayDate);
         });       
+        }
+
+        function addNew() {
+            document.getElementById("whiteEdit").style.width = "550px";
+            document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
+            document.getElementById("update").action = "Admin/addUser/";
+        }
+
+        function passwordReset($id) {
+
         }
 
         function closeNav() {
