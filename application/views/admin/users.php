@@ -29,10 +29,9 @@
                                 if ($tem->mission_id != $id) {
                                     echo "(Outdated)";
                                 }
-
                                 break;
                             }
-                        endforeach; } else { echo 'None';} 
+                        endforeach; 
             ?>  </td>
             <td> <?php echo $use->notes ?>  </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
