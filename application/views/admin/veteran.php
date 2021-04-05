@@ -37,9 +37,7 @@
                     echo $tem->color;
                     break;
                 }
-            endforeach } else { 
-            echo 'None';
-            } 
+            endforeach; } else { echo 'None';} 
             
             $getter = "";  
             ?>
