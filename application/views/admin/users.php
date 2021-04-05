@@ -52,9 +52,9 @@
 
     <label for="username">Username:</label>
     <input type="text" id="username" name="username"><br>
-
+    
     <p id = "passAdd"> Password:  <input type="text" id="password" name="password"> </p>
-    <br>
+    <p id = "passBlock"> Password:  <button class="btn btn-primary" id ="reset" > Reset</button> </p>
 
     <label for="user_type">User Type:</label>
     <input type="text" id="user_type" name="user_type"><br>
@@ -81,12 +81,8 @@
     <textarea id="notes" name="notes" rows="4" cols="50">
         
     </textarea>
-
-
-
+    
     </form>
-
-    <p id = "passBlock"> Password:  <button class="btn btn-primary" id ="reset" > Reset</button> </p>
 
     <button type="submit" class="btn btn-primary" form="update">Save changes</button>
 
