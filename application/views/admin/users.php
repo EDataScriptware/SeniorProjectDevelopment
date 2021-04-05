@@ -33,10 +33,7 @@
                                 break;
                             }
                         endforeach; } else { echo 'None';} 
-            
-            
-            
-            echo $use->team_id ?>  </td>
+            ?>  </td>
             <td> <?php echo $use->notes ?>  </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
         </tr>
