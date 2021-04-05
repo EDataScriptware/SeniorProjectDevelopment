@@ -35,6 +35,40 @@
 
 <div id="whiteEdit" class="whiteEdit">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <form id = "update" method = "POST">
+
+    <label for="username">User Type:</label>
+    <input type="text" id="username" name="username"><br>
+
+    <label for="user_type">User Type:</label>
+    <input type="text" id="user_type" name="user_type"><br>
+
+  <label for="user_permissions">User Permissions:</label>
+  <select id="user_permissions" name="user_permissions">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+
+    <label for="team_id">Team Id:</label>
+    <select id="team_id" name="team_id">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    </select>
+
+    <label for="notes">Notes:</label>
+    <textarea id="notes" name="notes" rows="4" cols="50">
+   
+    </textarea>
+
+    </form>
+
+    <p> Password:  <button class="btn btn-primary" id ="reset" > Reset</button> </p>
+
+    <button type="submit" class="btn btn-primary" form="update">Save changes</button>
 
 </div>
 
