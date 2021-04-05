@@ -53,7 +53,7 @@
     <form id = "update" method = "POST">
 
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username"><br>
+    <input type="text" id="username" name="username">
     
     <p id = "passAdd"> Password:  <input type="text" id="password" name="password"> </p>
     <p id = "passBlock"> Password:  <button class="btn btn-primary" id ="reset" > Reset</button> </p>
@@ -117,7 +117,7 @@
 
         function addNew() {
             document.getElementById("whiteEdit").style.width = "550px";
-            document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
+            document.getElementById("whiteEdit").style.padding = "60px 60px 0px 60px";
             document.getElementById("update").action = "Admin/addUser/";
             document.getElementById("passBlock").style.visibility = "hidden";
             document.getElementById("passAdd").style.visibility = "visible";
