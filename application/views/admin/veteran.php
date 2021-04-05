@@ -5,7 +5,7 @@
     </script>
 
 
-<?php ?>
+
 
 <table id="vetTable" class="table table-striped table-bordered scrunch">
     <thead>
@@ -20,22 +20,30 @@
     </thead>
     <tbody>
     <?php foreach ($veteran as $vet): ?>
+
+        <?php $getter = ""; ?>
+
         <tr>
             <td><?php echo $vet->first_name ?> <?php echo$vet->last_name?></td>
-            <td><?php if($vet->service_ww2 == 1) { echo 'World War 2'; } ?> <?php if($vet->service_korea == 1) { echo 'Korean War'; } ?> <?php if($vet->service_cold_war == 1) { echo 'Cold War'; } ?> <?php if($vet->service_vietnam == 1) { echo 'Vietnam'; } ?> </td>
+            <td>  <?php if($vet->service_ww2 == 1) { $getter .='World War 2,'; } ?> <?php if($vet->service_korea == 1) { $getter .='Korean War,'; } ?> <?php if($vet->service_cold_war == 1) { $getter .='Cold War,'; } ?> <?php if($vet->service_vietnam == 1) { $getter .='Vietnam,'; } ?>
+                <p> <?php echo $getter; ?></p> </td>
             <td><?php echo $vet->dob ?></td>
             <td><?php if($vet->mission_id == $id) { echo 'Yes'; } else { echo 'No';} ?></td>
             <td><?php if($vet->mission_id == $id) {
-            
+                  
+
             foreach ($team as $tem):
                 if ($vet->team_id == $tem->team_id) {
                     echo $tem->color;
                     break;
                 }
-            endforeach;    
+            endforeach   
             } else { 
             echo 'None';
-            } ?>
+            } 
+            
+            $getter = "";  
+            ?>
             </td>
         </tr>
         <?php endforeach ?>
