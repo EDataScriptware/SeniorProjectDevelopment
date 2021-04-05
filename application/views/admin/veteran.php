@@ -6,8 +6,8 @@
 
 
 
-
-<table id="vetTable" class="table table-striped table-bordered scrunch">
+<div class = "scrunch"> 
+<table id="vetTable" class="table table-striped table-bordered">
     <thead>
         <tr>
             <th>Name</th>
@@ -46,3 +46,4 @@
         <?php endforeach ?>
     </tbody>
 </table>
+        </div>

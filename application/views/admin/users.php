@@ -3,7 +3,7 @@
     $('#userTable').DataTable();
 } );
     </script>
-
+<div class = "scrunch"> 
 <table id="userTable"  class="display">
     <thead>
         <tr>
@@ -26,3 +26,4 @@
         <?php endforeach ?>
     </tbody>
 </table>
+    </div>
