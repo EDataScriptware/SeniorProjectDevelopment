@@ -45,7 +45,7 @@
         //       }
         //   });
 
-        $.post('../Admin/getUser', {id: $id}, function (data) {
+        $.post('Admin/getUser', {id: $id}, function (data) {
 
             var $result = JSON.parse(data);
             alert($result)
