@@ -78,9 +78,7 @@
     </select> <br>
 
     <p>Notes: </p>
-    <textarea id="notes" name="notes" rows="4" cols="50">
-        
-    </textarea>
+    <textarea id="notes" name="notes" rows="4" cols="50"></textarea>
 
     </form>
 
