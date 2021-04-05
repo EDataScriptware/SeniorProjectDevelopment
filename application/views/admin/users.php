@@ -82,13 +82,13 @@
             var $result = JSON.parse(data);
             alert($result);
             document.getElementById("whiteEdit").style.width = "550px";
-            document.getElementById("whiteEdit").style.padding-left = "60px";
+            // document.getElementById("whiteEdit").style.padding-left = "60px";
         });       
         }
 
         function closeNav() {
         document.getElementById("whiteEdit").style.width = "0";
-        document.getElementById("whiteEdit").style.padding-left = "0";
+       // document.getElementById("whiteEdit").style.padding-left = "0";
         }
 
     </script>
