@@ -52,8 +52,15 @@ class Admin extends CI_Controller {
 	{
 
 		$this->load->model('Veteran_model');
+		$this->load->model('Team_model');
 
-		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
+		$currMission_id = implode($this->db->get()->row_array());
+
+		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
+		$data['team'] = $this->Team_model->get_all_team_data();
+		$data['id'] = $currMission_id;
+
+	
 
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/veteran');
