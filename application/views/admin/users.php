@@ -45,9 +45,10 @@
         //       }
         //   });
 
-        $.post('../../Admin/', {id: $id}, function (data) {
+        $.post('../../Admin/getUser', {id: $id}, function (data) {
 
-            const $result = JSON.parse(data);
+            var $result = JSON.parse(data);
+            alert($result)
         });       
 
 

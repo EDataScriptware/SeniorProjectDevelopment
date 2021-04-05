@@ -143,7 +143,7 @@ class Admin extends CI_Controller {
 		
 		$data = $this->User_model->get_one_user($id);
 		
-		return $data);
+		return json_encode($data);
 	}
 
 
