@@ -38,7 +38,8 @@
   <a href="<?php echo base_url('documents')?>">Documents</a>
   <a href="<?php echo base_url('reservations')?>">Reservations</a>
   <a href="<?php echo base_url('users')?>">Users</a>
-  <a href="<?php echo base_url('user')?>">User View</a>
+  <a href="<?php echo base_url('users')?>">Veterans</a>
+  <a href="<?php echo base_url('user')?>">Personel View</a>
   <a id = "logout" href="<?php echo base_url('')?>">< Logout</a>
 </div>
 

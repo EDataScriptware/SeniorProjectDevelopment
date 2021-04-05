@@ -131,7 +131,7 @@
 
 #adminHeader {
 	height: 100%;
-	width: 300px; 
+	width: 225px; 
 	position: fixed; 
 	z-index: 1; 
 	top: 0; 
@@ -145,7 +145,7 @@
 	position: fixed;
     bottom: 0;
     left: 0;
-	width: 300px;
+	width: 225px;
 	
 }
 
@@ -164,6 +164,6 @@
   }
 
   #main {
-	padding-left: 325px;
+	padding-left: 250px;
 	padding-top: 35px;
   }

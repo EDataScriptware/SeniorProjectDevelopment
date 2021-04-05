@@ -69,5 +69,6 @@ $route['teams'] = 'Admin/teamView';
 $route['documents'] = 'Admin/docView';
 $route['reservations'] = 'Admin/resView';
 $route['users'] = 'Admin/userView';
+$route['Veterans'] = 'Admin/vetView';
 
 
