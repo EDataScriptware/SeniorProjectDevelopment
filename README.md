@@ -31,12 +31,3 @@ Current Process:
 2. The cronjob will initiate bash tasks in the script. 
 3. Bash task will pull the recent changes from the master branch to the Raspberry Pi 3 database.
 
-
-## Deployment Plan
-### Standalone File deployment.sh && CREATE_honorflight.sql
-In your terminal inside the SeniorProjectDevelopment directory. 
-```
-sudo bash deployment/deployment.sh 
-mysql -u insert_username -p < CREATE_honorflight.sql
-```
-
