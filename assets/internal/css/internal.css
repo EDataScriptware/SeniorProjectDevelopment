@@ -184,7 +184,7 @@
 	background-color: lightgray; 
 	overflow-x: scroll; 
 	padding-top: 60px; 
-	
+	overflow-y: hidden;
 	transition: 0.5s; 
   }
 
