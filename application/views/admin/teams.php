@@ -4,15 +4,7 @@
 
 <script>
     $(document).ready( function () {
-    $('#<?php echo $tem->color ?>Vet').DataTable({
-  "columns": [
-    null,
-    { "width": "19%" },
-    null,
-    null,
-    null
-  ]
-});
+    $('#<?php echo $tem->color ?>Vet').DataTable();
 } );
     </script>
 <h2> Veterans </h2>
