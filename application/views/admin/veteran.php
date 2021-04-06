@@ -182,27 +182,27 @@
             document.getElementById("update").action = "Admin/updateVet/"+$result[0].iduser;
 
             <?php foreach ($about as $aboot): ?>
-                document.getElementById(<?php echo $aboot ?>).value = $result[0]['<?php echo $aboot ?>'];
+                document.getElementById('<?php echo $aboot ?>').value = $result[0]['<?php echo $aboot ?>'];
             <?php endforeach ?>
 
             <?php foreach ($emergency as $emo): ?>
-                document.getElementById(<?php echo $emo ?>).value = $result[0]['<?php echo $emo?>'];
+                document.getElementById('<?php echo $emo ?>').value = $result[0]['<?php echo $emo?>'];
             <?php endforeach ?>
 
              <?php foreach ($comments as $com): ?>
-                document.getElementById(<?php echo $com ?>).value = $result[0]['<?php echo $com ?>'];
+                document.getElementById('<?php echo $com ?>').value = $result[0]['<?php echo $com ?>'];
              <?php endforeach ?>
 
             <?php foreach ($alternative as $alt): ?>
-                document.getElementById(<?php echo $alt ?>).value = $result[0]['<?php echo $alt ?>'];
+                document.getElementById('<?php echo $alt ?>').value = $result[0]['<?php echo $alt ?>'];
             <?php endforeach ?>
 
             <?php foreach ($mobility as $mob): ?>
-                document.getElementById(<?php echo $mob ?>).value = $result[0]['<?php echo $mob ?>'];
+                document.getElementById('<?php echo $mob ?>').value = $result[0]['<?php echo $mob ?>'];
             <?php endforeach ?>
 
             <?php foreach ($conditions as $con): ?>
-                document.getElementById(<?php echo $con ?>).value = $result[0]['<?php echo $con ?>'];
+                document.getElementById('<?php echo $con ?>').value = $result[0]['<?php echo $con ?>'];
             <?php endforeach ?>
 
         document.getElementById("med_list").value = $result[0]['med_list'];
