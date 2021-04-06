@@ -66,6 +66,9 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <form id = "update" method = "POST">
 
+    <h2 id = "bigName"> </h2>
+    <p id = "tinyId"> </p>
+
         <h3>About</h3>
 
 	<?php foreach ($about as $aboot): ?>
@@ -179,6 +182,9 @@
             document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
             
             document.getElementById("update").action = "Admin/updateVet/"+$result[0].iduser;
+
+            document.getElementById("bigName").value = result[0]['first_name'] + " " + result[0]['last_name'];
+            document.getElementById("tinyId").value = "{" + result[0]['veteran_id'] + '}';
 
             <?php foreach ($about as $aboot): ?>
                 document.getElementById('<?php echo $aboot ?>').value = $result[0]['<?php echo $aboot ?>'];
