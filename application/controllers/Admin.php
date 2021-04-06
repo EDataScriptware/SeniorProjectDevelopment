@@ -163,15 +163,6 @@ class Admin extends CI_Controller {
 		redirect('veterans');
 	}
 
-	public function addVeteran() {
-		$postData = $this->input->post();
-
-		$this->db->insert('veteran', $postData); 
-
-		redirect('Veteran');
-
-	}
-
 
 	public function addUser() {
 		$postData = $this->input->post();
