@@ -97,6 +97,26 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/footer');
 	}
 
+	public function guardView() //Crew View
+	{
+		$this->load->model('Veteran_model');
+		$this->load->model('Guardian_model');
+		$this->load->model('Team_model');
+
+		$this->db->select_max("mission_id");
+		$this->db->from('team');
+
+		$currMission_id = implode($this->db->get()->row_array());
+
+		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
+		$data['team'] = $this->Team_model->get_all_team_data();
+		$data['id'] = $currMission_id;
+
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/guardian', $data);
+		$this->load->view('admin/template/footer');
+	}
+
 	public function vetQueryView() {
 		$this->load->model('Veteran_model');
 

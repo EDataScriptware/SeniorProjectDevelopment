@@ -8,12 +8,12 @@
 <table id="userTable"  class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>User Type</th>
-            <th>Permission Level</th>
-            <th>Username</th>
-            <th>Team ID</th>
-            <th>Notes</th>
-            <th>Action</th>
+            <th>Name</th>
+            <th>War(s)</th>
+            <th>Date Of Birth</th>
+            <th>On Current Mission?</th>
+            <th>Current Team</th>
+            <th> Action </th>
         </tr>
     </thead>
     <tbody>
