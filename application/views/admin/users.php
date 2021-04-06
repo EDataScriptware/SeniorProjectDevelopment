@@ -8,11 +8,11 @@
 <table id="userTable"  class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>War(s)</th>
-            <th>Date Of Birth</th>
-            <th>On Current Mission?</th>
-            <th>Current Team</th>
+            <th>User Type</th>
+            <th>Permissions Level</th>
+            <th>User Name</th>
+            <th>Team</th>
+            <th>notes</th>
             <th> Action </th>
         </tr>
     </thead>
@@ -45,8 +45,6 @@
 <button type="button" class="btn btn-primary" onclick = "addNew()"  > Add New User </button>
 
     </div>
-
-
 
 <div id="whiteEdit" class="whiteEdit">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
