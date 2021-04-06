@@ -154,6 +154,25 @@ class Admin extends CI_Controller {
 		redirect('users');
 	}
 
+	public function updateVeteran($id) {
+		$postData = $this->input->post();
+
+		$this->db->where('veteran_id', $id);
+		$this->db->update('veteran', $postData); 
+
+		redirect('veterans');
+	}
+
+	public function addVeteran() {
+		$postData = $this->input->post();
+
+		$this->db->insert('veteran', $postData); 
+
+		redirect('Veteran');
+
+	}
+
+
 	public function addUser() {
 		$postData = $this->input->post();
 

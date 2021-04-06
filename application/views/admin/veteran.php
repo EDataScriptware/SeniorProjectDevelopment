@@ -57,9 +57,6 @@
 </table>
 
 <hr>
-
-<button type="button" class="btn btn-primary" onclick = "addNew()"  > Add New User </button>
-
         </div>
 
         <div id="whiteEdit" class="whiteEdit">
@@ -130,8 +127,6 @@
 
         <h3> Other Information </h3>
 
-
-
         <h4> Medical Code:  </h4>
         <select id="med_code" name="med_code">
         <option value="Red">Red</option>
@@ -181,7 +176,7 @@
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
             
-            document.getElementById("update").action = "Admin/updateVet/"+$result[0].iduser;
+            document.getElementById("update").action = "Admin/updateVeteran/"+$result[0].iduser;
 
             document.getElementById("bigName").value = result[0]['first_name'] + " " + result[0]['last_name'];
             document.getElementById("tinyId").value = "{" + result[0]['veteran_id'] + '}';
@@ -235,16 +230,6 @@
             document.getElementById("update").action = "Admin/updateVet/"+$result[0].iduser;
 
         });       
-        }
-
-        function addNew() {
-            document.getElementById("whiteEdit").style.width = "550px";
-            document.getElementById("whiteEdit").style.padding = "60px 90px 0px 60px";
-            document.getElementById("update").action = "Admin/addVet/";
-        }
-
-        function passwordReset($id) {
-            
         }
 
         function closeNav() {
