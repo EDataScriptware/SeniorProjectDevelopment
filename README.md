@@ -17,9 +17,12 @@
 
 **Python Version:** Python 3.7.3
 
-## Updating the Raspberry Pi 4 Server
-"Every minute updates the Raspberry Pi 4."
-Current Process: 
+## Updating the Raspberry Pi 4 Server (Exclusive to Team Ruby)
+What is a Cron? Cron is a scheduler on all Linux OS that allows the devies to trigger at a certain DateTime. 
+- [For more information about Cron, please search here.](https://www.pair.com/support/kb/configuring-cron/) 
+- [For more information about how scheduler crontab, please search here.](https://crontab.guru/)
+
+Consistent Data Current Process: 
 1. Cron will be triggered and create a process what is called a "cronjob."
 2. The cronjob will initiate bash tasks in the script. 
 3. Bash task will pull the recent changes from the master branch to the Raspberry Pi 4 database.
