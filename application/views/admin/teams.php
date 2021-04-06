@@ -4,14 +4,7 @@
 
 <script>
     $(document).ready( function () {
-    $('#<?php echo $tem->color ?>Vet').DataTable(
-        {
-  "columnDefs": [
-    { "width": "20%", "targets": 1 }
-  ]
-}
-
-    );
+    $('#<?php echo $tem->color ?>Vet').DataTable();
 } );
     </script>
 <h2> Veterans </h2>
@@ -40,8 +33,8 @@
         <tr>
             <td> <?php echo $vet->first_name ?> <?php echo$vet->last_name?></td>
             <td> <?php echo 'Day_Phone: '.$vet->day_phone ?> <br> <?php echo 'Cell_Phone: '.$vet->cell_phone?> </td>
-            <td> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?></td>
-            <td> <?php echo 'Day_Phone: '.$guardian[0]->day_phone ?> <br> <?php echo 'Cell_Phone: '.$guardian[0]->cell_phone?> </td>
+            <td> <?php echo if ($guardian[0] != null) { $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name } else {echo "None"}?></td>
+            <td> <?php echo if ($guardian[0] != null) { 'Day_Phone: '.$guardian[0]->day_phone ?> <br> <?php echo 'Cell_Phone: '.$guardian[0]->cell_phone } else {echo "None"}?> </td>
             <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>)"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>)"  > REMOVE </button> </td>
 
         </tr>
