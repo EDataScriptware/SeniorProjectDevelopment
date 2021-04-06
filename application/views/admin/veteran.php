@@ -66,7 +66,7 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <form id = "update" method = "POST">
 
-        <h3> About </h3>
+        <h3>About</h3>
 
 	<?php foreach ($about as $aboot): ?>
 		<?php 
@@ -75,7 +75,7 @@
 	        ?>
         <?php endforeach ?>
 
-        <h3> Emergency Contact </h3>
+        <h3>Emergency Contact</h3>
 
         <?php foreach ($emergency as $emo): ?>
 		<?php 
@@ -84,7 +84,7 @@
 	        ?>
         <?php endforeach ?>
 
-        <h3> Comments </h3>
+        <h3>Comments</h3>
 
         <?php foreach ($comments as $com): ?>
 		<?php 
@@ -94,7 +94,7 @@
         <?php endforeach ?>
 
 
-        <h3> Alternate Info </h3>
+        <h3>Alternate Info</h3>
 
         <?php foreach ($alternative as $alt): ?>
 		<?php 
@@ -103,8 +103,11 @@
 	        ?>
         <?php endforeach ?>
 
+        <h3> Medication </h3>
 
-        <h3> Mobility</h3>
+	    <textarea id="med_list" name="med_list" rows="4" cols="50"></textarea> 
+
+        <h3>Mobility</h3>
 
         <?php foreach ($mobility as $mob): ?>
         <?php 
@@ -113,9 +116,7 @@
         ?>
         <?php endforeach ?>
 
-
-
-        <h3> Conditions</h3>
+        <h3>Conditions</h3>
 
         <?php foreach ($conditions as $con): ?>
         <?php 
@@ -124,6 +125,30 @@
         ?>
         <?php endforeach ?>
 
+        <h3> Other Information </h3>
+
+
+
+        <h4> Medical Code:  </h4>
+        <select id="med_code" name="med_code">
+        <option value="Red">Red</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Green">Green</option>
+        </select>
+
+	    <h4> When to use Medication: </h4>
+	    <textarea id="med_when_use" name="med_when_use" rows="4" cols="50"></textarea>
+
+	    <h4> Flow Rate: </h4>
+	    <textarea id="med_flow_rate" name="med_flow_rate" rows="4" cols="50"></textarea>
+
+	    <h4> Other Conditions: </h4>
+	    <textarea id="med_others" name="med_others" rows="4" cols="50"></textarea>
+
+        <h4> Medical Chair Location: </h4>
+	    <textarea id="med_chair_loc" name="med_chair_loc" rows="4" cols="50"></textarea>
+        
+        
     </form>
 
     <hr>
@@ -144,6 +169,37 @@
             
 
             document.getElementById("update").action = "Admin/updateVet/"+$result[0].iduser;
+
+            <?php foreach ($about as $aboot): ?>
+                document.getElementById(<?php $aboot ?>).value = $result[0]['<?php $aboot ?>'];
+            <?php endforeach ?>
+
+            <?php foreach ($emergency as $emo): ?>
+                document.getElementById(<?php $emo ?>).value = $result[0]['<?php $emo?>'];
+            <?php endforeach ?>
+
+             <?php foreach ($comments as $com): ?>
+                document.getElementById(<?php $com ?>).value = $result[0]['<?php $com ?>'];
+             <?php endforeach ?>
+
+            <?php foreach ($alternative as $alt): ?>
+                document.getElementById(<?php $alt ?>).value = $result[0]['<?php $alt ?>'];
+            <?php endforeach ?>
+
+            <?php foreach ($mobility as $mob): ?>
+                document.getElementById(<?php $mob ?>).value = $result[0]['<?php $mob ?>'];
+            <?php endforeach ?>
+
+            <?php foreach ($conditions as $con): ?>
+                document.getElementById(<?php $con ?>).value = $result[0]['<?php $con ?>'];
+            <?php endforeach ?>
+
+	    <textarea id="med_list" name="med_list" rows="4" cols="50"></textarea> 
+        document.getElementById("med_list").value = $result[0]['med_list'];
+        document.getElementById("med_flow_rate").value = $result[0]['med_flow_rate'];
+        document.getElementById("med_when_use").value = $result[0]['med_when_use'];
+        document.getElementById("med_others").value = $result[0]['med_others'];
+        document.getElementById("med_chair_loc").value = $result[0]['med_chair_loc'];
 
         });       
         }
