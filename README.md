@@ -1,4 +1,4 @@
-```# Senior Project Development - Rochester Honor Flight
+# Senior Project Development - Rochester Honor Flight
 ## The Raspberry Pi 3 Server Requirement Specifications
 
 **Linux OS Distribution Family:** Debian-based
