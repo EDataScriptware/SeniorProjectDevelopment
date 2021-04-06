@@ -160,6 +160,17 @@
 
         <script>
 
+        $(document).ready(function() {
+
+	  // on form submit
+        $("#update").on('submit', function() {
+            // to each unchecked checkbox
+            $(this).find('input[type=checkbox]:not(:checked)').prop('checked', true).val(0);
+        })	
+ 
+    });
+
+
         function editBlock($id) {
         $.post('Admin/getVet', {id: $id}, function (data) {
             var $result = JSON.parse(data);
