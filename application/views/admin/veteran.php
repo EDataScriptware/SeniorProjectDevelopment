@@ -176,7 +176,7 @@
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
             
-            document.getElementById("update").action = "Admin/updateVeteran/"+$result[0].iduser;
+            document.getElementById("update").action = "Admin/updateVeteran/"+$result[0].veteran_id;
 
             document.getElementById("bigName").value = $result[0]['first_name'] + " " + $result[0]['last_name'];
             document.getElementById("tinyId").value = "{" + $result[0]['veteran_id'] + '}';
