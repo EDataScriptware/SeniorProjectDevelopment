@@ -2,7 +2,7 @@
 <?php $allowed = array(1,2, 3); ?>
 <?php echo json_encode($veteran[0])?>
 <h2> <?php echo $veteran[0]->first_name ?> <?php echo $veteran[0]->middle_initial ?>  <?php echo $veteran[0]->last_name ?> </h2>
-<?php if ($_SESSION["userPerm"] === '2') { ?>	
+<?php if ($_SESSION["userPerm"] === '0') { ?>	
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>
 <?php } ?>
 <?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>

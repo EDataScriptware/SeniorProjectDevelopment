@@ -1,7 +1,7 @@
 <?php
 	session_start(); 
 
-    if(isset($_SESSION["userPerm"]) && $_SESSION["userPerm"] == 2) {
+    if(isset($_SESSION["userPerm"]) && $_SESSION["userPerm"] == 0) {
       // display this page
     }
     else {
