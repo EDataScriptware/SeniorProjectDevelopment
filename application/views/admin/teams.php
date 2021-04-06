@@ -33,8 +33,8 @@
         <tr>
             <td> <?php echo $vet->first_name ?> <?php echo$vet->last_name?></td>
             <td> <?php echo 'Day_Phone: '.$vet->day_phone ?> <br> <?php echo 'Cell_Phone: '.$vet->cell_phone?> </td>
-            <td> <?php if ($guardian[0] != null) { echo  $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name } else {echo "None"}?></td>
-            <td> <?php if ($guardian[0] != null) { echo  'Day_Phone: '.$guardian[0]->day_phone ?> <br> <?php echo 'Cell_Phone: '.$guardian[0]->cell_phone } else {echo "None"}?> </td>
+            <td> <?php if ($guardian[0] != null) { echo  $guardian[0]->first_name." ".$guardian[0]->last_name } else {echo "None"}?></td>
+            <td> <?php if ($guardian[0] != null) { echo  'Day_Phone: '.$guardian[0]->day_phone.'<br> Cell_Phone: '.$guardian[0]->cell_phone } else {echo "None"}?> </td>
             <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>)"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>)"  > REMOVE </button> </td>
 
         </tr>
