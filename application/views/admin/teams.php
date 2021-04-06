@@ -6,11 +6,11 @@
     $(document).ready( function () {
     $('#<?php echo $tem->color ?>Vet').DataTable({
   "columns": [
+    null,
     { "width": "19%" },
-    { "width": "19%" },
-    { "width": "19%" },
-    { "width": "19%" },
-    { "width": "19%" }
+    null,
+    null,
+    null
   ]
 });
 } );
