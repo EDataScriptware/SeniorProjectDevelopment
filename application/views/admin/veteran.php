@@ -50,7 +50,7 @@
             ?>
             </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $vet->veteran_id ?>)" > EDIT </button> 
-                 <button type="button" class="btn btn-primary" onclick = "editGuardBlock(<?php echo $vet->guardian_id ?>)" > GUARDIAN EDIT </button> </td>
+                 <!-- <button type="button" class="btn btn-primary" onclick = "editGuardBlock(<?php // echo $vet->guardian_id ?>)" > GUARDIAN EDIT </button> </td> -->
         </tr>
         <?php endforeach ?>
     </tbody>
