@@ -203,7 +203,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Guardian_model');
 		$id = $this->input->post('id');
 		
-		$data = $this->Veteran_model->get_one_guardian($id);
+		$data = $this->Guardian_model->get_one_guardian($id);
 		
 		echo json_encode($data);
 	}
