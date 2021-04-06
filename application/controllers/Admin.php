@@ -185,7 +185,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Veteran_model');
 		$id = $this->input->post('id');
 		
-		$data = $this->User_model->get_one_veteran($id);
+		$data = $this->Veteran_model->get_one_veteran($id);
 		
 		echo json_encode($data);
 	}
