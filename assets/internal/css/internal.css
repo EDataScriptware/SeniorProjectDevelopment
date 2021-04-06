@@ -182,9 +182,9 @@
 	top: 0; 
 	right: 0;
 	background-color: lightgray; 
-	overflow-x: scroll; 
+	overflow-x: hidden; 
 	padding-top: 60px; 
-	overflow-y: hidden;
+	overflow-y: scroll;
 	transition: 0.5s; 
   }
 
