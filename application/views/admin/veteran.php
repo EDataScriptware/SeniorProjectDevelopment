@@ -178,7 +178,6 @@
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
             
-
             document.getElementById("update").action = "Admin/updateVet/"+$result[0].iduser;
 
             <?php foreach ($about as $aboot): ?>
@@ -198,11 +197,15 @@
             <?php endforeach ?>
 
             <?php foreach ($mobility as $mob): ?>
-                document.getElementById('<?php echo $mob ?>').value = $result[0]['<?php echo $mob ?>'];
+                if ($result[0]['<?php echo $mob ?>'] == 1) {$('#<?php echo $mob ?>').prop('checked', true);} 
+                else {$('#<?php echo $mob ?>').prop('checked', false); }
             <?php endforeach ?>
 
             <?php foreach ($conditions as $con): ?>
                 document.getElementById('<?php echo $con ?>').value = $result[0]['<?php echo $con ?>'];
+                
+                if ($result[0]['<?php echo $con ?>'] == 1) { $('#<?php echo $con ?>').prop('checked', true);}
+                else { $('#<?php echo $con ?>').prop('checked', false);}
             <?php endforeach ?>
 
         document.getElementById("med_list").value = $result[0]['med_list'];
