@@ -193,8 +193,7 @@
             <?php foreach ($conditions as $con): ?>
                 document.getElementById(<?php $con ?>).value = $result[0]['<?php $con ?>'];
             <?php endforeach ?>
-
-	    <textarea id="med_list" name="med_list" rows="4" cols="50"></textarea> 
+            
         document.getElementById("med_list").value = $result[0]['med_list'];
         document.getElementById("med_flow_rate").value = $result[0]['med_flow_rate'];
         document.getElementById("med_when_use").value = $result[0]['med_when_use'];
