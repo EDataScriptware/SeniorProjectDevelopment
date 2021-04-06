@@ -50,7 +50,7 @@
             ?>
             </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $vet->veteran_id ?>)" > EDIT </button> 
-                 <button type="button" class="btn btn-primary" onclick = "editGuardBlock(<?php echo $vet->veteran_id ?>,<?php echo $vet->guardian_id ?>)" > GUARDIAN EDIT </button> </td>
+                 <button type="button" class="btn btn-primary" onclick = "editGuardBlock(<?php echo $vet->guardian_id ?>)" > GUARDIAN EDIT </button> </td>
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -146,12 +146,17 @@
         <h4> Medical Chair Location: </h4>
 	    <textarea id="med_chair_loc" name="med_chair_loc" rows="4" cols="50"></textarea>
         
+
+        <hr>
+
+            <button type="submit" class="btn btn-primary" form="update">Save changes</button>
         
     </form>
 
-    <hr>
+    <form id = "updateGuard">
 
-    <button type="submit" class="btn btn-primary" form="update">Save changes</button>
+    </form>
+
 
 </div>
 
@@ -180,6 +185,9 @@
 
             document.getElementById("bigName").value = $result[0]['first_name'] + " " + $result[0]['last_name'];
             document.getElementById("tinyId").value = "{" + $result[0]['veteran_id'] + '}';
+            
+            document.getElementById("update").style.display = "block";
+            document.getElementById("updateGuard").style.display = "none";
 
             <?php foreach ($about as $aboot): ?>
                 document.getElementById('<?php echo $aboot ?>').value = $result[0]['<?php echo $aboot ?>'];
@@ -220,14 +228,17 @@
 
         
         function editGuardBlock($id) {
-        $.post('Admin/getVeteranGuardian', {id: $id}, function (data) {
+        $.post('Admin/getVetGuardian', {id: $id}, function (data) {
             var $result = JSON.parse(data);
             console.log($result[0]);
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
+
+            document.getElementById("update").style.display = "block";
+            document.getElementById("updateGuard").style.display = "none";
             
 
-            document.getElementById("update").action = "Admin/updateVet/"+$result[0].iduser;
+            document.getElementById("update").action = "Admin/updateVet/"+$result[0].guardian_id;
 
         });       
         }
