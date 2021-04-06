@@ -163,7 +163,6 @@ class Admin extends CI_Controller {
 		redirect('veterans');
 	}
 
-
 	public function addUser() {
 		$postData = $this->input->post();
 

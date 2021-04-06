@@ -178,8 +178,8 @@
             
             document.getElementById("update").action = "Admin/updateVeteran/"+$result[0].iduser;
 
-            document.getElementById("bigName").value = result[0]['first_name'] + " " + result[0]['last_name'];
-            document.getElementById("tinyId").value = "{" + result[0]['veteran_id'] + '}';
+            document.getElementById("bigName").value = $result[0]['first_name'] + " " + $result[0]['last_name'];
+            document.getElementById("tinyId").value = "{" + $result[0]['veteran_id'] + '}';
 
             <?php foreach ($about as $aboot): ?>
                 document.getElementById('<?php echo $aboot ?>').value = $result[0]['<?php echo $aboot ?>'];
