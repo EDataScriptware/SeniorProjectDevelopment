@@ -46,7 +46,7 @@ class Admin extends CI_Controller {
 		$data['team'] = $this->db->get()->result();
 
 		$this->load->view('admin/template/header');
-		$this->load->view('admin/teams');
+		$this->load->view('admin/teams' , $data);
 		$this->load->view('admin/template/footer');
 	}
 	public function userView() //User View
