@@ -1,13 +1,9 @@
 # Senior Project Development - Rochester Honor Flight
-## The Raspberry Pi 3 Server Requirement Specifications
+## The Raspberry Pi 4 Server Requirement Specifications
 
 **Linux OS Distribution Family:** Debian-based
 
 **Linux OS:** Raspbian 10 (Buster)
-
-**IP Address:** 129.21.148.57
-
-**Hostname:** http://rwby.student.rit.edu/
 
 **Localhost:** 127.0.0.1
 
@@ -21,12 +17,12 @@
 
 **Python Version:** Python 3.7.3
 
-## Updating the Raspberry Pi 3 Server
-"Every minute updates the Raspberry Pi 3."
+## Updating the Raspberry Pi 4 Server
+"Every minute updates the Raspberry Pi 4."
 Current Process: 
 1. Cron will be triggered and create a process what is called a "cronjob."
 2. The cronjob will initiate bash tasks in the script. 
-3. Bash task will pull the recent changes from the master branch to the Raspberry Pi 3 database.
+3. Bash task will pull the recent changes from the master branch to the Raspberry Pi 4 database.
 
 ## Deployment Plan
 ### Standalone File deployment.sh && CREATE_honorflight.sql
