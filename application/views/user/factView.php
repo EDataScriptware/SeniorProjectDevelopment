@@ -1,1 +1,0 @@
-<p> Fact View </p>

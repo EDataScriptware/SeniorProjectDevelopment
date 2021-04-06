@@ -77,24 +77,10 @@ class User extends CI_Controller {
 		$this->load->view('user/template/footer');
 	}
 
-    public function crewView() //Crew View
+    public function fileView() //all important files can be viewed here View
 	{
         $this->load->view('user/template/header');
-		$this->load->view('user/crewView');
-		$this->load->view('user/template/footer');
-	}
-
-    public function crisisView() //Crisis View
-	{
-        $this->load->view('user/template/header');
-		$this->load->view('user/crisisView');
-		$this->load->view('user/template/footer');
-	}
-
-    public function factView() //Factsheet view
-	{
-        $this->load->view('user/template/header');
-		$this->load->view('user/factView');
+		$this->load->view('user/fileView');
 		$this->load->view('user/template/footer');
 	}
 

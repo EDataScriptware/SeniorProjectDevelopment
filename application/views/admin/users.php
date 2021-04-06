@@ -11,7 +11,10 @@
             <th>User Type</th>
             <th>Permissions Level</th>
             <th>User Name</th>
+            <th>Name </th>
+            <th> Contact </th>
             <th>Team</th>
+            <th>Bus</th>
             <th>notes</th>
             <th> Action </th>
         </tr>
