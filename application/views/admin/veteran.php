@@ -161,7 +161,7 @@
         <script>
 
         function editBlock($id) {
-        $.post('Admin/getVeteran', {id: $id}, function (data) {
+        $.post('Admin/getVet', {id: $id}, function (data) {
             var $result = JSON.parse(data);
             console.log($result[0]);
             document.getElementById("whiteEdit").style.width = "550px";
