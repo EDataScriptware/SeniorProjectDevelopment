@@ -1,17 +1,15 @@
 ```# Senior Project Development - Rochester Honor Flight
 ## The Raspberry Pi 3 Server Requirement Specifications
 
+**Linux OS Distribution Family:** Debian-based
+
 **Linux OS:** Raspbian 10 (Buster)
 
 **IP Address:** 129.21.148.57
 
 **Hostname:** http://rwby.student.rit.edu/
 
-**Username:** pi
-
-**Password:** [REDACTED] - SECURITY REASONS
-
-**Localhost:** raspberrypi
+**Localhost:** 127.0.0.1
 
 **PHP Version**: 7.3.19-1~deb10u1
 
@@ -23,7 +21,6 @@
 
 **Python Version:** Python 3.7.3
 
-
 ## Updating the Raspberry Pi 3 Server
 "Every minute updates the Raspberry Pi 3."
 Current Process: 
@@ -31,3 +28,12 @@ Current Process:
 2. The cronjob will initiate bash tasks in the script. 
 3. Bash task will pull the recent changes from the master branch to the Raspberry Pi 3 database.
 
+## Deployment Plan
+### Standalone File deployment.sh && CREATE_honorflight.sql
+In your terminal inside the SeniorProjectDevelopment directory. 
+```
+sudo bash deployment/deployment.sh 
+mysql -u insert_username -p < CREATE_honorflight.sql
+```
+
+When the script is completed, you will receive a message `deployment.sh execution complete!`
