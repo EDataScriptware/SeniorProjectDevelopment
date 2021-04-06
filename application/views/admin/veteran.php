@@ -61,10 +61,20 @@
 
         <div id="whiteEdit" class="whiteEdit">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h2 id = "bigName"> </h2>
+        <p id = "tinyId"> </p>
     <form id = "update" method = "POST">
 
-    <h2 id = "bigName"> </h2>
-    <p id = "tinyId"> </p>
+
+    <label for="team_id">Team Id:</label>
+    <select id="team_id" name="team_id">
+    <?php foreach($team as $tem): ?>
+    <?php if ($tem->mission_id === $id) { ?>
+    <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color?></option>
+
+    <?php } ?>
+    <?php endforeach ?>
+    </select> <br>
 
         <h3>About</h3>
 
@@ -183,8 +193,8 @@
             
             document.getElementById("update").action = "Admin/updateVeteran/"+$result[0].veteran_id;
 
-            document.getElementById("bigName").value = $result[0]['first_name'] + " " + $result[0]['last_name'];
-            document.getElementById("tinyId").value = "{" + $result[0]['veteran_id'] + '}';
+            document.getElementById("bigName").innerHTML = $result[0]['first_name'] + " " + $result[0]['last_name'];
+            document.getElementById("tinyId").innerHTML = "{" + $result[0]['veteran_id'] + '}';
             
             document.getElementById("update").style.display = "block";
             document.getElementById("updateGuard").style.display = "none";

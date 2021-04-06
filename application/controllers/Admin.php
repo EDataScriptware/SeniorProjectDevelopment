@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
 		$this->load->helper('url_helper');
 	}
 
-	public function index()
+	public function index() // Bus book View
 	{
 		$this->load->model('Veteran_model');
 		$data['queryData'] = $this->Veteran_model->get_all_veteran_data(); //3700
@@ -19,19 +19,37 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/footer');
 	}
 
-	public function docView() //Crew View
+	public function docView() //Document View
 	{
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/documents');
 		$this->load->view('admin/template/footer');
 	}
-	public function teamView() //Crew View
+	public function teamView() //Team View
 	{
+		$this->load->model('User_model');
+		$this->load->model('Veteran_model');
+
+		$this->db->select_max("mission_id");
+		$this->db->from('team');
+
+		$currMission_id = implode($this->db->get()->row_array());
+
+		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
+		$data['user'] = $this->User_model->get_all_user_data();
+		$data['id'] = $currMission_id;
+
+		$this->db->select("*");
+		$this->db->from('team');
+		$this->db->where('mission_id', $currMission_id);
+
+		$data['team'] = $this->db->get()->result();
+
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/teams');
 		$this->load->view('admin/template/footer');
 	}
-	public function userView() //Crew View
+	public function userView() //User View
 	{
 		$this->load->model('User_model');
 		$this->load->model('Team_model');
@@ -43,6 +61,7 @@ class Admin extends CI_Controller {
 
 		$data['user'] = $this->User_model->get_all_user_data();
 		$data['team'] = $this->Team_model->get_all_team_data();
+		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
 		$data['id'] = $currMission_id;
 
 		$this->load->view('admin/template/header');
