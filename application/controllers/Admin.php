@@ -61,7 +61,6 @@ class Admin extends CI_Controller {
 
 		$data['user'] = $this->User_model->get_all_user_data();
 		$data['team'] = $this->Team_model->get_all_team_data();
-		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
 		$data['id'] = $currMission_id;
 
 		$this->load->view('admin/template/header');
