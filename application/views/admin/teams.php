@@ -8,7 +8,7 @@
 } );
     </script>
 <h2> Veterans </h2>
-
+<div class = "scrunch"> 
 <table id="<?php echo $tem->color ?>Vet"  class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -32,19 +32,17 @@
     
         <tr>
             <td> <?php echo $vet->first_name ?> <?php echo$vet->last_name?></td>
-            <td> <?php echo 'Day_Phone: '.$vet->day_phone ?> 
-            <?php echo 'Cell_Phone: '.$vet->cell_phone?> 
-        </td>
+            <td> <?php echo 'Day_Phone: '.$vet->day_phone ?> <br> <?php echo 'Cell_Phone: '.$vet->cell_phone?> </td>
             <td> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?></td>
-            <td> <?php echo 'Day_Phone: '.$guardian[0]->day_phone ?>
-            <?php echo 'Cell_Phone: '.$guardian[0]->cell_phone?>
-         </td>
+            <td> <?php echo 'Day_Phone: '.$guardian[0]->day_phone ?> <br> <?php echo 'Cell_Phone: '.$guardian[0]->cell_phone?> </td>
             <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>)"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>)"  > REMOVE </button> </td>
 
         </tr>
         <?php endforeach ?>
     </tbody>
 </table>
+</div>
+
 <button type="button" class="btn btn-primary" onclick = "addVetBlock()"  > Add New Vet </button>
 <button type="button" class="btn btn-primary" onclick = "addUserBlock()"  > Add New User </button>
 <hr>
