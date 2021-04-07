@@ -6,7 +6,7 @@
 
 <?php $about = array('dob','gender','occupation','shirt_size','city','state','zip','day_phone','cell_phone','email','shirt_size', 'branch'); ?>
 <?php $extra = array ('how_heard','why_volunteering','prior_experiences','med_training','med_conditions','diet_restrictions', 'administrative_comments'); ?>
-<?php $references = array('ref_name,','ref_day_phone','ref_evening_phone','ref_address','ref_relationship','ref_email'); ?>
+<?php $references = array('ref_name','ref_day_phone','ref_evening_phone','ref_address','ref_relationship','ref_email'); ?>
 <?php $emergency = array('emergency_name', 'emergency_relationship','emergency_address', 'emergency_day_phone', 'emergency_evening_phone', 'emergency_cell_phone'); ?>
 <?php $particularVet = array ('vet_name','vet_relationship'); ?>
 
