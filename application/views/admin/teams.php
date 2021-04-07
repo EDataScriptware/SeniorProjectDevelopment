@@ -62,6 +62,7 @@
     </thead>
     <tbody>
     <?php foreach ($veteran as $vet): ?>
+        <?php if ($vet->team_id == $tem->team_id) { ?>
 
     <?php
 	$this->db->select("*");
@@ -79,6 +80,7 @@
             <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>,'vet')"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $vet->veteran_id ?>,'vet')"  > REMOVE </button> </td>
 
         </tr>
+        <?php } ?>
         <?php endforeach ?>
     </tbody>
 </table>
