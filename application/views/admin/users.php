@@ -36,15 +36,14 @@
                             }
                         endforeach; 
             ?>  </td>
-                     <td><?php if($vet->mission_id == $id) {
-                  
-                  foreach ($bus as $bub):
-                      if ($user->bus_id == $bub->bus_id) {
-                          echo $bub->name;
-                          break;
-                      }
-                  endforeach; } else { echo 'None';} 
-            
+                     <td><?php                         
+                        foreach ($bus as $bub):
+                            if ($use->bus_id == $bus->bus_id) {
+                                echo $bub->name;
+                                if ($tem->mission_id != $id) { echo "(Outdated)"; }
+                                break;
+                            }
+                        endforeach; 
                   ?>
                   </td>
             <td> <?php echo $use->notes ?>  </td>
