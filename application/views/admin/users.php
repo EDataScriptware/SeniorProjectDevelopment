@@ -40,12 +40,11 @@
                   
                   foreach ($bus as $bub):
                       if ($user->bus_id == $bub->bus_id) {
-                          echo $tem->color;
+                          echo $bub->name;
                           break;
                       }
                   endforeach; } else { echo 'None';} 
-                  
-                  $getter = "";  
+            
                   ?>
                   </td>
             <td> <?php echo $use->notes ?>  </td>
