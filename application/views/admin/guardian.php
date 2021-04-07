@@ -40,7 +40,7 @@
             ?> </td>
             <td><?php echo $guard->dob ?></td>
             <td> Day Phone: <?php echo $guard->day_phone ?> <br> Cell Phone <?php echo $guard->cell_phone ?>  </td>
-            <td><?php $guard->med_training ?> </td>
+            <td><?php echo $guard->med_training ?> </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $guard->guardian_id ?>)" > EDIT </button> 
         </tr>
         <?php endforeach ?>
