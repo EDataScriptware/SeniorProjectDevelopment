@@ -9,8 +9,6 @@
 
 <h2><?php echo $bub->name?> <button type="button" class="btn btn-primary" onclick = "editBus(<?php echo $bub->bus_id ?>)"> Edit</button> </h2>
 
-
-
   <br>  
 <h3> <?php echo $bub->name?> Staff <button type="button" class="btn btn-primary" onclick = "addUserBlock()"  > Add New Staff Member </button></h3>
 
