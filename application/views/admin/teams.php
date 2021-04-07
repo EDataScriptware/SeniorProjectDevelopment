@@ -36,7 +36,7 @@
         <tr>
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name?></td>
             <td> <?php echo $use->user_type?></td>
-            <td> <?php echo'Day Phone: '.$use->day_phone.'<br> Cell Phone: '.$use->cell_phone; }?> </td>
+            <td> <?php echo'Day Phone: '.$use->day_phone.'<br> Cell Phone: '.$use->cell_phone;?> </td>
             <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $use->iduser ?>,'user')"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $use->iduser ?>,'user')"  > REMOVE </button> </td>
 
         </tr>
