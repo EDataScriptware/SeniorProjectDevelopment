@@ -16,7 +16,7 @@
     $('#<?php echo $tem->color ?>User').DataTable();
 } );
     </script>
-<h3> Staff </h3>
+<h3> Staff <button type="button" class="btn btn-primary" onclick = "addUserBlock()"  > Add New User </button></h3>
 
 <div class = "scrunch"> 
 <table id="<?php echo $tem->color ?>User"  class="table table-striped table-bordered">
@@ -44,9 +44,9 @@
 </table>
 </div>
 
-<button type="button" class="btn btn-primary" onclick = "addVetBlock()"  > Add New Vet </button>
 
-<h3> Veterans </h3>
+
+<h3> Veterans <button type="button" class="btn btn-primary" onclick = "addVetBlock()"  > Add New Vet </button> </h3>
 <div class = "scrunch"> 
 <table id="<?php echo $tem->color ?>Vet"  class="table table-striped table-bordered">
     <thead>
@@ -83,8 +83,6 @@
 </table>
 </div>
 
-
-<button type="button" class="btn btn-primary" onclick = "addUserBlock()"  > Add New User </button>
 <hr>
 
 <?php endforeach ?>
