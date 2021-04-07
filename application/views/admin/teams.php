@@ -7,7 +7,7 @@
 
 	$bus = $this->db->get()->result();
     echo json_encode($bus);
-    echo $tem;
+    echo json_encode($tem);
 	?>
 
 <h3> <?php echo $tem->color ?> Team - <?php $bus[0]->name?>  </h3>
