@@ -95,7 +95,7 @@
 
 
         </div>
-        
+
         <h3> Additional Information </h3>
 
         <?php foreach ($extra as $ex): ?>
@@ -143,7 +143,7 @@
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
             
-            document.getElementById("update").action = "Admin/updateVeteran/"+$result[0].veteran_id;
+            document.getElementById("update").action = "Admin/updateGuard/"+$result[0].guardian_id;
 
             document.getElementById("bigName").innerHTML = $result[0]['first_name'] + " " + $result[0]['last_name'];
             document.getElementById("tinyId").innerHTML = "{" + $result[0]['guardian_id'] + '}';
