@@ -1,13 +1,5 @@
 <?php foreach ($bus as $bub): ?>
 
-    <?php
-	$this->db->select("*");
-	$this->db->from('bus');
-	$this->db->where('bus_id',$tem->bus_id);
-
-	$bus = $this->db->get()->result();
-	?>
-
     <script>
     $(document).ready( function () {
     // $('#<?php // echo $tem->color ?>Vet').DataTable();
