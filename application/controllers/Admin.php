@@ -196,7 +196,7 @@ class Admin extends CI_Controller {
 
 	public function updateVeteran($id) {
 		$postData = $this->input->post();
-		$currTime = time();
+		$currTime = date("Y-m-d h:i:s");
 		$data = array('last_updated' => $currTime);
 
 		$this->db->where('veteran_id', $id);
@@ -210,7 +210,7 @@ class Admin extends CI_Controller {
 
 	public function updateGuard($id) {
 		$postData = $this->input->post();
-		$currTime = time();
+		$currTime = date("Y-m-d h:i:s"); 
 		$data = array('last_updated' => $currTime);
 
 		$this->db->where('guardian_id', $id);
