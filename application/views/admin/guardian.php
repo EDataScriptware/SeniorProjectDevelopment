@@ -36,7 +36,7 @@
                 $this->db->where('guardian_id',$guard->guardian_id);
             
                 $vet= $this->db->get()->result();
-                if ($vet != null) { echo $vet[0]->first_name." ".$vet[0]->last_name } else {echo "None"};
+                if ($vet != null) { echo $vet[0]->first_name." ".$vet[0]->last_name; } else {echo "None";};
             ?> </td>
             <td><?php echo $guard->dob ?></td>
             <td> Day Phone: <?php echo $guard->day_phone ?> <br> Cell Phone <?php echo $guard->cell_phone ?>  </td>
