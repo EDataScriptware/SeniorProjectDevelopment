@@ -29,6 +29,7 @@ class Admin extends CI_Controller {
 	{
 		$this->load->model('User_model');
 		$this->load->model('Veteran_model');
+		$this->load->model('Bus_model');
 
 		$this->db->select_max("mission_id");
 		$this->db->from('team');
@@ -36,6 +37,7 @@ class Admin extends CI_Controller {
 		$currMission_id = implode($this->db->get()->row_array());
 
 		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
+		$data['bus'] = $this->Bus_model->get_mission_bus_data($currMission_id);
 		$data['user'] = $this->User_model->get_all_user_data();
 		$data['id'] = $currMission_id;
 

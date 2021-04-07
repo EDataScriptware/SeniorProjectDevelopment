@@ -31,6 +31,17 @@ class Bus_model extends CI_Model {
         return $query;
     }
 
+        # GET BUSSES TIED TO SPECIFIC MISSION
+        public function get_mission_bus_data($id) {
+            $this->db->select("*");
+            $this->db->from('bus');
+            $this->db->where('mission_id',$id);
+    
+            $query = $this->db->get()->result();
+    
+            return $query;
+        }
+
     # GET
     public function getFields() {
 

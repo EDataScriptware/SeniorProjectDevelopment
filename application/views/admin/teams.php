@@ -1,4 +1,4 @@
-<?php foreach ($team as $tem): ?>
+<?php foreach ($bus as $bub): ?>
 
     <?php
 	$this->db->select("*");
@@ -8,20 +8,22 @@
 	$bus = $this->db->get()->result();
 	?>
 
-<h2> <?php echo $tem->color ?> Team - <?php echo $bus[0]->name?> <button type="button" class="btn btn-primary" onclick = "changeBus()"> CHANGE BUS</button> </h2>
-
-<script>
+    <script>
     $(document).ready( function () {
-    $('#<?php echo $tem->color ?>Vet').DataTable();
-    $('#<?php echo $tem->color ?>User').DataTable();
+    // $('#<?php // echo $tem->color ?>Vet').DataTable();
+    $('#<?php echo $bub->bus_id ?>User').DataTable();
 } );
     </script>
 
+<h2><?php echo $bub->name?> <button type="button" class="btn btn-primary" onclick = "editBus(<?php echo $bub->bus_id ?>)"> Edit</button> </h2>
+
+
+
   <br>  
-<h3> Staff <button type="button" class="btn btn-primary" onclick = "addUserBlock()"  > Add New User </button></h3>
+<h3> <?php echo $bub->name?> Staff <button type="button" class="btn btn-primary" onclick = "addUserBlock()"  > Add New Staff Member </button></h3>
 
 <div class = "scrunch"> 
-<table id="<?php echo $tem->color ?>User"  class="table table-striped table-bordered">
+<table id="<?php echo $bub->bus_id ?>User"  class="table table-striped table-bordered">
     <thead>
         <tr>
             <th>Name</th>
@@ -46,6 +48,14 @@
 </table>
 </div>
 
+<?php foreach ($team as $tem): ?>
+    <?php if ($tem->bus_id == $bub->bus_id) { ?>
+
+        <script>
+    $(document).ready( function () {
+    $('#<?php // echo $tem->color ?>Vet').DataTable();
+    } );
+    </script>
 
 <br>  
 <h3> Veterans <button type="button" class="btn btn-primary" onclick = "addVetBlock()"  > Add New Vet </button> </h3>
@@ -84,6 +94,8 @@
     </tbody>
 </table>
 </div>
+<?php } ?>
+<?php endforeach ?>
 
 <hr>
 
@@ -95,7 +107,7 @@ function addVetBlock() {
 
 }
 
-function changeBus() {
+function editBus($busId) {
 
 }
 
