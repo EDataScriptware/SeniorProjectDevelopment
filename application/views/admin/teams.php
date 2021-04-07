@@ -6,7 +6,7 @@
 	$this->db->where('bus_id',$tem->bus_id);
 
 	$bus = $this->db->get()->result();
-    echo json_encode($bus);
+    echo json_encode($bus[0]);
     echo json_encode($tem);
 	?>
 
@@ -46,6 +46,7 @@
 </table>
 </div>
 
+<button type="button" class="btn btn-primary" onclick = "addVetBlock()"  > Add New Vet </button>
 
 <h3> Veterans </h3>
 <div class = "scrunch"> 
@@ -84,7 +85,7 @@
 </table>
 </div>
 
-<button type="button" class="btn btn-primary" onclick = "addVetBlock()"  > Add New Vet </button>
+
 <button type="button" class="btn btn-primary" onclick = "addUserBlock()"  > Add New User </button>
 <hr>
 
