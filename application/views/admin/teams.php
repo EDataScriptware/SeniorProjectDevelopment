@@ -48,7 +48,7 @@
     </script>
 
 <br>  
-<h3> Team <?php $tem->color ?> Veterans <button type="button" class="btn btn-primary" onclick = "addVetBlock()"  > Add </button> </h3>
+<h3> Team <?php echo $tem->color ?> Veterans <button type="button" class="btn btn-primary" onclick = "addVetBlock()"  > Add </button> </h3>
 <div class = "scrunch"> 
 <table id="<?php echo $tem->color ?>Vet"  class="table table-striped table-bordered">
     <thead>
