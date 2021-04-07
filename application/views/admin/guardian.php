@@ -33,7 +33,7 @@
             <td>  <?php 
             	$this->db->select("*");
                 $this->db->from('veteran');
-                $this->db->where('guardian_id',$guard->$guard_id);
+                $this->db->where('guardian_id',$guard->guardian_id);
             
                 $vet= $this->db->get()->result();
                 echo $vet[0]->first_name." ".$vet[0]->last_name;
