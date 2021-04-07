@@ -160,10 +160,6 @@
         
     </form>
 
-    <form id = "updateGuard">
-
-    </form>
-
 
 </div>
 
@@ -191,9 +187,6 @@
 
             document.getElementById("bigName").innerHTML = $result[0]['first_name'] + " " + $result[0]['last_name'];
             document.getElementById("tinyId").innerHTML = "{" + $result[0]['veteran_id'] + '}';
-            
-            document.getElementById("update").style.display = "block";
-            document.getElementById("updateGuard").style.display = "none";
 
             <?php foreach ($about as $aboot): ?>
                 document.getElementById('<?php echo $aboot ?>').value = $result[0]['<?php echo $aboot ?>'];
@@ -232,22 +225,6 @@
         });       
         }
 
-        
-        function editGuardBlock($id) {
-        $.post('Admin/getVetGuardian', {id: $id}, function (data) {
-            var $result = JSON.parse(data);
-            console.log($result[0]);
-            document.getElementById("whiteEdit").style.width = "550px";
-            document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
-
-            document.getElementById("update").style.display = "block";
-            document.getElementById("updateGuard").style.display = "none";
-            
-
-            document.getElementById("update").action = "Admin/updateVet/"+$result[0].guardian_id;
-
-        });       
-        }
 
         function closeNav() {
         document.getElementById("whiteEdit").style.width = "0";

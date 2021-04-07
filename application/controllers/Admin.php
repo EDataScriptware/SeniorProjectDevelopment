@@ -111,6 +111,7 @@ class Admin extends CI_Controller {
 		$currMission_id = implode($this->db->get()->row_array());
 
 		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
+		$data['guardian'] = $this->Veteran_model->get_all_guardian_data();
 		$data['team'] = $this->Team_model->get_all_team_data();
 		$data['id'] = $currMission_id;
 
@@ -197,11 +198,30 @@ class Admin extends CI_Controller {
 
 	public function updateVeteran($id) {
 		$postData = $this->input->post();
+		$currTime = time();
+		$data = array('last_updated': $currTime);
 
 		$this->db->where('veteran_id', $id);
 		$this->db->update('veteran', $postData); 
 
+		$this->db->where('veteran_id', $id);
+		$this->db->update('veteran', $data); 
+
 		redirect('veterans');
+	}
+
+	public function updateGuard($id) {
+		$postData = $this->input->post();
+		$currTime = time();
+		$data = array('last_updated': $currTime);
+
+		$this->db->where('guardian_id', $id);
+		$this->db->update('guardian', $postData); 
+
+		$this->db->where('guardian_id', $id);
+		$this->db->update('guardian', $data); 
+
+		redirect('guardians');
 	}
 
 	public function addUser() {
@@ -240,7 +260,7 @@ class Admin extends CI_Controller {
 		echo json_encode($data);
 	}
 
-	public function getVetGuardian() {
+	public function getGuard() {
 		$this->load->model('Guardian_model');
 		$id = $this->input->post('id');
 		
