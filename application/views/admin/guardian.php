@@ -33,7 +33,7 @@
             <td>  <?php 
             	$this->db->select("*");
                 $this->db->from('veteran');
-                $this->db->where('guardian_id',$tem->$guard_id);
+                $this->db->where('guardian_id',$guard->$guard_id);
             
                 $vet= $this->db->get()->result();
                 echo $vet[0]->first_name." ".$vet[0]->last_name;
@@ -55,17 +55,6 @@
         <h2 id = "bigName"> </h2>
         <p id = "tinyId"> </p>
     <form id = "update" method = "POST">
-
-
-    <label for="team_id">Team Id:</label>
-    <select id="team_id" name="team_id">
-    <?php foreach($team as $tem): ?>
-    <?php if ($tem->mission_id === $id) { ?>
-    <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color?></option>
-
-    <?php } ?>
-    <?php endforeach ?>
-    </select> <br>
 
         <h3>About</h3>
 
