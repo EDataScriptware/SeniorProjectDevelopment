@@ -8,7 +8,7 @@
 	$bus = $this->db->get()->result();
 	?>
 
-<h2> <?php echo $tem->color ?> Team - <?php echo $bus[0]->name?>  </h2>
+<h2> <?php echo $tem->color ?> Team - <?php echo $bus[0]->name?> <button type="button" class="btn btn-primary" onclick = "changeBus()"  > EDIT </button> </h2>
 
 <script>
     $(document).ready( function () {
@@ -92,6 +92,10 @@
 
 <script> 
 function addVetBlock() {
+
+}
+
+function changeBus() {
 
 }
 
