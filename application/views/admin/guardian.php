@@ -78,7 +78,7 @@
 
         <?php foreach ($emergency as $emo): ?>
 		<?php 
-			echo str_replace('_', ' ',ucfirst($com)).": <input type='text' id='$com' name='$com' class = 'infoInput'>";
+			echo str_replace('_', ' ',ucfirst($emo)).": <input type='text' id='$emo' name='$emo' class = 'infoInput'>";
 			echo '<br>';
 	        ?>
         <?php endforeach ?>
