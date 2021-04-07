@@ -109,7 +109,7 @@ class Admin extends CI_Controller {
 
 		$currMission_id = implode($this->db->get()->row_array());
 
-		$data['guardian'] = $this->Guardian->get_all_guardian_data();
+		$data['guardian'] = $this->Guardian_model->get_all_guardian_data();
 		$data['team'] = $this->Team_model->get_all_team_data();
 		$data['id'] = $currMission_id;
 
