@@ -10,7 +10,7 @@
     echo json_encode($tem);
 	?>
 
-<h3> <?php echo $tem->color ?> Team - <?php $bus[0]->name?>  </h3>
+<h2> <?php echo $tem->color ?> Team - <?php $bus[0]->name?>  </h2>
 
 <script>
     $(document).ready( function () {
@@ -18,7 +18,7 @@
     $('#<?php echo $tem->color ?>User').DataTable();
 } );
     </script>
-<h2> Staff </h2>
+<h3> Staff </h3>
 
 <div class = "scrunch"> 
 <table id="<?php echo $tem->color ?>User"  class="table table-striped table-bordered">
@@ -47,7 +47,7 @@
 </div>
 
 
-<h2> Veterans </h2>
+<h3> Veterans </h3>
 <div class = "scrunch"> 
 <table id="<?php echo $tem->color ?>Vet"  class="table table-striped table-bordered">
     <thead>
