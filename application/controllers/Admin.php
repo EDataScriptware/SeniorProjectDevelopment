@@ -101,7 +101,6 @@ class Admin extends CI_Controller {
 
 	public function guardView() //Crew View
 	{
-		$this->load->model('Veteran_model');
 		$this->load->model('Guardian_model');
 		$this->load->model('Team_model');
 
@@ -110,8 +109,7 @@ class Admin extends CI_Controller {
 
 		$currMission_id = implode($this->db->get()->row_array());
 
-		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
-		$data['guardian'] = $this->Veteran_model->get_all_guardian_data();
+		$data['guardian'] = $this->Guardian->get_all_guardian_data();
 		$data['team'] = $this->Team_model->get_all_team_data();
 		$data['id'] = $currMission_id;
 
