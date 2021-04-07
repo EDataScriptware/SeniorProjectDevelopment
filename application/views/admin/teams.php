@@ -43,7 +43,7 @@
 
         <script>
     $(document).ready( function () {
-    $('#<?php // echo $tem->color ?>Vet').DataTable();
+    $('#<?php echo $tem->color ?>Vet').DataTable();
     } );
     </script>
 
