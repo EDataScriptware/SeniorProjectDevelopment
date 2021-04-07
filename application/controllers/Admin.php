@@ -199,7 +199,7 @@ class Admin extends CI_Controller {
 	public function updateVeteran($id) {
 		$postData = $this->input->post();
 		$currTime = time();
-		$data = array('last_updated': $currTime);
+		$data = array('last_updated' => $currTime);
 
 		$this->db->where('veteran_id', $id);
 		$this->db->update('veteran', $postData); 
