@@ -213,7 +213,7 @@ class Admin extends CI_Controller {
 	public function updateGuard($id) {
 		$postData = $this->input->post();
 		$currTime = time();
-		$data = array('last_updated': $currTime);
+		$data = array('last_updated' => $currTime);
 
 		$this->db->where('guardian_id', $id);
 		$this->db->update('guardian', $postData); 
