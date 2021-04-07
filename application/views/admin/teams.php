@@ -30,15 +30,8 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach ($veteran as $vet): ?>
-
-    <?php
-	$this->db->select("*");
-	$this->db->from('guardian');
-	$this->db->where('guardian_id',$vet->guardian_id);
-
-	$guardian = $this->db->get()->result();
-	?>
+    <?php foreach ($user as $use): ?>
+        <?php if ($use->bus_id == $bus[0]->bus_id) { ?>
     
         <tr>
             <td> <?php echo $vet->first_name ?> <?php echo$vet->last_name?></td>
@@ -48,6 +41,7 @@
             <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>)"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>)"  > REMOVE </button> </td>
 
         </tr>
+        <?php } ?>
         <?php endforeach ?>
     </tbody>
 </table>
