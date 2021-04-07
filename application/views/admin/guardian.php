@@ -105,11 +105,6 @@
 	        ?>
         <?php endforeach ?>
 
-
-
-
-        
-
         <hr>
 
             <button type="submit" class="btn btn-primary" form="update">Save changes</button>
