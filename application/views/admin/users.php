@@ -11,12 +11,12 @@
             <th>User Type</th>
             <th>Permissions Level</th>
             <th>User Name</th>
-            <th>Name </th>
-            <th> Contact </th>
+            <th>Name</th>
+            <th>Contact</th>
             <th>Team</th>
             <th>Bus</th>
             <th>notes</th>
-            <th> Action </th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -25,17 +25,29 @@
             <td> <?php echo $use->user_type ?> </td>
             <td> <?php echo $use->user_permissions ?>  </td>
             <td> <?php echo $use->username ?>  </td>
+            <td> <?php echo $use->first_name ?> <?php echo $use->last_name ?>  </td>
+            <td> <?php echo $use->day_phone ?> <br> <?php echo $use->cell_phone ?>  </td>
             <td> <?php
                         foreach ($team as $tem):
                             if ($use->team_id == $tem->team_id) {
                                 echo $tem->color;
-                                if ($tem->mission_id != $id) {
-                                    echo "(Outdated)";
-                                }
+                                if ($tem->mission_id != $id) { echo "(Outdated)"; }
                                 break;
                             }
                         endforeach; 
             ?>  </td>
+                     <td><?php if($vet->mission_id == $id) {
+                  
+                  foreach ($bus as $bub):
+                      if ($user->bus_id == $bub->bus_id) {
+                          echo $tem->color;
+                          break;
+                      }
+                  endforeach; } else { echo 'None';} 
+                  
+                  $getter = "";  
+                  ?>
+                  </td>
             <td> <?php echo $use->notes ?>  </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
         </tr>

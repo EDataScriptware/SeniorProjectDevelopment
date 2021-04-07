@@ -50,9 +50,11 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/footer');
 	}
 	public function userView() //User View
-	{
+	{	
+
 		$this->load->model('User_model');
 		$this->load->model('Team_model');
+		$this->load->model('Bus_model');
 
 		$this->db->select_max("mission_id");
 		$this->db->from('team');
@@ -60,6 +62,7 @@ class Admin extends CI_Controller {
 		$currMission_id = implode($this->db->get()->row_array());
 
 		$data['user'] = $this->User_model->get_all_user_data();
+		$data['bus'] = $this->Bus_model->get_all_bus_data();
 		$data['team'] = $this->Team_model->get_all_team_data();
 		$data['id'] = $currMission_id;
 
