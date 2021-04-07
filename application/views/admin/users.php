@@ -38,7 +38,7 @@
             ?>  </td>
                      <td><?php                         
                         foreach ($bus as $bub):
-                            if ($use->bus_id == $bus->bus_id) {
+                            if ($use->bus_id == $bub->bus_id) {
                                 echo $bub->name;
                                 if ($tem->mission_id != $id) { echo "(Outdated)"; }
                                 break;
