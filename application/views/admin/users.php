@@ -15,7 +15,7 @@
             <th>Contact</th>
             <th>Team</th>
             <th>Bus</th>
-            <th>notes</th>
+            <th>Notes</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -23,7 +23,22 @@
     <?php foreach ($user as $use): ?>
         <tr>
             <td> <?php echo $use->user_type ?> </td>
-            <td> <?php echo $use->user_permissions ?>  </td>
+            <td> <?php
+            switch ($use->user_permissions) {
+                case 0:
+                    echo "Administrator";
+                    break;
+                case 1:
+                    echo "Group Leader";
+                    break;
+                case 2:
+                    echo "Group Assistant";
+                    break;
+                case 3:
+                    echo "Generic User";
+                    break;
+            }
+            echo $use->user_permissions ?>  </td>
             <td> <?php echo $use->username ?>  </td>
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name ?>  </td>
             <td> <?php echo 'Day_Phone: '.$use->day_phone ?> <br> <?php echo 'Cell_Phone: '.$use->cell_phone ?>  </td>
@@ -72,10 +87,9 @@
 
   <label for="user_permissions">User Permissions:</label>
   <select id="user_permissions" name="user_permissions">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
+  <option value="1">1 (Leader Privileges)</option>
+  <option value="2">2 (Assistant Privileges)</option>
+  <option value="3">3 (User Privileges)</option>
 </select> <br>
 
     <label for="team_id">Team Id:</label>
