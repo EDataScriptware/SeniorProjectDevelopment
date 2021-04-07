@@ -6,11 +6,9 @@
 	$this->db->where('bus_id',$tem->bus_id);
 
 	$bus = $this->db->get()->result();
-    echo json_encode($bus[0]);
-    echo json_encode($tem);
 	?>
 
-<h2> <?php echo $tem->color ?> Team - <?php $bus[0]->name?>  </h2>
+<h2> <?php echo $tem->color ?> Team - <?php echo $bus[0]->name?>  </h2>
 
 <script>
     $(document).ready( function () {
