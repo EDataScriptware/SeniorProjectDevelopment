@@ -3,7 +3,7 @@ $unUserCheck = false;
 $unVetCheck = false;
 
 ?>
-
+<div class = "scrunch"> 
 <?php foreach ($bus as $bub): ?>
 
     <script>
@@ -18,7 +18,7 @@ $unVetCheck = false;
   <br>  
 <h3> <?php echo $bub->name?> Staff <button type="button" class="btn btn-primary" onclick = "addUserBlock(<?php echo $bub->bus_id ?>)"  > Add New Staff Member </button></h3>
 
-<div class = "scrunch"> 
+
 <table id="<?php echo $bub->bus_id ?>User"  class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -42,7 +42,6 @@ $unVetCheck = false;
         <?php endforeach ?>
     </tbody>
 </table>
-</div>
 
 <?php foreach ($team as $tem): ?>
     <?php if ($tem->bus_id == $bub->bus_id) { ?>
@@ -55,7 +54,6 @@ $unVetCheck = false;
 
 <br>  
 <h3> Team <?php echo $tem->color ?> Veterans <button type="button" class="btn btn-primary" onclick = "addVetBlock()"  > Add </button> </h3>
-<div class = "scrunch"> 
 <table id="<?php echo $tem->color ?>Vet"  class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -89,7 +87,7 @@ $unVetCheck = false;
         <?php endforeach ?>
     </tbody>
 </table>
-</div>
+
 <?php } ?>
 <?php endforeach ?>
 
@@ -112,7 +110,7 @@ $unVetCheck = false;
 <?php if ($unUserCheck == true) { ?> 
 <h3> Staff</h3>
 
-<div class = "scrunch"> 
+
 <table id="unUser"  class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -136,7 +134,6 @@ $unVetCheck = false;
         <?php endforeach ?>
     </tbody>
 </table>
-</div>
 
 <?php } ?>
 
@@ -178,7 +175,7 @@ $unVetCheck = false;
 <?php } ?>
 <?php } ?>
 
-
+</div>
 
 <script> 
 function addVetBlock() {
