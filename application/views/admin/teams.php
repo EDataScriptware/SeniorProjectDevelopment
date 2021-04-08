@@ -175,15 +175,7 @@ $unVetCheck = false;
         <?php endforeach ?>
     </tbody>
 </table>
-
-
-
-
 <?php } ?>
-
-
-
-
 <?php } ?>
 
 
