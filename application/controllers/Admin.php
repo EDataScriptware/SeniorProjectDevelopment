@@ -280,7 +280,7 @@ class Admin extends CI_Controller {
 		$this->db->update('user', $data); 
 
 		}
-		else if ($type === "vet") {
+		else if ($type === "veteran") {
 			$data = array('team_id' => null);
 
 			$this->db->where('veteran_id', $id);
