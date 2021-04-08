@@ -200,7 +200,7 @@ function moveBlock($id, $type) {
 
 function removeBlock($id, $type) {
 
-    if (confirm("Are you sure you want to remove this " $type " from the mission? You can undo this."  )) {
+    if (confirm("Are you sure you want to remove this " + $type + " from the mission? You can undo this."  )) {
         $.post('Admin/removeType', {id: $id, type: $type}, function () {
         location.reload();
 
