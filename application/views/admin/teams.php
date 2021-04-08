@@ -140,7 +140,7 @@ $unVetCheck = false;
 
 <?php } ?>
 
-<?php if ($unUserCheck == true) { ?> 
+<?php if ($unVetCheck == true) { ?> 
 <h3> Veterans</h3>
 
 <table id="unVet"  class="table table-striped table-bordered">
