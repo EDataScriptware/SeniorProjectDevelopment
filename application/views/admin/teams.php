@@ -16,7 +16,7 @@ $unVetCheck = false;
 <h2><?php echo $bub->name?> <button type="button" class="btn btn-primary" onclick = "editBus(<?php echo $bub->bus_id ?>)"> Edit</button> </h2>
 
   <br>  
-<h3> <?php echo $bub->name?> Staff <button type="button" class="btn btn-primary" onclick = "addUserBlock(<?php echo $bub->bus_id ?>)"  > Add New Staff Member </button></h3>
+<h3> <?php echo $bub->name?> Staff </h3>
 
 
 <table id="<?php echo $bub->bus_id ?>User"  class="table table-striped table-bordered">
@@ -36,7 +36,7 @@ $unVetCheck = false;
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name?></td>
             <td> <?php echo $use->user_type?></td>
             <td> <?php echo'Day Phone: '.$use->day_phone.'<br> Cell Phone: '.$use->cell_phone;?> </td>
-            <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $use->iduser ?>,'user')"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $use->iduser ?>,'user')"  > REMOVE </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $use->iduser ?>,'staff')"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $use->iduser ?>,'staff')"  > REMOVE </button> </td>
         </tr>
         <?php } else if ($use->bus_id == null){$unUserCheck = true;} ?>
         <?php endforeach ?>
@@ -53,7 +53,7 @@ $unVetCheck = false;
     </script>
 
 <br>  
-<h3> Team <?php echo $tem->color ?> Veterans <button type="button" class="btn btn-primary" onclick = "addVetBlock()"  > Add </button> </h3>
+<h3> Team <?php echo $tem->color ?> Veterans</h3>
 <table id="<?php echo $tem->color ?>Vet"  class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -128,7 +128,7 @@ $unVetCheck = false;
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name?></td>
             <td> <?php echo $use->user_type?></td>
             <td> <?php echo'Day Phone: '.$use->day_phone.'<br> Cell Phone: '.$use->cell_phone;?> </td>
-            <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $use->iduser ?>,'user')"  > MOVE </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $use->iduser ?>,'staff')"  > MOVE </button> </td>
         </tr>
         <?php } ?>
         <?php endforeach ?>
@@ -174,19 +174,17 @@ $unVetCheck = false;
 </table>
 <?php } ?>
 <?php } ?>
-
+        
+<button type="button" class="btn btn-primary" onclick = "addBus()"  > Add new Bus </button>
 </div>
 
 <script> 
-function addVetBlock() {
-
-}
 
 function editBus($busId) {
 
 }
 
-function addUserBlock() {
+function addBus() {
 
 }
 
@@ -195,6 +193,17 @@ function moveBlock($id, $type) {
 }
 
 function removeBlock($id, $type) {
+
+    if (confirm("Are you sure you want to remove this " $type " from the mission? You can undo this."  )) {
+        $.post('Admin/removeType', {id: $id, type: $type}, function () {
+        location.reload();
+
+    });
+    } else {
+    
+    }
+
+
     
 }
 

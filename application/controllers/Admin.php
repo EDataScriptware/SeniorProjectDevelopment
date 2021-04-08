@@ -269,5 +269,26 @@ class Admin extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function removeType() {
+		$id = $this->input->post('id');
+		$type = $this->input->post('type');
+
+		if ($type === "staff") {
+			$data = array('bus_id' = null);
+
+		$this->db->where('iduser', $id);
+		$this->db->update('user', $data); 
+
+		}
+		else if ($type === "vet") {
+			$data = array('bus_id' = null);
+
+			$this->db->where('veteran_id', $id);
+			$this->db->update('veteran', $data); 
+		}
+
+
+	}
+
 
 }
