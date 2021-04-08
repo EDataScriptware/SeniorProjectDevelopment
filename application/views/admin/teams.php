@@ -104,8 +104,9 @@ $unVetCheck = false;
 
 
 <?php if ($unUserCheck == true || $unVetCheck == true) { ?> 
-<h2> Uncatagorized</h2>
+<h2> Uncatagorized Members</h2>
 
+<br>
 
 <?php if ($unUserCheck == true) { ?> 
 <h3> Staff</h3>
