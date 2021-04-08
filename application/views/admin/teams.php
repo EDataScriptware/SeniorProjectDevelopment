@@ -13,7 +13,7 @@ $unVetCheck = false;
 } );
     </script>
 
-<h2><?php echo $bub->name?> <button type="button" class="btn btn-primary" onclick = "editBus(<?php echo $bub->bus_id ?>)"> Edit</button> </h2>
+<h2><?php echo $bub->name?> </h2>
 
   <br>  
 <h3> <?php echo $bub->name?> Staff </h3>
@@ -53,7 +53,7 @@ $unVetCheck = false;
     </script>
 
 <br>  
-<h3> Team <?php echo $tem->color ?> Veterans</h3>
+<h3> Team <?php echo $tem->color ?> Veterans <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $use->iduser ?>,'staff')"  > MOVE </button> </h3>
 <table id="<?php echo $tem->color ?>Vet"  class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -175,16 +175,22 @@ $unVetCheck = false;
 <?php } ?>
 <?php } ?>
         
-<button type="button" class="btn btn-primary" onclick = "addBus()"  > Add new Bus </button>
+<button type="button" class="btn btn-primary" onclick = "addBus()"  > Add Bus </button>
+<button type="button" class="btn btn-primary" onclick = "removeBus()"  > Remove Bus </button>
 </div>
 
 <script> 
 
-function editBus($busId) {
+
+function addBus() {
 
 }
 
-function addBus() {
+function removeBus() {
+
+}
+
+function moveTeam($id) {
 
 }
 

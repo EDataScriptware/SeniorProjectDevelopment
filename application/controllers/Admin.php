@@ -274,14 +274,14 @@ class Admin extends CI_Controller {
 		$type = $this->input->post('type');
 
 		if ($type === "staff") {
-			$data = array('bus_id' = null);
+			$data = array('bus_id' => null);
 
 		$this->db->where('iduser', $id);
 		$this->db->update('user', $data); 
 
 		}
 		else if ($type === "vet") {
-			$data = array('bus_id' = null);
+			$data = array('team_id' => null);
 
 			$this->db->where('veteran_id', $id);
 			$this->db->update('veteran', $data); 
