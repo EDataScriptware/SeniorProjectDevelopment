@@ -1,0 +1,1 @@
+<script> $(document).ready( function () {  document.getElementById("doc").addClass('active');} ); </script>
