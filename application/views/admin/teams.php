@@ -12,8 +12,6 @@ $unVetCheck = false;
     $('#<?php echo $bub->bus_id ?>User').DataTable();
 } );
     </script>
-
-
 <script> $(document).ready( function () {  $('#team').addClass('active');} ); </script>
 
 <h2><?php echo $bub->name?> </h2>
@@ -191,7 +189,7 @@ $unVetCheck = false;
 </div>
 
 
-<div class="modal" tabindex="-1" role="dialog">
+<div class="modal" tabindex="-1" id="moveUser" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -213,6 +211,26 @@ $unVetCheck = false;
   </div>
 </div>
 
+<div class="modal" tabindex="-1" id="removeBus" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Remove a Bus</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Confirm changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

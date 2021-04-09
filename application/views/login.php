@@ -1,13 +1,18 @@
 
-  <form method='post' action= '<?php echo base_url('Login/loginCheck/'); ?>'>
+
+
+  <form class ="form-signin" method='post' action= '<?php echo base_url('Login/loginCheck/'); ?>'>
+
+  <img  width="224" height="72" class="mb-4" src="<?php echo base_url('assets/internal/img/logo.png')?>">
+  
+  <h1 class="h3 mb-3 font-weight-normal">Login</h1>
     
 
-    <label for="username">Username:</label>
-    <input type="text" id="uName" name="username" required><br><br>
-    <label for="password">Password:</label>
-    <input type="password" id="pWord" name="password" required><br><br>
-
-    <button input type='submit' name='submit' value='Submit'> Login </button>
+  <label for="inputUsername" class="sr-only">Username</label>
+    <input type="username"id="uName" name="username" class="form-control" placeholder="Username" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="pWord" name="password" class="form-control" placeholder="Password" required>
+    <button class="btn btn-lg btn-primary btn-block" name='submit'  value='Submit' type="submit">Sign in</button>
   </form>
 
   <?php
