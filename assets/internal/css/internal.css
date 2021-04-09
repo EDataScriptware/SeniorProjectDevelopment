@@ -127,9 +127,9 @@
 #accommodations {display: none;}
 
 
-/*admin Sidebar*/
+/*admin Sidebar OLD*/
 
-#adminHeader {
+/* #adminHeader {
 	height: 100%;
 	width: 225px; 
 	position: fixed; 
@@ -161,7 +161,7 @@
   
 #adminHeader a:hover {
 	background-color: rgb(0, 153, 153);
-  }
+  } */
 
   #main {
 	margin: auto;
