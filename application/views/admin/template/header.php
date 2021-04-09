@@ -86,7 +86,7 @@
         <li class="nav-item"><a href="<?php echo base_url('reservations')?>" id = "rez" class="nav-link">Reservations</a></li>
         <li class="nav-item"><a href="<?php echo base_url('users')?>" id = "use" class="nav-link">Users</a></li>
         <li class="nav-item"><a href="<?php echo base_url('veterans')?>" id = "vet" class="nav-link">Veterans</a></li>
-        <li class="nav-item"><a href="<?php echo base_url('guardians')?>" id = "gaurd" class="nav-link">Guardians</a></li>
+        <li class="nav-item"><a href="<?php echo base_url('guardians')?>" id = "gau" class="nav-link">Guardians</a></li>
         <li class="nav-item"><a href="<?php echo base_url('user')?>" class="nav-link">Personnel View</a></li>
         <li class="nav-item"><a href="<?php echo base_url('')?>" class="nav-link">Logout</a></li>
       </ul>
