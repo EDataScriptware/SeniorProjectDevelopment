@@ -52,6 +52,7 @@
         }
         .odd {
         background-color:  rgba(0, 0, 0, 0.05) !important;
+        --bs-table-accent-bg: none;
         }
 
     </style>
