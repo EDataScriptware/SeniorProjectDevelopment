@@ -11,7 +11,9 @@
     <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="pWord" name="password" class="form-control" placeholder="Password" required>
     <button class="btn btn-lg btn-primary btn-block" name='submit'  value='Submit' type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
   </form>
+  
 
   <?php
 
