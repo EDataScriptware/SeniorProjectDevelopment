@@ -34,11 +34,16 @@
 <script src="<?php echo base_url('assets/DataTables/datatables.js')?>"> </script>
 
 <style>
+
         .container
         {
             background-color: lightblue;
-            width:100% !important;
+
+        }
+        header {
+          width:100% !important;
             max-width: 100% !important;
+
         }
         body
         {
