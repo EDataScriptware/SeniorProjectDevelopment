@@ -55,6 +55,10 @@
         --bs-table-accent-bg: none !important;
         }
 
+        .table>:not(:last-child)>:last-child>* {
+          border-bottom-color: none !important;
+        }
+
     </style>
 
 
