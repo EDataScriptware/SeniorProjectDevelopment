@@ -50,6 +50,9 @@
         table {
           background-color: white !important;
         }
+        .odd {
+        background-color:  rgba(0, 0, 0, 0.05) !important;
+        }
 
     </style>
 
