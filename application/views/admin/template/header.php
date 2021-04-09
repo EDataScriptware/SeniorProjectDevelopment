@@ -37,6 +37,8 @@
         .container
         {
             background-color: lightblue;
+            width:100% !important;
+            max-width: 100% !important;
         }
         body
         {
