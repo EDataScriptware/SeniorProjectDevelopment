@@ -39,8 +39,7 @@
                 case 3:
                     echo "Generic User";
                     break;
-            }
-            echo $use->user_permissions ?>  </td>
+            }?>  </td>
             <td> <?php echo $use->username ?>  </td>
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name ?>  </td>
             <td> <?php echo 'Day Phone: '.$use->day_phone ?> <br> <?php echo 'Cell Phone: '.$use->cell_phone ?>  </td>
