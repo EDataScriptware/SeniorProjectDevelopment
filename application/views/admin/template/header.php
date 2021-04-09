@@ -33,8 +33,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/DataTables/datatables.css')?>" />
 <script src="<?php echo base_url('assets/DataTables/datatables.js')?>"> </script>
 
-
-
 <style>
         .container
         {
@@ -44,11 +42,6 @@
         {
             background-color: whitesmoke;
         }
-        body
-        {
-            background-color: lightblue;
-        }
-
     </style>
 
 
