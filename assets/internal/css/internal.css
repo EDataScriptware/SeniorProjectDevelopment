@@ -166,6 +166,7 @@
   #main {
 	margin: auto;
 	width: 900px;
+	max-width: 900px;
 	padding: 10px;
   }
 
