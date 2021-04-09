@@ -66,10 +66,12 @@
   <a href="">Veterans</a>
   <a href="">Guardians</a>
   <a href="">Personel View</a>
-  <a id = "logout" href="<?php echo base_url('')?>">< Logout</a>
+  <a id = "logout" href="">< Logout</a>
 </div>
 
 <div id = 'main'>  -->
+
+<?php echo base_url('')?>
 
 
 <div class="container">
@@ -88,6 +90,7 @@
         <li class="nav-item"><a href="<?php echo base_url('veterans')?>" class="nav-link">Veterans</a></li>
         <li class="nav-item"><a href="<?php echo base_url('guardians')?>" class="nav-link">Guardians</a></li>
         <li class="nav-item"><a href="<?php echo base_url('user')?>" class="nav-link">Personnel View</a></li>
+        <li class="nav-item"><a href="<?php echo base_url('')?>" class="nav-link">Logout</a></li>
       </ul>
     </header>
   </div>
