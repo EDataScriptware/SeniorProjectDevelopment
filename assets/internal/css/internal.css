@@ -164,8 +164,9 @@
   }
 
   #main {
-	padding-left: 150px;
-	padding-right: 150px;
+	margin: auto;
+	width: 75%;
+	padding: 10px;
   }
 
   .scrunch {
