@@ -38,16 +38,17 @@
         .container
         {
             background-color: lightblue;
+            width:100% !important;
+
+            /* max-width: 100% !important; */
+
+  
 
         }
-        header {
-          width:100% !important;
-            max-width: 100% !important;
 
-        }
         body
         {
-            background-color: whitesmoke;
+            /* background-color: whitesmoke; */
         }
     </style>
 
