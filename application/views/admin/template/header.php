@@ -14,6 +14,9 @@
 	<meta charset="utf-8">
 	<title>Honor Flight - Administration</title>
 
+
+<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
+
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css')?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap-grid.css')?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap-reboot.css')?>" />
