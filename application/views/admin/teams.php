@@ -14,7 +14,7 @@ $unVetCheck = false;
     </script>
 
 
-<script> $(document).ready( function () {  document.getElementById("team").addClass('active');} ); </script>
+<script> $(document).ready( function () {  $('#team').addClass('active');} ); </script>
 
 <h2><?php echo $bub->name?> </h2>
 

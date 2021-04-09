@@ -5,7 +5,7 @@
     </script>
 <div class = "scrunch"> 
 
-<script> $(document).ready( function () {  document.getElementById("use").addClass('active');} ); </script>
+<script> $(document).ready( function () {  $('#use').addClass('active');} ); </script>
 
 <table id="userTable"  class="table table-striped table-bordered">
     <thead>

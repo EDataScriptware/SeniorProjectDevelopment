@@ -1,1 +1,1 @@
-<script> $(document).ready( function () {  document.getElementById("doc").addClass('active');} ); </script>
+<script> $(document).ready( function () {  $('#doc').addClass('active');} ); </script>

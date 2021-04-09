@@ -4,7 +4,7 @@
 } );
     </script>
 
-<script> $(document).ready( function () {  document.getElementById("guard").addClass('active');} ); </script>   
+<script> $(document).ready( function () {  $('#guard').addClass('active');} ); </script>   
 
 <?php $about = array('dob','gender','occupation','shirt_size','city','state','zip','day_phone','cell_phone','email','shirt_size', 'branch'); ?>
 <?php $extra = array ('how_heard','why_volunteering','prior_experience','med_training','med_conditions','diet_restrictions', 'administrative_comments'); ?>
