@@ -4,6 +4,8 @@
 } );
     </script>
 
+<script> $(document).ready( function () {  document.getElementById("vet").addClass('active');} ); </script>
+
 <?php $about = array('dob','gender','weight','city','state','zip','day_phone','cell_phone','email','shirt_size'); ?>
 <?php $emergency = array ('emergency_name','emergency_relationship','emergency_address', 'emergency_day_phone', 'emergency_cell_phone') ?>
 <?php $comments = array ('add_comments','admin_comments') ?>

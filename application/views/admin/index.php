@@ -1,3 +1,5 @@
+<script> $(document).ready( function () {  document.getElementById("home").addClass('active');} ); </script>
+
 <p> admin </p>
 
 <!-- Trigger/Open The Modal -->
