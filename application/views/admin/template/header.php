@@ -38,7 +38,7 @@
         {
             background-color: lightblue;
         }
-        html
+        body
         {
             background-color: whitesmoke;
         }
@@ -71,7 +71,7 @@
       </a>
   
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="<?php echo base_url('admin')?>" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="<?php echo base_url('admin')?>" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="<?php echo base_url('teams')?>" class="nav-link">Teams</a></li>
         <li class="nav-item"><a href="<?php echo base_url('documents')?>" class="nav-link">Documents</a></li>
         <li class="nav-item"><a href="<?php echo base_url('reservations')?>" class="nav-link">Reservations</a></li>
