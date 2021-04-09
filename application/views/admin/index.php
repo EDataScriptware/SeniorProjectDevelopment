@@ -1,4 +1,4 @@
-<script> $(document).ready( function () {  document.getElementById("home").addClass('active');} ); </script>
+<script> $(document).ready( function () {  document.getElementById("home").parent().addClass('active');} ); </script>
 
 <p> admin </p>
 
