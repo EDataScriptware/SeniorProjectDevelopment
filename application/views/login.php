@@ -1,6 +1,4 @@
 
-
-
   <form class ="form-signin" method='post' action= '<?php echo base_url('Login/loginCheck/'); ?>'>
 
   <img  width="224" height="72" class="mb-4" src="<?php echo base_url('assets/internal/img/logo.png')?>">
