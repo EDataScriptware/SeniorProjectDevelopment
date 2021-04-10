@@ -16,7 +16,7 @@
 
 
 
-    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> -->
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css')?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap-grid.css')?>" />
@@ -64,21 +64,6 @@
 
 </head>
 <body>
-
-<!-- <div id="adminHeader" class="sidenav">
-  <a href="">Home</a>
-  <a href="">Teams</a>
-  <a href="">Documents</a>
-  <a href="">Reservations</a>
-  <a href="">Users</a>
-  <a href="">Veterans</a>
-  <a href="">Guardians</a>
-  <a href="">Personel View</a>
-  <a id = "logout" href="">< Logout</a>
-</div>
-
-<div id = 'main'>  -->
-
 
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
