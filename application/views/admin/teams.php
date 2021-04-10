@@ -189,7 +189,7 @@ $unVetCheck = false;
 </div>
 
 <!-- Moving Individual User -->
-<div class="modal" tabindex="-1" id="moveUser" role="dialog">
+<div class="modal fade " tabindex="-1" id="moveUser" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -211,7 +211,7 @@ $unVetCheck = false;
   </div>
 </div>
 <!-- Adding Bus -->
-<div class="modal" tabindex="-1" id="addBus" role="dialog">
+<div class="modal fade " tabindex="-1" id="addBus" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -233,7 +233,7 @@ $unVetCheck = false;
 </div>
 
 <!-- Removing Bus -->
-<div class="modal" tabindex="-1" id="removeBus" role="dialog">
+<div class="modal fade " tabindex="-1" id="removeBus" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -265,7 +265,7 @@ $unVetCheck = false;
   </div>
 </div>
 <!-- Moving Teams -->
-<div class="modal" tabindex="-1" id="moveTeam" role="dialog">
+<div class="modal fade " tabindex="-1" id="moveTeam" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -300,22 +300,25 @@ var $holdType = '';
 
 
 function addBus() {
-
+    $('#addBus').modal('show');
 }
 
 function removeBus($id) {
 $holdBusID = $id;
+$('#removeBus').modal('show');
 }
 
 
 function moveTeam($id) {
 $holdTeamID = $id;
+$('#moveTeam').modal('show');
 }
 
 
 function moveBlock($id, $type) {
 $holdUID = $id;
 $holdType = $type;
+$('#moveUser').modal('show');
 }
 
 function removeBlock($id, $type) {
