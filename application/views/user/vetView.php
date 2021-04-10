@@ -139,7 +139,7 @@
         </button>
       </div>
       <div class="modal-body">
-	  <form method ="POST" id = "update" action='<?php echo base_url('User/updateInfo/'.$veteran[0]->veteran_id); ?>'>
+	  <form  id = "update" method ="POST" action='<?php echo base_url('User/updateInfo/'.$veteran[0]->veteran_id); ?>'>
 
 	
 	  <h3> About </h3>
