@@ -54,7 +54,7 @@ $unVetCheck = false;
     </script>
 
 <br>  
-<h3> Team <?php echo $tem->color ?> Veterans <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moveTeam" onclick = "moveBlock(<?php echo $use->iduser ?>,'staff')"  > MOVE </button> </h3>
+<h3> Team <?php echo $tem->color ?> Veterans <button type="button" class="btn btn-primary" onclick = "moveTeam(<?php echo $tem->tem_id ?>)"  > MOVE </button> </h3>
 <table id="<?php echo $tem->color ?>Vet"  class="table table-striped table-bordered">
     <thead>
         <tr>
