@@ -14,7 +14,7 @@ $unVetCheck = false;
     </script>
 <script> $(document).ready( function () {  $('#team').addClass('active');} ); </script>
 
-<h2><?php echo $bub->name?> </h2>
+<h2><?php echo $bub->name?> <button type="button" class="btn btn-primary" onclick = "removeBus($bub->$bus_id)"> REMOVE</button> </h2>
 
   <br>  
 <h3> <?php echo $bub->name?> Staff </h3>
@@ -106,9 +106,7 @@ $unVetCheck = false;
 
 
 <button type="button" class="btn btn-primary"  onclick = "addBus()" > Add Bus </button>
-<button type="button" class="btn btn-primary" onclick = "removeBus()"   > Remove Bus </button>
-<button type="button" class="btn btn-primary" onclick = "addTeam()"   > Add Team </button>
-<button type="button" class="btn btn-primary" onclick = "removeTeam()"  > Remove Team </button>
+<button type="button" class="btn btn-primary" onclick = "addTeam()"> Add Team </button>
 
 <?php if ($unUserCheck == true || $unVetCheck == true) { ?> 
 <h2> Uncatagorized Members</h2>
@@ -319,40 +317,6 @@ $unVetCheck = false;
 
 <!-- removing popups -->
 
-<!-- Removing Bus -->
-<div class="modal fade " tabindex="-1" id="removeBus" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Remove a Bus</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form id = "busOut" method ="POST" action=''>
-
-      <p> Select a Bus you'd like to remove: </p>
-
-      <select name="bus_id" id="bus_id">
-      <?php foreach ($bus as $bub): ?>
-        <option value="<?php echo $bub->bus_id ?>"><?php echo $bub->name ?></option>
-        <?php endforeach ?>
-        </select>
-
-        <p> Know this can't be undone. </p>
-
-      </form>
-
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" form="busOut">Confirm changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <!-- Removing Team -->
 <div class="modal fade " tabindex="-1" id="removeTeam" role="dialog">
   <div class="modal-dialog" role="document">
@@ -444,8 +408,14 @@ function removeBlock($id, $type) {
 }
 
 function removeBus($id) {
-document.getElementById("busOut").action = "Admin/removeBus/"+$id;
-$('#removeBus').modal('show');
+if (confirm("Are you sure you want to remove this Bus from the mission? You cannot undo this."  )) {
+        $.post('Admin/removeBus', {id: $id}, function () {
+        location.reload();
+
+    });
+    } else {}
+
+
 }
 
 function removeTeam($id) {
