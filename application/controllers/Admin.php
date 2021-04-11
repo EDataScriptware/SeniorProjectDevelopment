@@ -269,6 +269,94 @@ class Admin extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function moveUser($id) {
+		$bus_id = $this->input->post('bus_id');
+
+		$data = array('bus_id' => $bus_id);
+
+		$this->db->where('iduser', $id);
+		$this->db->update('user', $data); 
+
+	}
+
+	public function moveVeteran($id) {
+		
+		$team_id = $this->input->post('team_id');
+
+		$data = array('team_id' => $team_id);
+
+		$this->db->where('veteran_id', $id);
+		$this->db->update('veteran', $data); 
+	}
+
+	public function moveTeam($id) {
+		$bus_id = $this->input->post('bus_id');
+
+		$data = array('bus_id' => $bus_id);
+
+		$this->db->where('team_id', $id);
+		$this->db->update('team', $data); 
+	}
+
+	public function newBus() {
+
+		$this->db->select_max("mission_id");
+		$this->db->from('team');
+
+		$currMission_id = implode($this->db->get()->row_array());
+
+		$name = $this->input->post('name');
+
+		$data = array ('mission_id' => $currMission_id,
+						'name' => $name);
+
+		$this->db->insert('bus', $data); 			
+
+	}
+
+	public function newTeam() {
+
+		$this->db->select_max("mission_id");
+		$this->db->from('team');
+
+		$currMission_id = implode($this->db->get()->row_array());
+
+		$color = $this->input->post('color');
+		$bus_id = $this->input->post('bus_id');
+
+		$data = array ('mission_id' => $currMission_id,
+		'color' => $color,
+		'bus_id' => $bus_id);
+
+		$this->db->insert('team', $data); 	
+	}
+
+	public function  removeTeam($id) {
+		$data = array('team_id' => null);
+
+		$this->db->where('team_id', $id);
+		$this->db->update('veteran', $data); 
+
+		$this->db->where('team_id', $id);
+		$this->db->update('user', $data); 
+
+		$this->db->where('team_id', $id);
+		$this->db->delete('team');
+	}
+
+	public function removeBus($id) {
+		$data = array('bus_id' => null);
+
+		$this->db->where('bus_id', $id);
+		$this->db->update('veteran', $data); 
+
+		$this->db->where('bus_id', $id);
+		$this->db->update('user', $data); 
+
+		$this->db->where('bus_id', $id);
+		$this->db->delete('bus');
+	}
+
 	public function removeType() {
 		$id = $this->input->post('id');
 		$type = $this->input->post('type');

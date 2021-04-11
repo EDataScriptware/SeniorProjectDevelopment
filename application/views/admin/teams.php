@@ -37,7 +37,7 @@ $unVetCheck = false;
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name?></td>
             <td> <?php echo $use->user_type?></td>
             <td> <?php echo'Day Phone: '.$use->day_phone.'<br> Cell Phone: '.$use->cell_phone;?> </td>
-            <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moveUser" onclick = "moveBlock(<?php echo $use->iduser ?>,'staff')"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $use->iduser ?>,'staff')"  > REMOVE </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $use->iduser ?>,'staff')"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $use->iduser ?>,'staff')"  > REMOVE </button> </td>
         </tr>
         <?php } else if ($use->bus_id == null){$unUserCheck = true;} ?>
         <?php endforeach ?>
@@ -82,7 +82,7 @@ $unVetCheck = false;
             <td> <?php echo 'Day Phone: '.$vet->day_phone ?> <br> <?php echo 'Cell Phone: '.$vet->cell_phone?> </td>
             <td> <?php if ($guardian != null) { echo $guardian[0]->first_name." ".$guardian[0]->last_name; } else {echo "None";}?></td>
             <td> <?php if ($guardian != null) { echo'Day Phone: '.$guardian[0]->day_phone.'<br> Cell Phone: '.$guardian[0]->cell_phone; } else {echo "None";}?> </td>
-            <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moveUser" onclick = "moveBlock(<?php echo $vet->veteran_id ?>,'veteran')"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $vet->veteran_id ?>,'veteran')"  > REMOVE </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>,'veteran')"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $vet->veteran_id ?>,'veteran')"  > REMOVE </button> </td>
         </tr>
         <?php } else if ($vet->team_id == null){$unVetCheck = true;} ?>
         <?php endforeach ?>
@@ -134,7 +134,7 @@ $unVetCheck = false;
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name?></td>
             <td> <?php echo $use->user_type?></td>
             <td> <?php echo'Day Phone: '.$use->day_phone.'<br> Cell Phone: '.$use->cell_phone;?> </td>
-            <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moveUser" onclick = "moveBlock(<?php echo $use->iduser ?>,'staff')"  > MOVE </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $use->iduser ?>,'staff')"  > MOVE </button> </td>
         </tr>
         <?php } ?>
         <?php endforeach ?>
@@ -172,7 +172,7 @@ $unVetCheck = false;
             <td> <?php echo 'Day Phone: '.$vet->day_phone ?> <br> <?php echo 'Cell Phone: '.$vet->cell_phone?> </td>
             <td> <?php if ($guardian != null) { echo $guardian[0]->first_name." ".$guardian[0]->last_name; } else {echo "None";}?></td>
             <td> <?php if ($guardian != null) { echo'Day Phone: '.$guardian[0]->day_phone.'<br> Cell Phone: '.$guardian[0]->cell_phone; } else {echo "None";}?> </td>
-            <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moveUser" onclick = "moveBlock(<?php echo $vet->veteran_id ?>,'veteran')"  > MOVE </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "moveBlock(<?php echo $vet->veteran_id ?>,'veteran')"  > MOVE </button> </td>
         </tr>
         <?php }?>
         <?php endforeach ?>
@@ -305,6 +305,14 @@ $unVetCheck = false;
       <label for="color">Give the team a color:</label>
 
       <input type="text" id="color" name="color" required size="10">
+
+
+      <p>   Assign the team to a bus </p>
+
+        <select required name="bus_id" id="bus_id">
+        <?php foreach ($bus as $bub): ?>
+        <option value="<?php echo $bub->bus_id ?>"><?php echo $bub->name ?></option>
+        <?php endforeach ?>
     
         </form>
       </div>
