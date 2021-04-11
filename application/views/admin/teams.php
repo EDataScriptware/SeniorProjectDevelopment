@@ -54,7 +54,7 @@ $unVetCheck = false;
     </script>
 
 <br>  
-<h3> Team <?php echo $tem->color ?> Veterans <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moveUser" onclick = "moveBlock(<?php echo $use->iduser ?>,'staff')"  > MOVE </button> </h3>
+<h3> Team <?php echo $tem->color ?> Veterans <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#moveTeam" onclick = "moveBlock(<?php echo $use->iduser ?>,'staff')"  > MOVE </button> </h3>
 <table id="<?php echo $tem->color ?>Vet"  class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -204,7 +204,7 @@ $unVetCheck = false;
 
             <select name="team_id" id="team_id">
         <?php foreach ($team as $tem): ?>
-        <option value="<?php echo $tem->team_id ?>"><?php echo $team->color ?></option>
+        <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color ?></option>
         <?php endforeach ?>
         </select>
 
@@ -370,7 +370,7 @@ $unVetCheck = false;
 
       <select name="team_id" id="team_id">
         <?php foreach ($team as $tem): ?>
-        <option value="<?php echo $tem->team_id ?>"><?php echo $team->color ?></option>
+        <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color ?></option>
         <?php endforeach ?>
         </select>
 
