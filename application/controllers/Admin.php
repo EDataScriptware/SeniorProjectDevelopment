@@ -331,7 +331,8 @@ class Admin extends CI_Controller {
 		$this->db->insert('team', $data); 	
 	}
 
-	public function  removeTeam($id) {
+	public function  removeTeam() {
+		$id = $this->input->post('team_id');
 		$data = array('team_id' => null);
 
 		$this->db->where('team_id', $id);
@@ -344,7 +345,8 @@ class Admin extends CI_Controller {
 		$this->db->delete('team');
 	}
 
-	public function removeBus($id) {
+	public function removeBus() {
+		$id = $this->input->post('bus_id');
 		$data = array('bus_id' => null);
 
 		$this->db->where('bus_id', $id);
