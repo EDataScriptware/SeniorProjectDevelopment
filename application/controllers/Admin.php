@@ -101,7 +101,7 @@ class Admin extends CI_Controller {
 
 		$data['team'] = $this->db->get()->result();
 
-		$data['flight'] = $this->User_model->get_mission_flight_data($currMission_id);
+		$data['flight'] = $this->Flight_model->get_mission_flight_data($currMission_id);
 
 
 		$this->load->view('admin/template/header');
