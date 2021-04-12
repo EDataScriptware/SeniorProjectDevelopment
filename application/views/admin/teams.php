@@ -283,7 +283,7 @@ $unVetCheck = false;
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit"  form='newBus' class="btn btn-primary" >Confirm changes</button>
+        <button type="submit"  form='newBus' class="btn btn-primary" >Add New Bus</button>
       </div>
     </div>
   </div>
@@ -307,7 +307,7 @@ $unVetCheck = false;
       <input type="text" id="color" name="color" required size="10">
 
 
-      <p>   Assign the team to a bus </p>
+      <p>   Assign the team to a bus: </p>
 
         <select required name="bus_id" id="bus_id">
         <?php foreach ($bus as $bub): ?>
@@ -317,42 +317,7 @@ $unVetCheck = false;
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit"  form='addTeam' class="btn btn-primary" >Confirm changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- removing popups -->
-
-<!-- Removing Team -->
-<div class="modal fade " tabindex="-1" id="removeTeam" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Remove a Bus</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form id = "TeamOut" method ="POST" action='<?php echo base_url('Admin/removeTeam')?> '>
-
-      <p> Select a Team you'd like to remove: </p>
-
-      <select name="team_id" id="team_id">
-        <?php foreach ($team as $tem): ?>
-        <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color ?></option>
-        <?php endforeach ?>
-        </select>
-
-        <p> Know this can't be undone. </p>
-
-      </form>
-
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" form="TeamOut">Confirm changes</button>
+        <button type="submit"  form='addTeam' class="btn btn-primary" >Add New Team</button>
       </div>
     </div>
   </div>
@@ -407,7 +372,7 @@ $('#moveUser').modal('show');
 //Removing Functions
 function removeBlock($id, $type) {
 
-    if (confirm("Are you sure you want to remove this " + $type + " from the mission? You can undo this."  )) {
+    if (confirm("Are you sure you want to remove this " + $type + " from the mission? "  )) {
         $.post('Admin/removeType', {id: $id, type: $type}, function () {
         location.reload();
 
@@ -416,7 +381,7 @@ function removeBlock($id, $type) {
 }
 
 function removeBus($id) {
-if (confirm("Are you sure you want to remove this Bus from the mission? You cannot undo this."  )) {
+if (confirm("Are you sure you want to remove this Bus from the mission? "  )) {
         $.post('Admin/removeBus', {id: $id}, function () {
         location.reload();
 
@@ -428,7 +393,7 @@ if (confirm("Are you sure you want to remove this Bus from the mission? You cann
 
 function removeTeam($id) {
 
-if (confirm("Are you sure you want to remove this team from the mission? You cannot undo this."  )) {
+if (confirm("Are you sure you want to remove this team from the mission? "  )) {
     $.post('Admin/removeTeam', {id: $id}, function () {
     location.reload();
 

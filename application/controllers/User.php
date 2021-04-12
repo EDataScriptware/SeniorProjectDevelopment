@@ -23,7 +23,7 @@ class User extends CI_Controller {
 		$this->load->model('Veteran_model');
 
 		$this->db->select_max("mission_id");
-		$this->db->from('team');
+		$this->db->from('mission');
 
 		$currMission_id = implode($this->db->get()->row_array());
 

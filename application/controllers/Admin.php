@@ -21,6 +21,13 @@ class Admin extends CI_Controller {
 
 	public function docView() //Document View
 	{
+
+		$this->db->select_max("mission_id");
+		$this->db->from('mission');
+
+		$currMission_id = implode($this->db->get()->row_array());
+
+
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/documents');
 		$this->load->view('admin/template/footer');
@@ -32,7 +39,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Bus_model');
 
 		$this->db->select_max("mission_id");
-		$this->db->from('team');
+		$this->db->from('mission');
 
 		$currMission_id = implode($this->db->get()->row_array());
 
@@ -59,7 +66,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Bus_model');
 
 		$this->db->select_max("mission_id");
-		$this->db->from('team');
+		$this->db->from('mission');
 
 		$currMission_id = implode($this->db->get()->row_array());
 
@@ -116,7 +123,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Team_model');
 
 		$this->db->select_max("mission_id");
-		$this->db->from('team');
+		$this->db->from('mission');
 
 		$currMission_id = implode($this->db->get()->row_array());
 
@@ -137,7 +144,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Team_model');
 
 		$this->db->select_max("mission_id");
-		$this->db->from('team');
+		$this->db->from('mission');
 
 		$currMission_id = implode($this->db->get()->row_array());
 
@@ -409,6 +416,101 @@ class Admin extends CI_Controller {
 
 
 	}
+
+	public function addEvent($type) {
+
+		$this->db->select_max("mission_id");
+		$this->db->from('mission');
+
+		$currMission_id = implode($this->db->get()->row_array());
+
+		switch ($type) {
+			case 'fly':
+
+
+
+				break;
+			case 'hotel':
+
+
+
+				break;
+			case 'event':
+
+
+
+				break;
+		}
+
+	}
+
+	public function editEvent($id,$type) {
+
+
+		$this->db->select_max("mission_id");
+		$this->db->from('mission');
+
+		$currMission_id = implode($this->db->get()->row_array());
+
+		switch ($type) {
+			case 'fly':
+
+				break;
+			case 'hotel':
+
+				break;
+			case 'event':
+
+				break;
+		}
+
+	}
+
+	public function getEvent() {
+		$id = $this->input->post('id');
+		$type = $this->input->post('type');
+
+
+		switch ($type) {
+			case 'fly':
+				$this->db->where('flight_id', $id);
+				$this->db->get('flight');
+				break;
+			case 'hotel':
+				$this->db->where('hotel_id', $id);
+				$this->db->get('hotel_info');
+				break;
+			case 'event':
+				$this->db->where('event_id', $id);
+				$this->db->get('event');
+				break;
+		}
+
+	}
+
+
+	public function removeEvent() {
+		$id = $this->input->post('id');
+		$type = $this->input->post('type');
+
+
+		switch ($type) {
+			case 'fly':
+				$this->db->where('flight_id', $id);
+				$this->db->delete('flight');
+				break;
+			case 'hotel':
+				$this->db->where('hotel_id', $id);
+				$this->db->delete('hotel_info');
+				break;
+			case 'event':
+				$this->db->where('event_id', $id);
+				$this->db->delete('event');
+				break;
+		}
+
+	}
+
 
 
 }
