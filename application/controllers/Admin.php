@@ -5,7 +5,7 @@ class Admin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('url_helper');
+		$this->load->helper(array('url_helper', 'form', 'url'));
 	}
 
 	public function index() // Bus book View
@@ -55,10 +55,33 @@ class Admin extends CI_Controller {
 		$currMission_id = implode($this->db->get()->row_array());
 
 
+
+
 		$this->load->view('admin/template/header');
-		$this->load->view('admin/documents');
+		$this->load->view('admin/documents', array('error' => ' '));
 		$this->load->view('admin/template/footer');
 	}
+
+	public function do_upload() {
+
+		$config['upload_path']          = '../libraries/documents/';
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload('fileToUpload'))
+		{
+				$error = array('error' => $this->upload->display_errors());
+
+				$this->load->view('documents', $error);
+		}
+		else
+		{
+				$data = array('upload_data' => $this->upload->data());
+
+				$this->load->view('upload_success', $data);
+		}
+	}
+
 	public function teamView() //Team View
 	{
 		$this->load->model('User_model');
