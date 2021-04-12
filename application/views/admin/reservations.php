@@ -122,12 +122,12 @@ $(document).ready( function () {
     <?php foreach ($hotel as $hot): ?>
      <?php if ($hot->$veteran_id === $vet->veteran_id) {
          $skip = true;
-         echo $skip;
+         
          break;
      } ?> 
     <?php endforeach ?>
 
-    <?php if ($skip = false) {?>
+    <?php if ($skip = false) { echo $skip;?>
         <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option>
         <?php }else {$skip = false;} ?>
 <?php endforeach ?>
