@@ -91,6 +91,7 @@ class Admin extends CI_Controller {
 		$this->load->model('User_model');
 		$this->load->model('Team_model');
 		$this->load->model('Bus_model');
+		
 
 		$this->db->select_max("mission_id");
 		$this->db->from('mission');
@@ -110,6 +111,7 @@ class Admin extends CI_Controller {
 	{
 
 		$this->load->model('Flight_model');
+		$this->load->model('Veteran_model');
 
 
 		$this->db->select_max("mission_id");
@@ -136,6 +138,7 @@ class Admin extends CI_Controller {
 		$data['team'] = $this->db->get()->result();
 
 		$data['flight'] = $this->Flight_model->get_mission_flight_data($currMission_id);
+		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
 
 
 		$this->load->view('admin/template/header');

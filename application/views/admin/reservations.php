@@ -113,6 +113,17 @@ $(document).ready( function () {
     </tbody>
 </table>
 
+
+<!-- VETDATALIST -->
+<datalist id ='vets'>
+<?php foreach ($veteran as $vet): ?>
+    <?php foreach ($hotel as $hot): ?>
+      
+        
+    <?php endforeach ?>
+<?php endforeach ?>
+</datalist>
+
 <!-- Add Modal -->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" >
   <div class="modal-dialog" >
@@ -153,6 +164,26 @@ $(document).ready( function () {
         </form>
 
         <form id ="addHotel" style='display:none' >
+
+        <label for="newName">Hotel Name:</label>
+ 
+            <input type="text" id="newName" name="newName" required size="10"> <br>
+
+        <label for="newVeteran_id">Veteran:</label>
+
+            <input type="text" list='veterans' id="newVeteran_id" name="newVeteran_id" required size="10"> <br>
+
+        <label for="newRoom">Room:</label>
+ 
+            <input type="text" id="newRoom" name="newRoom" required size="10"> <br>
+
+        <label for="newCheck_in">Check-In Time:</label>
+ 
+            <input type="datetime-local" id="newCheck_in" name="newCheck_in">  <br>
+
+        <label for="newCheck_out">Check-Out Time:</label>
+ 
+            <input type="datetime-local" id="newCheck_out" name="newCheck_out">  <br>
 
         </form>
 
@@ -200,6 +231,7 @@ $(document).ready( function () {
         </button>
       </div>
       <div class="modal-body">
+
         <form id ="editFly" style='display:none' >
 
         <label for="airline">Airline:</label>
@@ -216,7 +248,7 @@ $(document).ready( function () {
 
         <label for="arrival_location">Arrival Location:</label>
 
-            <input type="arrival_location" id="arrival_location" name="arrival_location" required size="10">  <br>
+            <input type="text" id="arrival_location" name="arrival_location" required size="10">  <br>
 
         <label for="departure_time">Departure Time:</label>
 
@@ -224,41 +256,63 @@ $(document).ready( function () {
 
         <label for="departure_location">Departure Location:</label>
 
-            <input type="departure_location" id="departure_location" name="departure_location" required size="10">  <br>
+            <input type="text" id="departure_location" name="departure_location" required size="10">  <br>
 
         </form>
 
         <form id ="editHotel" style='display:none' >
 
-            <label for="title">Title:</label>
+        <label for="name">Hotel Name:</label>
+ 
+            <input type="text" id="name" name="name" required size="10"> <br>
 
-                <input type="text" id="title" name="title" required size="10"> <br>
+        <label for="veteran_id">Veteran:</label>
 
-            <label for="description">Description:</label>
+            <input type="text" list='veterans' id="veteran_id" name="veteran_id" required size="10"> <br>
 
-                <textarea id="description" name="description" > </textarea>  <br>
+        <label for="room">Room:</label>
 
-            <label for="date">Date:</label>
+            <input type="text" id="room" name="room" required size="10"> <br>
 
-                <input type="date" id="date" name="date">  <br>
+        <label for="check_in">Check-In Time:</label>
 
-            <label for="start">Start Time:</label>
+            <input type="datetime-local" id="check_in" name="check_in">  <br>
 
-                <input type="time" id="start" name="start">  <br>
+        <label for="check_out">Check-Out Time:</label>
 
-            <label for="end">End Time:</label>
-
-                <input type="time" id="end" name="end">  <br>
+            <input type="datetime-local" id="check_out" name="check_out">  <br>
+          
         </form>
 
         <form id ="editEvent" style='display:none' >
 
+        <label for="title">Title:</label>
+
+            <input type="text" id="title" name="title" required size="10"> <br>
+
+        <label for="description">Description:</label>
+
+            <textarea id="description" name="description" > </textarea>  <br>
+
+        <label for="date">Date:</label>
+
+            <input type="date" id="date" name="date">  <br>
+
+        <label for="start">Start Time:</label>
+
+            <input type="time" id="start" name="start">  <br>
+
+        <label for="end">End Time:</label>
+
+            <input type="time" id="end" name="end">  <br>
         </form>
 
 
       </div>
       <div class="modal-footer">
-
+      <button type="button" class="btn btn-primary" style='display:none' id='editFlyBut' form ="editFly">Add New Flight Entry</button>
+        <button type="button" class="btn btn-primary" style='display:none' id='editHotelBut' form ="editHotel">Add New Hotel Entry</button>
+        <button type="button" class="btn btn-primary" style='display:none' id='editEventBut' form ="editEvent">Add New Event Entry</button>
       </div>
     </div>
   </div>
@@ -317,10 +371,16 @@ function addBlock($type) {
 }
 
 function editBlock($id, $type) {
+
+    
+
     
     switch ($type) {
         case 'fly':
-            document.getElementById("editFly").action = 'Admin/addEvent/'+$type;
+
+            $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
+    
+            document.getElementById("editFly").action = 'Admin/editEvent/'+$id+'/'+type;
 
             document.getElementById("editFly").style.display = "block";
             document.getElementById("editFlyBut").style.display = "block";
@@ -331,10 +391,22 @@ function editBlock($id, $type) {
             document.getElementById("editEvent").style.display = "none";
             document.getElementById("editEventBut").style.display = "none";
 
+            document.getElementById("arrival").value = result[0]['arrival'];
+            document.getElementById("departure").value = result[0]['departure'];
+            document.getElementById("flight_number").value = result[0]['flight_number'];
+            document.getElementById("airline").value = result[0]['airline'];
+            document.getElementById("arrival_location").value = result[0]['arrival_location'];
+            document.getElementById("departure_location").value = result[0]['departure_location'];
+            
+             });
+
         break;
 
         case 'hotel':
-            document.getElementById("editHotel").action = "Admin/addEvent/"+$type;
+
+            $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
+
+            document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+type;
 
             document.getElementById("editFly").style.display = "none";
             document.getElementById("editFlyBut").style.display = "none";
@@ -344,10 +416,22 @@ function editBlock($id, $type) {
 
             document.getElementById("editEvent").style.display = "none";
             document.getElementById("editEventBut").style.display = "none";
+            
+            document.getElementById("veteran_id").value = result[0]['veteran_id'];
+            document.getElementById("name").value = result[0]['name'];
+            document.getElementById("room").value = result[0]['room'];
+            document.getElementById("check_in").value = result[0]['check_in'];
+            document.getElementById("check_out").value = result[0]['check_out'];
+
+        });
+
         break;
 
         case 'event':
-            document.getElementById("editHotel").action = "Admin/addEvent/"+$type;
+
+            $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
+
+            document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+type;
 
             document.getElementById("editFly").style.display = "none";
             document.getElementById("editFlyBut").style.display = "none";
@@ -357,6 +441,16 @@ function editBlock($id, $type) {
 
             document.getElementById("editEvent").style.display = "block";
             document.getElementById("editEventBut").style.display = "block";
+
+
+            document.getElementById("description").value = result[0]['description'];
+            document.getElementById("start").value = result[0]['start'];
+            document.getElementById("end").value = result[0]['end'];
+            document.getElementById("date").value = result[0]['date'];
+            document.getElementById("title").value = result[0]['title'];
+
+        });
+
         break;
 
     }
