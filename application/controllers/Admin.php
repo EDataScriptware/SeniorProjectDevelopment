@@ -72,13 +72,17 @@ class Admin extends CI_Controller {
 		{
 				$error = array('error' => $this->upload->display_errors());
 
+				$this->load->view('admin/template/header');
 				$this->load->view('admin/documents', $error);
+				$this->load->view('admin/template/footer');
 		}
 		else
 		{
 				$data = array('upload_data' => $this->upload->data());
 
+				$this->load->view('admin/template/header');
 				$this->load->view('upload_success', $data);
+				$this->load->view('admin/template/footer');
 		}
 	}
 
