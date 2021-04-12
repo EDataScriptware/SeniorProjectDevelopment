@@ -5,7 +5,7 @@ class Admin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper(array('url_helper', 'form', 'url', 'directory'));
+		$this->load->helper(array('url_helper', 'form', 'url', 'directory', 'download'));
 	}
 
 	public function index() // Bus book View
