@@ -122,6 +122,7 @@ $(document).ready( function () {
     <?php foreach ($hotel as $hot): ?>
      <?php if ($hot->$veteran_id === $vet->veteran_id) {
          $skip = true;
+         echo $skip;
          break;
      } ?> 
     <?php endforeach ?>
