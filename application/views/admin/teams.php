@@ -300,7 +300,7 @@ $unVetCheck = false;
         </button>
       </div>
       <div class="modal-body">
-          <form id = "newBus" method ="POST" action='<?php echo base_url('Admin/newTeam')?> '> 
+          <form id = "newTeam" method ="POST" action='<?php echo base_url('Admin/newTeam')?> '> 
 
       <label for="color">Give the team a color:</label>
 
