@@ -5,6 +5,7 @@
 <body>
 
 <h3>Your file was successfully uploaded!</h3>
+<!-- <h3>Return to the "documents" page to view your file</h3> -->
 
 <ul>
 <?php foreach ($upload_data as $item => $value):?>
