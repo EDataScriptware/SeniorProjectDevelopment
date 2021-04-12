@@ -30,7 +30,7 @@
             <tbody>
             <?php foreach ($files as $file): ?>
                 <tr>
-                    <td><a> <?php echo $file ?> </a></td>
+                    <td><a href='<?php echo base_url('Admin/download/'.$file); ?>'><?php echo $file ?> </a></td>
                 </tr>
                 <?php endforeach ?>
             </tbody>
