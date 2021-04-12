@@ -118,6 +118,7 @@ $(document).ready( function () {
 <datalist id ='veterans'>
 <?php $skip = false ?>
 <?php foreach ($veteran as $vet): ?>
+    <p> test </p>
     <?php foreach ($hotel as $hot): ?>
      <?php if ($hot->$veteran_id === $vet->veteran_id) {
          $skip = true;
