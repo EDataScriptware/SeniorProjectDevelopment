@@ -5,7 +5,7 @@ class Admin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper(array('url_helper', 'form', 'url'));
+		$this->load->helper(array('url_helper', 'form', 'url', 'directory'));
 	}
 
 	public function index() // Bus book View
@@ -54,11 +54,11 @@ class Admin extends CI_Controller {
 
 		$currMission_id = implode($this->db->get()->row_array());
 
-
+		$map = directory_map('./uploads/', 1);
 
 
 		$this->load->view('admin/template/header');
-		$this->load->view('admin/documents', array('error' => ' '));
+		$this->load->view('admin/documents', array('error' => ' ', 'files' => $map));
 		$this->load->view('admin/template/footer');
 	}
 

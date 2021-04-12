@@ -13,5 +13,7 @@
             <input type="submit" value="upload" />
 
         </form>
+
+        <?php echo $files . "<br/>" ;?>
     </body>
 </html>
