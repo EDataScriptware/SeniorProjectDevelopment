@@ -64,7 +64,7 @@ class Admin extends CI_Controller {
 
 	public function do_upload() {
 
-		$config['upload_path']          = '../libraries/documents/';
+		$config['upload_path']          = './uploads/';
 
 		$this->load->library('upload', $config);
 
