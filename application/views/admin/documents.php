@@ -3,6 +3,7 @@
 <html>
     <body>
 
+        <?php echo getcwd() . "<br/>" ;?>
         <?php echo $error;?>
             <?php echo form_open_multipart('Admin/do_upload');?>
 
