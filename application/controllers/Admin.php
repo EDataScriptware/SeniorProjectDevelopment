@@ -82,7 +82,7 @@ class Admin extends CI_Controller {
 				$data = array('upload_data' => $this->upload->data());
 
 				$this->load->view('admin/template/header');
-				$this->load->view('upload_success', $data);
+				$this->load->view('admin/upload_success', $data);
 				$this->load->view('admin/template/footer');
 		}
 	}
