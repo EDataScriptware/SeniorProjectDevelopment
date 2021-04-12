@@ -313,6 +313,7 @@ $unVetCheck = false;
         <?php foreach ($bus as $bub): ?>
         <option value="<?php echo $bub->bus_id ?>"><?php echo $bub->name ?></option>
         <?php endforeach ?>
+        </select>
     
         </form>
       </div>
