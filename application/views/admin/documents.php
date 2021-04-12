@@ -7,9 +7,7 @@
 
 <html>
     <body>
-
-        <?php echo getcwd() . "<br/>" ;?>
-        <?php echo $error;?>
+        <b><?php echo $error;?></b>
             <?php echo form_open_multipart('Admin/do_upload');?>
 
             <input type="file" name="fileToUpload" size="20" />
@@ -18,6 +16,8 @@
             <input type="submit" value="upload" />
 
         </form>
+
+        <br/>
 
         <?php if(isset($files)) { ?>
             <table id="fileTable"  class="table table-striped table-bordered">
