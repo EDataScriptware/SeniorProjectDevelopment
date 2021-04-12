@@ -105,7 +105,7 @@ class Admin extends CI_Controller {
 
 
 		$this->load->view('admin/template/header');
-		$this->load->view('admin/reservations');
+		$this->load->view('admin/reservations', $data);
 		$this->load->view('admin/template/footer');
 	}
 
