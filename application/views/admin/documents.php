@@ -19,21 +19,21 @@
 
         </form>
 
-        <?php echo json_encode($files) . "<br/>" ;?>
-
-        <table id="fileTable"  class="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>File Name</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($files as $file): ?>
-                <tr>
-                    <td><a href='<?php echo base_url('Admin/download/'.$file); ?>'><?php echo $file ?> </a></td>
-                </tr>
-                <?php endforeach ?>
-            </tbody>
-        </table>
+        <?php if(isset($files)) { ?>
+            <table id="fileTable"  class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>File Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($files as $file): ?>
+                    <tr>
+                        <td><a href='<?php echo base_url('Admin/download/'.$file); ?>'><?php echo $file ?> </a></td>
+                    </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        <?php } ?>
     </body>
 </html>
