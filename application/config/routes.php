@@ -69,6 +69,7 @@ $route['reservations'] = 'Admin/resView';
 $route['users'] = 'Admin/userView';
 $route['veterans'] = 'Admin/vetView';
 $route['guardians'] = 'Admin/guardView';
+$route['busbook'] = 'Admin/busBookView';
 
 
 

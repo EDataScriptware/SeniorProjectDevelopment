@@ -19,6 +19,28 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/footer');
 	}
 
+	public function busBookView() {
+		$this->load->model('BusBook_model');
+		$this->load->model('Bus_model');
+
+		$bus_books = $this->BusBook_model->get_all_busbook_data();
+		
+		$data['bus_book_data'] = [];
+
+		foreach($bus_books as $bus_book) {
+
+			$bus_data = $this->Bus_model->get_mission_bus_data($bus_book->mission_id);
+
+			if($bus_data) {
+				array_push($data['bus_book_data'], $bus_book, $bus_data)
+			}
+		}
+
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/busbook', $data);
+		$this->load->view('admin/template/footer');
+	}
+
 	public function docView() //Document View
 	{
 
