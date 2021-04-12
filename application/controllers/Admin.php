@@ -72,7 +72,7 @@ class Admin extends CI_Controller {
 		{
 				$error = array('error' => $this->upload->display_errors());
 
-				$this->load->view('documents', $error);
+				$this->load->view('admin/documents', $error);
 		}
 		else
 		{
