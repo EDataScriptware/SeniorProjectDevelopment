@@ -115,7 +115,7 @@ $(document).ready( function () {
 
 
 <!-- VETDATALIST -->
-<datalist id ='vets'>
+<datalist id ='veterans'>
 <?php $skip = false ?>
 <?php foreach ($veteran as $vet): ?>
     <?php foreach ($hotel as $hot): ?>
