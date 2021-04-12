@@ -17,9 +17,11 @@
 
         </form>
 
-        <br/>
 
         <?php if(isset($files)) { ?>
+            <br/>
+            <hr/>
+            <br/>
             <table id="fileTable"  class="table table-striped table-bordered">
                 <thead>
                     <tr>
