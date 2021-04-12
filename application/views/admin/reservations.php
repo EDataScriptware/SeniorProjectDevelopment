@@ -119,7 +119,7 @@ $(document).ready( function () {
 <?php $skip = false ?>
 <?php foreach ($veteran as $vet): ?>
     <?php foreach ($hotel as $hot): ?>
-     <?php if ($hot->$veteran_id == $vet->veteran_id) {
+     <?php if ($hot->$veteran_id === $vet->veteran_id) {
          $skip = true;
          break;
      } 
