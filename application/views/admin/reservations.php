@@ -118,7 +118,7 @@ $(document).ready( function () {
 <datalist id ='veterans'>
 <?php $skip = false ?>
 <?php foreach ($veteran as $vet): ?>
-    <p> test </p>
+
     <?php foreach ($hotel as $hot): ?>
      <?php if ($hot->$veteran_id === $vet->veteran_id) {
          $skip = true;
@@ -127,11 +127,9 @@ $(document).ready( function () {
      ?> 
     <?php if ($skip = true) {
         $skip = false;
-    }   else {
-        echo '<option value='.$vet->veteran_id.'> '.$vet->first_name.' '.$vet->last_name.'</option>';
-    }
-    
-    ?>
+    }   else { ?>
+        <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option>
+ <?php   } ?>
     <?php endforeach ?>
 <?php endforeach ?>
 </datalist>
