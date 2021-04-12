@@ -31,9 +31,9 @@ class Admin extends CI_Controller {
 
 			$bus_data = $this->Bus_model->get_mission_bus_data($bus_book->mission_id);
 
-			if($bus_data) {
+			if($bus_data) 
 				array_push($data['bus_book_data'], $bus_book, $bus_data)
-			}
+			
 		}
 
 		$this->load->view('admin/template/header');
