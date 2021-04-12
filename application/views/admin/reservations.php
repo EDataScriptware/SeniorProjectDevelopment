@@ -127,7 +127,7 @@ $(document).ready( function () {
     <?php if ($skip = true) {
         $skip = false;
     }   else {
-        echo '<option value='.$vet->veteran_id.'> '.$vet->first_name.' '.$vet->last_name.'</option>'
+        echo '<option value='.$vet->veteran_id.'> '.$vet->first_name.' '.$vet->last_name.'</option>';
     }
     
     ?>
