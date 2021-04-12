@@ -72,8 +72,38 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/users', $data);
 		$this->load->view('admin/template/footer');
 	}
-	public function resView() //Crew View
+	public function resView() //Reservation View
 	{
+
+		$this->load->model('Flight_model');
+
+
+		$this->db->select_max("mission_id");
+		$this->db->from('team');
+
+		$currMission_id = implode($this->db->get()->row_array());
+		$data['id'] = $currMission_id;
+
+		$this->db->select("*");
+		$this->db->from('hotel_info');
+		$this->db->where('mission_id', $currMission_id);
+		$data['hotel'] = $this->db->get()->result();
+
+		$this->db->select("*");
+		$this->db->from('event');
+		$this->db->where('mission_id', $currMission_id);
+		$data['event'] = $this->db->get()->result();
+
+		
+		$this->db->select("*");
+		$this->db->from('team');
+		$this->db->where('mission_id', $currMission_id);
+
+		$data['team'] = $this->db->get()->result();
+
+		$data['flight'] = $this->User_model->get_mission_flight_data($currMission_id);
+
+
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/reservations');
 		$this->load->view('admin/template/footer');

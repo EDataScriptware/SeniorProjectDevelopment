@@ -20,6 +20,21 @@ class Flight_Model extends CI_Model {
         return $query;
 	}
 
+        # GET MISSION SPECIFIC FLIGHT DATA
+	public function get_mission_flight_data($id) {
+        
+        $this->db->select("*");
+        $this->db->from('flight');
+        $this->db->where('mission_id',$id);
+
+        $query = $this->db->get()->result();
+        
+        
+        // echo json_encode($query);
+
+        return $query;
+	}
+
     # GET SPECIFIC
     public function get_one_flight($id) {
         $this->db->select("*");
