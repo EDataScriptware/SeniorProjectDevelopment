@@ -123,14 +123,12 @@ $(document).ready( function () {
      <?php if ($hot->$veteran_id === $vet->veteran_id) {
          $skip = true;
          break;
-     } 
-     ?> 
-    <?php if ($skip = true) {
-        $skip = false;
-    }   else { ?>
-        <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option>
- <?php   } ?>
+     } ?> 
     <?php endforeach ?>
+
+    <?php if ($skip = false) {?>
+        <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option>
+        <?php   }else {$skip = false} ?>
 <?php endforeach ?>
 </datalist>
 
