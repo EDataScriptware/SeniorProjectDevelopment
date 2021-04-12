@@ -14,6 +14,6 @@
 
         </form>
 
-        <?php echo $files . "<br/>" ;?>
+        <?php echo json_encode($files) . "<br/>" ;?>
     </body>
 </html>
