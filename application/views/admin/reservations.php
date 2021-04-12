@@ -158,24 +158,24 @@ $(document).ready( function () {
 
         <form id ="addEvent" style='display:none' >
             <label for="newTitle">Title:</label>
-
-            <input type="text" id="newTitle" name="newTitle" required size="10">
+ 
+            <input type="text" id="newTitle" name="newTitle" required size="10"> <br>
 
             <label for="newDescription">Description:</label>
 
-            <textarea id="newDescription" name="newDescription" > </textarea>
+            <textarea id="newDescription" name="newDescription" > </textarea>  <br>
 
             <label for="newDate">Date:</label>
             
-            <input type="date" id="newDate" name="newDate">
+            <input type="date" id="newDate" name="newDate">  <br>
 
             <label for="newStart">Start Time:</label>
             
-            <input type="time" id="newStart" name="newStart">
+            <input type="time" id="newStart" name="newStart">  <br>
 
             <label for="newEnd">End Time:</label>
             
-            <input type="time" id="newEnd" name="newEnd">
+            <input type="time" id="newEnd" name="newEnd">  <br>
 
         </form>
         
@@ -204,27 +204,27 @@ $(document).ready( function () {
 
         <label for="airline">Airline:</label>
 
-            <input type="text" id="airline" name="airline" required size="10">
+            <input type="text" id="airline" name="airline" required size="10">  <br>
 
         <label for="flight_number">Flight Number:</label>
 
-            <input type="number" id="flight_number" name="flight_number" required size="10">
+            <input type="number" id="flight_number" name="flight_number" required size="10">  <br>
 
         <label for="arrival">Arrival Time:</label>
 
-            <input type="datetime-local" id="arrival" name="arrival">
+            <input type="datetime-local" id="arrival" name="arrival">  <br>
 
         <label for="arrival_location">Arrival Location:</label>
 
-            <input type="arrival_location" id="arrival_location" name="arrival_location" required size="10">
+            <input type="arrival_location" id="arrival_location" name="arrival_location" required size="10">  <br>
 
         <label for="departure_time">Departure Time:</label>
 
-            <input type="datetime-local" id="departure_time" name="departure_time">
+            <input type="datetime-local" id="departure_time" name="departure_time">  <br>
 
         <label for="departure_location">Departure Location:</label>
 
-            <input type="departure_location" id="departure_location" name="departure_location" required size="10">
+            <input type="departure_location" id="departure_location" name="departure_location" required size="10">  <br>
 
         </form>
 
@@ -232,23 +232,23 @@ $(document).ready( function () {
 
             <label for="title">Title:</label>
 
-                <input type="text" id="title" name="title" required size="10">
+                <input type="text" id="title" name="title" required size="10"> <br>
 
             <label for="description">Description:</label>
 
-                <textarea id="description" name="description" > </textarea>
+                <textarea id="description" name="description" > </textarea>  <br>
 
             <label for="date">Date:</label>
 
-                <input type="date" id="date" name="date">
+                <input type="date" id="date" name="date">  <br>
 
             <label for="start">Start Time:</label>
 
-                <input type="time" id="start" name="start">
+                <input type="time" id="start" name="start">  <br>
 
             <label for="end">End Time:</label>
 
-                <input type="time" id="end" name="end">
+                <input type="time" id="end" name="end">  <br>
         </form>
 
         <form id ="editEvent" style='display:none' >
