@@ -157,6 +157,25 @@ $(document).ready( function () {
         </form>
 
         <form id ="addEvent" style='display:none' >
+            <label for="newTitle">Title:</label>
+
+            <input type="text" id="newTitle" name="newTitle" required size="10">
+
+            <label for="newDescription">Description:</label>
+
+            <textarea id="newDescription" name="newDescription" > </textarea>
+
+            <label for="newDate">Date:</label>
+            
+            <input type="date" id="newDate" name="newDate">
+
+            <label for="newStart">Start Time:</label>
+            
+            <input type="time" id="newStart" name="newStart">
+
+            <label for="newEnd">End Time:</label>
+            
+            <input type="time" id="newEnd" name="newEnd">
 
         </form>
         
@@ -182,33 +201,54 @@ $(document).ready( function () {
       </div>
       <div class="modal-body">
         <form id ="editFly" style='display:none' >
+
         <label for="airline">Airline:</label>
 
-        <input type="text" id="airline" name="airline" required size="10">
+            <input type="text" id="airline" name="airline" required size="10">
 
         <label for="flight_number">Flight Number:</label>
 
-        <input type="number" id="flight_number" name="flight_number" required size="10">
+            <input type="number" id="flight_number" name="flight_number" required size="10">
 
         <label for="arrival">Arrival Time:</label>
 
-        <input type="datetime-local" id="arrival" name="arrival">
+            <input type="datetime-local" id="arrival" name="arrival">
 
         <label for="arrival_location">Arrival Location:</label>
 
-    <input type="arrival_location" id="arrival_location" name="arrival_location" required size="10">
+            <input type="arrival_location" id="arrival_location" name="arrival_location" required size="10">
 
-    <label for="departure_time">Departure Time:</label>
+        <label for="departure_time">Departure Time:</label>
 
-    <input type="datetime-local" id="departure_time" name="departure_time">
+            <input type="datetime-local" id="departure_time" name="departure_time">
 
-    <label for="departure_location">Departure Location:</label>
+        <label for="departure_location">Departure Location:</label>
 
-    <input type="departure_location" id="departure_location" name="departure_location" required size="10">
+            <input type="departure_location" id="departure_location" name="departure_location" required size="10">
+
         </form>
 
         <form id ="editHotel" style='display:none' >
 
+            <label for="title">Title:</label>
+
+                <input type="text" id="title" name="title" required size="10">
+
+            <label for="description">Description:</label>
+
+                <textarea id="description" name="description" > </textarea>
+
+            <label for="date">Date:</label>
+
+                <input type="date" id="date" name="date">
+
+            <label for="start">Start Time:</label>
+
+                <input type="time" id="start" name="start">
+
+            <label for="end">End Time:</label>
+
+                <input type="time" id="end" name="end">
         </form>
 
         <form id ="editEvent" style='display:none' >
