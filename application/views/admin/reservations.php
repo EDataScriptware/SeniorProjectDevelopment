@@ -126,29 +126,29 @@ $(document).ready( function () {
       <div class="modal-body">
         <form id ="addFly" style='display:none' >
 
-            <label for="airline">Airline:</label>
+            <label for="newAirline">Airline:</label>
 
-            <input type="text" id="airline" name="airline" required size="10">
+            <input type="text" id="newAirline" name="newAirline" required size="10">
 
-            <label for="flight_number">Flight Number:</label>
+            <label for="newFlight_number">Flight Number:</label>
 
-            <input type="number" id="flight_number" name="flight_number" required size="10">
+            <input type="number" id="newFlight_number" name="newFlight_number" required size="10">
 
-            <label for="arrival">Arrival Time:</label>
+            <label for="newArrival">Arrival Time:</label>
 
-            <input type="datetime-local" id="arrival" name="arrival">
+            <input type="datetime-local" id="newArrival" name="newArrival">
 
-            <label for="arrival_location">Arrival Location:</label>
+            <label for="newArrival_location">Arrival Location:</label>
 
-            <input type="arrival_location" id="arrival_location" name="arrival_location" required size="10">
+            <input type="text" id="newArrival_location" name="newArrival_location" required size="10">
 
-            <label for="departure_time">Departure Time:</label>
+            <label for="newDeparture_time">Departure Time:</label>
 
-            <input type="datetime-local" id="departure_time" name="departure_time">
+            <input type="datetime-local" id="newDeparture_time" name="newDeparture_time">
 
-            <label for="departure_location">Departure Location:</label>
+            <label for="newDeparture_location">Departure Location:</label>
 
-            <input type="departure_location" id="departure_location" name="departure_location" required size="10">
+            <input type="text" id="newDeparture_location" name="newDeparture_location" required size="10">
 
         </form>
 
@@ -218,9 +218,7 @@ $(document).ready( function () {
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" style='display:none' id='editFlyBut' form ="editFly">Save changes</button>
-        <button type="button" class="btn btn-primary" style='display:none' id='editFlyHotel' form ="editHotel">Save changes</button>
-        <button type="button" class="btn btn-primary" style='display:none' id='editFlyEvent' form ="editEvent">Save changes</button>
+
       </div>
     </div>
   </div>
