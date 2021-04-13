@@ -404,7 +404,7 @@ function editBlock($id, $type) {
             document.getElementById("editFly").action = 'Admin/editEvent/'+$id+'/'+$type;
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
-                console.log(result[0]);
+                console.log(result);
            
 
             document.getElementById("editFly").style.display = "block";
@@ -432,7 +432,7 @@ function editBlock($id, $type) {
             document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+$type;
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
-                console.log(result[0]);
+                console.log(result);
 
             document.getElementById("editFly").style.display = "none";
             document.getElementById("editFlyBut").style.display = "none";
@@ -458,7 +458,7 @@ function editBlock($id, $type) {
             document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+$type;
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
-                console.log(result[0]);
+                console.log(result);
 
             document.getElementById("editFly").style.display = "none";
             document.getElementById("editFlyBut").style.display = "none";
