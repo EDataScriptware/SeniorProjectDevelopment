@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($book['bus'] as $bus) { ?>
+                <?php foreach($book->bus as $bus) { ?>
                     <tr>
                         <td><?php $bus->bus_id ;?></td>
                     </tr>
