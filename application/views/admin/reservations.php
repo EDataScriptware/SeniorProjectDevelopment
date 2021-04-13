@@ -406,7 +406,7 @@ function editBlock($id, $type) {
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
     
                 var $result = JSON.parse(result);
-                console.log($result);
+                console.log($res[0]);
 
             document.getElementById("editFly").style.display = "block";
             document.getElementById("editFlyBut").style.display = "block";
@@ -417,12 +417,12 @@ function editBlock($id, $type) {
             document.getElementById("editEvent").style.display = "none";
             document.getElementById("editEventBut").style.display = "none";
 
-            document.getElementById("arrival").value = $result[0]['arrival'];
-            document.getElementById("departure").value = $result[0]['departure'];
-            document.getElementById("flight_number").value = $result[0]['flight_number'];
-            document.getElementById("airline").value = $result[0]['airline'];
-            document.getElementById("arrival_location").value = $result[0]['arrival_location'];
-            document.getElementById("departure_location").value = $result[0]['departure_location'];
+            document.getElementById("arrival").value = $res[0]['arrival'];
+            document.getElementById("departure").value = $res[0]['departure'];
+            document.getElementById("flight_number").value = $res[0]['flight_number'];
+            document.getElementById("airline").value = $res[0]['airline'];
+            document.getElementById("arrival_location").value = $res[0]['arrival_location'];
+            document.getElementById("departure_location").value = $res[0]['departure_location'];
             
              });
 
@@ -434,7 +434,7 @@ function editBlock($id, $type) {
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
                 var $result = JSON.parse(result);
-                console.log($result);
+                console.log($res[0]);
 
 
             document.getElementById("editFly").style.display = "none";
@@ -446,11 +446,11 @@ function editBlock($id, $type) {
             document.getElementById("editEvent").style.display = "none";
             document.getElementById("editEventBut").style.display = "none";
             
-            document.getElementById("veteran_id").value = $result[0]['veteran_id'];
-            document.getElementById("name").value = $result[0]['name'];
-            document.getElementById("room").value = $result[0]['room'];
-            document.getElementById("check_in").value = $result[0]['check_in'];
-            document.getElementById("check_out").value = $result[0]['check_out'];
+            document.getElementById("veteran_id").value = $res[0]['veteran_id'];
+            document.getElementById("name").value = $res[0]['name'];
+            document.getElementById("room").value = $res[0]['room'];
+            document.getElementById("check_in").value = $res[0]['check_in'];
+            document.getElementById("check_out").value = $res[0]['check_out'];
 
         });
 
@@ -461,8 +461,8 @@ function editBlock($id, $type) {
             document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+$type;
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
-                var $result = JSON.parse(result);
-                console.log($result);
+                var $res = JSON.parse(result);
+                console.log($res[0]);
 
 
             document.getElementById("editFly").style.display = "none";
@@ -475,11 +475,11 @@ function editBlock($id, $type) {
             document.getElementById("editEventBut").style.display = "block";
 
 
-            document.getElementById("description").value = $result[0]['description'];
-            document.getElementById("start").value = $result[0]['start'];
-            document.getElementById("end").value = $result[0]['end'];
-            document.getElementById("date").value = $result[0]['date'];
-            document.getElementById("title").value = $result[0]['title'];
+            document.getElementById("description").value = $res[0]['description'];
+            document.getElementById("start").value = $res[0]['start'];
+            document.getElementById("end").value = $res[0]['end'];
+            document.getElementById("date").value = $res[0]['date'];
+            document.getElementById("title").value = $res[0]['title'];
 
         });
 
