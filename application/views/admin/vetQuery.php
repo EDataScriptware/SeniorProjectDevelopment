@@ -1,6 +1,11 @@
+<script> $(document).ready( function () {  
+    $('#doc').addClass('active');
+    $('#vetTable').DataTable();
+} ); 
+
 <p> Vet Query </p>
 
-<table>
+<table id="vetTable"  class="table table-striped table-bordered">
     <tr>
         <?php
             foreach($fields as $field) {
