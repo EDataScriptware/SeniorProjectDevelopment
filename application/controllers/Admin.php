@@ -484,18 +484,62 @@ class Admin extends CI_Controller {
 
 		switch ($type) {
 			case 'fly':
+				$airline = $this->input->post('newAirline');
+				$flight_number = $this->input->post('newFlight_number');
+				$arrival = $this->input->post('newArrival');
+				$arrival_location = $this->input->post('newArrival_location');
+				$departure = $this->input->post('newDeparture');
+				$departure_location = $this->input->post('newDeparture_location');
 
+				$data = array(
+					'airline' => $airline,
+					'flight_number' => $flight_number,
+					'arrival' => $arrival,
+					'arrival_location' => $arrival_location,
+					'departure' => $departure,
+					'departure_location' => $departure_location,
+					'mission_id' => $currMission_id,
+				);
 
+				$this->db->insert('fly', $data); 
 
 				break;
 			case 'hotel':
+				$name = $this->input->post('newName');
+				$veteran_id = $this->input->post('newVeteran_id');
+				$room = $this->input->post('newRoom');
+				$check_in = $this->input->post('newCheck_in');
+				$check_out = $this->input->post('newCheck_out');
 
+				$data = array(
+					'name' => $name,
+					'veteran_id' => $veteran_id,
+					'room' => $room,
+					'check_in' => $check_in,
+					'check_out' => $check_out,
+					'mission_id' => $currMission_id,
+				);
 
+				$this->db->insert('hotel_info', $data); 
 
 				break;
 			case 'event':
+				$title = $this->input->post('newTitle');
+				$description = $this->input->post('newDescription');
+				$date = $this->input->post('newDate');
+				$start = $this->input->post('newStart');
+				$end = $this->input->post('newEnd');
+				
+				$data = array(
+					'title' => $title,
+					'description' => $description,
+					'date' => $date,
+					'start' => $start,
+					'end' => $end,
+					'mission_id' => $currMission_id,
+				);
 
-
+				$this->db->insert('event', $data); 
 
 				break;
 		}
@@ -503,22 +547,24 @@ class Admin extends CI_Controller {
 	}
 
 	public function editEvent($id,$type) {
-
+		$postData = $this->input->post();
 
 		$this->db->select_max("mission_id");
 		$this->db->from('mission');
 
-		$currMission_id = implode($this->db->get()->row_array());
 
 		switch ($type) {
 			case 'fly':
-
+				$this->db->where('flight_id', $id);
+				$this->db->update('flight',$postData);
 				break;
 			case 'hotel':
-
+				$this->db->where('hotel_id', $id);
+				$this->db->update('hotel_info',$postData);
 				break;
 			case 'event':
-
+				$this->db->where('event_id', $id);
+				$this->db->update('event',$postData);
 				break;
 		}
 

@@ -122,12 +122,10 @@ $(document).ready( function () {
     <?php foreach ($hotel as $hot): ?>
      <?php if ($hot->$veteran_id === $vet->veteran_id) {
          $skip = true;
-         
-         break;
      } ?> 
     <?php endforeach ?>
 
-    <?php if ($skip = false) { echo $skip;?>
+    <?php if ($skip = false) { ?>
         <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option>
         <?php }else {$skip = false;} ?>
 <?php endforeach ?>
@@ -148,27 +146,27 @@ $(document).ready( function () {
 
             <label for="newAirline">Airline:</label>
 
-            <input type="text" id="newAirline" name="newAirline" required size="10"> <br>
+                <input type="text" id="newAirline" name="newAirline" required size="10"> <br>
 
             <label for="newFlight_number">Flight Number:</label>
 
-            <input type="number" id="newFlight_number" name="newFlight_number" required size="10"> <br>
+                <input type="number" id="newFlight_number" name="newFlight_number" required size="10"> <br>
 
             <label for="newArrival">Arrival Time:</label>
 
-            <input type="datetime-local" id="newArrival" name="newArrival"> <br>
+                <input type="datetime-local" id="newArrival" name="newArrival"> <br>
 
             <label for="newArrival_location">Arrival Location:</label>
 
-            <input type="text" id="newArrival_location" name="newArrival_location" required size="10"> <br>
+                <input type="text" id="newArrival_location" name="newArrival_location" required size="10"> <br>
 
-            <label for="newDeparture_time">Departure Time:</label>
+            <label for="newDeparture">Departure Time:</label>
 
-            <input type="datetime-local" id="newDeparture_time" name="newDeparture_time"> <br>
+                <input type="datetime-local" id="newDeparture" name="newDeparture"> <br>
 
             <label for="newDeparture_location">Departure Location:</label>
 
-            <input type="text" id="newDeparture_location" name="newDeparture_location" required size="10"> <br>
+                <input type="text" id="newDeparture_location" name="newDeparture_location" required size="10"> <br>
 
         </form>
 
@@ -199,23 +197,23 @@ $(document).ready( function () {
         <form id ="addEvent" style='display:none' >
             <label for="newTitle">Title:</label>
  
-            <input type="text" id="newTitle" name="newTitle" required size="10"> <br>
+                <input type="text" id="newTitle" name="newTitle" required size="10"> <br>
 
             <label for="newDescription">Description:</label>
 
-            <textarea id="newDescription" name="newDescription" > </textarea>  <br>
+                <textarea id="newDescription" name="newDescription" > </textarea>  <br>
 
             <label for="newDate">Date:</label>
             
-            <input type="date" id="newDate" name="newDate">  <br>
+                <input type="date" id="newDate" name="newDate">  <br>
 
             <label for="newStart">Start Time:</label>
             
-            <input type="time" id="newStart" name="newStart">  <br>
+                <input type="time" id="newStart" name="newStart">  <br>
 
             <label for="newEnd">End Time:</label>
             
-            <input type="time" id="newEnd" name="newEnd">  <br>
+                <input type="time" id="newEnd" name="newEnd">  <br>
 
         </form>
         
