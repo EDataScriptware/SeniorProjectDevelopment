@@ -408,15 +408,6 @@ function editBlock($id, $type) {
                 var $res = JSON.parse(result);
                 console.log($res[0]);
 
-            var $dT1 = $res[0]['arrival'];
-            var $dT2 = $res[0]['departure'];
-
-            var $parseDT1 = $dT1.split(/[- :]/);
-            var $parseDT2 = $dT2.split(/[- :]/);
-
-           var $dateObject1 = new Date(...$parseDT1);
-           var $dateObject2 = new Date(...$parseDT2);
-
             document.getElementById("editFly").style.display = "block";
             document.getElementById("editFlyBut").style.display = "block";
 
@@ -426,8 +417,8 @@ function editBlock($id, $type) {
             document.getElementById("editEvent").style.display = "none";
             document.getElementById("editEventBut").style.display = "none";
 
-            document.getElementById("arrival").value = $dateObject1;
-            document.getElementById("departure").value = $dateObject2;
+            document.getElementById("arrival").value = $res[0]['arrival'].replace(" ", "T");
+            document.getElementById("departure").value = $res[0]['departure'].replace(" ", "T");;
             document.getElementById("flight_number").value = $res[0]['flight_number'];
             document.getElementById("airline").value = $res[0]['airline'];
             document.getElementById("arrival_location").value = $res[0]['arrival_location'];
@@ -458,8 +449,8 @@ function editBlock($id, $type) {
             document.getElementById("veteran_id").value = $res[0]['veteran_id'];
             document.getElementById("name").value = $res[0]['name'];
             document.getElementById("room").value = $res[0]['room'];
-            document.getElementById("check_in").value = Convert.ToDateTime($res[0]['check_in']);
-            document.getElementById("check_out").value = Convert.ToDateTime($res[0]['check_out']);
+            document.getElementById("check_in").value = $res[0]['check_in'].replace(" ", "T");
+            document.getElementById("check_out").value = $res[0]['check_out'].replace(" ", "T");
 
         });
 
