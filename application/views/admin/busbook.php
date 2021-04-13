@@ -16,7 +16,7 @@
 
 
         <h2>Bus Book <?php echo $book->bus_book_id; ?> | Mission ID: <?php echo $book->mission_id; ?></h2>
-        <h3>Start: <?php echo $book->start; ?> | End: <?php echo $book->end; ?></h3>
+        <h4>Start: <?php echo $book->start; ?> | End: <?php echo $book->end; ?></h4>
         <?php if(isset($book->notes)) { ?>
                 <p><?php echo $book->notes; ?></p>
         <?php } ?>
@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($book->bus as $bus) {?>
+                <?php foreach($book['bus'] as $bus) { ?>
                     <tr>
                         <td><?php $bus->bus_id ;?></td>
                     </tr>
