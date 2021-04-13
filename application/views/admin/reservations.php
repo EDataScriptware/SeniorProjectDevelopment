@@ -381,7 +381,7 @@ function editBlock($id, $type) {
     switch ($type) {
         case 'fly':
 
-            document.getElementById("editFly").action = 'Admin/editEvent/'+$id+'/'+type;
+            document.getElementById("editFly").action = 'Admin/editEvent/'+$id+'/'+$type;
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
     
@@ -409,7 +409,7 @@ function editBlock($id, $type) {
 
         case 'hotel':
 
-            document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+type;
+            document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+$type;
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
 
@@ -434,7 +434,7 @@ function editBlock($id, $type) {
 
         case 'event':
 
-            document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+type;
+            document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+$type;
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
 
