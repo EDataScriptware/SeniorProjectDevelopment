@@ -278,7 +278,7 @@ $unVetCheck = false;
 
       <label for="name">Label the new Bus:</label>
 
-      <input type="text" id="name" name="name" required size="10">
+      <input type="text" id="name" name="name" required>
     
         </form>
       </div>
@@ -304,7 +304,7 @@ $unVetCheck = false;
 
       <label for="color">Give the team a color:</label>
 
-      <input type="text" id="color" name="color" required size="10">
+      <input type="text" id="color" name="color" required >
 
 
       <p>   Assign the team to a bus: </p>
