@@ -174,7 +174,6 @@ class Admin extends CI_Controller {
 		$data['flight'] = $this->Flight_model->get_mission_flight_data($currMission_id);
 		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
 
-
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/reservations', $data);
 		$this->load->view('admin/template/footer');
@@ -540,9 +539,11 @@ class Admin extends CI_Controller {
 				$date = $this->input->post('newDate');
 				$start = $this->input->post('newStart');
 				$end = $this->input->post('newEnd');
+				$team_id = $this->input->post('newTeam_id');
 				
 				$data = array(
 					'title' => $title,
+					'team_id' => $teamId,
 					'description' => $description,
 					'date' => $date,
 					'start' => $start,

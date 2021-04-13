@@ -198,6 +198,16 @@ $(document).ready( function () {
  
                 <input type="text" id="newTitle" name="newTitle" required size="10"> <br>
 
+            <label for="newTeam_id">Team Id:</label>
+            <select id="newTeam_id" name="newTeam_id">
+            <?php foreach($team as $tem): ?>
+            <?php if ($tem->mission_id === $id) { ?>
+            <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color?></option>
+
+            <?php } ?>
+            <?php endforeach ?>
+            </select> <br>
+
             <label for="newDescription">Description:</label>
 
                 <textarea id="newDescription" name="newDescription" > </textarea>  <br>
@@ -295,6 +305,16 @@ $(document).ready( function () {
         <label for="title">Title:</label>
 
             <input type="text" id="title" name="title" required size="10"> <br>
+
+            <label for="team_id">Team Id:</label>
+            <select id="team_id" name="team_id">
+            <?php foreach($team as $tem): ?>
+            <?php if ($tem->mission_id === $id) { ?>
+            <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color?></option>
+
+            <?php } ?>
+            <?php endforeach ?>
+            </select> <br>
 
         <label for="description">Description:</label>
 
