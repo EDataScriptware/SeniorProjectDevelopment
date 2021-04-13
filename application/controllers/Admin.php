@@ -602,7 +602,7 @@ class Admin extends CI_Controller {
 				break;
 		}
 
-		echo json_encode($data);
+		echo $data;
 		
 	}
 
