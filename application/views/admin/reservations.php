@@ -336,9 +336,9 @@ $(document).ready( function () {
 
       </div>
       <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" style='display:none' id='editFlyBut' form ="editFly">Add New Flight Entry</button>
-        <button type="submit" class="btn btn-primary" style='display:none' id='editHotelBut' form ="editHotel">Add New Hotel Entry</button>
-        <button type="submit" class="btn btn-primary" style='display:none' id='editEventBut' form ="editEvent">Add New Event Entry</button>
+      <button type="submit" class="btn btn-primary" style='display:none' id='editFlyBut' form ="editFly">Edit Flight Entry</button>
+        <button type="submit" class="btn btn-primary" style='display:none' id='editHotelBut' form ="editHotel">Edit Hotel Entry</button>
+        <button type="submit" class="btn btn-primary" style='display:none' id='editEventBut' form ="editEvent">Edit Event Entry</button>
       </div>
     </div>
   </div>
