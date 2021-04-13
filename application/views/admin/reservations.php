@@ -411,11 +411,11 @@ function editBlock($id, $type) {
             var $dT1 = $res[0]['arrival'];
             var $dT2 = $res[0]['departure'];
 
-            var $parseDT1 = dT1.split(/[- :]/);
-            var $parseDT2 = dT2.split(/[- :]/);
+            var $parseDT1 = $dT1.split(/[- :]/);
+            var $parseDT2 = $dT2.split(/[- :]/);
 
-           var $dateObject1 = new Date(...parseDT1);
-           var $dateObject2 = new Date(...parseDT2);
+           var $dateObject1 = new Date(...$parseDT1);
+           var $dateObject2 = new Date(...$parseDT2);
 
             document.getElementById("editFly").style.display = "block";
             document.getElementById("editFlyBut").style.display = "block";
