@@ -601,7 +601,8 @@ class Admin extends CI_Controller {
 				$this->db->get('event');
 				break;
 		}
-		redirect('reservations');
+
+		echo json_encode($data);
 	}
 
 
