@@ -17,10 +17,10 @@ $(document).ready( function () {
         <tr>
             <th>Airline</th>
             <th>Flight Number</th>
-            <th>Arrival Time</th>
-            <th>Arrival Location</th>
             <th>Departure Time</th>
             <th>Departure Location</th>
+            <th>Arrival Time</th>
+            <th>Arrival Location</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -29,10 +29,10 @@ $(document).ready( function () {
         <tr>
             <td><?php echo $fly->airline ?></td>
             <td><?php echo $fly->flight_number ?></td>
-            <td><?php echo $fly->arrival ?></td>
-            <td><?php echo $fly->arrival_location ?></td>
             <td><?php echo $fly->departure ?></td>
             <td><?php echo $fly->departure_location ?></td>
+            <td><?php echo $fly->arrival ?></td>
+            <td><?php echo $fly->arrival_location ?></td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $fly->flight_id ?>,'fly')"  > EDIT </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $fly->flight_id ?>,'fly')"  > REMOVE </button> </td>
         </tr>
         <?php endforeach ?>
@@ -143,19 +143,11 @@ $(document).ready( function () {
 
             <label for="newAirline">Airline:</label>
 
-                <input type="text" id="newAirline" name="newAirline" required size="10"> <br>
+                <input type="text" id="newAirline" name="newAirline" required > <br>
 
             <label for="newFlight_number">Flight Number:</label>
 
-                <input type="number" id="newFlight_number" name="newFlight_number" required size="10"> <br>
-
-            <label for="newArrival">Arrival Time:</label>
-
-                <input type="datetime-local" id="newArrival" name="newArrival"> <br>
-
-            <label for="newArrival_location">Arrival Location:</label>
-
-                <input type="text" id="newArrival_location" name="newArrival_location" required size="10"> <br>
+                <input type="number" id="newFlight_number" name="newFlight_number" required > <br>
 
             <label for="newDeparture">Departure Time:</label>
 
@@ -163,7 +155,17 @@ $(document).ready( function () {
 
             <label for="newDeparture_location">Departure Location:</label>
 
-                <input type="text" id="newDeparture_location" name="newDeparture_location" required size="10"> <br>
+                <input type="text" id="newDeparture_location" name="newDeparture_location" required > <br>
+
+            <label for="newArrival">Arrival Time:</label>
+
+                <input type="datetime-local" id="newArrival" name="newArrival"> <br>
+
+            <label for="newArrival_location">Arrival Location:</label>
+
+                <input type="text" id="newArrival_location" name="newArrival_location" required > <br>
+
+
 
         </form>
 
@@ -171,15 +173,15 @@ $(document).ready( function () {
 
         <label for="newName">Hotel Name:</label>
  
-            <input type="text" id="newName" name="newName" required size="10"> <br>
+            <input type="text" id="newName" name="newName" required > <br>
 
         <label for="newVeteran_id">Veteran:</label>
 
-            <input type="text" list='veterans' id="newVeteran_id" name="newVeteran_id" required size="10"> <br>
+            <input type="text" list='veterans' id="newVeteran_id" name="newVeteran_id" required > <br>
 
         <label for="newRoom">Room:</label>
  
-            <input type="text" id="newRoom" name="newRoom" required size="10"> <br>
+            <input type="text" id="newRoom" name="newRoom" required > <br>
 
         <label for="newCheck_in">Check-In Time:</label>
  
