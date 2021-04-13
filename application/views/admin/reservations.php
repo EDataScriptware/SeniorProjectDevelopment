@@ -258,6 +258,14 @@ $(document).ready( function () {
 
             <input type="number" id="flight_number" name="flight_number" required size="10">  <br>
 
+        <label for="departure">Departure Time:</label>
+
+            <input type="datetime-local" id="departure_time" name="departure_time">  <br>
+
+        <label for="departure_location">Departure Location:</label>
+
+            <input type="text" id="departure_location" name="departure_location" required size="10">  <br>
+
         <label for="arrival">Arrival Time:</label>
 
             <input type="datetime-local" id="arrival" name="arrival">  <br>
@@ -265,14 +273,6 @@ $(document).ready( function () {
         <label for="arrival_location">Arrival Location:</label>
 
             <input type="text" id="arrival_location" name="arrival_location" required size="10">  <br>
-
-        <label for="departure_time">Departure Time:</label>
-
-            <input type="datetime-local" id="departure_time" name="departure_time">  <br>
-
-        <label for="departure_location">Departure Location:</label>
-
-            <input type="text" id="departure_location" name="departure_location" required size="10">  <br>
 
         </form>
 
