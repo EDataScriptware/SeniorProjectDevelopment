@@ -107,7 +107,7 @@ $(document).ready( function () {
             <td> <?php echo $eve->date ?>  </td>
             <td> <?php echo $eve->start ?>  </td>
             <td> <?php echo $eve->end ?>  </td>
-            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>,'event')"  > EDIT </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $use->iduser ?>,'event')"  > REMOVE </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $eve->event_id ?>,'event')"  > EDIT </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $eve->event_id ?>,'event')"  > REMOVE </button> </td>
         </tr>
         <?php endforeach ?>
     </tbody>
