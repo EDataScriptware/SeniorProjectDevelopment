@@ -117,10 +117,8 @@ $(document).ready( function () {
 <!-- VETDATALIST -->
 <datalist id ='veterans'>
 <?php foreach ($veteran as $vet): ?>
-    <!-- <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option> -->
     <?php $skip = false; ?>
     <?php foreach ($hotel as $hot): ?>
-        <p> test </p>
      <?php if ($hot->$veteran_id === $vet->veteran_id) { $skip = true; break;} ?> 
     <?php endforeach ?>
 
