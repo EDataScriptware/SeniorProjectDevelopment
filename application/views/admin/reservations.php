@@ -458,7 +458,7 @@ function editBlock($id, $type) {
 
         case 'event':
 
-            document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+$type;
+            document.getElementById("editEvent").action = "Admin/editEvent/"+$id+'/'+$type;
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
                 var $res = JSON.parse(result);
