@@ -408,6 +408,15 @@ function editBlock($id, $type) {
                 var $res = JSON.parse(result);
                 console.log($res[0]);
 
+            var $dT1 = $res[0]['arrival'];
+            var $dT2 = $res[0]['departure'];
+
+            var $parseDT1 = dT1.split(/[- :]/);
+            var $parseDT2 = dT2.split(/[- :]/);
+
+           var $dateObject1 = new Date(...parseDT1);
+           var $dateObject2 = new Date(...parseDT2);
+
             document.getElementById("editFly").style.display = "block";
             document.getElementById("editFlyBut").style.display = "block";
 
@@ -417,8 +426,8 @@ function editBlock($id, $type) {
             document.getElementById("editEvent").style.display = "none";
             document.getElementById("editEventBut").style.display = "none";
 
-            document.getElementById("arrival").value = Convert.ToDateTime($res[0]['arrival']);
-            document.getElementById("departure").value = Convert.ToDateTime($res[0]['departure']);
+            document.getElementById("arrival").value = $dateObject1;
+            document.getElementById("departure").value = $dateObject2;
             document.getElementById("flight_number").value = $res[0]['flight_number'];
             document.getElementById("airline").value = $res[0]['airline'];
             document.getElementById("arrival_location").value = $res[0]['arrival_location'];
