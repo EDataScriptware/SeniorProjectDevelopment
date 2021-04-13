@@ -13,6 +13,9 @@
                 <th><?php echo $field ?></th>
         <?php } ?>
     </tr>
+    <tr>
+        Action
+    </tr>
     <?php
         foreach($vetData as $vet) {?>
             <tr>
@@ -28,5 +31,3 @@
             </tr>
         <?php } ?>
 </table>
-
-<?php echo json_encode($fields); ?>
