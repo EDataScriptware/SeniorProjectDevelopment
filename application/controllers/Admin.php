@@ -377,6 +377,7 @@ class Admin extends CI_Controller {
 
 		$this->db->where('iduser', $id);
 		$this->db->update('user', $data); 
+		redirect('teams');
 
 	}
 
@@ -388,6 +389,7 @@ class Admin extends CI_Controller {
 
 		$this->db->where('veteran_id', $id);
 		$this->db->update('veteran', $data); 
+		redirect('teams');
 	}
 
 	public function moveTeam($id) {
@@ -397,6 +399,7 @@ class Admin extends CI_Controller {
 
 		$this->db->where('team_id', $id);
 		$this->db->update('team', $data); 
+		redirect('teams');
 	}
 
 	public function newBus() {
@@ -411,7 +414,8 @@ class Admin extends CI_Controller {
 		$data = array ('mission_id' => $currMission_id,
 						'name' => $name);
 
-		$this->db->insert('bus', $data); 			
+		$this->db->insert('bus', $data);
+		redirect('teams'); 			
 
 	}
 
@@ -430,6 +434,7 @@ class Admin extends CI_Controller {
 		'bus_id' => $bus_id);
 
 		$this->db->insert('team', $data); 	
+		redirect('teams');
 	}
 
 	public function  removeTeam() {
@@ -507,7 +512,7 @@ class Admin extends CI_Controller {
 					'mission_id' => $currMission_id,
 				);
 
-				$this->db->insert('fly', $data); 
+				$this->db->insert('flight', $data); 
 
 				break;
 			case 'hotel':
@@ -549,7 +554,7 @@ class Admin extends CI_Controller {
 
 				break;
 		}
-
+		redirect('reservations');
 	}
 
 	public function editEvent($id,$type) {
@@ -573,7 +578,7 @@ class Admin extends CI_Controller {
 				$this->db->update('event',$postData);
 				break;
 		}
-
+		redirect('reservations');
 	}
 
 	public function getEvent() {
@@ -595,7 +600,7 @@ class Admin extends CI_Controller {
 				$this->db->get('event');
 				break;
 		}
-
+		redirect('reservations');
 	}
 
 
@@ -618,7 +623,7 @@ class Admin extends CI_Controller {
 				$this->db->delete('event');
 				break;
 		}
-
+		redirect('reservations');
 	}
 
 
