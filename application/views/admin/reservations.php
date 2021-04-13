@@ -116,9 +116,9 @@ $(document).ready( function () {
 
 <!-- VETDATALIST -->
 <datalist id ='veterans'>
-<?php $skip = false ?>
+<?php $skip = false; ?>
 <?php foreach ($veteran as $vet): ?>
-    <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option>
+    <!-- <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option> -->
     <?php foreach ($hotel as $hot): ?>
      <?php if ($hot->$veteran_id === $vet->veteran_id) {
          $skip = true;
