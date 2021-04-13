@@ -2,6 +2,7 @@
     $('#doc').addClass('active');
     $('#vetTable').DataTable();
 } ); 
+</script>
 
 <p> Vet Query </p>
 
@@ -10,8 +11,7 @@
         <?php
             foreach($fields as $field) { ?>
                 <th><?php echo $field ?></th>
-            <?php } 
-        ?>
+        <?php } ?>
     </tr>
     <?php
         foreach($vetData as $vet) {?>
@@ -23,8 +23,8 @@
                 <td><?php echo "<input form=".$vet->veteran_id." type='text' name='".$key."' value='".$value."'>" ;?></td>
             <?php } ?>
 
-                <td><?php echo "<button input form='".$vet->veteran_id."' type='submit' name='submit' value='Submit'> Submit </button>"; ?> </td>";
-                </form>";
+                <td><?php echo "<button input form='".$vet->veteran_id."' type='submit' name='submit' value='Submit'> Submit </button>"; ?> </td>
+                </form>
             </tr>
         <?php } ?>
 </table>
