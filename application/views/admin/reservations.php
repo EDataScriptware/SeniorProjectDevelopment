@@ -139,7 +139,7 @@ $(document).ready( function () {
         </button>
       </div>
       <div class="modal-body">
-        <form id ="addFly" style='display:none' >
+        <form method='post' id ="addFly" style='display:none' >
 
             <label for="newAirline">Airline:</label>
 
@@ -169,7 +169,7 @@ $(document).ready( function () {
 
         </form>
 
-        <form id ="addHotel" style='display:none' >
+        <form id ="addHotel" method='post' style='display:none' >
 
         <label for="newName">Hotel Name:</label>
  
@@ -193,7 +193,7 @@ $(document).ready( function () {
 
         </form>
 
-        <form id ="addEvent" style='display:none' >
+        <form id ="addEvent" method='post' style='display:none' >
             <label for="newTitle">Title:</label>
  
                 <input type="text" id="newTitle" name="newTitle" required size="10"> <br>
@@ -238,7 +238,7 @@ $(document).ready( function () {
       </div>
       <div class="modal-body">
 
-        <form id ="editFly" style='display:none' >
+        <form id ="editFly" method='POST' style='display:none' >
 
         <label for="airline">Airline:</label>
 
@@ -266,7 +266,7 @@ $(document).ready( function () {
 
         </form>
 
-        <form id ="editHotel" style='display:none' >
+        <form id ="editHotel" method='POST' style='display:none' >
 
         <label for="name">Hotel Name:</label>
  
@@ -290,7 +290,7 @@ $(document).ready( function () {
           
         </form>
 
-        <form id ="editEvent" style='display:none' >
+        <form id ="editEvent" method='POST' style='display:none' >
 
         <label for="title">Title:</label>
 
