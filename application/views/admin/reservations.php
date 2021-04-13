@@ -405,7 +405,7 @@ function editBlock($id, $type) {
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
     
-                var $result = JSON.parse(result);
+                var $res = JSON.parse(result);
                 console.log($res[0]);
 
             document.getElementById("editFly").style.display = "block";
@@ -433,7 +433,7 @@ function editBlock($id, $type) {
             document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+$type;
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
-                var $result = JSON.parse(result);
+                var $res = JSON.parse(result);
                 console.log($res[0]);
 
 
