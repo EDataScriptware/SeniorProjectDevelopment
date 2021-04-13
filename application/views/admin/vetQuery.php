@@ -28,3 +28,5 @@
             </tr>
         <?php } ?>
 </table>
+
+<?php echo json_encode($fields); ?>
