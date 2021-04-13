@@ -590,15 +590,15 @@ class Admin extends CI_Controller {
 		switch ($type) {
 			case 'fly':
 				$this->db->where('flight_id', $id);
-				$data =	$this->db->get('flight');
+				$data =	$this->db->get('flight')->result();
 				break;
 			case 'hotel':
 				$this->db->where('hotel_id', $id);
-				$data =	$this->db->get('hotel_info');
+				$data =	$this->db->get('hotel_info')->result();
 				break;
 			case 'event':
 				$this->db->where('event_id', $id);
-				$data =	$this->db->get('event');
+				$data =	$this->db->get('event')->result();
 				break;
 		}
 
