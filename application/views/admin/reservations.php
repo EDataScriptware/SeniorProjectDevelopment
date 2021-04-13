@@ -417,8 +417,8 @@ function editBlock($id, $type) {
             document.getElementById("editEvent").style.display = "none";
             document.getElementById("editEventBut").style.display = "none";
 
-            document.getElementById("arrival").value = $res[0]['arrival'];
-            document.getElementById("departure").value = $res[0]['departure'];
+            document.getElementById("arrival").value = Convert.ToDateTime($res[0]['arrival']);
+            document.getElementById("departure").value = Convert.ToDateTime($res[0]['departure']);
             document.getElementById("flight_number").value = $res[0]['flight_number'];
             document.getElementById("airline").value = $res[0]['airline'];
             document.getElementById("arrival_location").value = $res[0]['arrival_location'];
@@ -449,8 +449,8 @@ function editBlock($id, $type) {
             document.getElementById("veteran_id").value = $res[0]['veteran_id'];
             document.getElementById("name").value = $res[0]['name'];
             document.getElementById("room").value = $res[0]['room'];
-            document.getElementById("check_in").value = $res[0]['check_in'];
-            document.getElementById("check_out").value = $res[0]['check_out'];
+            document.getElementById("check_in").value = Convert.ToDateTime($res[0]['check_in']);
+            document.getElementById("check_out").value = Convert.ToDateTime($res[0]['check_out']);
 
         });
 
