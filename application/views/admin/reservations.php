@@ -406,6 +406,7 @@ function editBlock($id, $type) {
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
     
                 var $result = JSON.parse(result);
+                console.log($result);
 
             document.getElementById("editFly").style.display = "block";
             document.getElementById("editFlyBut").style.display = "block";
@@ -433,6 +434,7 @@ function editBlock($id, $type) {
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
                 var $result = JSON.parse(result);
+                console.log($result);
 
 
             document.getElementById("editFly").style.display = "none";
@@ -460,6 +462,7 @@ function editBlock($id, $type) {
 
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
                 var $result = JSON.parse(result);
+                console.log($result);
 
 
             document.getElementById("editFly").style.display = "none";
