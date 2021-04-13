@@ -87,6 +87,12 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	public function download ($filename) {
+		$file_path = "./uploads/";
+
+		force_download(''.$file_path.$filename, NULL);                     
+	}
+
 	public function teamView() //Team View
 	{
 		$this->load->model('User_model');
