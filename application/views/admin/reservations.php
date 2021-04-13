@@ -116,7 +116,6 @@ $(document).ready( function () {
 
 <!-- VETDATALIST -->
 <datalist id ='veterans'>
-<?php  ?>
 <?php foreach ($veteran as $vet): ?>
     <!-- <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option> -->
     <?php $skip = false; ?>
