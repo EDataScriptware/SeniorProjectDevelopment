@@ -1,6 +1,6 @@
 <script> $(document).ready( function () {  
     $('#doc').addClass('active');
-    $('#vetTable').DataTable();
+    // $('#vetTable').DataTable();
 } ); 
 
 <p> Vet Query </p>
