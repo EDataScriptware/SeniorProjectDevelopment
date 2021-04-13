@@ -9,13 +9,10 @@
 <table id="vetTable"  class="table table-striped table-bordered">
     <thead>
         <tr>
-            <?php
-                foreach($fields as $field) { ?>
+            <?php foreach($fields as $field) { ?>
                     <th><?php echo $field ?></th>
             <?php } ?>
-        </tr>
-        <tr>
-            Action
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
