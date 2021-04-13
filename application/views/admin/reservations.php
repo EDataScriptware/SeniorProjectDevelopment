@@ -260,7 +260,7 @@ $(document).ready( function () {
 
         <label for="departure">Departure Time:</label>
 
-            <input type="datetime-local" id="departure_time" name="departure_time">  <br>
+            <input type="datetime-local" id="departure" name="departure">  <br>
 
         <label for="departure_location">Departure Location:</label>
 
