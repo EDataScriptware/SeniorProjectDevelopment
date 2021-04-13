@@ -543,7 +543,7 @@ class Admin extends CI_Controller {
 				
 				$data = array(
 					'title' => $title,
-					'team_id' => $teamId,
+					'team_id' => $team_id,
 					'description' => $description,
 					'date' => $date,
 					'start' => $start,
