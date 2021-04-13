@@ -139,7 +139,7 @@ $(document).ready( function () {
         </button>
       </div>
       <div class="modal-body">
-        <form method='post' id ="addFly" style='display:none' >
+        <form method='POST' id ="addFly" style='display:none' >
 
             <label for="newAirline">Airline:</label>
 
@@ -169,7 +169,7 @@ $(document).ready( function () {
 
         </form>
 
-        <form id ="addHotel" method='post' style='display:none' >
+        <form id ="addHotel" method='POST' style='display:none' >
 
         <label for="newName">Hotel Name:</label>
  
@@ -193,7 +193,7 @@ $(document).ready( function () {
 
         </form>
 
-        <form id ="addEvent" method='post' style='display:none' >
+        <form id ="addEvent" method='POST' style='display:none' >
             <label for="newTitle">Title:</label>
  
                 <input type="text" id="newTitle" name="newTitle" required size="10"> <br>
@@ -359,7 +359,7 @@ function addBlock($type) {
         break;
 
         case 'event':
-            document.getElementById("addHotel").action = "Admin/addEvent/"+$type;
+            document.getElementById("addEvent").action = "Admin/addEvent/"+$type;
 
             document.getElementById("addFly").style.display = "none";
             document.getElementById("addFlyBut").style.display = "none";
@@ -378,15 +378,14 @@ function addBlock($type) {
 
 function editBlock($id, $type) {
 
-    
-
-    
     switch ($type) {
         case 'fly':
 
+            document.getElementById("editFly").action = 'Admin/editEvent/'+$id+'/'+type;
+
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
     
-            document.getElementById("editFly").action = 'Admin/editEvent/'+$id+'/'+type;
+           
 
             document.getElementById("editFly").style.display = "block";
             document.getElementById("editFlyBut").style.display = "block";
@@ -410,9 +409,9 @@ function editBlock($id, $type) {
 
         case 'hotel':
 
-            $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
-
             document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+type;
+
+            $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
 
             document.getElementById("editFly").style.display = "none";
             document.getElementById("editFlyBut").style.display = "none";
@@ -435,9 +434,9 @@ function editBlock($id, $type) {
 
         case 'event':
 
-            $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
-
             document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+type;
+
+            $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
 
             document.getElementById("editFly").style.display = "none";
             document.getElementById("editFlyBut").style.display = "none";
