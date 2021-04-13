@@ -1,6 +1,6 @@
 <script> $(document).ready( function () {  
     $('#doc').addClass('active');
-    // $('#vetTable').DataTable();
+    $('#vetTable').DataTable();
 } ); 
 
 <p> Vet Query </p>
@@ -8,9 +8,9 @@
 <table id="vetTable"  class="table table-striped table-bordered">
     <tr>
         <?php
-            foreach($fields as $field) {
-                echo "<th>".$field."</th>";
-            }
+            foreach($fields as $field) { ?>
+                <th><?php echo $field ?></th>
+            <?php } 
         ?>
     </tr>
     <?php
@@ -27,5 +27,4 @@
                 </form>";
             </tr>
         <?php } ?>
-    ?>
 </table>
