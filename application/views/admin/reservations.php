@@ -121,9 +121,7 @@ $(document).ready( function () {
     <!-- <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option> -->
     <?php $skip = false; ?>
     <?php foreach ($hotel as $hot): ?>
-     <?php if ($hot->$veteran_id === $vet->veteran_id) {
-         $skip = true;
-     } ?> 
+     <?php if ($hot->$veteran_id === $vet->veteran_id) { $skip = true;} ?> 
     <?php endforeach ?>
 
     <?php if ($skip = false) { ?>
