@@ -218,9 +218,9 @@ $(document).ready( function () {
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" style='display:none' id='addFlyBut' form ="addFly">Add New Flight Entry</button>
-        <button type="button" class="btn btn-primary" style='display:none' id='addHotelBut' form ="addHotel">Add New Hotel Entry</button>
-        <button type="button" class="btn btn-primary" style='display:none' id='addEventBut' form ="addEvent">Add New Event Entry</button>
+        <button type="submit" class="btn btn-primary" style='display:none' id='addFlyBut' form ="addFly">Add New Flight Entry</button>
+        <button type="submit" class="btn btn-primary" style='display:none' id='addHotelBut' form ="addHotel">Add New Hotel Entry</button>
+        <button type="submit" class="btn btn-primary" style='display:none' id='addEventBut' form ="addEvent">Add New Event Entry</button>
       </div>
     </div>
   </div>
@@ -316,9 +316,9 @@ $(document).ready( function () {
 
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-primary" style='display:none' id='editFlyBut' form ="editFly">Add New Flight Entry</button>
-        <button type="button" class="btn btn-primary" style='display:none' id='editHotelBut' form ="editHotel">Add New Hotel Entry</button>
-        <button type="button" class="btn btn-primary" style='display:none' id='editEventBut' form ="editEvent">Add New Event Entry</button>
+      <button type="submit" class="btn btn-primary" style='display:none' id='editFlyBut' form ="editFly">Add New Flight Entry</button>
+        <button type="submit" class="btn btn-primary" style='display:none' id='editHotelBut' form ="editHotel">Add New Hotel Entry</button>
+        <button type="submit" class="btn btn-primary" style='display:none' id='editEventBut' form ="editEvent">Add New Event Entry</button>
       </div>
     </div>
   </div>
