@@ -20,7 +20,7 @@
         <hr/>
         <p>NOTE: This button will rebuild the Veteran PDF Report.  This button should only be pressed once per mission or if veteran data is changed. Only the admin can press this button/rebuild the file.</p>
         <p>After the report is built it will be placed in the "uploads" folder and will be served to staff on the trip.</p>
-        <button class="btn btn-primary" onclick="<?php echo base_url('Admin/buildVetPdf/'); ?>">Build Veteran Report PDF</button>
+        <button type="button" class="btn btn-primary" onclick="<?php echo base_url('Admin/buildVetPdf/'); ?>">Build Veteran Report PDF</button>
 
 
         <?php if(isset($files)) { ?>
