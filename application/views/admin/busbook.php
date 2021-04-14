@@ -8,12 +8,10 @@
 
 </script>
 
-<?php 
-    echo json_encode($bus_book_data) ;
+<button type="button" class="btn btn-primary" onclick="">Create Mission / Bus Book</button>
 
-    if(isset($bus_book_data)) {
+<?php if(isset($bus_book_data)) {
     foreach($bus_book_data as $book) { ?>
-
         <hr/>
         <h2>Bus Book <?php echo $book->bus_book_id; ?> | Mission ID: <?php echo $book->mission_id; ?></h2>
         <h4>Start: <?php echo $book->start; ?> | End: <?php echo $book->end; ?></h4>
@@ -28,6 +26,7 @@
                     <th>Name</th>
                     <th>Leader Name</th>
                     <th>Leader Phone</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,10 +36,10 @@
                         <td><?php echo $bus->name ;?></td>
                         <td><?php echo $bus->leader_first.' '.$bus->leader_last ;?></td>
                         <td><?php echo $bus->leader_phone ;?></td>
+                        <td><button type="button" class="btn btn-primary" >Edit</button></td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
     <?php } 
-    }
-?>
+} ?>
