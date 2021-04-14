@@ -49,7 +49,7 @@ class Admin extends CI_Controller {
 	public function buildVetPdf() {
 		$cmd = "python3 scripting/pdf_writer.py";
 
-		$output = shell_exec($cmd);
+		$output['test'] = shell_exec('ls');
 
 		// $this->docView();
 		// echo $output;
