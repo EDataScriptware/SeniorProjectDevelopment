@@ -6,7 +6,7 @@ import sqlalchemy
 
 now = datetime.datetime.now()
 datetimeString = "Generated On: " + now.strftime("%B %m, %Y - %I:%M:%S %p")
-pdfFileName = "/../uploads/Mission_Report.pdf"
+pdfFileName = "../uploads/Mission_Report.pdf"
 
 class PDF(FPDF):
    pass
@@ -44,8 +44,7 @@ def veteranNameList(self, string):
 
 def borderLines(self):
     self.line(5.0,5.0,205.0,5.0)     # top one
-  
-	  self.line(5.0,292.0,205.0,292.0) # bottom one
+    self.line(5.0,292.0,205.0,292.0) # bottom one
     self.line(5.0,5.0,5.0,292.0)     # left one
     self.line(205.0,5.0,205.0,292.0) # right one
 
