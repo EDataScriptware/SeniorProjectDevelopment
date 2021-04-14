@@ -51,8 +51,9 @@ class Admin extends CI_Controller {
 
 		$output = shell_exec($cmd);
 
-		$this->docView();
-		echo $output;
+		// $this->docView();
+		// echo $output;
+		$this->load->view('admin/index', $output);
 	}
 
 	public function docView() //Document View

@@ -2,6 +2,10 @@
 
 <p> admin </p>
 
+<?php if(isset($test)) {
+  echo $test; 
+} ?>
+
 <!-- Trigger/Open The Modal -->
 <button id="vetQuery">Veteran Query</button>
 
