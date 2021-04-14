@@ -1,7 +1,7 @@
 from fpdf import FPDF 
 import datetime
 import sys, os
-import data_retrieval
+import data_retrievals
 import sqlalchemy
 
 now = datetime.datetime.now()
