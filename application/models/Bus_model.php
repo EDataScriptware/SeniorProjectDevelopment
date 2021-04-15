@@ -45,10 +45,10 @@ class Bus_model extends CI_Model {
     public function get_bus_and_teams($busid) {
         $this->db->select("b.*, t.*") ;
         $this->db->from("bus b") ;
-        $this->db->where("b.bus_id", $busid) ;
         $this->db->join("team t", "b.bus_id = t.bus_id") ;
+        $this->db->where("b.bus_id", $busid) ;
 
-        $query = $this->db->get();
+        $query = $this->db->get()->result();
 
         return $query;
     }
