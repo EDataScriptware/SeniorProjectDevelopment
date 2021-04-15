@@ -70,6 +70,22 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/footer');
 	}
 
+	public function editBus($busid) {
+		if(isset($busid)) {
+			$this->load->model('Bus_model');
+
+			$data['bus_data'] = $this->Bus_model->get_bus_and_teams($bus_id);
+
+			$this->load->view('admin/template/header');
+			$this->load->view('editBus', $data);
+			$this->load->view('admin/template/footer');
+
+		}
+		else {
+			redirect('busbook') ;
+		}
+	}
+
 	public function do_upload() {
 
 		$config['upload_path']          = './uploads/';

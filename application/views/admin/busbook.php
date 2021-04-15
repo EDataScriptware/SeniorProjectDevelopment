@@ -36,7 +36,7 @@
                         <td><?php echo $bus->name ;?></td>
                         <td><?php echo $bus->leader_first.' '.$bus->leader_last ;?></td>
                         <td><?php echo $bus->leader_phone ;?></td>
-                        <td><button type="button" class="btn btn-primary" >Edit</button></td>
+                        <td><button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/editBus/'.$bus->bus_id); ?>'" >Edit</button></td>
                     </tr>
                 <?php } ?>
             </tbody>
