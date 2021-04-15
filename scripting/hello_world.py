@@ -11,7 +11,6 @@ try:
     pdf.add_page()
     
     print("Printing outputting file")
-    
     pdf.output("uploads/HelloWorld.pdf")
     
     print("HelloWorld.pdf printed")
