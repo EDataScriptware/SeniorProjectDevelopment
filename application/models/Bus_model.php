@@ -46,7 +46,7 @@ class Bus_model extends CI_Model {
         $this->db->select("b.*, t.*") ;
         $this->db->from("bus b") ;
         $this->db->where("b.bus_id", $busid) ;
-        $this->db->join("team t", "b.bus.bus_id = t.team.bus_id") ;
+        $this->db->join("team t", "b.bus_id = t.bus_id") ;
 
         $query = $this->db->get();
 
