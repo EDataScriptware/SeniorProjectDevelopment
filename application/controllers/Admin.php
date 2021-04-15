@@ -74,7 +74,7 @@ class Admin extends CI_Controller {
 		if(isset($busid)) {
 			$this->load->model('Bus_model');
 
-			$data['team_data'] = $this->Bus_model->get_bus_and_teams($busid);
+			$data['team_data'] = $this->Bus_model->get_bus_teams($busid);
 			$data['bus_data'] = $this->Bus_model->get_one_bus($busid);
 
 			$this->load->view('admin/template/header');
