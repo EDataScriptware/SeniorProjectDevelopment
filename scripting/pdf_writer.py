@@ -7,6 +7,7 @@ import sqlalchemy
 now = datetime.datetime.now()
 datetimeString = "Generated On: " + now.strftime("%B %m, %Y - %I:%M:%S %p")
 pdfFileName = "../uploads/Mission_Report.pdf"
+print("starting pdf_writer.py")
 
 class PDF(FPDF):
    pass
@@ -320,3 +321,4 @@ for veteranRow in veteranArray:
     
 
 pdf.output(pdfFileName)
+print("pdf_writer.py computed")
