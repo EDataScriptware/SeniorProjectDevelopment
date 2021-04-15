@@ -4,7 +4,7 @@ try:
 
 
     class PDF(FPDF):
-    pass
+        pass
 
     pdf = PDF(orientation='p',unit='mm')
     pdf.add_page()
@@ -12,5 +12,5 @@ try:
     print("Printing outputting file")
     pdf.output("uploads/HelloWorld.pdf")
     print("HelloWorld.pdf printed")
-except Exception e:
-    print("ERROR: " + str(e))
+except:
+    print("ERROR")
