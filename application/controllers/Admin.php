@@ -51,8 +51,7 @@ class Admin extends CI_Controller {
 
 		$test = exec($cmd);
 
-		$this->docView();
-		// var_dump($test);
+		redirect('Admin/documents') ;
 	}
 
 	public function docView() //Document View
