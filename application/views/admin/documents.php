@@ -25,6 +25,7 @@
 
 
         <?php if(isset($files)) { ?>
+            <h2>Uploaded Documents</h2>
             <br/>
             <hr/>
             <br/>
