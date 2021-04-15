@@ -6,7 +6,7 @@ import sqlalchemy
 
 now = datetime.datetime.now()
 datetimeString = "Generated On: " + now.strftime("%B %m, %Y - %I:%M:%S %p")
-pdfFileName = "../uploads/Mission_Report.pdf"
+pdfFileName = "uploads/Mission_Report.pdf"
 print("starting pdf_writer.py")
 
 class PDF(FPDF):
@@ -51,7 +51,7 @@ def borderLines(self):
 
 borderLines(pdf)
 titles(pdf, "Rochester Honor Flights Team Report")
-logoImage(pdf, "TeamRuby.png")
+logoImage(pdf, "scripting/TeamRuby.png")
 subtitle(pdf, datetimeString)
 
 ## DATA PAGE
@@ -89,7 +89,7 @@ veteranArray = data_retrieval.getAllVeteran()
 pdf.add_page()
 titles(pdf, "Rochester Honor Flight Individual Veteran Report")
 subtitle(pdf, datetimeString)
-logoImage(pdf, "TeamRuby.png")
+logoImage(pdf, "scripting/TeamRuby.png")
 borderLines(pdf)
 
 def name(self, string):
