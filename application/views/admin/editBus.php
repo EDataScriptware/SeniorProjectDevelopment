@@ -38,7 +38,7 @@
                     <td><?php echo $team->team_id ;?></td>
                     <td><?php echo $team->mission_id ;?></td>
                     <td><?php echo $team->color;?></td>
-                    <td><button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/editBus/'.$bus->bus_id); ?>'" >Edit</button></td>
+                    <td><button type="button" class="btn btn-primary" onclick="location.href=''" >Edit</button></td>
                 </tr>
             <?php } ?>
         </tbody>
