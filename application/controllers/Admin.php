@@ -47,7 +47,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function buildVetPdf() {
-		$cmd = "python scripting/pdf_writer.py";
+		$cmd = "python3 scripting/pdf_writer.py";
 
 		$test = shell_exec($cmd);
 
