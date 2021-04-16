@@ -64,7 +64,19 @@ class Team_Model extends CI_Model {
     }
 
     public function createTeam($mission_id, $bus_id, $leader_id, $hs_id, $color) {
-        
+        $data = array(
+            'mission_id' => $mission_id,
+            'bus_id' => $bus_id,
+            'leader_id' => $leader_id,
+            'hs_id' => $hs_id,
+            'color' => $color
+        );
+
+        $this->db->insert('team', $data) ;
+
+        $insert_id = $this->db->insert_id();
+
+        return $insert_id ;
     }
     
 

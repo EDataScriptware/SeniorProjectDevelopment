@@ -30,7 +30,7 @@
             <tr>
                 <th>Color</th>
                 <th>Team ID</th>
-                <th>Misson ID</th>
+                <th>Mission ID</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -82,6 +82,8 @@
                         </datalist>
         <br/>
         <input type="hidden" name="mission_id" value="<?php echo $bus_data->mission_id ; ?>" />
+        <br/>
+        <br/>
         <button input type='submit' class="btn btn-primary" name='submit' value='submit'>Create</button>
     </form>
 
