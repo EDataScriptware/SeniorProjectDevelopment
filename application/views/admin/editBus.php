@@ -22,7 +22,7 @@
     <h5>Group Leader: <?php echo $bus_data->gl_first.' '.$bus_data->gl_last; ?> | Phone: <?php echo $bus_data->gl_phone; ?></h5>
 
     <button type="button" class="btn btn-primary" id="createTeam">Create Team</button>
-    </br>
+    <br/>
 
     <table id="bus" class="table table-striped table-bordered">
         <thead>

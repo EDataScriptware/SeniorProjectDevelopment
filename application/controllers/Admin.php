@@ -89,6 +89,21 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	public function createTeam($busid) {
+		if($this->input->post('submit') != NULL) {
+			$postData = $this->input->post();
+
+
+			if(isset($postData["submit"])) {
+				unset($postData["submit"]) ;
+			}
+
+			foreach($postData as $key => $value) {
+				echo $key . ' => ' . $value;
+			}
+		}
+	}
+
 	public function do_upload() {
 
 		$config['upload_path']          = './uploads/';
