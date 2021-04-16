@@ -73,12 +73,12 @@ class Team_Model extends CI_Model {
 
         if($leader_id != '') {
             $leader_id = intval($leader_id);
-            array_push($data, (object)['leader_id' => $leader_id]);
+            array_push($data, ['leader_id' => $leader_id]);
         }
 
         if($hs_id != '') {
             $hs_id = intval($hs_id);
-            array_push($data, (object)['hs_id' => $hs_id]);
+            array_push($data, ['hs_id' => $hs_id]);
         }
 
         $this->db->insert('team', $data) ;
