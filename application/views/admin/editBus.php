@@ -69,7 +69,8 @@
                                 <option value="<?php echo $leader->iduser; ?>"><?php echo $leader->first_name . ' ' . $leader->last_name ; ?></option>
                             <?php } ?>
                         </datalist>
-        <br>
+        <br/>
+        <input type="hidden" name="mission_id" value="<?php echo $bus_data->mission_id ; ?>" />
         <button input type='submit' class="btn btn-primary" name='submit' value='submit'>Create</button>
     </form>
 
