@@ -29,8 +29,9 @@
         <thead>
             <tr>
                 <th>Color</th>
+                <th>Team Leader</th>
+                <th>Saftey Leader</th>
                 <th>Team ID</th>
-                <th>Mission ID</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -38,6 +39,8 @@
             <?php foreach($team_data as $team) { ?>
                 <tr>
                     <td><?php echo $team->color;?></td>
+                    <td><?php echo $team->leader;?></td>
+                    <td><?php echo $team->safety;?></td>
                     <td><?php echo $team->team_id ;?></td>
                     <td><?php echo $team->mission_id ;?></td>
                     <td><button type="button" class="btn btn-primary" >Edit</button></td>
