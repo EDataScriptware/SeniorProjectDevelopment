@@ -131,7 +131,7 @@ class Admin extends CI_Controller {
 		redirect('admin/editBus/'.$busid) ;
 	}
 
-	public busForm($mission_id) {
+	public function busForm($mission_id) {
 		$data['mission_id'] = $mission_id ;
 
 		$this->load->view('admin/template/header');
