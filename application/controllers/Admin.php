@@ -149,6 +149,21 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/footer');
 	}
 
+	public function createBook() {
+		if($this->input->post('submit') != NULL) {
+			$postData = $this->input->post();
+
+			$this->load->model('BusBook_model') ;
+
+			if(isset($postData["submit"])) {
+				unset($postData["submit"]) ;
+			}
+
+			$this->BusBook_model->createBook($postData);
+		}
+		redirect('busbook') ;
+	}
+
 	public function createBus($mission_id) {
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();

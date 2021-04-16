@@ -39,6 +39,25 @@ class BusBook_Model extends CI_Model {
         return $fields;
     }
 
+    public function createBook($data) {
+
+        $notes = $data['notes'];
+        
+        unset($data['notes']);
+
+        $this->db->insert('mission', $data) ;
+        $insert_id = $this->db->insert_id();
+
+        $book_data = array(
+            "mission_id" => $insert_id,
+            "start" => $data['start_date'],
+            "end" => $data['end_date'],
+            "notes" => $notes
+        );
+
+        $this->db->insert('bus_book', $book_data) ;
+    }
+
     # PUT/Update
     public function updateBusBookEntry($bus_book) {
         // the update statement to the DB that changes a bus entry.
