@@ -12,6 +12,7 @@ class Guardian_Model extends CI_Model {
         
         $this->db->select("*");
         $this->db->from('guardian');
+        $this->db->order_by("last_name", "asc") ;
 
         $query = $this->db->get()->result();
         
