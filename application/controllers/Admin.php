@@ -85,7 +85,7 @@ class Admin extends CI_Controller {
 
 		}
 		else {
-			redirect('admin/busbook') ;
+			redirect('busbook') ;
 		}
 	}
 
@@ -96,7 +96,7 @@ class Admin extends CI_Controller {
 			$this->Bus_model->deleteBus($bus_id) ;
 		}
 
-		redirect('admin/busbook') ;
+		redirect('busbook') ;
 	}
 
 	public function createTeam($busid) {
@@ -161,7 +161,7 @@ class Admin extends CI_Controller {
 
 			$this->Bus_model->createBus($postData);
 		}
-		redirect('admin/busbook/') ;
+		redirect('busbook') ;
 	}
 
 	public function deleteTeam($tid, $busid) {
