@@ -58,7 +58,7 @@
         Team Leader: <input list="leader_id" name='leader_id'>
                         <datalist id="leader_id">
                             <?php foreach($leader_data as $leader) { ?>
-                                <option value="<?php echo $leader->iduser . '-- ' .  $leader->first_name . ' ' . $leader->last_name ; ?>">
+                                <option value="<?php echo $leader->iduser ?>"><?php echo $leader->iduser . '-- ' .  $leader->first_name . ' ' . $leader->last_name ; ?></option>
                             <?php } ?>
                         </datalist>
 
