@@ -93,7 +93,7 @@ class Admin extends CI_Controller {
 		if(isset($busid)) {
 			$this->load->model('Bus_model');
 
-			$this->Bus_model->deleteBus($bus_id) ;
+			$this->Bus_model->deleteBus(intval($bus_id)) ;
 		}
 
 		// redirect('busbook') ;
