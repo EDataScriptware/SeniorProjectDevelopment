@@ -93,7 +93,7 @@ class Admin extends CI_Controller {
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();
 
-			$this->load->model('Team_modal') ;
+			$this->load->model('Team_model') ;
 
 			if(isset($postData["submit"])) {
 				unset($postData["submit"]) ;
