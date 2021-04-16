@@ -23,6 +23,7 @@
 
     <button type="button" class="btn btn-primary" id="createTeam">Create Team</button>
     <br/>
+    <br/>
 
     <table id="bus" class="table table-striped table-bordered">
         <thead>
@@ -61,7 +62,7 @@
                                 <option value="<?php echo $leader->iduser; ?>"><?php echo $leader->first_name . ' ' . $leader->last_name ; ?></option>
                             <?php } ?>
                         </datalist>
-
+        <br/>
         Saftey Leader: <input list="hs_id" name='hs_id'>
                         <datalist id="hs_id">
                             <?php foreach($leader_data as $leader) { ?>
