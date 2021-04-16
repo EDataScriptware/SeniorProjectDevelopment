@@ -34,7 +34,10 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($book->bus as $bus) { ?>
+                
+            <?php
+                if(isset($book->bus)) {
+                    foreach($book->bus as $bus) { ?>
                     <tr>
                         <td><?php echo $bus->bus_id ;?></td>
                         <td><?php echo $bus->name ;?></td>
@@ -42,7 +45,8 @@
                         <td><?php echo $bus->leader_phone ;?></td>
                         <td><button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/editBus/'.$bus->bus_id); ?>'" >Details</button></td>
                     </tr>
-                <?php } ?>
+                <?php } 
+                } ?>
             </tbody>
         </table>
     <?php } 
