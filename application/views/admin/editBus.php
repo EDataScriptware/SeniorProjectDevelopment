@@ -42,7 +42,7 @@
                     <td><?php echo $team->leader;?></td>
                     <td><?php echo $team->safety;?></td>
                     <td><?php echo $team->team_id ;?></td>
-                    <td><button type="button" class="btn btn-primary" >Edit</button></td>
+                    <td><button type="button" class="btn btn-primary" onclick="location.href='Admin/deleteTeam/'<?php echo $team->team_id ;?>">Delete</button></td>
                 </tr>
             <?php } ?>
         </tbody>

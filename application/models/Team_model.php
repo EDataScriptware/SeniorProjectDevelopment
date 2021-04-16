@@ -63,6 +63,10 @@ class Team_Model extends CI_Model {
         return $bool; // failed or successful
     }
 
+    public function deleteTeam($tid) {
+        $this->db->delete('team', array('team_id', $tid));
+    }
+
     public function createTeam($mission_id, $bus_id, $leader_id, $hs_id, $color) {
 
         $data = array(

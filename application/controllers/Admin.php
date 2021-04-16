@@ -131,6 +131,16 @@ class Admin extends CI_Controller {
 		redirect('admin/editBus/'.$busid) ;
 	}
 
+	public function deleteTeam($tid, $busid) {
+		if(isset($tid)) {
+			$this->load->model("Team_model");
+
+			$this->Team_model->deleteTeam($tid);
+		}
+		
+		redirect('admin/editBus/'.$busid) ;
+	}
+
 	public function do_upload() {
 
 		$config['upload_path']          = './uploads/';
