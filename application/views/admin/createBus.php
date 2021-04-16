@@ -59,4 +59,6 @@
     <input type="hidden" name="mission_id" value="<?php echo $mission_id ; ?>" />
     <br/>
     <button input type='submit' class="btn btn-primary" name='submit' value='submit'>Create</button>
+    <br>
+    <br>
 </form>

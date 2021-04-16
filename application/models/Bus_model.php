@@ -56,6 +56,11 @@ class Bus_model extends CI_Model {
         return $insert_id ;
     }
 
+    public function deleteBus($bus_id) {
+        $this->db->where('bus_id', $bus_id);
+        $this->db->delete('bus');
+    }
+
     # GET
     public function getFields() {
 

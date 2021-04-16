@@ -85,8 +85,18 @@ class Admin extends CI_Controller {
 
 		}
 		else {
-			redirect('busbook') ;
+			redirect('admin/busbook') ;
 		}
+	}
+
+	public function deleteBus($bus_id) {
+		if(isset($busid)) {
+			$this->load->model('Bus_model');
+
+			$this->Bus_model->deleteBus($bus_id) ;
+		}
+
+		redirect('admin/busbook') ;
 	}
 
 	public function createTeam($busid) {

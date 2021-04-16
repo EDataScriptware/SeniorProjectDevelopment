@@ -19,7 +19,10 @@ $('#bus').DataTable();
     <h5>Saftey Leader: <?php echo $bus_data->hs_first.' '.$bus_data->hs_last; ?> | Phone: <?php echo $bus_data->hs_phone; ?></h5>
     <h5>Group Leader: <?php echo $bus_data->gl_first.' '.$bus_data->gl_last; ?> | Phone: <?php echo $bus_data->gl_phone; ?></h5>
 
-    <button type="button" class="btn btn-primary" id="createTeam">Create Team</button>
+    <div style="display: inline;">
+      <button type="button" class="btn btn-primary" id="createTeam">Create Team</button>
+      <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/deleteBus/'.$bus_data->bus_id) ;?>'" id="deleteBus">Delete Bus</button>
+    </div>
     <br/>
     <br/>
 
