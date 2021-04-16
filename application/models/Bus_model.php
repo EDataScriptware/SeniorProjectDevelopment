@@ -43,7 +43,7 @@ class Bus_model extends CI_Model {
     }
 
     public function get_bus_teams($busid) {
-        $query = $this->db->query("SELECT t.*, concat(s.first_name,' ',l.last_name) AS leader, concat(s.first_name,' ',s.last_name) AS safety FROM team t LEFT JOIN guardian l on l.guardian_id = t.leader_id LEFT JOIN guardian s on s.guardian_id = t.hs_id WHERE t.bus_id = ".$busid);
+        $query = $this->db->query("SELECT t.*, concat(l.first_name,' ',l.last_name) AS leader, concat(s.first_name,' ',s.last_name) AS safety FROM team t LEFT JOIN guardian l on l.guardian_id = t.leader_id LEFT JOIN guardian s on s.guardian_id = t.hs_id WHERE t.bus_id = ".$busid);
 
         return $query->result();
     }
