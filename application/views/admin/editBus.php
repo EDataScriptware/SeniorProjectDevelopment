@@ -39,7 +39,7 @@
                     <td><?php echo $team->color;?></td>
                     <td><?php echo $team->team_id ;?></td>
                     <td><?php echo $team->mission_id ;?></td>
-                    <td><button type="button" class="btn btn-primary" onclick="location.href=''" >Edit</button></td>
+                    <td><button type="button" class="btn btn-primary" >Edit</button></td>
                 </tr>
             <?php } ?>
         </tbody>
