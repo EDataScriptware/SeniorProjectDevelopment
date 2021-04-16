@@ -39,6 +39,16 @@ class User_Model extends CI_Model {
         return $fields;
     }
 
+    public function get_all_leaders() {
+        $this->db->select("*");
+        $this->db->from("user");
+        $this->db->where("user_permissions", 1);
+
+        $query = $this->db->get()->result();
+
+        return $query ;
+    }
+
     # PUT/Update
     public function updateUserEntry($user) {
         // the update statement to the DB that changes an entry.
