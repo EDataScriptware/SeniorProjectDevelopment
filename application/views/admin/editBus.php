@@ -55,7 +55,18 @@
     <span class="close">&times;</span>
     <p>Fill in the fields to make a new team.</p>
     <form method='post' action='<?php echo base_url('Admin/createTeam/'.$bus_data->bus_id); ?>' >
-        Color: <input type='text' name='color' placeholder='Enter team color'><br>
+        Color: <input list="color" name='color'>
+                        <datalist id="color">
+                            <option value="Blue">
+                            <option value="Purple">
+                            <option value="Red">
+                            <option value="Green">
+                            <option value="Yellow">
+                            <option value="Orange">
+                            <option value="Silver">
+                            <option value="Gold">
+                        </datalist>
+        <br/>
         Team Leader: <input list="leader_id" name='leader_id'>
                         <datalist id="leader_id">
                             <?php foreach($leader_data as $leader) { ?>
