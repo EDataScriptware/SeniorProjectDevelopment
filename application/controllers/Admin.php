@@ -93,7 +93,7 @@ class Admin extends CI_Controller {
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();
 
-			$this->load->modal('Team_modal') ;
+			$this->load->model('Team_modal') ;
 
 			if(isset($postData["submit"])) {
 				unset($postData["submit"]) ;
@@ -126,7 +126,7 @@ class Admin extends CI_Controller {
 				echo "<br/>" ;
 			}
 
-			$this->Team_modal->createTeam($mission_id, $busid, $leader_id, $hs_id, $color);
+			$this->Team_model->createTeam($mission_id, $busid, $leader_id, $hs_id, $color);
 		}
 		redirect('admin/editBus/'.$busid) ;
 	}
