@@ -21,7 +21,7 @@
     <h5>Saftey Leader: <?php echo $bus_data->hs_first.' '.$bus_data->hs_last; ?> | Phone: <?php echo $bus_data->hs_phone; ?></h5>
     <h5>Group Leader: <?php echo $bus_data->gl_first.' '.$bus_data->gl_last; ?> | Phone: <?php echo $bus_data->gl_phone; ?></h5>
 
-    <button type="button" class="btn btn-primary" onclick="">Create Team</button>
+    <button type="button" class="btn btn-primary" id="createTeam">Create Team</button>
     </br>
 
     <table id="bus" class="table table-striped table-bordered">
@@ -61,6 +61,7 @@
                                 <option value="<?php echo $leader->iduser . '-- ' .  $leader->first_name . ' ' . $leader->last_name ; ?>">
                             <?php } ?>
                         </datalist>
+
         Saftey Leader: <input list="hs_id" name='hs_id'>
                         <datalist id="hs_id">
                             <?php foreach($leader_data as $leader) { ?>
@@ -120,7 +121,7 @@
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("vetQuery");
+var btn = document.getElementById("createTeam");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
