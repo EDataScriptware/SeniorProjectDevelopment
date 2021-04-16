@@ -42,7 +42,6 @@
                     <td><?php echo $team->leader;?></td>
                     <td><?php echo $team->safety;?></td>
                     <td><?php echo $team->team_id ;?></td>
-                    <td><?php echo $team->mission_id ;?></td>
                     <td><button type="button" class="btn btn-primary" >Edit</button></td>
                 </tr>
             <?php } ?>
