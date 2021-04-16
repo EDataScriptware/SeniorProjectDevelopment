@@ -20,6 +20,8 @@
         <?php } ?>
         
         <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/busForm/'.$book->mission_id); ?>'">Create Bus</button>
+        <br>
+        <br>
 
         <table id="<?php echo $book->bus_book_id; ?>book" class="table table-striped table-bordered">
             <thead>

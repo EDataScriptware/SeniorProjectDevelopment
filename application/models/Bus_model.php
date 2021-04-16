@@ -48,6 +48,14 @@ class Bus_model extends CI_Model {
         return $query->result();
     }
 
+    public function createBus($bus_data) {
+        $this->db->insert('bus', $bus_data) ;
+
+        $insert_id = $this->db->insert_id();
+
+        return $insert_id ;
+    }
+
     # GET
     public function getFields() {
 

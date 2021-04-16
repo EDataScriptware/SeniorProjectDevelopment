@@ -143,42 +143,15 @@ class Admin extends CI_Controller {
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();
 
-			$this->load->model('Team_model') ;
+			$this->load->model('Bus_model') ;
 
 			if(isset($postData["submit"])) {
 				unset($postData["submit"]) ;
 			}
 
-			// $color = null ;
-			// $leader_id = null ;
-			// $hs_id = null ;
-			// $mission_id = null ;
-
-			foreach($postData as $key => $value) {
-				echo $key . ' => ' . $value;
-				// switch ($key) {
-				// 	case "color":
-				// 		$color = $value;
-				// 		break;
-
-				// 	case "leader_id":
-				// 		$leader_id = $value;
-				// 		break;
-
-				// 	case "hs_id":
-				// 		$hs_id = $value;
-				// 		break;
-
-				// 	case "mission_id":
-				// 		$mission_id = $value;
-				// 		break;
-				// }
-				echo "<br/>" ;
-			}
-
-			// $this->Team_model->createTeam($mission_id, $busid, $leader_id, $hs_id, $color);
+			$this->Bus_model->createBus($postData);
 		}
-		// redirect('admin/busbook/') ;
+		redirect('admin/busbook/') ;
 	}
 
 	public function deleteTeam($tid, $busid) {

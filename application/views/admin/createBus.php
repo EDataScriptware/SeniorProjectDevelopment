@@ -12,7 +12,7 @@
 <br/>
 <br/>
 <form method='post' action='<?php echo base_url('Admin/createBus/'.$mission_id); ?>' >
-    <h2>Leader Information</h2><br/>
+    <h2>Leader Information</h2>
     <label for="name">Bus Name:</label><br>
     <input type="text" id="name" name="name"><br><br>
 
@@ -29,7 +29,7 @@
     <input type="text" id="leader_phone" name="leader_phone"><br><br><br>
 
 
-    <h2>Saftey Leader Information</h2><br/>
+    <h2>Safety Leader Information</h2>
     <label for="hs_first">First Name:</label><br>
     <input type="text" id="hs_first" name="hs_first"><br><br>
 
@@ -43,7 +43,7 @@
     <input type="text" id="hs_phone" name="hs_phone"><br><br><br>
 
 
-    <h2>Group Leader</h2><br/>
+    <h2>Group Leader</h2>
     <label for="gl_first">First Name:</label><br>
     <input type="text" id="gl_first" name="gl_first"><br><br>
 
