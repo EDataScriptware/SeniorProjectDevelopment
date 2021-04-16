@@ -131,6 +131,56 @@ class Admin extends CI_Controller {
 		redirect('admin/editBus/'.$busid) ;
 	}
 
+	public busForm($mission_id) {
+		$data['mission_id'] = $mission_id ;
+
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/createBus', $data);
+		$this->load->view('admin/template/footer');
+	}
+
+	public function createBus($mission_id) {
+		if($this->input->post('submit') != NULL) {
+			$postData = $this->input->post();
+
+			$this->load->model('Team_model') ;
+
+			if(isset($postData["submit"])) {
+				unset($postData["submit"]) ;
+			}
+
+			// $color = null ;
+			// $leader_id = null ;
+			// $hs_id = null ;
+			// $mission_id = null ;
+
+			foreach($postData as $key => $value) {
+				echo $key . ' => ' . $value;
+				// switch ($key) {
+				// 	case "color":
+				// 		$color = $value;
+				// 		break;
+
+				// 	case "leader_id":
+				// 		$leader_id = $value;
+				// 		break;
+
+				// 	case "hs_id":
+				// 		$hs_id = $value;
+				// 		break;
+
+				// 	case "mission_id":
+				// 		$mission_id = $value;
+				// 		break;
+				// }
+				echo "<br/>" ;
+			}
+
+			// $this->Team_model->createTeam($mission_id, $busid, $leader_id, $hs_id, $color);
+		}
+		// redirect('admin/busbook/') ;
+	}
+
 	public function deleteTeam($tid, $busid) {
 		$this->load->model("Team_model");
 
