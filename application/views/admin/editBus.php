@@ -65,6 +65,7 @@
                             <option value="Orange">
                             <option value="Silver">
                             <option value="Gold">
+                            <option value="Teal">
                         </datalist>
         <br/>
         Team Leader: <input list="leader_id" name='leader_id'>

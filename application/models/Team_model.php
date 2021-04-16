@@ -65,10 +65,10 @@ class Team_Model extends CI_Model {
 
     public function createTeam($mission_id, $bus_id, $leader_id, $hs_id, $color) {
         $data = array(
-            'mission_id' => $mission_id,
-            'bus_id' => $bus_id,
-            'leader_id' => $leader_id,
-            'hs_id' => $hs_id,
+            'mission_id' => intval($mission_id),
+            'bus_id' => intval($bus_id),
+            'leader_id' => intval($leader_id),
+            'hs_id' => intval($hs_id),
             'color' => $color
         );
 
