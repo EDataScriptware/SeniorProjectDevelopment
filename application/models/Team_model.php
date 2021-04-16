@@ -62,6 +62,10 @@ class Team_Model extends CI_Model {
         
         return $bool; // failed or successful
     }
+
+    public function createTeam($mission_id, $bus_id, $leader_id, $hs_id, $color) {
+        
+    }
     
 
 }

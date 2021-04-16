@@ -93,15 +93,42 @@ class Admin extends CI_Controller {
 		if($this->input->post('submit') != NULL) {
 			$postData = $this->input->post();
 
+			$this->load->modal('Team_modal') ;
 
 			if(isset($postData["submit"])) {
 				unset($postData["submit"]) ;
 			}
 
+			$color = null ;
+			$leader_id = null ;
+			$hs_id = null ;
+			$mission_id = null ;
+
 			foreach($postData as $key => $value) {
 				echo $key . ' => ' . $value;
+				switch ($key) {
+					case "color":
+						$color = $value;
+						break;
+
+					case "leader_id":
+						$leader_id = $value;
+						break;
+
+					case "hs_id":
+						$hs_id = $value;
+						break;
+
+					case "mission_id":
+						$mission_id = $value;
+						break;
+				}
+				echo "<br/>" ;
 			}
+
+			$this->Team_modal->createTeam($mission_id, $busid, $leader_id, $hs_id, $color);
 		}
+		redirect('admin/editBus/'.$busid) ;
 	}
 
 	public function do_upload() {
