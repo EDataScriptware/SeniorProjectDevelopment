@@ -132,6 +132,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function deleteTeam($tid, $busid) {
+		echo $tid. " ".$busid;
 		if(isset($tid)) {
 			$this->load->model("Team_model");
 
