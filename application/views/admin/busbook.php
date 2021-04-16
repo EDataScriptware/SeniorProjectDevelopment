@@ -69,7 +69,7 @@
         <input type="date" id="end_date" name="end_date"><br><br>
 
         <label for="notes">Notes:</label>
-        <input type="date" id="notes" name="notes"><br><br>
+        <input type="textarea" id="notes" name="notes"><br><br>
         <br/>
         <input type="hidden" name="show_on_front" value="0" />
         <br/>
