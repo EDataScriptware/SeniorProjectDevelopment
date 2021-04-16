@@ -96,7 +96,7 @@ class Admin extends CI_Controller {
 			$this->Bus_model->deleteBus(intval($bus_id)) ;
 		}
 
-		// redirect('busbook') ;
+		redirect('busbook') ;
 	}
 
 	public function createTeam($busid) {
