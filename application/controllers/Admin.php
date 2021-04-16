@@ -90,7 +90,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function deleteBus($bus_id) {
-		if(isset($busid)) {
+		if(isset($bus_id)) {
 			$this->load->model('Bus_model');
 
 			$this->Bus_model->deleteBus(intval($bus_id)) ;
