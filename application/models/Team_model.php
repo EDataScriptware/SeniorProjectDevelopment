@@ -64,7 +64,8 @@ class Team_Model extends CI_Model {
     }
 
     public function deleteTeam($tid) {
-        $this->db->delete('team', array('team_id', $tid));
+        $this->db->where('team_id', $tid);
+        $this->db->delete('team');
     }
 
     public function createTeam($mission_id, $bus_id, $leader_id, $hs_id, $color) {

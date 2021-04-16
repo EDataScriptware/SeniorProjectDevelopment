@@ -2,10 +2,8 @@
     $('#book').addClass('active');
 } ); 
 
-<?php foreach($bus_book_data as $bus) { ?>
-    $('#bus').DataTable();
-<?php } ?> 
 
+$('#bus').DataTable();
 </script>
 
 <?php if(isset($bus_data) && isset($team_data)) {
