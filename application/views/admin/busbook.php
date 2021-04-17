@@ -8,6 +8,9 @@
 
 </script>
 
+<h1>Bus Book Management</h1>
+<hr/>
+
 <button type="button" class="btn btn-primary" id="createBook">Create Mission / Bus Book</button>
 
 <?php if(isset($bus_book_data)) {
