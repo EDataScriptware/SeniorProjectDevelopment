@@ -6,12 +6,6 @@
 $('#bus').DataTable();
 </script>
 
-<?php if(isset($bus_data) && isset($team_data)) {
-    echo json_encode($bus_data) ;
-    echo "<br/>";
-    echo json_encode($team_data) ;
-} ?>
-
 
 <?php if(isset($bus_data) && isset($team_data)) { ?>
     <h2>Bus Name: <?php echo $bus_data->name; ?> | Bus ID: <?php echo $bus_data->bus_id; ?></h2>
