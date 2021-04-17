@@ -14,7 +14,7 @@ $unVetCheck = false;
     </script>
 <script> $(document).ready( function () {  $('#team').addClass('active');} ); </script>
 
-<h2><?php echo $bub->name?> <button type="button" class="btn btn-primary" onclick = "removeBus($bub->$bus_id)"> REMOVE</button> </h2>
+<h2><?php echo $bub->name?> </h2>
 
   <br>  
 <h3> <?php echo $bub->name?> Staff </h3>
@@ -54,7 +54,7 @@ $unVetCheck = false;
     </script>
 
 <br>  
-<h3> Team <?php echo $tem->color ?> Veterans <button type="button" class="btn btn-primary" onclick = "moveTeam(<?php echo $tem->team_id ?>)"  > MOVE </button> <button type="button" class="btn btn-primary" onclick = "removeTeam(<?php echo $tem->team_id ?>)"  > REMOVE </button> </h3>
+<h3> Team <?php echo $tem->color ?> Veterans <button type="button" class="btn btn-primary" onclick = "moveTeam(<?php echo $tem->team_id ?>)"  > MOVE </button></h3>
 <table id="<?php echo $tem->color ?>Vet"  class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -103,10 +103,6 @@ $unVetCheck = false;
     $('#unUser').DataTable();
 } );
     </script>
-
-
-<button type="button" class="btn btn-primary"  onclick = "addBus()" > Add Bus </button>
-<button type="button" class="btn btn-primary" onclick = "addTeam()"> Add Team </button>
 
 <?php if ($unUserCheck == true || $unVetCheck == true) { ?> 
 <h2> Uncatagorized Members</h2>
@@ -235,7 +231,7 @@ $unVetCheck = false;
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Remove a Bus</h5>
+        <h5 class="modal-title">Move a Team</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -261,81 +257,11 @@ $unVetCheck = false;
   </div>
 </div>
 
-<!-- adding popups -->
-
-<!-- Adding Bus -->
-<div class="modal fade " tabindex="-1" id="addBus" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Add a bus</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form id = "newBus" method ="POST" action='<?php echo base_url('Admin/newBus')?> '> 
-
-      <label for="name">Label the new Bus:</label>
-
-      <input type="text" id="name" name="name" required>
-    
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="submit"  form='newBus' class="btn btn-primary" >Add New Bus</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Adding Team -->
-<div class="modal fade " tabindex="-1" id="addTeam" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Add a Team</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form id = "newTeam" method ="POST" action='<?php echo base_url('Admin/newTeam')?> '> 
-
-      <label for="color">Give the team a color:</label>
-
-      <input type="text" id="color" name="color" required >
-
-
-      <p>   Assign the team to a bus: </p>
-
-        <select required name="bus_id" id="bus_id">
-        <?php foreach ($bus as $bub): ?>
-        <option value="<?php echo $bub->bus_id ?>"><?php echo $bub->name ?></option>
-        <?php endforeach ?>
-        </select>
-    
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="submit"  form='addTeam' class="btn btn-primary" >Add New Team</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <script> 
 var $holdBusID = null;
 var $holdTeamID = null;
 var $holdUID = null;
 var $holdType = '';
-
-//adding Functions
-function addBus() {$('#addBus').modal('show');}
-
-function addTeam() {$('#addTeam').modal('show');}
-
 
 //Moving functions
 function moveTeam($id) {
@@ -379,27 +305,6 @@ function removeBlock($id, $type) {
 
     });
     } else {}
-}
-
-function removeBus($id) {
-if (confirm("Are you sure you want to remove this Bus from the mission? "  )) {
-        $.post('Admin/removeBus', {id: $id}, function () {
-        location.reload();
-
-    });
-    } else {}
-
-
-}
-
-function removeTeam($id) {
-
-if (confirm("Are you sure you want to remove this team from the mission? "  )) {
-    $.post('Admin/removeTeam', {id: $id}, function () {
-    location.reload();
-
-});
-} else {}
 }
 
 </script>
