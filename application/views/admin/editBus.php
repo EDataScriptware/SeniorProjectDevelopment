@@ -21,7 +21,7 @@ $('#bus').DataTable();
 
     <div style="display: inline;">
       <button type="button" class="btn btn-primary" id="createTeam">Create Team</button>
-      <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/deleteBus/'.$bus_data->bus_id) ;?>'" id="deleteBus">Delete Bus</button>
+      <button type="button" class="btn btn-danger" onclick="location.href='<?php echo base_url('Admin/deleteBus/'.$bus_data->bus_id) ;?>'" id="deleteBus">Delete Bus</button>
     </div>
     <br/>
     <br/>
@@ -43,7 +43,7 @@ $('#bus').DataTable();
                     <td><?php echo $team->leader;?></td>
                     <td><?php echo $team->safety;?></td>
                     <td><?php echo $team->team_id ;?></td>
-                    <td><button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/deleteTeam/'.$team->team_id.'/'.$bus_data->bus_id) ;?>'">Delete</button></td>
+                    <td><button type="button" class="btn btn-danger" onclick="location.href='<?php echo base_url('Admin/deleteTeam/'.$team->team_id.'/'.$bus_data->bus_id) ;?>'">Delete</button></td>
                 </tr>
             <?php } ?>
         </tbody>

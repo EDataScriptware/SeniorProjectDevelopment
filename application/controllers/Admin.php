@@ -115,7 +115,6 @@ class Admin extends CI_Controller {
 			$mission_id = null ;
 
 			foreach($postData as $key => $value) {
-				echo $key . ' => ' . $value;
 				switch ($key) {
 					case "color":
 						$color = $value;
@@ -133,7 +132,6 @@ class Admin extends CI_Controller {
 						$mission_id = $value;
 						break;
 				}
-				echo "<br/>" ;
 			}
 
 			$this->Team_model->createTeam($mission_id, $busid, $leader_id, $hs_id, $color);
