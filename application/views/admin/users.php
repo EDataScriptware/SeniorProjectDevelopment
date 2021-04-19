@@ -66,7 +66,7 @@
                   </td>
             <td> <?php echo $use->notes ?>  </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
-            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > DELETE </button> </td>
+          <?php if $use->user_permission != '0' {  ?>  <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > DELETE </button> </td>  <?php } ?> 
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -163,6 +163,18 @@
         document.getElementById("notes").value = "";
 
         }
+
+        function removeBlock($id) {
+
+        if (confirm("Are you sure you want to remove this " + $type + " from the mission? "  )) {
+            $.post('Admin/removeType', {id: $id, type: $type}, function () {
+            location.reload();
+
+        });
+        } else {}
+        }
+
+        </script>
 
     </script>
 
