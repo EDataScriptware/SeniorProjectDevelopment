@@ -22,11 +22,13 @@
 }
 
 .buttonScrollView{
-	width:auto;
-	overflow-x: scroll; 
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
 }
 
 .scrollItem {
+	display: inline-block;
 	background: #2e353d;
 	height: 120px;
 	width: 90px;
