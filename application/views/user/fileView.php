@@ -3,9 +3,9 @@
     $('#fileTable').DataTable();
 } ); 
 </script>
-
+<br/>
+<br/>
 <h1>Documents</h1>
-        <br/>
         <?php if(isset($files)) { ?>
             <hr/>
             <br/>
