@@ -2,8 +2,9 @@
 
 <?php // echo json_encode($veteran)?>
 <div class="btn-group">
-<button  type="button" id = "teamButton" class="btn btn-primary" onClick ="showTeam()"> Team View</button>
-<button  type="button" id = "busButton" class="btn btn-primary" onClick ="showBus()"> Bus view </button>
+<button  type="button" id = "teamButton" class="btn btn-primary" onClick ="showTeam()">Team</button>
+<button  type="button" id = "busButton" class="btn btn-primary" onClick ="showBus()"> Bus </button>
+<button  type="button" id = "busButton" class="btn btn-primary" onClick ="showBus()"> Staff </button>
 </div>
 <div id = "teamView"> 
 
