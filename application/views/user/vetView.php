@@ -171,16 +171,16 @@
 	<?php endforeach ?>
 
 	<h4> Medication List: </h4>
-	<textarea id="med_list" name="med_list" rows="4" cols="50"><?php echo $veteran[0]->med_list; ?></textarea> 
+	<textarea id="med_list" name="med_list" ><?php echo $veteran[0]->med_list; ?></textarea> 
 
 	<h4> When to use Medication: </h4>
-	<textarea id="med_when_use" name="med_when_use" rows="4" cols="50"><?php echo $veteran[0]->med_when_use; ?></textarea>
+	<textarea id="med_when_use" name="med_when_use" ><?php echo $veteran[0]->med_when_use; ?></textarea>
 
 	<h4> Flow Rate: </h4>
-	<textarea id="med_flow_rate" name="med_flow_rate" rows="4" cols="50"><?php echo $veteran[0]->med_flow_rate; ?></textarea>
+	<textarea id="med_flow_rate" name="med_flow_rate" ><?php echo $veteran[0]->med_flow_rate; ?></textarea>
 
 	<h4> Other Conditions: </h4>
-	<textarea id="med_others" name="med_others" rows="4" cols="50"><?php echo $veteran[0]->med_others; ?></textarea>
+	<textarea id="med_others" name="med_others" ><?php echo $veteran[0]->med_others; ?></textarea>
 
 	<h3>Accommodations </h3>
 	<?php foreach ($medAccomidations as $accomidations): ?>
