@@ -61,7 +61,7 @@
 	</div>
 <?php } ?>
 
-	<div id = "staffView">
+	<div style="display:none" id = "staffView">
 
 	</div>
 
