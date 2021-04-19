@@ -13,7 +13,7 @@
 
 </div>
 
-
+<?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?> 
 
 <div id = "about">
 <h2> Basic Information </h2>
