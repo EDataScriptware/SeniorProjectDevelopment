@@ -44,20 +44,22 @@
             <div class="menu-list">
     
                 <ul id="menu-content" class="menu-content collapse out">
-                    <li id = "home"> <a href = "<?php echo base_url('user') ?>"> <i class="fa fa-home fa-lg"></i> Home Page </a> </li>
+                    <li id = "home" onclick="location.href='<?php echo base_url('user'); ?>'"> <a><i class="fa fa-home fa-lg"></i> Home Page </a> </li>
 
                     <li id = "teams" data-toggle="collapse" data-target="#products" class="collapsed">
                     <a href="#"><i class="fa fa-list fa-lg"></i> Teams <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
                     <?php foreach ($allTeams as $team): ?>
-                        <li><a href = "<?php echo base_url('vetList'. '/'. $team->team_id) ?>"><?php echo $team->color ?></a></li>
+                        <li onclick="location.href='<?php echo base_url('vetList'. '/'. $team->team_id); ?>'"><a><?php echo $team->color ?></a></li>
 
                         <?php endforeach; ?>
                     </ul>
-
-                    <li id = "documents" onclick="location.href='<?php echo base_url('mission_documents'); ?>'"> <a href = ""> <i class="fa fa-file fa-lg"></i> Documents </a> </li>
-                    <li id = "itinerary"> <a href = "<?php echo base_url('mission_itinerary') ?>"> <i class="fa fa-calendar fa-lg"></i> Itinerary </a> </li>
+                    
+                    <?php if($_SESSION['userPerm'] <= 2) { ?>
+                      <li id = "documents" onclick="location.href='<?php echo base_url('mission_documents'); ?>'"> <a> <i class="fa fa-file fa-lg"></i> Documents </a> </li>
+                    <?php } ?>
+                    <li id = "itinerary" onclick="location.href='<?php echo base_url('mission_itinerary'); ?>'"> <a> <i class="fa fa-calendar fa-lg"></i> Itinerary </a> </li>
                 </ul>
         </div>
     </div>
