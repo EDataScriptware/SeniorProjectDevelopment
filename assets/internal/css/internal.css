@@ -29,7 +29,8 @@
 .scrollItem {
 	background: #2e353d;
 	height: 120px;
-	width: 80px;
+	width: 90px;
+	color: white;
 }
 
 .cnter{
