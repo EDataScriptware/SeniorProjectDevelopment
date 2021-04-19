@@ -13,10 +13,10 @@
 
 </div>
 
-<?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?> 
+
 
 <div id = "about">
-<h2> Basic Information </h2>
+<h2> Basic Information <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 	<p> DOB: <?php echo $veteran[0]->dob ?>  </p>
 
@@ -55,12 +55,12 @@
 </div>
 
 <div id = "reservations">
-<h2> Schedule </h2>
+<h2> Schedule <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 </div>
 
 <div id = "medicalInfo">
-<h2> Medical Info </h2>
+<h2> Medical Info <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 	<p> DOB: <?php echo $veteran[0]->dob ?>  </p>
 
@@ -99,7 +99,7 @@
 </div>
 
 <div id = "accommodations">
-<h2>History</h2>
+<h2>History <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?> </h2>
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
 			if ($accomidations === "med_walk_bus_steps") {
