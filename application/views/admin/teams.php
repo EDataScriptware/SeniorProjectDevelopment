@@ -124,7 +124,7 @@ $unVetCheck = false;
     </thead>
     <tbody>
     <?php foreach ($user as $use): ?>
-        <?php if ($use->bus_id == null) { ?>
+        <?php if ($use->bus_id == null && $use->user_permissions != '0') { ?>
     
         <tr>
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name?></td>

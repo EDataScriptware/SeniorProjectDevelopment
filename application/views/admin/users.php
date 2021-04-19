@@ -66,6 +66,7 @@
                   </td>
             <td> <?php echo $use->notes ?>  </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > DELETE </button> </td>
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -73,9 +74,7 @@
 
 <hr>
 
-
-
-    </div>
+</div>
 
 <div id="whiteEdit" class="whiteEdit">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -84,12 +83,13 @@
     <p> <label for="username">Username:</label> <input type="text" id="username" name="username"> </p>
     
     <p id = "passAdd"> Password:  <input type="text" id="password" name="password"> </p>
-    <p id = "passBlock"> Password:  <button class="btn btn-primary" id ="reset" > Reset</button> </p>
+    <p id = "passBlock"> Password:  <button type="button" class="btn btn-primary" id ="reset" > Reset</button> </p>
 
     <p> <label for="user_type">User Type:</label><input type="text" id="user_type" name="user_type"><br> </p>
 
   <label for="user_permissions">User Permissions:</label>
   <select id="user_permissions" name="user_permissions">
+  <option value=" ">Select Permissions Level</option>
   <option value="1">1 (Leader Privileges)</option>
   <option value="2">2 (Assistant Privileges)</option>
   <option value="3">3 (User Privileges)</option>
