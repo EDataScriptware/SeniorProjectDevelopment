@@ -1,13 +1,14 @@
 <script> $(document).ready( function () {  $('#home').addClass('active');} ); </script>
 
-<p> admin </p>
+<h1>Welcome to the Admin Portal!</h1>
+<h2>Use the top navigation bar to make changes to different aspects of the mission. Or to create a new one!</h2>
 
 <?php if(isset($test)) {
   echo $test; 
 } ?>
 
 <!-- Trigger/Open The Modal -->
-<button id="vetQuery">Veteran Query</button>
+<!-- <button id="vetQuery">Veteran Query</button> -->
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
