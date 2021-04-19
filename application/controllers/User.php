@@ -57,6 +57,8 @@ class User extends CI_Controller {
 
 		$data['bus'] = $this->db->get()->result();
 
+		$data['allTeams'] = $this->Index_model->get_TeamList();
+
         $this->load->view('user/template/header',$data);
 		$this->load->view('user/vetList', $data);
 		$this->load->view('user/template/footer');
@@ -69,7 +71,7 @@ class User extends CI_Controller {
 		$this->load->model('Veteran_model');
 	
 		$data['veteran'] = $this->Veteran_model->get_one_veteran($id);
-		$data['teams'] = $this->Index_model->get_TeamList();
+		$data['allTeams'] = $this->Index_model->get_TeamList();
 
 		$data['fields'] = $this->Veteran_model->getFields($id);
 		// $data['vetObj2'] = $this->Veteran_model->updateVetEntry($id);
@@ -80,7 +82,7 @@ class User extends CI_Controller {
 
     public function fileView() //all important files can be viewed here View
 	{
-		$data['teams'] = $this->Index_model->get_TeamList();
+		$data['allTeams'] = $this->Index_model->get_TeamList();
         $this->load->view('user/template/header',$data);
 		$this->load->view('user/fileView');
 		$this->load->view('user/template/footer');
@@ -88,7 +90,7 @@ class User extends CI_Controller {
 
     public function itineraryView() //Itinerary Information
 	{
-		$data['teams'] = $this->Index_model->get_TeamList();
+		$data['allTeams'] = $this->Index_model->get_TeamList();
         $this->load->view('user/template/header',$data);
 		$this->load->view('user/itinerary');
 		$this->load->view('user/template/footer');

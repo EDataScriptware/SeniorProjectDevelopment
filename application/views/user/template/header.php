@@ -50,7 +50,7 @@
                     <a href="#"><i class="fa fa-gift fa-lg"></i> Teams <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
-                    <?php foreach ($teams as $team): ?>
+                    <?php foreach ($allTeams as $team): ?>
                         <li><a href = "<?php echo base_url('vetList'. '/'. $team->team_id) ?>"><?php echo $team->color ?></a></li>
 
                         <?php endforeach; ?>
