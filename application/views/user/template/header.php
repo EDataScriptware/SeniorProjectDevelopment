@@ -2,7 +2,7 @@
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" content="width=device-width, initial-scale=1" name="viewport" >
 	<title>Honor Flight - User</title>
 
   <?php 

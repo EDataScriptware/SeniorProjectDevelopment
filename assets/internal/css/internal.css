@@ -292,7 +292,7 @@
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .nav-side-menu {
     position: relative;
     width: 100%;
@@ -321,7 +321,7 @@
 .content {margin-left: 0;}
 
 }
-@media (min-width: 767px) {
+@media screen and (min-width: 767px) {
   .nav-side-menu .menu-list .menu-content {
     display: block;
   }
@@ -385,7 +385,7 @@ body {
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
  .nav-side-menu .sub-menu {
     position: relative;
     width: 100%;
@@ -460,7 +460,7 @@ body {
   transition: all 1s ease;
 }}
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
 	.sub-line {
 	  position: relative;
 	  width: 100%;

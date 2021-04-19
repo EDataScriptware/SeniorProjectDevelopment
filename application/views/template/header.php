@@ -3,7 +3,7 @@
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" content="width=device-width, initial-scale=1" name="viewport" >
 	<title>Rochester Honor Flight</title>
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
