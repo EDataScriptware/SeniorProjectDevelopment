@@ -56,7 +56,7 @@
                         <?php endforeach; ?>
                     </ul>
 
-                    <li id = "documents"> <a href = "<?php echo base_url('mission_documents') ?>"> <i class="fa fa-file fa-lg"></i> Documents </a> </li>
+                    <li id = "documents" onclick="location.href='<?php echo base_url('mission_documents'); ?>'"> <a href = ""> <i class="fa fa-file fa-lg"></i> Documents </a> </li>
                     <li id = "itinerary"> <a href = "<?php echo base_url('mission_itinerary') ?>"> <i class="fa fa-calendar fa-lg"></i> Itinerary </a> </li>
                 </ul>
         </div>
