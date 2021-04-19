@@ -219,7 +219,8 @@ class Admin extends CI_Controller {
 	public function deleteFile($filename) {
 		$directory = "./uploads/" ;
 
-		unlink($directory.$filename) ;
+		unlink($directory.''.$filename) ;
+		echo "HERE: ".$filename;
 	}
 
 	public function teamView() //Team View
