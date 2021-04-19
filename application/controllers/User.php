@@ -57,8 +57,6 @@ class User extends CI_Controller {
 
 		$data['bus'] = $this->db->get()->result();
 
-		$data['teams'] = $this->Index_model->get_TeamList();
-
         $this->load->view('user/template/header',$data);
 		$this->load->view('user/vetList', $data);
 		$this->load->view('user/template/footer');
