@@ -5,7 +5,7 @@ class User extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper('url_helper');
+		$this->load->helper(array('url_helper', 'form', 'url', 'directory', 'download'));
 		$this->load->model('Index_model');
 	}
 
@@ -83,9 +83,22 @@ class User extends CI_Controller {
     public function fileView() //all important files can be viewed here View
 	{
 		$data['allTeams'] = $this->Index_model->get_TeamList();
-        $this->load->view('user/template/header',$data);
-		$this->load->view('user/fileView');
+        // $this->load->view('user/template/header',$data);
+		// $this->load->view('user/fileView');
+		// $this->load->view('user/template/footer');
+
+		$map = directory_map('./uploads/', 1);
+
+
+		$this->load->view('user/template/header', $data);
+		$this->load->view('user/fileView', array('error' => ' ', 'files' => $map));
 		$this->load->view('user/template/footer');
+	}
+
+	public function download ($filename) {
+		$file_path = "./uploads/";
+
+		force_download(''.$file_path.$filename, NULL);                     
 	}
 
     public function itineraryView() //Itinerary Information
