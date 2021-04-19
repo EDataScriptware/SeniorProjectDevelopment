@@ -22,8 +22,14 @@
 }
 
 .buttonScrollView{
-	width:400px;
+	width:auto;
 	overflow-x: scroll; 
+}
+
+.scrollItem {
+	background: #2e353d;
+	height: 120px;
+	width: 80px;
 }
 
 .cnter{
