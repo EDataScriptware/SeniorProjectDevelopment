@@ -3,7 +3,7 @@
 <?php // echo json_encode($veteran)?>
 <div class="btn-group cnter">
 <button  type="button" id = "teamButton" class="btn btn-dark" onClick ="showTeam()">Team</button>
-<?php if ($id === null) { ?> <button  type="button" id = "busButton" class="btn btn-dark" onClick ="showBus()"> Bus </button> <?php if } ?>
+<?php if ($id === null) { ?> <button  type="button" id = "busButton" class="btn btn-dark" onClick ="showBus()"> Bus </button> <?php } ?>
 <button  type="button" id = "staffButton" class="btn btn-dark" onClick ="showStaff()"> Staff </button>
 </div>
 <div id = "teamView"> 
