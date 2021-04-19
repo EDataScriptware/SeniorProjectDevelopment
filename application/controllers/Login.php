@@ -38,7 +38,7 @@ class Login extends CI_Controller {
 				$_SESSION["userPerm"] = $userObj->user_permissions;
 				
 				if ($_SESSION["userPerm"] === '0') {
-					redirect('admin');
+					redirect('busbook');
 				}
 				else {
 					redirect('user');

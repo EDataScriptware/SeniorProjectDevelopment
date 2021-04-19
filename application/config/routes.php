@@ -62,14 +62,14 @@ $route['mission_documents'] = 'User/fileView';
 $route['mission_itinerary'] = 'User/itineraryView'; 
 
 //Admin Routes
-$route['admin'] =  'Admin/busBookView'; //admin home screen
+// $route['admin'] = 'Admin'; //admin home screen
 $route['teams'] = 'Admin/teamView';
 $route['documents'] = 'Admin/docView';
 $route['reservations'] = 'Admin/resView';
 $route['users'] = 'Admin/userView';
 $route['veterans'] = 'Admin/vetView';
 $route['guardians'] = 'Admin/guardView';
-// $route['busbook'] = 'Admin/busBookView';
+$route['busbook'] = 'Admin/busBookView';
 
 
 
