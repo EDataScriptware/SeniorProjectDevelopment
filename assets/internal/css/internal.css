@@ -22,8 +22,8 @@
 }
 
 .buttonScrollView{
-	width:150%;
-	overflow-y: hidden; 
+	width:100%;
+	overflow-x: scroll; 
 }
 
 .cnter{
