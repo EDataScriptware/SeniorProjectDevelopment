@@ -11,10 +11,10 @@
 .teamListElement {
 	display: inline-block;
 	text-align: justify;
-	background: #F4F4F4;
+	background: #2e353d;
 	border-radius: 15px;
 	width: 100%;
-	height: 88px;
+	height: 80px;
 	padding: 16px;
 	margin-bottom: 14px;
 	font-size: 225%;
@@ -27,22 +27,22 @@
 }
 
 .teamListElement:link {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
 .teamListElement:visited {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
 .teamListElement:hover {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
 .teamListElement:active {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
