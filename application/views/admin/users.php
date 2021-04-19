@@ -66,7 +66,7 @@
                   </td>
             <td> <?php echo $use->notes ?>  </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
-          <?php if $use->user_permissions != '0' {  ?>  <td> <button type="button" class="btn btn-primary" onclick = "deleteBlock(<?php echo $use->iduser ?>)"  > DELETE </button> </td>  <?php } ?> 
+          <?php if ($use->user_permissions != '0') {  ?>  <td> <button type="button" class="btn btn-primary" onclick = "deleteBlock(<?php echo $use->iduser ?>)"  > DELETE </button> </td>  <?php } ?> 
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -178,7 +178,7 @@
         function deleteBlock($id) {
 
         if (confirm("Are you sure you want to delete this user? "  )) {
-            $.post('Admin/removeUser', {id: $id}, function () {
+            $.post('Admin/deleteUser', {id: $id}, function () {
             location.reload();
 
         });
