@@ -99,7 +99,7 @@
 </div>
 
 <div id = "accommodations">
-<h3>History </h3>
+<h2>History</h2>
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
 			if ($accomidations === "med_walk_bus_steps") {
