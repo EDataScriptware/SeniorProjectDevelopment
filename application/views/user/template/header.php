@@ -44,9 +44,9 @@
             <div class="menu-list">
     
                 <ul id="menu-content" class="menu-content collapse out">
-                    <li> <a href = "<?php echo base_url('user') ?>"> <i class="fa fa-home fa-lg"></i> Home Page </a> </li>
+                    <li id = "home"> <a href = "<?php echo base_url('user') ?>"> <i class="fa fa-home fa-lg"></i> Home Page </a> </li>
 
-                    <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                    <li id = "teams" data-toggle="collapse" data-target="#products" class="collapsed">
                     <a href="#"><i class="fa fa-list fa-lg"></i> Teams <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
@@ -56,8 +56,8 @@
                         <?php endforeach; ?>
                     </ul>
 
-                    <li> <a href = "<?php echo base_url('mission_documents') ?>"> <i class="fa fa-file fa-lg"></i> Documents </a> </li>
-                    <li> <a href = "<?php echo base_url('mission_itinerary') ?>"> <i class="fa fa-calendar fa-lg"></i> Itinerary </a> </li>
+                    <li id = "documents"> <a href = "<?php echo base_url('mission_documents') ?>"> <i class="fa fa-file fa-lg"></i> Documents </a> </li>
+                    <li id = "itinerary"> <a href = "<?php echo base_url('mission_itinerary') ?>"> <i class="fa fa-calendar fa-lg"></i> Itinerary </a> </li>
                 </ul>
         </div>
     </div>

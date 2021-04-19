@@ -10,6 +10,10 @@
 
 
 <?php if ($id != null) { ?>
+	<script> $(document).ready( function () {  
+    $('#teams').addClass('active');
+} ); 
+</script>
 <div class = "teamListView">
 
 
@@ -19,6 +23,11 @@
 	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="teamListElement"><?php echo $vet->first_name ?> <?php echo$vet->last_name?></a>
 <?php endforeach ?>
 <?php } else { ?>
+
+	<script> $(document).ready( function () {  
+    $('#home').addClass('active');
+} ); 
+</script>
 
 <?php foreach ($team as $tem): ?>
 
