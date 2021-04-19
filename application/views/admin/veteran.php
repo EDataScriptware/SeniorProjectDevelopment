@@ -138,6 +138,7 @@
 
         <h4> Medical Code:  </h4>
         <select id="med_code" name="med_code">
+        <option value="">None</option>
         <option value="Red">Red</option>
         <option value="Yellow">Yellow</option>
         <option value="Green">Green</option>
