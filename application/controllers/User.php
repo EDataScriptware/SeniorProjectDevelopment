@@ -6,62 +6,23 @@ class User extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url_helper');
+		$this->load->model('Index_model');
 	}
 
 	public function index()
 	{
-		// $this->load->model('Index_model');
-		// $data['teams'] = $this->Index_model->get_TeamList();
-        // $this->load->view('user/template/header');
-		// $this->load->view('user/index', $data);
-		// $this->load->view('user/template/footer');
-
-		$this->db->select_max("mission_id");
-		$this->db->from('mission');
-
-		$currMission_id = implode($this->db->get()->row_array());
-
-		if ($id != null) {
-			$data['id'] = $id;
-			$data['veteran'] = $this->Veteran_model->get_team_veteran_data($currMission_id, $id);
-
-			$this->db->select("*");
-			$this->db->from('team');
-			$this->db->where('team_id', $id);
-	
-			$data['team'] = $this->db->get()->result()[0];
-		}
-		else {
-			$data['id'] = null;
-			$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
-
-			$this->db->select("*");
-			$this->db->from('team');
-			$this->db->where('mission_id', $currMission_id);
-	
-			$data['team'] = $this->db->get()->result();
-		}
-
-
-		$this->db->select("*");
-		$this->db->from('bus ');
-		$this->db->where('mission_id', $currMission_id);
-
-		$data['bus'] = $this->db->get()->result();
-
+		$this->load->model('Index_model');
 		$data['teams'] = $this->Index_model->get_TeamList();
-
-        $this->load->view('user/template/header',$data);
-		$this->load->view('user/vetList', $data);
+        $this->load->view('user/template/header');
+		$this->load->view('user/index', $data);
 		$this->load->view('user/template/footer');
-
-
 	}
 
     public function vetList() //Veterins List
 	{
 		$id = $this->uri->segment(2);
 		$this->load->model('Veteran_model');
+		
 
 		$this->db->select_max("mission_id");
 		$this->db->from('mission');
