@@ -6,15 +6,10 @@
 <?php $medMedication = array('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
 
 <div class = "buttonScrollView">
-	<button id = "aboutButton" class = "scrollItem" onClick ="showAbout()"> About </button>
-	<button id = "resButton" class = "scrollItem" onClick ="showRes()"> Schedule </button>
-	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	
-		<button id = "medButton" class = "scrollItem" onClick ="showMed()"> Medical Info </button>
-	<?php } ?>
-	
-	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	
-	<button id = "acomButton" class = "scrollItem" onClick ="showAcc()"> History </button> 
-	<?php } ?>
+	<button id = "aboutButton" class = "scrollItem" onClick ="showAbout()">About</button>
+	<button id = "resButton" class = "scrollItem" onClick ="showRes()">Schedule</button>
+	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "medButton" class = "scrollItem" onClick ="showMed()">Medical Info</button><?php } ?>
+	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "acomButton" class = "scrollItem" onClick ="showAcc()">History</button> <?php } ?>
 
 </div>
 
