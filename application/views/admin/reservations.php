@@ -33,7 +33,7 @@ $(document).ready( function () {
             <td><?php echo $fly->departure_location ?></td>
             <td><?php echo date_format(date_create($fly->arrival),"Y/m/d h:i A"); ?></td>
             <td><?php echo $fly->arrival_location ?></td>
-            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $fly->flight_id ?>,'fly')"  > EDIT </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $fly->flight_id ?>,'fly')"  > REMOVE </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $fly->flight_id ?>,'fly')"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $fly->flight_id ?>,'fly')"  > REMOVE </button> </td>
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -70,7 +70,7 @@ $(document).ready( function () {
             <td> <?php echo $hot->room ?>  </td>
             <td> <?php echo date_format(date_create($hot->check_in),"Y/m/d h:i A"); ?>  </td>
             <td> <?php echo date_format(date_create($hot->check_out),"Y/m/d h:i A"); ?>  </td>
-            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $hot->hotel_id ?>,'hotel')"  > EDIT </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $hot->hotel_id ?>,'hotel')"  > REMOVE </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $hot->hotel_id ?>,'hotel')"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $hot->hotel_id ?>,'hotel')"  > REMOVE </button> </td>
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -107,7 +107,7 @@ $(document).ready( function () {
             <td> <?php echo date_format(date_create($eve->date),"Y/m/d"); ?>  </td>
             <td> <?php echo date_format(date_create($eve->start),"h:i A"); ?>  </td>
             <td> <?php echo date_format(date_create($eve->end),"h:i A"); ?>  </td>
-            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $eve->event_id ?>,'event')"  > EDIT </button> <button type="button" class="btn btn-primary" onclick = "removeBlock(<?php echo $eve->event_id ?>,'event')"  > REMOVE </button> </td>
+            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $eve->event_id ?>,'event')"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $eve->event_id ?>,'event')"  > REMOVE </button> </td>
         </tr>
         <?php endforeach ?>
     </tbody>
