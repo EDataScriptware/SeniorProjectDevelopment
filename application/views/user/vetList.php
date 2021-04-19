@@ -59,7 +59,7 @@
 	<?php endforeach ?>
 
 	</div>
-<?php if } ?>
+<?php } ?>
 
 	<div id = "staffView">
 
