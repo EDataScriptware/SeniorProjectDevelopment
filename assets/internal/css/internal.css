@@ -21,6 +21,11 @@
 	font-size: 215%;
 }
 
+.buttonScrollView{
+	width:100%;
+	overflow-y: hidden; 
+}
+
 .cnter{
 	margin: auto;
   	width: 50%;
