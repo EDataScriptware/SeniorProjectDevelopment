@@ -6,10 +6,10 @@
 <?php $medMedication = array('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
 
 <div class = "buttonScrollView">
-	<button id = "aboutButton" class = "scrollItem scrollActive" onClick ="showAbout()">About</button>
-	<button id = "schButton" class = "scrollItem" onClick ="showRes()">Schedule</button>
-	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "medButton" class = "scrollItem" onClick ="showMed()">Medical Info</button><?php } ?>
-	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "hisButton" class = "scrollItem" onClick ="showAcc()">History</button> <?php } ?>
+	<button id = "aboutBut" class = "scrollItem scrollActive" onClick ="showAbout()">About</button>
+	<button id = "schBut" class = "scrollItem" onClick ="showRes()">Schedule</button>
+	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "medBut" class = "scrollItem" onClick ="showMed()">Medical Info</button><?php } ?>
+	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "hisBut" class = "scrollItem" onClick ="showAcc()">History</button> <?php } ?>
 
 </div>
 
@@ -225,6 +225,14 @@ $(document).ready(function() {
 		document.getElementById("reservations").style.display = "none";
 		document.getElementById("medicalInfo").style.display = "none";
 		document.getElementById("accommodations").style.display = "none";
+
+		$("#aboutBut").removeClass("scrollActive");
+		$("#schBut").removeClass("scrollActive");
+		$("#medBut").removeClass("scrollActive");
+		$("#hisBut").removeClass("scrollActive");
+
+		$("#aboutBut").addClass("scrollActive");
+
 	}
 
 	function showRes() {
@@ -232,6 +240,14 @@ $(document).ready(function() {
 		document.getElementById("reservations").style.display = "inline-block";
 		document.getElementById("medicalInfo").style.display = "none";
 		document.getElementById("accommodations").style.display = "none";
+
+		$("#aboutBut").removeClass("scrollActive");
+		$("#schBut").removeClass("scrollActive");
+		$("#medBut").removeClass("scrollActive");
+		$("#hisBut").removeClass("scrollActive");
+
+		$("#schBut").addClass("scrollActive");
+
 	}
 
 	function showMed() {
@@ -239,6 +255,14 @@ $(document).ready(function() {
 		document.getElementById("reservations").style.display = "none";
 		document.getElementById("medicalInfo").style.display = "inline-block";
 		document.getElementById("accommodations").style.display = "none";
+
+		$("#aboutBut").removeClass("scrollActive");
+		$("#schBut").removeClass("scrollActive");
+		$("#medBut").removeClass("scrollActive");
+		$("#hisBut").removeClass("scrollActive");
+
+		$("#medBut").addClass("scrollActive");
+
 	}
 
 	function showAcc() {
@@ -246,6 +270,14 @@ $(document).ready(function() {
 		document.getElementById("reservations").style.display = "none";
 		document.getElementById("medicalInfo").style.display = "none";
 		document.getElementById("accommodations").style.display = "inline-block";
+
+		$("#aboutBut").removeClass("scrollActive");
+		$("#schBut").removeClass("scrollActive");
+		$("#medBut").removeClass("scrollActive");
+		$("#hisBut").removeClass("scrollActive");
+
+		$("#hisBut").addClass("scrollActive");
+
 	}
 
 </script>
