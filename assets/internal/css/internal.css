@@ -277,6 +277,8 @@
 .nav-side-menu li a {
   text-decoration: none;
   color: #e1ffff;
+  width:100%;
+  height: 100%;
 }
 .nav-side-menu li a i {
   padding-left: 10px;
