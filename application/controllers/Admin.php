@@ -220,7 +220,8 @@ class Admin extends CI_Controller {
 		$directory = "./uploads/" ;
 
 		unlink($directory.''.$filename) ;
-		echo "HERE: ".$filename;
+
+		redirect('documents') ;
 	}
 
 	public function teamView() //Team View
