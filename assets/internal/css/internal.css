@@ -21,6 +21,11 @@
 	font-size: 215%;
 }
 
+.cnter{
+	margin: auto;
+  	width: 90%;
+}
+
 .modal-xl {
 	width: auto;
 	max-width:900px;
