@@ -65,8 +65,7 @@
                   ?>
                   </td>
             <td> <?php echo $use->notes ?>  </td>
-            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
-          <?php if ($use->user_permissions != '0') {  ?>  <td> <button type="button" class="btn btn-primary" onclick = "deleteBlock(<?php echo $use->iduser ?>)"  > DELETE </button> </td>  <?php } ?> 
+            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> <?php if ($use->user_permissions != '0') {  ?> <button type="button" class="btn btn-danger" onclick = "deleteBlock(<?php echo $use->iduser ?>)"  > DELETE </button> <?php } ?>  </td>
         </tr>
         <?php endforeach ?>
     </tbody>
