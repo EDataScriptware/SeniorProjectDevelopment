@@ -66,7 +66,7 @@
                     <?php if ($_SESSION["userPerm"] === '0') { ?>
                       <li id = "admin" onclick="location.href='<?php echo base_url('admin'); ?>'"> <a> <i class="fa fa-cogs fa-lg"></i> Admin Portal </a> </li>
                     <?php } ?>
-                    <li id = "logut" onclick="location.href='<?php echo base_url(''); ?>'"> <a> <i class="fa fa-times fa-lg"></i> Logout </a> </li>
+                    <li id = "logout" onclick="location.href='<?php echo base_url(''); ?>'"> <a> <i class="fa fa-times fa-lg"></i> Logout </a> </li>
                 </ul>
         </div>
     </div>
