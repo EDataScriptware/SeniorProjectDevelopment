@@ -34,6 +34,8 @@
 	width: 90px;
 	color: black;
 	border: 0;
+	margin-right: 5px;
+	margin-left: 5px;
 	border-radius: 0px 20px;
 }
 
@@ -349,8 +351,8 @@
 
 .content {
 	
-	margin-left: 25px;
-	margin-right: 25px;
+	margin-left: 35px;
+	margin-right: 35px;
 
 }
 
