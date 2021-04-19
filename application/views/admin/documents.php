@@ -41,7 +41,7 @@
                 <?php foreach ($files as $file): ?>
                     <tr>
                         <td><a href='<?php echo base_url('Admin/download/'.$file); ?>'><?php echo $file ?> </a></td>
-                        <td><button class="btn btn-danger">Delete</button></td>
+                        <td><button class="btn btn-danger" onclick="<?php echo base_url('Admin/deleteFile/'.$file); ?>">Delete</button></td>
                     </tr>
                     <?php endforeach ?>
                 </tbody>
