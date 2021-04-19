@@ -403,6 +403,7 @@ body {
     color: #000;
     width: 40px;
     text-align: center;
+	border-radius: 25px;
   }
   
   .sub-line ul .sub-press li.active,
