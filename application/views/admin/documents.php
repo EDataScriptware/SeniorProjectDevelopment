@@ -30,7 +30,6 @@
             <hr/>
             <h2>Uploaded Documents</h2>
             <br/>
-            <br/>
             <table id="fileTable"  class="table table-striped table-bordered">
                 <thead>
                     <tr>
