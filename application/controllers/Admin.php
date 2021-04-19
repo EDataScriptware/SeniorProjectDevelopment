@@ -216,6 +216,12 @@ class Admin extends CI_Controller {
 		force_download(''.$file_path.$filename, NULL);                     
 	}
 
+	public function deleteFile($filename) {
+		$directory = "./uploads/" ;
+
+		unlink($directory.$filename) ;
+	}
+
 	public function teamView() //Team View
 	{
 		$this->load->model('User_model');
