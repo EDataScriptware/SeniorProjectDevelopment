@@ -5,11 +5,9 @@
 </script>
 
 <h1>Documents</h1>
-        <hr/>
         <br/>
         <?php if(isset($files)) { ?>
             <hr/>
-            <h2>Uploaded Documents</h2>
             <br/>
             <table id="fileTable"  class="table table-striped table-bordered">
                 <thead>
