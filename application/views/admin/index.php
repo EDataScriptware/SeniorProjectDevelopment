@@ -1,6 +1,6 @@
 <script> $(document).ready( function () {  $('#home').addClass('active');} ); </script>
 
-<h1>Welcome to the Admin Portal!</h1>
+<h1>Welcome to the Honor Flight Admin Portal!</h1>
 <h2>Use the top navigation bar to make changes to different aspects of the mission. Or to create a new one!</h2>
 
 <?php if(isset($test)) {
