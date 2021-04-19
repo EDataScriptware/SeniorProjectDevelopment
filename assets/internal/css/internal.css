@@ -347,7 +347,12 @@
     line-height: 50px !important;
   }
 
-.content {margin-left: 0;}
+.content {
+	
+	margin-left: 25px;
+	margin-right: 25px;
+
+}
 
 }
 @media screen and (min-width: 767px) {
