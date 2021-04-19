@@ -47,7 +47,7 @@
                     <li> <a href = "<?php echo base_url('user') ?>"> <i class="fa fa-home fa-lg"></i> Home Page </a> </li>
 
                     <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                    <a href="#"><i class="fa fa-address-book fa-lg"></i> Teams <span class="arrow"></span></a>
+                    <a href="#"><i class="fa fa-list fa-lg"></i> Teams <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
                     <?php foreach ($allTeams as $team): ?>
