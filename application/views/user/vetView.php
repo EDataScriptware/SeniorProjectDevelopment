@@ -55,12 +55,12 @@
 </div>
 
 <div id = "reservations">
-<h3> Reservations</h3>
+<h2> Schedule </h2>
 
 </div>
 
 <div id = "medicalInfo">
-<h3>Medical Information</h3>
+<h2> Medical Info </h2>
 
 	<p> DOB: <?php echo $veteran[0]->dob ?>  </p>
 
@@ -99,7 +99,7 @@
 </div>
 
 <div id = "accommodations">
-<h3>Accommodations </h3>
+<h3>History </h3>
 <?php foreach ($medAccomidations as $accomidations): ?>
 		<?php if ($veteran[0]->$accomidations == 1) {
 			if ($accomidations === "med_walk_bus_steps") {
