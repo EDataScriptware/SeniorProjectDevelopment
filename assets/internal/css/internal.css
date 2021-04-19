@@ -39,6 +39,8 @@
 	border-radius: 0px 20px;
 }
 
+.scrollItem:focus {outline:0;} 
+
 .scrollActive {
 	background: #2e353d;
 	color: white;
