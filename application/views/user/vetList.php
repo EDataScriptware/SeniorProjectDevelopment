@@ -43,8 +43,6 @@
 	<?php } ?>
 </div>
 
-</div>
-
 <div id = "busView">
 	<?php foreach ($bus as $b): ?>
 
