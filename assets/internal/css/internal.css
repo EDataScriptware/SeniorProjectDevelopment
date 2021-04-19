@@ -31,6 +31,8 @@
 	height: 120px;
 	width: 90px;
 	color: white;
+	border: 0;
+	border-radius: 0px 25px;
 }
 
 .cnter{
