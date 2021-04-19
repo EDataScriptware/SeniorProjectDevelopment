@@ -58,8 +58,8 @@ $route['user'] = 'User/vetList'; //User Home screen
 // $route['vetList'] = 'User/vetList';
 $route['vetList/:num'] = 'User/vetList';
 $route['vetView/:num'] = 'User/vetView'; 
-$route['fileView'] = 'User/fileView'; 
-$route['itineraryView'] = 'User/itineraryView'; 
+$route['mission_documents'] = 'User/fileView'; 
+$route['mission_itinerary'] = 'User/itineraryView'; 
 
 //Admin Routes
 $route['admin'] = 'Admin'; //admin home screen
