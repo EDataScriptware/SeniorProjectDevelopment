@@ -66,7 +66,7 @@
                   </td>
             <td> <?php echo $use->notes ?>  </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
-          <?php if $use->user_permissions != '0' {  ?>  <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > DELETE </button> </td>  <?php } ?> 
+          <?php if $use->user_permissions != '0' {  ?>  <td> <button type="button" class="btn btn-primary" onclick = "deleteBlock(<?php echo $use->iduser ?>)"  > DELETE </button> </td>  <?php } ?> 
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -83,7 +83,7 @@
     <p> <label for="username">Username:</label> <input type="text" id="username" name="username"> </p>
     
     <p id = "passAdd"> Password:  <input type="text" id="password" name="password"> </p>
-    <p id = "passBlock"> Password:  <button type="button" class="btn btn-primary" id ="reset" > Reset</button> </p>
+    <p id = "passBlock"> Password:  <button type="button" class="btn btn-primary" id ="reset"  > Reset</button> </p>
 
     <p> <label for="user_type">User Type:</label><input type="text" id="user_type" name="user_type"><br> </p>
 
@@ -138,6 +138,7 @@
             document.getElementById("user_permissions").value = $result[0].user_permissions;
             document.getElementById("adminButton").style.display = 'block';
             document.getElementById("user_permissions").disabled = true;
+             
             }
             document.getElementById("team_id").value = $result[0].team_id;
             document.getElementById("notes").value = $result[0].notes;
@@ -174,7 +175,7 @@
 
         }
 
-        function removeBlock($id) {
+        function deleteBlock($id) {
 
         if (confirm("Are you sure you want to delete this user? "  )) {
             $.post('Admin/removeUser', {id: $id}, function () {

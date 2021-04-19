@@ -608,6 +608,13 @@ class Admin extends CI_Controller {
 
 	}
 
+	public function  deleteUser() {
+		$id = $this->input->post('id');
+
+		$this->db->where('iduser', $id);
+		$this->db->delete('team');
+	}
+
 	public function addEvent($type) {
 
 		$this->db->select_max("mission_id");
