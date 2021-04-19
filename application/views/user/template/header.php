@@ -63,6 +63,10 @@
                       <li id = "documents" onclick="location.href='<?php echo base_url('mission_documents'); ?>'"> <a> <i class="fa fa-file fa-lg"></i> Documents </a> </li>
                     <?php } ?>
                     <li id = "itinerary" onclick="location.href='<?php echo base_url('mission_itinerary'); ?>'"> <a> <i class="fa fa-calendar fa-lg"></i> Itinerary </a> </li>
+                    <?php if ($_SESSION["userPerm"] === '0') { ?>
+                      <li id = "admin" onclick="location.href='<?php echo base_url('admin'); ?>'"> <a> <i class="fa fa-calendar fa-lg"></i> Admin Portal </a> </li>
+                    <?php } ?>
+                    <li id = "logut" onclick="location.href='<?php echo base_url(''); ?>'"> <a> <i class="fa fa-calendar fa-lg"></i> Logout </a> </li>
                 </ul>
         </div>
     </div>
