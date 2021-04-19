@@ -54,8 +54,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //User Routes
-$route['user'] = 'User'; //User Home screen
-$route['vetList'] = 'User/vetList';
+$route['user'] = 'User/vetList'; //User Home screen
+// $route['vetList'] = 'User/vetList';
 $route['vetList/:num'] = 'User/vetList';
 $route['vetView/:num'] = 'User/vetView'; 
 $route['fileView'] = 'User/fileView'; 

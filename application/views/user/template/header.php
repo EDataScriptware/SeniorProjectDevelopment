@@ -45,7 +45,7 @@
     
                 <ul id="menu-content" class="menu-content collapse out">
                     <li>
-                    <a href="#">
+                    <a href = "<?php echo base_url('user') ?>">
                     <i class="fa fa-dashboard fa-lg"></i> Home Page
                     </a>
                     </li>
@@ -54,15 +54,10 @@
                     <a href="#"><i class="fa fa-gift fa-lg"></i> Teams <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
-                        <li class="active"><a href="#">Blue</a></li>
-                        <li><a href="#">Gold</a></li>
-                        <li><a href="#">Green</a></li>
-                        <li><a href="#">Purple</a></li>
-                        <li><a href="#">Purple</a></li>
-                        <li><a href="#">Red</a></li>
-                        <li><a href="#">Silver</a></li>
-                        <li><a href="#">Teal</a></li>
-                        <li><a href="#">Yellow</a></li>
+                    <?php foreach ($teams as $team): ?>
+                        <li><a href = "<?php echo base_url('vetList'. '/'. $team->team_id) ?>"><?php echo $team->color ?></a></li>
+
+                        <?php endforeach; ?>
                     </ul>
                 </ul>
         </div>
