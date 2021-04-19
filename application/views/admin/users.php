@@ -66,7 +66,7 @@
                   </td>
             <td> <?php echo $use->notes ?>  </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > EDIT </button> </td>
-          <?php if $use->user_permission != '0' {  ?>  <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > DELETE </button> </td>  <?php } ?> 
+          <?php if $use->user_permissions != '0' {  ?>  <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $use->iduser ?>)"  > DELETE </button> </td>  <?php } ?> 
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -89,7 +89,8 @@
 
   <label for="user_permissions">User Permissions:</label>
   <select id="user_permissions" name="user_permissions">
-  <option value=" ">Select Permissions Level</option>
+  <option value=" " disabled >Select Permission Level</option>
+  <option id ="adminButton" style ='display:none' value="0">Admin</option>
   <option value="1">1 (Leader Privileges)</option>
   <option value="2">2 (Assistant Privileges)</option>
   <option value="3">3 (User Privileges)</option>
@@ -128,7 +129,16 @@
             
             document.getElementById("username").value = $result[0].username;
             document.getElementById("user_type").value = $result[0].user_type;
+            if ($result[0].user_permissions != '0') { 
             document.getElementById("user_permissions").value = $result[0].user_permissions;
+            document.getElementById("adminButton").style.display = 'none';
+            document.getElementById("user_permissions").disabled = false;
+            }
+            else {
+            document.getElementById("user_permissions").value = $result[0].user_permissions;
+            document.getElementById("adminButton").style.display = 'block';
+            document.getElementById("user_permissions").disabled = true;
+            }
             document.getElementById("team_id").value = $result[0].team_id;
             document.getElementById("notes").value = $result[0].notes;
             document.getElementById("update").action = "Admin/updateUser/"+$result[0].iduser;
@@ -166,8 +176,8 @@
 
         function removeBlock($id) {
 
-        if (confirm("Are you sure you want to remove this " + $type + " from the mission? "  )) {
-            $.post('Admin/removeType', {id: $id, type: $type}, function () {
+        if (confirm("Are you sure you want to delete this user? "  )) {
+            $.post('Admin/removeUser', {id: $id}, function () {
             location.reload();
 
         });
