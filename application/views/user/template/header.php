@@ -56,8 +56,8 @@
                         <?php endforeach; ?>
                     </ul>
 
-                    <a href = "<?php echo base_url('mission_documents') ?>">  <li> <i class="fa fa-dashboard fa-lg"></i> Documents  </li> </a>
-                    <li> <a href = "<?php echo base_url('mission_itinerary') ?>"> <i class="fa fa-dashboard fa-lg"></i> Itinerary  </li> </a>
+                    <li> <a href = "<?php echo base_url('mission_documents') ?>"> <i class="fa fa-dashboard fa-lg"></i> Documents </a> </li>
+                    <li> <a href = "<?php echo base_url('mission_itinerary') ?>"> <i class="fa fa-dashboard fa-lg"></i> Itinerary </a> </li>
                 </ul>
         </div>
     </div>
