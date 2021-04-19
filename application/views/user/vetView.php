@@ -7,13 +7,13 @@
 
 <div class = "buttonScrollView btn-group btn-group-lg mx-auto">
 	<button id = "aboutButton" class = "btn btn-primary" onClick ="showAbout()"> About </button>
-	<button id = "resButton" class = "btn btn-primary" onClick ="showRes()"> Reservations </button>
+	<button id = "resButton" class = "btn btn-primary" onClick ="showRes()"> Schedule </button>
 	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	
 		<button id = "medButton" class = "btn btn-primary" onClick ="showMed()"> Medical Info </button>
 	<?php } ?>
 	
 	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	
-	<button id = "acomButton" class = "btn btn-primary" onClick ="showAcc()"> Accommodations </button> 
+	<button id = "acomButton" class = "btn btn-primary" onClick ="showAcc()"> History </button> 
 	<?php } ?>
 
 </div>
