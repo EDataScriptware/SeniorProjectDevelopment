@@ -5,9 +5,6 @@
 <button id = "teamButton" class = "userViewButton" onClick ="showTeam()"> Team View</button>
 <button id = "busButton" class = "userViewButton" onClick ="showBus()"> Bus view </button>
 
-<input type="text" id="name" name="search">
-
-
 <div id = "teamView"> 
 
 
