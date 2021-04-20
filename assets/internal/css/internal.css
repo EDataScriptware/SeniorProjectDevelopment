@@ -57,6 +57,7 @@
 .scrollActive {
 	background: #2e353d;
 	color: white;
+	filter: drop-shadow(0 0 0.75rem lightgrey);
 }
 
 .cnter{
