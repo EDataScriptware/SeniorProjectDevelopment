@@ -56,10 +56,10 @@
           border-bottom-color: none !important;
         }
 
-        .nav-item
-        {
-          background-color: red;
-        }
+       .nav-link
+       {
+          color: darkgoldenrod;
+       }
 
     </style>
 
