@@ -213,8 +213,6 @@
             <?php endforeach ?>
 
             <?php foreach ($conditions as $con): ?>
-                document.getElementById('<?php echo $con ?>').value = $result[0]['<?php echo $con ?>'];
-                
                 if ($result[0]['<?php echo $con ?>'] == 1) { $('#<?php echo $con ?>').prop('checked', true);}
                 else { $('#<?php echo $con ?>').prop('checked', false);}
             <?php endforeach ?>
