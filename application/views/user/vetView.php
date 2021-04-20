@@ -312,11 +312,11 @@
 
         <label for="name">Hotel Name:</label>
  
-            <input type="text" id="name" name="name" value='<?php echo $hotel[0]['name'];?>' required size="10"> <br>
+            <input type="text" id="name" name="name" value='<?php // echo $hotel[0]['name'];?>' required size="10"> <br>
 
         <label for="room">Room:</label>
 
-            <input type="text" id="room" name="room" value='<?php echo $hotel[0]['room'];?>' required size="10"> <br>
+            <input type="text" id="room" name="room" value='<?php // echo $hotel[0]['room'];?>' required size="10"> <br>
 
         <label for="check_in">Check-In Time:</label>
 
