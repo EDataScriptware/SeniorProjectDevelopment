@@ -1,13 +1,15 @@
 
 
 <?php // echo json_encode($veteran)?>
+<?php if ($id === null) { ?>
 <div class='wrapper text-center'>
 <div class="btn-group btn-group-lg">
 <button  type="button" id = "teamButton" class="btn btn-primary" onClick ="showTeam()">Team</button>
-<?php if ($id === null) { ?> <button  type="button" id = "busButton" class="btn btn-primary" onClick ="showBus()"> Bus </button> <?php } ?>
+ <button  type="button" id = "busButton" class="btn btn-primary" onClick ="showBus()"> Bus </button> 
 <button  type="button" id = "staffButton" class="btn btn-primary" onClick ="showStaff()"> Staff </button>
 </div>
 </div>
+<?php } ?>
 <div id = "teamView"> 
 
 <?php if ($id != null) { ?>
@@ -47,7 +49,7 @@
 <div id = "busView">
 	<?php foreach ($bus as $b): ?>
 
-<h2> <b>  <?php echo $b->name ?> Staff </b> </h2>
+<h2> <b>  <?php echo $b->name ?></b> </h2>
 
 <?php foreach ($veteran as $vet): ?>
 <?php if ($vet->bus_id === $b->bus_id) { ?>
@@ -63,6 +65,9 @@
 	<div style="display:none" id = "staffView">
 
 		<?php foreach ($bus as $b): ?>
+
+		<h2> <b>  <?php echo $b->name ?> Staff </b> </h2>
+		
 			<?php foreach ($user as $use): ?>
 			<?php if ($use->bus_id === $b->bus_id) { ?>
 			<a href="" class="teamListElement"><?php echo $use->first_name ?> <?php echo$use->last_name?></a>
