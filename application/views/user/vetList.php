@@ -18,7 +18,7 @@
 <div class = "teamListView">
 
 
-	<h3> <?php echo $team->color ?> Team View </h3>
+	<h3> <?php echo $team->color ?> Team</h3>
 
 <?php foreach ($veteran as $vet): ?>
 	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="teamListElement"><?php echo $vet->first_name ?> <?php echo$vet->last_name?></a>
@@ -48,7 +48,7 @@
 <div id = "busView">
 	<?php foreach ($bus as $b): ?>
 
-<h3> <?php echo $b->name ?> View </h3>
+<h3> <?php echo $b->name ?></h3>
 
 <?php foreach ($veteran as $vet): ?>
 <?php if ($vet->bus_id === $b->bus_id) { ?>
