@@ -3,6 +3,10 @@
     font-size: 4vh;
 }
 
+.brand {
+	padding-bottom: 10px;
+}
+
 .teamListView {
 	max-width: 85%;
 	margin:0 auto;
