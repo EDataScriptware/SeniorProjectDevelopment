@@ -8,7 +8,7 @@
 
 <div class = "buttonScrollView">
 	<button id = "aboutBut" class = "scrollItem scrollActive" onClick ="showAbout()"> <i class="fa fa-user fa-3x"></i> <br> <b> About </b></button>
-	<button id = "schBut" class = "scrollItem"  onClick ="showRes()"> <i class="fa fa-calendar fa-3x"></i>  <br> <b>  Reservations</b></button>
+	<button id = "schBut" class = "scrollItem"  onClick ="showRes()"> <i class="fa fa-calendar fa-3x"></i>  <br> <b>  Travel</b></button>
 	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "medBut" class = "scrollItem" onClick ="showMed()"> <i class="fa fa-medkit fa-3x"></i>  <br> <b> Medical </b></button><?php } ?>
 	<button id = "hisBut" class = "scrollItem" onClick ="showAcc()"> <i class="fa fa-history fa-3x"></i>  <br> <b> History </b></button>
 
