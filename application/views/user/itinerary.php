@@ -100,9 +100,7 @@
         
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" style='display:none' id='addFlyBut' form ="addFly">Add New Flight Entry</button>
-        <button type="submit" class="btn btn-primary" style='display:none' id='addHotelBut' form ="addHotel">Add New Hotel Entry</button>
-        <button type="submit" class="btn btn-primary" style='display:none' id='addEventBut' form ="addEvent">Add New Event Entry</button>
+        <button type="submit" class="btn btn-primary" id='addEventBut' form ="addEvent">Add New Event</button>
       </div>
     </div>
   </div>
