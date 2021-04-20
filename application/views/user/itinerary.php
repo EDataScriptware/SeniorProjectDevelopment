@@ -163,17 +163,6 @@ function editBlock($id) {
         var $res = JSON.parse(result);
         console.log($res[0]);
 
-
-    document.getElementById("editFly").style.display = "none";
-    document.getElementById("editFlyBut").style.display = "none";
-
-    document.getElementById("editHotel").style.display = "none";
-    document.getElementById("editHotelBut").style.display = "none";
-
-    document.getElementById("editEvent").style.display = "block";
-    document.getElementById("editEventBut").style.display = "block";
-
-
     document.getElementById("description").value = $res[0]['description'];
     document.getElementById("start").value = $res[0]['start'];
     document.getElementById("end").value = $res[0]['end'];
