@@ -183,6 +183,7 @@ function editBlock($id) {
 
 
 }
+}
 
 function removeBlock($id) {
 
