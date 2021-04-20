@@ -8,8 +8,6 @@
 </div>
 <div id = "teamView"> 
 
-
-
 <?php if ($id != null) { ?>
 	<script> $(document).ready( function () {  
     $('#teams').addClass('active');
