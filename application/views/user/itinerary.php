@@ -15,9 +15,11 @@
 <?php $first = true; ?>
 
 <?php foreach ($allTeams as $tem): ?>
-    <?php if ($first = true) { ?>
+    <?php if ($first === true) { ?>
     <div id = "eventCon<?php echo $tem->color ?>"> 
-    <?php $first = false; } else { ?>
+    <?php 
+    $first = false; 
+        } else { ?>
         <div id = "eventCon<?php echo $tem->color ?>" style='display:none'> 
     <?php } ?>
     <script>
