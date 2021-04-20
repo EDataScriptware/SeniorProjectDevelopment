@@ -34,6 +34,11 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/DataTables/datatables.css')?>" />
 <script src="<?php echo base_url('assets/DataTables/datatables.js')?>"> </script>
 
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/jquery-ui/jquery-ui.css')?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/jquery-ui/jquery-ui.structure.css')?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/jquery-ui/jquery-ui.theme.css')?>" />
+<script src="<?php echo base_url('assets/jquery-ui/jquery-ui.js')?>"> </script>
+
 
 </head>
 <body>
