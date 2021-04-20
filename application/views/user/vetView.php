@@ -92,7 +92,7 @@
 
 
 <?php if ($hotel != null) { ?>
-<h2> <b> Hotel Info <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </b> </h2>
+<h2> <b> Hotel Info <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"> EDIT </button>  <?php } ?>  </b> </h2>
 <p> <b> Name: </b> <?php echo $hotel[0]->name ?>  </p>
 <p> <b> Room No: </b> <?php echo $hotel[0]->room ?>  </p>
 <p> <b> Check In: </b> <?php echo $hotel[0]->check_in ?>  </p>
@@ -297,6 +297,51 @@
     </div>
   </div>
 </div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Edit Hotel Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id ="editHotel" method='POST' action='<?php echo base_url('User/updateHotelInfo/'.$veteran[0]->veteran_id); ?>' >
+
+        <label for="name">Hotel Name:</label>
+ 
+            <input type="text" id="name" name="name" required size="10"> <br>
+
+        <label for="veteran_id">Veteran:</label>
+
+            <input type="text" list='veterans' id="veteran_id" name="veteran_id" required size="10"> <br>
+
+        <label for="room">Room:</label>
+
+            <input type="text" id="room" name="room" required size="10"> <br>
+
+        <label for="check_in">Check-In Time:</label>
+
+            <input type="datetime-local" id="check_in" name="check_in">  <br>
+
+        <label for="check_out">Check-Out Time:</label>
+
+            <input type="datetime-local" id="check_out" name="check_out">  <br>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" style='display:none' id='editHotelBut' form ="editHotel">Edit Hotel Entry</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <script>
 
