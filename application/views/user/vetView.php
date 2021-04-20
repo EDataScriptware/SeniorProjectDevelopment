@@ -295,46 +295,6 @@
   </div>
 </div>
 
-<!-- Edit Modal -->
-<?php if ($hotel != null) { ?>
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
-  <div class="modal-dialog" >
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" >Edit Hotel Info</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <form id ="editHotel" method='POST' action='<?php echo base_url('User/updateHotelInfo/'.$veteran[0]->veteran_id); ?>' >
-
-        <label for="name">Hotel Name:</label>
- 
-            <input type="text" id="name" name="name" value='<?php echo $hotel[0]['name'];?>' required size="10"> <br>
-
-        <label for="room">Room:</label>
-
-            <input type="text" id="room" name="room" value='<?php echo $hotel[0]['room'];?>' required size="10"> <br>
-
-        <label for="check_in">Check-In Time:</label>
-
-            <input type="datetime-local" id="check_in" value='<?php echo $hotel[0]['check_in'].replace(" ", "T");?>' name="check_in">  <br>
-
-        <label for="check_out">Check-Out Time:</label>
-
-            <input type="datetime-local" id="check_out" value='<?php echo $hotel[0]['check_out'].replace(" ", "T");?>' name="check_out">  <br>
-          
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" id='editHotelBut' form ="editHotel">Edit Hotel Entry</button>
-      </div>
-    </div>
-  </div>
-</div>
-<?php } ?>
 
 
 
