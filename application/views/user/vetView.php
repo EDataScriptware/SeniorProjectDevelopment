@@ -113,6 +113,31 @@
 	<?php } ?>
 
 	<hr>
+
+	<h2> <b> Medication </b> </h2>
+
+	<?php if ($veteran[0]->med_list != '') {
+			echo '<p> <b> Medication List </b> </p>';
+			echo $veteran[0]->med_list;
+		} ?>
+
+		<?php if ($veteran[0]->med_when_use != '') {
+			echo '<p> <b> When to use Medication </b> </p>';
+			echo $veteran[0]->med_when_use;
+		} ?>
+
+	<?php if ($veteran[0]->med_flow_rate != '') {
+			echo '<p> <b> Flow Rate </b> </p>';
+			echo $veteran[0]->med_flow_rate;
+		} ?>
+
+		<?php if ($veteran[0]->med_others != '') {
+			echo '<h4> <b> Other Conditions </p>';
+			echo $veteran[0]->med_others;
+		} ?>
+
+	<hr>
+
 		<h2> <b> Mobility </b> </h2>
 
 		<?php foreach ($medAccomidations as $accomidations): ?>
@@ -128,9 +153,15 @@
 		?>
 	<?php endforeach ?>
 
+	<?php if ($veteran[0]->med_chair_loc != '') {
+				echo " <b> Medical Chair Location: </b>".$veteran[0]->med_chair_loc;
+			echo '<br>';
+		}
+		?>
+
 	<hr>
 
-	<h2> <b> Mobility </b> </h2>
+	<h2> <b> Conditions </b> </h2>
 
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
@@ -140,33 +171,7 @@
 
 	<?php endforeach ?>
 
-	
 
-	<?php if ($veteran[0]->med_chair_loc != '') {
-				echo "Medical Chair Location: ".$veteran[0]->med_chair_loc;
-			echo '<br>';
-		}
-		?>
-
-	<?php if ($veteran[0]->med_list != '') {
-			echo '<h4> Medication List </h4>';
-			echo $veteran[0]->med_list;
-		} ?>
-
-		<?php if ($veteran[0]->med_when_use != '') {
-			echo '<h4> When to use Medication </h4>';
-			echo $veteran[0]->med_when_use;
-		} ?>
-
-<?php if ($veteran[0]->med_flow_rate != '') {
-			echo '<h4> Flow Rate </h4>';
-			echo $veteran[0]->med_flow_rate;
-		} ?>
-
-		<?php if ($veteran[0]->med_others != '') {
-			echo '<h4> Other Conditions </h4>';
-			echo $veteran[0]->med_others;
-		} ?>
 </div>
 
 <div id = "accommodations">
