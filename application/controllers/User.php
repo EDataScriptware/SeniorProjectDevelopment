@@ -200,7 +200,8 @@ class User extends CI_Controller {
 		redirect('mission_itinerary');
 	}
 
-	public function deleteEvent($id) {
+	public function deleteEvent() {
+		$id = $this->input->post('id');
 		$this->db->where('event_id', $id);
 		$this->db->delete('event');
 	}
