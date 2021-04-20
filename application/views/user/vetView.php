@@ -91,22 +91,22 @@
 <div id = "reservations">
 
 
-<?php if ($hotel != null) { ?>
+<?php if ($hotel[0] != null) { ?>
 <h2> <b> Hotel Info <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </b> </h2>
-<p> <b> Name: </b> <?php echo $hotel->name ?>  </p>
-<p> <b> Room No: </b> <?php echo $hotel->room ?>  </p>
-<p> <b> Check In: </b> <?php echo $hotel->check_in ?>  </p>
-<p> <b> Check Out: </b> <?php echo $hotel->check_out ?>  </p>
+<p> <b> Name: </b> <?php echo $hotel[0]->name ?>  </p>
+<p> <b> Room No: </b> <?php echo $hotel[0]->room ?>  </p>
+<p> <b> Check In: </b> <?php echo $hotel[0]->check_in ?>  </p>
+<p> <b> Check Out: </b> <?php echo $hotel[0]->check_out ?>  </p>
 
 <?php } ?>
-<?php if ($flight != null) { ?>
+<?php if ($flight[0] != null) { ?>
 <h2> <b> Flight Info </b> </h2>
-<p> <b> Airline </b> <?php echo $flight->airline ?>  </p>
-<p> <b> Flight No: </b> <?php echo $flight->flight_number ?>  </p>
-<p> <b> Departure Date/Time: </b> <?php echo $flight->departure ?>  </p>
-<p> <b> Departure Location: </b> <?php echo $flight->departure_location ?>  </p>
-<p> <b> Arrival Date/Time: </b> <?php echo $flight->arrival ?>  </p>
-<p> <b> Arrival Location: </b> <?php echo $flight->arrival_location ?>  </p>
+<p> <b> Airline </b> <?php echo $flight[0]->airline ?>  </p>
+<p> <b> Flight No: </b> <?php echo $flight[0]->flight_number ?>  </p>
+<p> <b> Departure Date/Time: </b> <?php echo $flight[0]->departure ?>  </p>
+<p> <b> Departure Location: </b> <?php echo $flight[0]->departure_location ?>  </p>
+<p> <b> Arrival Date/Time: </b> <?php echo $flight[0]->arrival ?>  </p>
+<p> <b> Arrival Location: </b> <?php echo $flight[0]->arrival_location ?>  </p>
 
 
 <?php } ?>
