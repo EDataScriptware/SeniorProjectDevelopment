@@ -36,7 +36,7 @@
     </thead>
     <tbody>
     <?php foreach ($event as $eve): ?>
-        <?php if ($event->team_id == $tem->team_id) { ?>
+        <?php if ($eve->team_id == $tem->team_id) { ?>
         <tr>
             <td> <?php echo $eve->title ?>  </td>
             <td> <?php echo $eve->description ?>  </td>
