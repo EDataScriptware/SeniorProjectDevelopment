@@ -128,7 +128,7 @@
 		} ?>
 
 		<?php if ($veteran[0]->med_others != '') {
-			echo '<h4> <b> Other Conditions </p>';
+			echo '<p> <b> Other Conditions </p>';
 			echo $veteran[0]->med_others;
 		} ?>
 
@@ -171,6 +171,23 @@
 
 <div id = "accommodations">
 <h2> <b> History </b> <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?> </h2>
+	
+<h2> <b> Veteran History </b> </h2>
+
+	<p> <b> Service Branch: </b> <?php echo $veteran[0]->emergency_name ?>  </p>
+
+	<p> <b> Rank : </b> <?php echo $veteran[0]->emergency_relationship ?> </p>
+
+	<p> <b> War(s) Served: </b> <?php echo $veteran[0]->emergency_address ?>  </p>
+
+	<p> <b> Job: </b> <?php echo $veteran[0]->emergency_day_phone ?>  </p>
+
+	<hr>
+
+	<h2> <b> Infomation History </b> </h2>
+
+<p> <b> Last Updated: </b> <?php echo $veteran[0]->admin_comments ?>  </p>
+
 
 
 
