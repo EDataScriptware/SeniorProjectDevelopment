@@ -113,22 +113,22 @@
 	<h2> <b> Medication </b> </h2>
 
 	<?php if ($veteran[0]->med_list != '') {
-			echo '<p> <b> Medication List </b> </p>';
+			echo '<h3> <b> Medication List </b> </h3>';
 			echo $veteran[0]->med_list;
 		} ?>
 
 		<?php if ($veteran[0]->med_when_use != '') {
-			echo '<p> <b> When to use Medication </b> </p>';
+			echo '<h3> <b> When to use Medication </b> </h3>';
 			echo $veteran[0]->med_when_use;
 		} ?>
 
 	<?php if ($veteran[0]->med_flow_rate != '') {
-			echo '<p> <b> Flow Rate </b> </p>';
+			echo '<h3> <b> Flow Rate </b> </h3>';
 			echo $veteran[0]->med_flow_rate;
 		} ?>
 
 		<?php if ($veteran[0]->med_others != '') {
-			echo '<p> <b> Other Conditions </p>';
+			echo '<h3> <b> Other Conditions </b> </h3>';
 			echo $veteran[0]->med_others;
 		} ?>
 
