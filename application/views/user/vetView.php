@@ -97,7 +97,7 @@
 <p> <b> Room No: </b> <?php echo $hotel[0]->room ?>  </p>
 <p> <b> Check In: </b> <?php echo date_format(date_create($hotel[0]->check_in),"Y/m/d h:i A"); ?>  </p>
 <p> <b> Check Out: </b> <?php echo date_format(date_create($hotel[0]->check_out),"Y/m/d h:i A"); ?>  </p>
-
+<hr>
 <?php } ?>
 <?php if ($flight != null) { ?>
 <h2> <b> Flight Info </b> </h2>
@@ -108,7 +108,7 @@
 <p> <b> Arrival Date/Time: </b> <?php echo date_format(date_create($flight[0]->arrival),"Y/m/d h:i A");  ?>  </p>
 <p> <b> Arrival Location: </b> <?php echo $flight[0]->arrival_location ?>  </p>
 
-
+<hr>
 <?php } ?>
 </div>
 
