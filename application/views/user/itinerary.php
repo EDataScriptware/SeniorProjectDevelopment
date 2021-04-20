@@ -7,7 +7,14 @@
 
 <div class = "buttonScrollView">
 <?php foreach ($allTeams as $team): ?>
-	<button id = "<?php echo strtolower($team->color) ?>" class = "scrollItem <?php echo strtolower($team->color) ?>" onClick ="showAbout()"> <i class="fa fa-flag fa-3x"></i> <br> <b> <?php echo $team->color ?> </b></button>
+	<button id = "<?php echo strtolower($team->color) ?>" class = "scrollItem <?php echo strtolower($team->color) ?>" onClick ="show<?php echo $team->color ?>()"> <i class="fa fa-flag fa-3x"></i> <br> <b> <?php echo $team->color ?> </b></button>
+
+    <script>
+        function show<?php echo $team->color ?>() {
+            
+        }
+
+    </script>
 
     <?php endforeach; ?>
 </div>
