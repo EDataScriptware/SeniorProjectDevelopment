@@ -698,7 +698,6 @@ class Admin extends CI_Controller {
 
 	public function editEvent($id,$type) {
 		$postData = $this->input->post();
-\
 		switch ($type) {
 			case 'fly':
 				$this->db->where('flight_id', $id);
