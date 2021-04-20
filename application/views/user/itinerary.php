@@ -155,6 +155,7 @@
 
 function addBlock($team) {
     document.getElementById("addEvent").action = "User/addEvent/"+$team;
+    $('#addModal').modal('show');
 }
 
 function editBlock($id) {
@@ -181,6 +182,9 @@ function editBlock($id) {
     document.getElementById("date").value = $res[0]['date'];
     document.getElementById("title").value = $res[0]['title'];
 });
+
+$('#editModal').modal('show');
+
 }
 
 function removeBlock($id) {
