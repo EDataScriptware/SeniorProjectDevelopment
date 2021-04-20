@@ -1,10 +1,12 @@
 
 
 <?php // echo json_encode($veteran)?>
-<div class="btn-group btn-group-lg mx-auto">
+<div class='wrapper text-center'>
+<div class="btn-group btn-group-lg">
 <button  type="button" id = "teamButton" class="btn btn-primary" onClick ="showTeam()">Team</button>
 <?php if ($id === null) { ?> <button  type="button" id = "busButton" class="btn btn-primary" onClick ="showBus()"> Bus </button> <?php } ?>
 <button  type="button" id = "staffButton" class="btn btn-primary" onClick ="showStaff()"> Staff </button>
+</div>
 </div>
 <div id = "teamView"> 
 
