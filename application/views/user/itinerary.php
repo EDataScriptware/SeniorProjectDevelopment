@@ -12,9 +12,14 @@
     <?php endforeach; ?>
 </div>
 
+<?php $first = true; ?>
 
 <?php foreach ($allTeams as $tem): ?>
+    <?php if ($first = true) { ?>
     <div id = "eventCon<?php echo $tem->color ?>"> 
+    <?php $first = false; } else { ?>
+        <div id = "eventCon<?php echo $tem->color ?>" style='display:none'> 
+    <?php } ?>
     <script>
   $( function() {
       $("#eventTeam<?php echo $tem->color ?>" ).accordion({heightStyle: "content",collapsible: true,active: false });
