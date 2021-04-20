@@ -119,6 +119,11 @@ class User extends CI_Controller {
 	{
 		$data['allTeams'] = $this->Index_model->get_TeamList();
 
+		$this->db->select_max("mission_id");
+		$this->db->from('mission');
+
+		$currMission_id = implode($this->db->get()->row_array());
+
 		$this->db->select("*");
 		$this->db->from('event');
 		$this->db->where('mission_id', $currMission_id);
