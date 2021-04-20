@@ -165,7 +165,7 @@
 
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
-			echo "<b>".  str_replace('_', ' ',ucfirst(substr($medication,4." </b>: Yes";
+			echo "<b>".  str_replace('_', ' ',ucfirst(substr($medication,4)." </b>: Yes";
 			echo '<br>';
 		} ?>
 
