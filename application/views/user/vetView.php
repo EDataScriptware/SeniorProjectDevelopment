@@ -95,17 +95,17 @@
 <h2> <b> Hotel Info <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"> EDIT </button>  <?php } ?>  </b> </h2>
 <p> <b> Name: </b> <?php echo $hotel[0]->name ?>  </p>
 <p> <b> Room No: </b> <?php echo $hotel[0]->room ?>  </p>
-<p> <b> Check In: </b> <?php echo $hotel[0]->check_in ?>  </p>
-<p> <b> Check Out: </b> <?php echo $hotel[0]->check_out ?>  </p>
+<p> <b> Check In: </b> <?php echo date_format(date_create($hotel[0]->check_in),"Y/m/d h:i A"); ?>  </p>
+<p> <b> Check Out: </b> <?php echo date_format(date_create($hotel[0]->check_out),"Y/m/d h:i A"); ?>  </p>
 
 <?php } ?>
 <?php if ($flight != null) { ?>
 <h2> <b> Flight Info </b> </h2>
 <p> <b> Airline </b> <?php echo $flight[0]->airline ?>  </p>
 <p> <b> Flight No: </b> <?php echo $flight[0]->flight_number ?>  </p>
-<p> <b> Departure Date/Time: </b> <?php echo $flight[0]->departure ?>  </p>
+<p> <b> Departure Date/Time: </b> <?php echo date_format(date_create($flight[0]->departure),"Y/m/d h:i A");  ?>  </p>
 <p> <b> Departure Location: </b> <?php echo $flight[0]->departure_location ?>  </p>
-<p> <b> Arrival Date/Time: </b> <?php echo $flight[0]->arrival ?>  </p>
+<p> <b> Arrival Date/Time: </b> <?php echo date_format(date_create($flight[0]->arrival),"Y/m/d h:i A");  ?>  </p>
 <p> <b> Arrival Location: </b> <?php echo $flight[0]->arrival_location ?>  </p>
 
 
