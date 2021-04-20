@@ -41,7 +41,7 @@
     </script>
 </script>
 
-<h3> Team <?php echo $tem->color ?> Events </h3>
+<h3> Team <?php echo $tem->color ?> Events <button type="button" class="btn btn-primary" onclick = "addBlock('<?php echo $tem->team_id ?>')"  > ADD </button> </h3>
 <div id="eventTeam<?php echo $tem->color ?>"  class="table table-striped table-bordered">
 
 <?php foreach ($event as $eve): ?>
