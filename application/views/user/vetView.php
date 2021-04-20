@@ -91,7 +91,7 @@
 <div id = "reservations">
 
 
-<?php if ($hotel[0] != null) { ?>
+<?php if ($hotel != null) { ?>
 <h2> <b> Hotel Info <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </b> </h2>
 <p> <b> Name: </b> <?php echo $hotel[0]->name ?>  </p>
 <p> <b> Room No: </b> <?php echo $hotel[0]->room ?>  </p>
@@ -99,7 +99,7 @@
 <p> <b> Check Out: </b> <?php echo $hotel[0]->check_out ?>  </p>
 
 <?php } ?>
-<?php if ($flight[0] != null) { ?>
+<?php if ($flight != null) { ?>
 <h2> <b> Flight Info </b> </h2>
 <p> <b> Airline </b> <?php echo $flight[0]->airline ?>  </p>
 <p> <b> Flight No: </b> <?php echo $flight[0]->flight_number ?>  </p>
