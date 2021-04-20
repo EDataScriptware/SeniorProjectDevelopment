@@ -56,10 +56,11 @@
           border-bottom-color: none !important;
         }
 
-        button
-        {
-          background-color: red;
-        }
+       .nav-link
+       {
+          color: darkgoldenrod;
+       }
+
     </style>
 
 
