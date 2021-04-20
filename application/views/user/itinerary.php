@@ -3,7 +3,7 @@
 } ); 
 </script>
 
-<h2> <b> Itinerary </b> </h2>
+<h2 style='text-align:center'> <b> Itinerary </b> </h2>
 
 <div class = "buttonScrollView">
 <?php foreach ($allTeams as $team): ?>
@@ -11,7 +11,7 @@
 
     <script>
         function show<?php echo $team->color ?>() {
-            
+
         }
 
     </script>
