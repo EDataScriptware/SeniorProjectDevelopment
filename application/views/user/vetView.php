@@ -208,9 +208,6 @@
 
 <p> <b> Last Updated: </b> <?php echo $veteran[0]->admin_comments ?>  </p>
 
-
-
-
 </div>
 
 <!-- Modal -->
