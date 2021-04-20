@@ -174,13 +174,14 @@
 	
 <h2> <b> Veteran History </b> </h2>
 
-	<p> <b> Service Branch: </b> <?php echo $veteran[0]->emergency_name ?>  </p>
+	<p> <b> Service Branch: </b> <?php echo $veteran[0]->service_branch ?>  </p>
 
-	<p> <b> Rank : </b> <?php echo $veteran[0]->emergency_relationship ?> </p>
+	<p> <b> Rank : </b> <?php echo $veteran[0]->service_rank ?> </p>
+	<?php $getter = ""; ?>
+	<p> <b> War(s) Served: </b> <?php if($veteran[0]->service_ww2 == 1) { $getter .='World War 2,'; } ?> <?php if($veteran[0]->service_korea == 1) { $getter .='Korean War,'; } ?> <?php if($veteran[0]->service_cold_war == 1) { $getter .='Cold War,'; } ?> <?php if($veteran[0]->service_vietnam == 1) { $getter .='Vietnam,'; } ?>
+                <p> <?php echo substr($getter, 0, -1); ?></p> </p>
 
-	<p> <b> War(s) Served: </b> <?php echo $veteran[0]->emergency_address ?>  </p>
-
-	<p> <b> Job: </b> <?php echo $veteran[0]->emergency_day_phone ?>  </p>
+	<p> <b> Job: </b> <?php echo $veteran[0]->service_activity?>  </p>
 
 	<hr>
 
