@@ -76,7 +76,6 @@
       <div class="modal-body">
         <form id ="addEvent" method='POST'>
 
-
             <label for="newTitle">Title:</label>
  
                 <input type="text" id="newTitle" name="newTitle" required size="10"> <br>
@@ -161,7 +160,7 @@ function addBlock($team) {
 function editBlock($id) {
     document.getElementById("editEvent").action = "User/editEvent/"+$id;
 
-    $.post('User/getEvent', {id: $id, type: $type}, function (result) {
+    $.post('User/getEvent', {id: $id}, function (result) {
         var $res = JSON.parse(result);
         console.log($res[0]);
 
@@ -188,7 +187,7 @@ function editBlock($id) {
 function removeBlock($id) {
 
 if (confirm("Are you sure you want to remove this event? "  )) {
-    $.post('User/removeEvent', {id: $id, type: $type}, function () {
+    $.post('User/removeEvent', {id: $id}, function () {
     location.reload();
 
 });
