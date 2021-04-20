@@ -1,12 +1,11 @@
 
-<?php $allowed = array(0,1); ?>
+<?php $allowed = array(0,1,2); ?>
 <h1 style = 'text-align:center'> <b> <?php echo $veteran[0]->first_name ?> <?php echo $veteran[0]->last_name ?> </b> </h1>
 
 <?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
 <?php $medMedication = array('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
-<?php $emergency = array ('emergency_name','emergency_relationship','emergency_address', 'emergency_day_phone', 'emergency_cell_phone') ?>
-<?php $comments = array ('add_comments','admin_comments') ?>
-<?php $alternative = array ('alt_name','alt_email','alt_phone','alt_relationship') ?>
+
+
 <?php $mobility = array ("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility') ?>
 <?php $conditions = array ('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
 
@@ -15,7 +14,7 @@
 	<button id = "aboutBut" class = "scrollItem scrollActive" onClick ="showAbout()"> <i class="fa fa-user fa-3x"></i> <br> <b> About </b></button>
 	<button id = "schBut" class = "scrollItem"  onClick ="showRes()"> <i class="fa fa-calendar fa-3x"></i>  <br> <b>  Schedule </b></button>
 	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "medBut" class = "scrollItem" onClick ="showMed()"> <i class="fa fa-medkit fa-3x"></i>  <br> <b> Medical </b></button><?php } ?>
-	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "hisBut" class = "scrollItem" onClick ="showAcc()"> <i class="fa fa-history fa-3x"></i>  <br> <b> History </b></button> <?php } ?>
+	<button id = "hisBut" class = "scrollItem" onClick ="showAcc()"> <i class="fa fa-history fa-3x"></i>  <br> <b> History </b></button>
 
 </div>
 
@@ -62,14 +61,34 @@
 
 	<h2> <b> Emergency Contact </b> </h2>
 
-	<?php foreach ($emergency as $emg): ?>
+	<p> <b> Name: </b> <?php echo $veteran[0]->emergency_name ?>  </p>
 
-	<?php endforeach ?>
+	<p> <b> Relationship: </b> <?php echo $veteran[0]->emergency_relationship ?> </p>
+
+	<p> <b> Address: </b> <?php echo $veteran[0]->emergency_address ?>  </p>
+
+	<p> <b> Day Phone: </b> <?php echo $veteran[0]->emergency_day_phone ?>  </p>
+
+	<p> <b> Cell Phone: </b> <?php echo $veteran[0]->emergency_cell_phone ?>  </p>
+
+	<hr>
+
+	<h2> <b> Comments </b> </h2>
 	
-	<?php if ($veteran[0]->add_comments != "") { ?>
-	<p> <b> Additional Information: </b> </p>
-	<p> <?php echo $veteran[0]->add_comments?> </p>
-	<?php } ?>
+	<p> <b> Comments:  </b>  <?php echo $veteran[0]->add_comments?> </p>
+	<p> <b> Admin Comments:  </b> <?php echo $veteran[0]->admin_comments?>  </p>
+
+	<hr> 
+
+	<h2> <b> Alt Info </b> </h2>
+
+	<p> <b> Alt Name: </b> <?php echo $veteran[0]->alt_name ?>  </p>
+
+	<p> <b> Alt Relationship: </b> <?php echo $veteran[0]->alt_email ?> </p>
+
+	<p> <b> Alt Phone: </b> <?php echo $veteran[0]->alt_phone ?>  </p>
+
+	<p> <b> Alt Email: </b> <?php echo $veteran[0]->alt_relationship ?>  </p>
 
 </div>
 
