@@ -320,11 +320,11 @@
 
         <label for="check_in">Check-In Time:</label>
 
-            <input type="datetime-local" id="check_in" value='<?php echo str_replace(" ",$hotel[0]->check_in, "T");?>' name="check_in">  <br>
+            <input type="datetime-local" id="check_in" value='<?php echo str_replace(" ", "T",$hotel[0]->check_in);?>' name="check_in">  <br>
 
         <label for="check_out">Check-Out Time:</label>
 
-            <input type="datetime-local" id="check_out" value='<?php echo str_replace(" ",$hotel[0]->check_out, "T");?>' name="check_out">  <br>
+            <input type="datetime-local" id="check_out" value='<?php echo str_replace(" ", "T",$hotel[0]->check_out);?>' name="check_out">  <br>
           
         </form>
       </div>
