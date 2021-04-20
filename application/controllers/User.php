@@ -165,6 +165,11 @@ class User extends CI_Controller {
 				$date = $this->input->post('newDate');
 				$start = $this->input->post('newStart');
 				$end = $this->input->post('newEnd');
+
+				$this->db->select_max("mission_id");
+				$this->db->from('mission');
+		
+				$currMission_id = implode($this->db->get()->row_array());
 				
 				$data = array(
 					'title' => $title,
