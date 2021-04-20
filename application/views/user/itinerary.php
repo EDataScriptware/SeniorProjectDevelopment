@@ -13,56 +13,6 @@
 </div>
 
 
-
-<?php foreach ($allTeams as $team): ?>
-    <script>
-    $(document).ready( function () {
-    $('#eventTeam<?php echo $tem->color ?>').DataTable();
-    } );
-    </script>
-</script>
-
-<h3> Team <?php echo $tem->color ?> Events </h3>
-<table id="eventTeam<?php echo $tem->color ?>"  class="table table-striped table-bordered">
-<thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Start Time</th>
-            <th>End time</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($event as $eve): ?>
-        <?php if ($vet->team_id == $tem->team_id) { ?>
-        <tr>
-            <td> <?php echo $eve->title ?>  </td>
-            <td> <?php echo $eve->description ?>  </td>
-            <td> <?php 
-             foreach ($team as $tem):
-                if ($eve->team_id == $tem->team_id) {
-                    echo $tem->color;
-                    break;
-                }
-            endforeach;
-            
-            ?>  </td>
-            <td> <?php echo date_format(date_create($eve->date),"Y/m/d"); ?>  </td>
-            <td> <?php echo date_format(date_create($eve->start),"h:i A"); ?>  </td>
-            <td> <?php echo date_format(date_create($eve->end),"h:i A"); ?>  </td>
-            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $eve->event_id ?>,'event')"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $eve->event_id ?>,'event')"  > REMOVE </button> </td>
-        </tr>
-        <?php } ?>
-        <?php endforeach ?>
-    </tbody>
-</table>
-
-
-<?php endforeach; ?>
-
-
 <?php foreach ($allTeams as $tem): ?>
     <script>
   $( function() {$( "#eventTeam<?php echo $tem->color ?>" ).accordion();} );
@@ -73,7 +23,7 @@
 <div id="eventTeam<?php echo $tem->color ?>"  class="table table-striped table-bordered">
 
 <?php foreach ($event as $eve): ?>
-        <?php if ($vet->team_id == $tem->team_id) { ?>
+        <?php if ($eve->team_id == $tem->team_id) { ?>
             <h3> <?php echo $eve->title ?>  </h3>
             <div>
             <p> <?php echo $eve->description ?>  </p>
@@ -89,4 +39,4 @@
 </div>
 
 
-<?php endforeach; ?>
+<?php endforeach ?>
