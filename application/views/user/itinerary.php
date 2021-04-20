@@ -11,6 +11,11 @@
 
     <script>
         function show<?php echo $team->color ?>() {
+            <?php foreach ($allTeams as $team): ?>
+                document.getElementById("eventCon<?php echo $team->color ?>").style.display = "none";
+            <?php endforeach; ?>
+            
+            document.getElementById("eventCon<?php echo $team->color ?>").style.display = "block";
 
         }
 
