@@ -91,6 +91,7 @@
 <div id = "reservations">
 <h2> <b> Schedule </b> <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
+
 </div>
 
 <div id = "medicalInfo">
