@@ -153,46 +153,43 @@
 
 <script>
 
-function addBlock($team) {
-    document.getElementById("addEvent").action = "User/addEvent/"+$team;
-}
+// function addBlock($team) {
+//     document.getElementById("addEvent").action = "User/addEvent/"+$team;
+// }
 
-function editBlock($id) {
-    document.getElementById("editEvent").action = "User/editEvent/"+$id;
+// function editBlock($id) {
+//     document.getElementById("editEvent").action = "User/editEvent/"+$id;
 
-    $.post('User/getEvent', {id: $id}, function (result) {
-        var $res = JSON.parse(result);
-        console.log($res[0]);
-
-
-    document.getElementById("editFly").style.display = "none";
-    document.getElementById("editFlyBut").style.display = "none";
-
-    document.getElementById("editHotel").style.display = "none";
-    document.getElementById("editHotelBut").style.display = "none";
-
-    document.getElementById("editEvent").style.display = "block";
-    document.getElementById("editEventBut").style.display = "block";
+//     $.post('User/getEvent', {id: $id}, function (result) {
+//         var $res = JSON.parse(result);
+//         console.log($res[0]);
 
 
-    document.getElementById("description").value = $res[0]['description'];
-    document.getElementById("start").value = $res[0]['start'];
-    document.getElementById("end").value = $res[0]['end'];
-    document.getElementById("date").value = $res[0]['date'];
-    document.getElementById("title").value = $res[0]['title'];
+//     document.getElementById("editFly").style.display = "none";
+//     document.getElementById("editFlyBut").style.display = "none";
+
+//     document.getElementById("editHotel").style.display = "none";
+//     document.getElementById("editHotelBut").style.display = "none";
+
+//     document.getElementById("editEvent").style.display = "block";
+//     document.getElementById("editEventBut").style.display = "block";
 
 
-}
-}
+//     document.getElementById("description").value = $res[0]['description'];
+//     document.getElementById("start").value = $res[0]['start'];
+//     document.getElementById("end").value = $res[0]['end'];
+//     document.getElementById("date").value = $res[0]['date'];
+//     document.getElementById("title").value = $res[0]['title'];
+// }
+// }
 
-function removeBlock($id) {
+// function removeBlock($id) {
 
-if (confirm("Are you sure you want to remove this event? "  )) {
-    $.post('User/removeEvent', {id: $id}, function () {
-    location.reload();
+// if (confirm("Are you sure you want to remove this event? "  )) {
+//     $.post('User/removeEvent', {id: $id}, function () {
+//     location.reload();
 
-});
-} else {}
-}
+// });
+// } else {}}
 
 </script>
