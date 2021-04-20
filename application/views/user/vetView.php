@@ -311,23 +311,19 @@
 
         <label for="name">Hotel Name:</label>
  
-            <input type="text" id="name" name="name" required size="10"> <br>
-
-        <label for="veteran_id">Veteran:</label>
-
-            <input type="text" list='veterans' id="veteran_id" name="veteran_id" required size="10"> <br>
+            <input type="text" id="name" name="name" value='<?php echo $hotel[0]['name'];?>' required size="10"> <br>
 
         <label for="room">Room:</label>
 
-            <input type="text" id="room" name="room" required size="10"> <br>
+            <input type="text" id="room" name="room" value='<?php echo $hotel[0]['room'];?>' required size="10"> <br>
 
         <label for="check_in">Check-In Time:</label>
 
-            <input type="datetime-local" id="check_in" name="check_in">  <br>
+            <input type="datetime-local" id="check_in" value='<?php echo $hotel[0]['check_in'].replace(" ", "T");?>' name="check_in">  <br>
 
         <label for="check_out">Check-Out Time:</label>
 
-            <input type="datetime-local" id="check_out" name="check_out">  <br>
+            <input type="datetime-local" id="check_out" value='<?php echo $hotel[0]['check_out'].replace(" ", "T");?>' name="check_out">  <br>
           
         </form>
       </div>
