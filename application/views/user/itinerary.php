@@ -14,7 +14,7 @@
 
 
 
-<?php foreach ($allTeams as $tem): ?>
+<?php foreach ($allTeams as $team): ?>
     <script>
     $(document).ready( function () {
     $('#eventTeam<?php echo $tem->color ?>').DataTable();
@@ -36,10 +36,19 @@
     </thead>
     <tbody>
     <?php foreach ($event as $eve): ?>
-        <?php if ($eve->team_id == $tem->team_id) { ?>
+        <?php if ($vet->team_id == $tem->team_id) { ?>
         <tr>
             <td> <?php echo $eve->title ?>  </td>
             <td> <?php echo $eve->description ?>  </td>
+            <td> <?php 
+             foreach ($team as $tem):
+                if ($eve->team_id == $tem->team_id) {
+                    echo $tem->color;
+                    break;
+                }
+            endforeach;
+            
+            ?>  </td>
             <td> <?php echo date_format(date_create($eve->date),"Y/m/d"); ?>  </td>
             <td> <?php echo date_format(date_create($eve->start),"h:i A"); ?>  </td>
             <td> <?php echo date_format(date_create($eve->end),"h:i A"); ?>  </td>
@@ -49,6 +58,35 @@
         <?php endforeach ?>
     </tbody>
 </table>
+
+
+<?php endforeach; ?>
+
+
+<?php foreach ($allTeams as $tem): ?>
+    <script>
+  $( function() {$( "#eventTeam<?php echo $tem->color ?>" ).accordion();} );
+    </script>
+</script>
+
+<h3> Team <?php echo $tem->color ?> Events </h3>
+<div id="eventTeam<?php echo $tem->color ?>"  class="table table-striped table-bordered">
+
+<?php foreach ($event as $eve): ?>
+        <?php if ($vet->team_id == $tem->team_id) { ?>
+            <h3> <?php echo $eve->title ?>  </h3>
+            <div>
+            <p> <?php echo $eve->description ?>  </p>
+            <p> <?php echo date_format(date_create($eve->date),"Y/m/d"); ?>  </p>
+            <p> <?php echo date_format(date_create($eve->start),"h:i A"); ?>  </p>
+            <p> <?php echo date_format(date_create($eve->end),"h:i A"); ?>  </p>
+            <p> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $eve->event_id ?>,'event')"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $eve->event_id ?>,'event')"  > REMOVE </button> </p>
+        </tr>
+        </div>
+        <?php } ?>
+        <?php endforeach ?>
+
+</div>
 
 
 <?php endforeach; ?>
