@@ -16,8 +16,7 @@
 } ); 
 </script>
 <div class = "teamListView">
-
-
+	
 	<h2> <b> <?php echo $team->color ?> Team </b> </h2>
 
 <?php foreach ($veteran as $vet): ?>
