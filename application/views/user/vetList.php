@@ -47,7 +47,7 @@
 <div id = "busView">
 	<?php foreach ($bus as $b): ?>
 
-<h2> <b>  <?php echo $b->name ?> Staff </b> </h2>
+<h2> <b>  <?php echo $b->name ?></b> </h2>
 
 <?php foreach ($veteran as $vet): ?>
 <?php if ($vet->bus_id === $b->bus_id) { ?>
@@ -63,6 +63,9 @@
 	<div style="display:none" id = "staffView">
 
 		<?php foreach ($bus as $b): ?>
+
+		<h2> <b>  <?php echo $b->name ?> Staff </b> </h2>
+		
 			<?php foreach ($user as $use): ?>
 			<?php if ($use->bus_id === $b->bus_id) { ?>
 			<a href="" class="teamListElement"><?php echo $use->first_name ?> <?php echo$use->last_name?></a>
