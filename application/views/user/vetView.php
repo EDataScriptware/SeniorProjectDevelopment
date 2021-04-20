@@ -4,8 +4,6 @@
 
 <?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
 <?php $medMedication = array('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
-
-<?php $about = array('dob','gender','weight','city','state','zip','day_phone','cell_phone','email','shirt_size'); ?>
 <?php $emergency = array ('emergency_name','emergency_relationship','emergency_address', 'emergency_day_phone', 'emergency_cell_phone') ?>
 <?php $comments = array ('add_comments','admin_comments') ?>
 <?php $alternative = array ('alt_name','alt_email','alt_phone','alt_relationship') ?>
@@ -26,13 +24,21 @@
 
 	<p> <b> DOB: </b> <?php echo $veteran[0]->dob ?>  </p>
 
+	<p> <b> Gender: </b> <?php echo $veteran[0]->gender ?>  </p>
+
 	<p> <b> Address: </b> <?php echo $veteran[0]->city ?> <?php echo $veteran[0]->state ?> <?php echo $veteran[0]->zip ?>  </p>
 
 	<p> <b> Day Phone: </b> <?php echo $veteran[0]->day_phone ?>  </p>
 
-	<p> <b> Alt Phone: </b> <?php echo $veteran[0]->cell_phone ?>  </p>
+	<p> <b> Cell Phone: </b> <?php echo $veteran[0]->cell_phone ?>  </p>
 
-	<h3> Guardian </h3>
+	<p> <b> Email: </b> <?php echo $veteran[0]->email ?>  </p>
+
+	<p> <b> Shirt: </b> <?php echo $veteran[0]->shirt_size ?>  </p>
+
+	<hr>
+
+	<h2> <b> Guardian </b> </h2>
 	<?php
 	$this->db->select("*");
 	$this->db->from('guardian');
@@ -40,21 +46,28 @@
 
 	$guardian = $this->db->get()->result();
 	?>
-	<p> Name: <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p>
+	<p> <b> Name: </b> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p>
 
-	<p> DOB: <?php echo $guardian[0]->dob ?>  </p>
+	<p> <b> DOB: </b> <?php echo $guardian[0]->dob ?>  </p>
 
-	<p> Relationship: <?php echo $guardian[0]->vet_relationship ?> </p>
+	<p> <b> Relationship: </b> <?php echo $guardian[0]->vet_relationship ?> </p>
 
-	<p> Address: <?php echo $guardian[0]->city ?> <?php echo $guardian[0]->state ?> <?php echo $guardian[0]->zip ?> </p>
+	<p> <b> Address: </b> <?php echo $guardian[0]->city ?> <?php echo $guardian[0]->state ?> <?php echo $guardian[0]->zip ?> </p>
 
-	<p> Day Phone: <?php echo $guardian[0]->day_phone ?>  </p>
+	<p> <b> Day Phone: </b> <?php echo $guardian[0]->day_phone ?>  </p>
 
-	<p> Alt Phone: <?php echo $guardian[0]->cell_phone ?>  </p>
+	<p> <b> Cell Phone: </b> <?php echo $guardian[0]->cell_phone ?>  </p>
 
+	<hr>
+
+	<h2> <b> Emergency Contact </b> </h2>
+
+	<?php foreach ($emergency as $emg): ?>
+
+	<?php endforeach ?>
 	
 	<?php if ($veteran[0]->add_comments != "") { ?>
-	<h3> Additional Information: </h3>
+	<p> <b> Additional Information: </b> </p>
 	<p> <?php echo $veteran[0]->add_comments?> </p>
 	<?php } ?>
 
