@@ -32,7 +32,7 @@
 
 <?php foreach ($team as $tem): ?>
 
-	<h3> <?php echo $tem->color ?> Team View </h3>
+	<h2> <b> <?php echo $tem->color ?> Team </b> </h2>
 
 <?php foreach ($veteran as $vet): ?>
 	<?php if ($vet->team_id === $tem->team_id) { ?>
