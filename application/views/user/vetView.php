@@ -1,9 +1,17 @@
 
 <?php $allowed = array(0,1); ?>
-<h1 style = 'text-align:center'> <?php echo $veteran[0]->first_name ?> <?php echo $veteran[0]->last_name ?> </h1>
+<h1 style = 'text-align:center'> <b> <?php echo $veteran[0]->first_name ?> <?php echo $veteran[0]->last_name ?> </b> </h1>
 
 <?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
 <?php $medMedication = array('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
+
+<?php $about = array('dob','gender','weight','city','state','zip','day_phone','cell_phone','email','shirt_size'); ?>
+<?php $emergency = array ('emergency_name','emergency_relationship','emergency_address', 'emergency_day_phone', 'emergency_cell_phone') ?>
+<?php $comments = array ('add_comments','admin_comments') ?>
+<?php $alternative = array ('alt_name','alt_email','alt_phone','alt_relationship') ?>
+<?php $mobility = array ("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility') ?>
+<?php $conditions = array ('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dimentia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
+
 
 <div class = "buttonScrollView">
 	<button id = "aboutBut" class = "scrollItem scrollActive" onClick ="showAbout()"> <i class="fa fa-user fa-3x"></i> <br> <b> About </b></button>
@@ -13,16 +21,19 @@
 
 </div>
 
-
-
 <div id = "about">
-<h2> Basic Information <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
+<h2> <b> About </b> <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
-	<p> DOB: <?php echo $veteran[0]->dob ?>  </p>
+	<p> <b> DOB: </b> </p>
 
-	<p> Address: <?php echo $veteran[0]->city ?> <?php echo $veteran[0]->state ?> <?php echo $veteran[0]->zip ?>  </p>
+	<p style="float: right; margin-right: 100px;" > <?php echo $veteran[0]->dob ?>   </p>
 
-	<p> Day Phone: <?php echo $veteran[0]->day_phone ?>  </p>
+	<br>
+
+	<p> <b> Address: </b> <?php echo $veteran[0]->city ?> <?php echo $veteran[0]->state ?> <?php echo $veteran[0]->zip ?>  </p>
+
+
+<p> Day Phone: <?php echo $veteran[0]->day_phone ?>  </p>
 
 	<p> Alt Phone: <?php echo $veteran[0]->cell_phone ?>  </p>
 
@@ -194,7 +205,7 @@
 	<?php endforeach ?>
 
 	<h4> Medical Chair Location: </h4>
-	<textarea id="med_chair_loc" name="med_chair_loc" rows="4" cols="50"><?php echo $veteran[0]->med_chair_loc; ?></textarea>
+	<textarea id="med_chair_loc" name="med_chair_loc" ><?php echo $veteran[0]->med_chair_loc; ?></textarea>
 
 
 	</form>
