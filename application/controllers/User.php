@@ -182,6 +182,7 @@ class User extends CI_Controller {
 				);
 
 				$this->db->insert('event', $data); 
+				redirect('mission_itinerary');
 	}
 
 	public function getEvent() {
@@ -196,6 +197,7 @@ class User extends CI_Controller {
 		$postData = $this->input->post();
 		$this->db->where('event_id', $id);
 		$this->db->update('event',$postData);
+		redirect('mission_itinerary');
 	}
 
 	public function deleteEvent($id) {
