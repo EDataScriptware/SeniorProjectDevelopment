@@ -8,7 +8,7 @@
 
 <div class = "buttonScrollView">
 	<button id = "aboutBut" class = "scrollItem scrollActive" onClick ="showAbout()"> <i class="fa fa-user fa-3x"></i> <br> <b> About </b></button>
-	<button id = "schBut" class = "scrollItem"  onClick ="showRes()"> <i class="fa fa-calendar fa-3x"></i>  <br> <b>  Schedule </b></button>
+	<button id = "schBut" class = "scrollItem"  onClick ="showRes()"> <i class="fa fa-calendar fa-3x"></i>  <br> <b>  Reservations</b></button>
 	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "medBut" class = "scrollItem" onClick ="showMed()"> <i class="fa fa-medkit fa-3x"></i>  <br> <b> Medical </b></button><?php } ?>
 	<button id = "hisBut" class = "scrollItem" onClick ="showAcc()"> <i class="fa fa-history fa-3x"></i>  <br> <b> History </b></button>
 
@@ -89,9 +89,27 @@
 </div>
 
 <div id = "reservations">
-<h2> <b> Schedule </b> <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 
+<?php if ($hotel != null) { ?>
+<h2> <b> Hotel Info <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </b> </h2>
+<p> <b> Name: </b> <?php echo $hotel->name ?>  </p>
+<p> <b> Room No: </b> <?php echo $hotel->room ?>  </p>
+<p> <b> Check In: </b> <?php echo $hotel->check_in ?>  </p>
+<p> <b> Check Out: </b> <?php echo $hotel->check_out ?>  </p>
+
+<?php } ?>
+<?php if ($flight != null) { ?>
+<h2> <b> Flight Info </b> </h2>
+<p> <b> Airline </b> <?php echo $flight->airline ?>  </p>
+<p> <b> Flight No: </b> <?php echo $flight->flight_number ?>  </p>
+<p> <b> Departure Date/Time: </b> <?php echo $flight->departure ?>  </p>
+<p> <b> Departure Location: </b> <?php echo $flight->departure_location ?>  </p>
+<p> <b> Arrival Date/Time: </b> <?php echo $flight->arrival ?>  </p>
+<p> <b> Arrival Location: </b> <?php echo $flight->arrival_location ?>  </p>
+
+
+<?php } ?>
 </div>
 
 <div id = "medicalInfo">

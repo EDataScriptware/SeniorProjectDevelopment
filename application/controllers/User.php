@@ -71,9 +71,22 @@ class User extends CI_Controller {
 		$id = $this->uri->segment(2);
 		// $id = $_GET["vet_id"];
 		$this->load->model('Veteran_model');
+		$this->load->model('Flight_model');
 	
 		$data['veteran'] = $this->Veteran_model->get_one_veteran($id);
 		$data['allTeams'] = $this->Index_model->get_TeamList();
+
+		$this->db->select("*");
+		$this->db->from('hotel_info');
+		$this->db->where('veteran_id', $id);
+		$data['hotel'] = $this->db->get()->result();
+
+		$this->db->select_max("mission_id");
+		$this->db->from('mission');
+
+		$currMission_id = implode($this->db->get()->row_array());
+
+		$data['flight'] = $this->Flight_model->get_mission_flight_data($currMission_id);
 
 		$data['fields'] = $this->Veteran_model->getFields($id);
 		// $data['vetObj2'] = $this->Veteran_model->updateVetEntry($id);
