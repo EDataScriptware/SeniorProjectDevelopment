@@ -177,7 +177,7 @@ $('#editModal').modal('show');
 function removeBlock($id) {
 
 if (confirm("Are you sure you want to remove this event? "  )) {
-    $.post('User/removeEvent', {id: $id}, function () {
+    $.post('User/deleteEvent', {id: $id}, function () {
     location.reload();
 
 });
