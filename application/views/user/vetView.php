@@ -24,16 +24,19 @@
 <div id = "about">
 <h2> <b> About </b> <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
-	<p> <b> DOB: </b> </p>
+	<p style="float: left";> <b> DOB: </b> </p>
 
-	<p style="float: right; margin-right: 100px;" > <?php echo $veteran[0]->dob ?>   </p>
+	<p style="float: right; margin-right: 90px;" > <?php echo $veteran[0]->dob ?>   </p>
 
 	<br>
 
-	<p> <b> Address: </b> <?php echo $veteran[0]->city ?> <?php echo $veteran[0]->state ?> <?php echo $veteran[0]->zip ?>  </p>
+	<p style="float: left";> <b> Address: </b>   </p>
 
+	<p style="float: right; margin-right: 90px;" >  <?php echo $veteran[0]->city ?> <?php echo $veteran[0]->state ?> <?php echo $veteran[0]->zip ?> </p>
 
-<p> Day Phone: <?php echo $veteran[0]->day_phone ?>  </p>
+	<br>
+
+	<p> Day Phone: <?php echo $veteran[0]->day_phone ?>  </p>
 
 	<p> Alt Phone: <?php echo $veteran[0]->cell_phone ?>  </p>
 
