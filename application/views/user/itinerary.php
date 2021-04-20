@@ -3,6 +3,8 @@
 } ); 
 </script>
 
+<?php $allowed = array(0,1); ?>
+
 <h2 style='text-align:center'> <b> Itinerary </b> </h2>
 
 <div class = "buttonScrollView">
@@ -41,7 +43,7 @@
     </script>
 </script>
 
-<h3> Team <?php echo $tem->color ?> Events <button type="button" class="btn btn-primary" onclick = "addBlock('<?php echo $tem->team_id ?>')"  > ADD </button> </h3>
+<h3> Team <?php echo $tem->color ?> Events <?php if (in_array($_SESSION["userPerm"], $allowed))  { ?> <button type="button" class="btn btn-primary" onclick = "addBlock('<?php echo $tem->team_id ?>')"  > ADD </button> <?php } ?> </h3>
 <div id="eventTeam<?php echo $tem->color ?>"  class="table table-striped table-bordered">
 
 <?php foreach ($event as $eve): ?>
@@ -52,7 +54,7 @@
             <p> <b>Date: </b>  <?php echo date_format(date_create($eve->date),"Y/m/d"); ?>  </p>
             <p> <b>Start: </b>  <?php echo date_format(date_create($eve->start),"h:i A"); ?>  </p>
             <p> <b>End: </b>  <?php echo date_format(date_create($eve->end),"h:i A"); ?>  </p>
-            <p> <b>Actions: </b>  <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $eve->event_id ?>)"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $eve->event_id ?>)"  > REMOVE </button> </p>
+          <?php if (in_array($_SESSION["userPerm"], $allowed))  { ?>  <p> <b>Actions: </b>  <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $eve->event_id ?>)"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $eve->event_id ?>)"  > REMOVE </button> </p> <?php } ?>
         </tr>
         </div>
         <?php } ?>

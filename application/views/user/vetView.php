@@ -1,5 +1,5 @@
 
-<?php $allowed = array(0,1,2); ?>
+<?php $allowed = array(0,1); ?>
 <h1 style = 'text-align:center'> <b> <?php echo $veteran[0]->first_name ?> <?php echo $veteran[0]->last_name ?> </b> </h1>
 
 <?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
@@ -15,7 +15,7 @@
 </div>
 
 <div id = "about">
-<h2> <b> About </b> <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
+<h2> <b> About </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 	<p> <b> DOB: </b> <?php echo $veteran[0]->dob ?>  </p>
 
@@ -92,7 +92,7 @@
 
 
 <?php if ($hotel != null) { ?>
-<h2> <b> Hotel Info <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"> EDIT </button>  <?php } ?>  </b> </h2>
+<h2> <b> Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"> EDIT </button>  <?php } ?>  </b> </h2>
 <p> <b> Name: </b> <?php echo $hotel[0]->name ?>  </p>
 <p> <b> Room No: </b> <?php echo $hotel[0]->room ?>  </p>
 <p> <b> Check In: </b> <?php echo date_format(date_create($hotel[0]->check_in),"Y/m/d h:i A"); ?>  </p>
@@ -113,7 +113,7 @@
 </div>
 
 <div id = "medicalInfo">
-<h2> <b> Basic Information </b> <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
+<h2> <b> Basic Information </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 	<?php if ($veteran[0]->med_code != "") { ?>
 	<p> <b> Med Code: </b> <div id = 'med<?php echo $veteran[0]->med_code ?>' class = 'medCircle' > </div> <?php echo $veteran[0]->med_code ?> </p>
@@ -189,7 +189,7 @@
 </div>
 
 <div id = "accommodations">
-<h2> <b> History </b> <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?> </h2>
+<h2> <b> History </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?> </h2>
 	
 <h2> <b> Veteran History </b> </h2>
 
