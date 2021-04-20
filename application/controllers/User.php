@@ -118,8 +118,15 @@ class User extends CI_Controller {
     public function itineraryView() //Itinerary Information
 	{
 		$data['allTeams'] = $this->Index_model->get_TeamList();
+
+		$this->db->select("*");
+		$this->db->from('event');
+		$this->db->where('mission_id', $currMission_id);
+		$data['event'] = $this->db->get()->result();
+
+
         $this->load->view('user/template/header',$data);
-		$this->load->view('user/itinerary');
+		$this->load->view('user/itinerary',$data);
 		$this->load->view('user/template/footer');
 	}
 

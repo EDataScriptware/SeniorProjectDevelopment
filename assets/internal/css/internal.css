@@ -145,17 +145,17 @@
 }
 
 /*Box Colors*/
-#red {background: #F03434;}
-#blue {background: #1E8BC3;}
-#green {background: #00B16A;}
-#yellow {background: #F4F776;}
-#purple {background: #9B59B6;}
-#orange {background: #F39C12;}
-#gold {background: #FFD700;}
-#silver {background: #BEC2CB;}
-#teal {background: teal;}
-#grey {background: lightgrey;}
-#white {background: white;}
+#red {background: #F03434 !important; }
+#blue {background: #1E8BC3 !important;}
+#green {background: #00B16A !important;}
+#yellow {background: #F4F776 !important;}
+#purple {background: #9B59B6 !important;}
+#orange {background: #F39C12 !important;}
+#gold {background: #FFD700 !important;}
+#silver {background: #BEC2CB !important;}
+#teal {background: teal !important;}
+#grey {background: lightgrey !important;}
+#white {background: white !important;}
 
 
 
