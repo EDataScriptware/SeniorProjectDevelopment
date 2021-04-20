@@ -47,7 +47,7 @@
 <div id = "busView">
 	<?php foreach ($bus as $b): ?>
 
-<h2> <b>  <?php echo $b->name ?> </b> </h2>
+<h2> <b>  <?php echo $b->name ?> Staff </b> </h2>
 
 <?php foreach ($veteran as $vet): ?>
 <?php if ($vet->bus_id === $b->bus_id) { ?>
