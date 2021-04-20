@@ -52,7 +52,7 @@
             <p> <b>Date: </b>  <?php echo date_format(date_create($eve->date),"Y/m/d"); ?>  </p>
             <p> <b>Start: </b>  <?php echo date_format(date_create($eve->start),"h:i A"); ?>  </p>
             <p> <b>End: </b>  <?php echo date_format(date_create($eve->end),"h:i A"); ?>  </p>
-            <p> <b>Actions: </b>  <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $eve->event_id ?>,'event')"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $eve->event_id ?>,'event')"  > REMOVE </button> </p>
+            <p> <b>Actions: </b>  <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $eve->event_id ?>)"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $eve->event_id ?>)"  > REMOVE </button> </p>
         </tr>
         </div>
         <?php } ?>
@@ -62,3 +62,139 @@
 
 </div>
 <?php endforeach ?>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Add New Entry</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id ="addEvent" method='POST'>
+
+
+            <label for="newTitle">Title:</label>
+ 
+                <input type="text" id="newTitle" name="newTitle" required size="10"> <br>
+
+            <label for="newDescription">Description:</label>
+
+                <textarea id="newDescription" name="newDescription" > </textarea>  <br>
+
+            <label for="newDate">Date:</label>
+            
+                <input type="date" id="newDate" name="newDate">  <br>
+
+            <label for="newStart">Start Time:</label>
+            
+                <input type="time" id="newStart" name="newStart">  <br>
+
+            <label for="newEnd">End Time:</label>
+            
+                <input type="time" id="newEnd" name="newEnd">  <br>
+
+        </form>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" style='display:none' id='addFlyBut' form ="addFly">Add New Flight Entry</button>
+        <button type="submit" class="btn btn-primary" style='display:none' id='addHotelBut' form ="addHotel">Add New Hotel Entry</button>
+        <button type="submit" class="btn btn-primary" style='display:none' id='addEventBut' form ="addEvent">Add New Event Entry</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Edit Modal -->
+<?php if ($hotel != null) { ?>
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Edit Hotel Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      <form id ="editEvent" method='POST'>
+
+            <label for="title">Title:</label>
+
+                <input type="text" id="title" name="title" required size="10"> <br>
+
+            <label for="description">Description:</label>
+
+                <textarea id="description" name="description" > </textarea>  <br>
+
+            <label for="date">Date:</label>
+
+                <input type="date" id="date" name="date">  <br>
+
+            <label for="start">Start Time:</label>
+
+                <input type="time" id="start" name="start">  <br>
+
+            <label for="end">End Time:</label>
+
+                <input type="time" id="end" name="end">  <br>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id='editEventBut' form ="editEvent">Edit Event Entry</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
+
+<script>
+
+function addBlock($team) {
+    document.getElementById("addEvent").action = "User/addEvent/"+$team;
+}
+
+function editBlock($id) {
+    document.getElementById("editEvent").action = "User/editEvent/"+$id;
+
+    $.post('User/getEvent', {id: $id, type: $type}, function (result) {
+        var $res = JSON.parse(result);
+        console.log($res[0]);
+
+
+    document.getElementById("editFly").style.display = "none";
+    document.getElementById("editFlyBut").style.display = "none";
+
+    document.getElementById("editHotel").style.display = "none";
+    document.getElementById("editHotelBut").style.display = "none";
+
+    document.getElementById("editEvent").style.display = "block";
+    document.getElementById("editEventBut").style.display = "block";
+
+
+    document.getElementById("description").value = $res[0]['description'];
+    document.getElementById("start").value = $res[0]['start'];
+    document.getElementById("end").value = $res[0]['end'];
+    document.getElementById("date").value = $res[0]['date'];
+    document.getElementById("title").value = $res[0]['title'];
+
+
+}
+
+function removeBlock($id) {
+
+if (confirm("Are you sure you want to remove this event? "  )) {
+    $.post('User/removeEvent', {id: $id, type: $type}, function () {
+    location.reload();
+
+});
+} else {}
+}
+
+</script>

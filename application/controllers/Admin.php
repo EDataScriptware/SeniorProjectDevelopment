@@ -698,11 +698,7 @@ class Admin extends CI_Controller {
 
 	public function editEvent($id,$type) {
 		$postData = $this->input->post();
-
-		$this->db->select_max("mission_id");
-		$this->db->from('mission');
-
-
+\
 		switch ($type) {
 			case 'fly':
 				$this->db->where('flight_id', $id);

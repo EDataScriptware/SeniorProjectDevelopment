@@ -159,5 +159,43 @@ class User extends CI_Controller {
 
 	}
 
+	public function addEvent($team) {
+		$title = $this->input->post('newTitle');
+				$description = $this->input->post('newDescription');
+				$date = $this->input->post('newDate');
+				$start = $this->input->post('newStart');
+				$end = $this->input->post('newEnd');
+				
+				$data = array(
+					'title' => $title,
+					'team_id' => $team,
+					'description' => $description,
+					'date' => $date,
+					'start' => $start,
+					'end' => $end,
+					'mission_id' => $currMission_id,
+				);
+
+				$this->db->insert('event', $data); 
+	}
+
+	public function getEvent() {
+		$id = $this->input->post('id');
+		$this->db->where('event_id', $id);
+		$data =	$this->db->get('event')->result();
+	}
+
+
+	public function editEvent($id) {
+		$postData = $this->input->post();
+		$this->db->where('event_id', $id);
+		$this->db->update('event',$postData);
+	}
+
+	public function deleteEvent($id) {
+		$this->db->where('event_id', $id);
+		$this->db->delete('event');
+	}
+
 
 }
