@@ -171,7 +171,6 @@
 
 	<?php endforeach ?>
 
-
 </div>
 
 <div id = "accommodations">
@@ -208,7 +207,7 @@
 		<p> <label for="aPhone"> Alt Phone: </label> <input type="text" id="cell_phone" name="cell_phone" class = "infoInput" value = "<?php echo $veteran[0]->cell_phone ?>" >   </p>
 
 		<p> <b> Additional Information: </b></p>
-		<textarea id="add_comments" name="add_comments" rows="4" cols="50"><?php echo $veteran[0]->add_comments; ?></textarea>
+		<textarea id="add_comments" name="add_comments"><?php echo $veteran[0]->add_comments; ?></textarea>
 
 		<h3>Medical Information</h3>
 
