@@ -335,7 +335,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" style='display:none' id='editHotelBut' form ="editHotel">Edit Hotel Entry</button>
+        <button type="submit" class="btn btn-primary" id='editHotelBut' form ="editHotel">Edit Hotel Entry</button>
       </div>
     </div>
   </div>
