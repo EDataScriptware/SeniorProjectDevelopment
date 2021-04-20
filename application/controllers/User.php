@@ -22,6 +22,7 @@ class User extends CI_Controller {
 	{
 		$id = $this->uri->segment(2);
 		$this->load->model('Veteran_model');
+		$this->load->model('User_model');
 		
 
 		$this->db->select_max("mission_id");
@@ -42,6 +43,7 @@ class User extends CI_Controller {
 		else {
 			$data['id'] = null;
 			$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
+			$data['user'] = $this->User_model->get_all_user_data();
 
 			$this->db->select("*");
 			$this->db->from('team');
@@ -52,7 +54,7 @@ class User extends CI_Controller {
 
 
 		$this->db->select("*");
-		$this->db->from('bus ');
+		$this->db->from('bus');
 		$this->db->where('mission_id', $currMission_id);
 
 		$data['bus'] = $this->db->get()->result();
@@ -88,7 +90,6 @@ class User extends CI_Controller {
 		// $this->load->view('user/template/footer');
 
 		$map = directory_map('./uploads/', 1);
-
 
 		$this->load->view('user/template/header', $data);
 		$this->load->view('user/fileView', array('error' => ' ', 'files' => $map));

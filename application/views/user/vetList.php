@@ -16,7 +16,7 @@
 } ); 
 </script>
 <div class = "teamListView">
-	
+
 	<h2> <b> <?php echo $team->color ?> Team </b> </h2>
 
 <?php foreach ($veteran as $vet): ?>
@@ -61,6 +61,17 @@
 <?php } ?>
 
 	<div style="display:none" id = "staffView">
+
+		<?php foreach ($bus as $b): ?>
+			<?php foreach ($user as $use): ?>
+			<?php if ($use->bus_id === $b->bus_id) { ?>
+			<a href="" class="teamListElement"><?php echo $use->first_name ?> <?php echo$use->last_name?></a>
+				<?php  }?>
+				<?php endforeach ?>
+			<?php } ?>
+
+		<?php endforeach ?>
+
 
 	</div>
 
