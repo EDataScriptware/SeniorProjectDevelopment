@@ -296,6 +296,7 @@
 </div>
 
 <!-- Edit Modal -->
+<?php if ($hotel != null) { ?>
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
   <div class="modal-dialog" >
     <div class="modal-content">
@@ -333,6 +334,7 @@
     </div>
   </div>
 </div>
+<?php } ?>
 
 
 
