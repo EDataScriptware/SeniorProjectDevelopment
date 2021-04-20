@@ -27,7 +27,15 @@
 	white-space: nowrap;
 	margin-right: -25px;
 	margin-left: -25px;
+
+	  -ms-overflow-style: none;  /* IE and Edge */
+  	  scrollbar-width: none;  /* Firefox */
 }
+
+.buttonScrollView:-webkit-scrollbar {
+	display: none;
+  }
+  
 
 .scrollItem {
 	display: inline-block;
@@ -186,6 +194,14 @@
 	padding-top: 60px; 
 	overflow-y: scroll;
 	transition: 0.5s; 
+
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+
+  }
+
+  .whiteEdit:-webkit-scrollbar {
+	display: none;
   }
 
   .whiteEdit .closebtn {
