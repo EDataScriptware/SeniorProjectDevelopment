@@ -68,8 +68,6 @@
 			<a href="" class="teamListElement"><?php echo $use->first_name ?> <?php echo$use->last_name?></a>
 				<?php  }?>
 				<?php endforeach ?>
-			<?php } ?>
-
 		<?php endforeach ?>
 
 
