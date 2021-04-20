@@ -93,27 +93,60 @@
 </div>
 
 <div id = "reservations">
-<h2> Schedule <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
+<h2> <b> Schedule </b> <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 </div>
 
 <div id = "medicalInfo">
-<h2> Medical Info <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
-
-	<p> DOB: <?php echo $veteran[0]->dob ?>  </p>
+<h2> <b> Basic Information </b> <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 	<?php if ($veteran[0]->med_code != "") { ?>
-	<h3> Med Code: <div id = 'med<?php echo $veteran[0]->med_code ?>' class = 'medCircle' > </div> <?php echo $veteran[0]->med_code ?>
-		<?php  }?>
-	<h4> Conditions </h4>	
+	<p> <b> Med Code: </b> <div id = 'med<?php echo $veteran[0]->med_code ?>' class = 'medCircle' > </div> <?php echo $veteran[0]->med_code ?> </p>
+		<?php  } else { ?>
+	<p> <b> Med Code: </b> None </p>
+	<?php } ?>
+
+	<?php if ($veteran[0]->diet_restrictions != "") { ?>
+	<p> <b> Diet Restrictions: </b> <?php echo $veteran[0]->diet_restrictions ?> </p>
+		<?php  } else { ?>
+	<p> <b> Diet Restrictions: </b> None </p>
+	<?php } ?>
+
+	<hr>
+		<h2> <b> Mobility </b> </h2>
+
+		<?php foreach ($medAccomidations as $accomidations): ?>
+		<?php if ($veteran[0]->$accomidations == 1) {
+			if ($accomidations === "med_walk_bus_steps") {
+				echo "Bus Steps: Yes";
+			}
+			else {
+				echo "<b>". str_replace('_', ' ',ucfirst(substr($accomidations,4)))." </b>: Yes";
+			}
+			echo '<br>';
+		}
+		?>
+	<?php endforeach ?>
+
+	<hr>
+
+	<h2> <b> Mobility </b> </h2>
 
 	<?php foreach ($medMedication as $medication): ?>
 		<?php if ($veteran[0]->$medication == 1) {
-			echo str_replace('_', ' ',ucfirst(substr($medication,4)));
+			echo "<b>".  str_replace('_', ' ',ucfirst(substr($medication,4." </b>: Yes";
 			echo '<br>';
 		} ?>
 
 	<?php endforeach ?>
+
+	
+
+	<?php if ($veteran[0]->med_chair_loc != '') {
+				echo "Medical Chair Location: ".$veteran[0]->med_chair_loc;
+			echo '<br>';
+		}
+		?>
 
 	<?php if ($veteran[0]->med_list != '') {
 			echo '<h4> Medication List </h4>';
@@ -138,24 +171,7 @@
 
 <div id = "accommodations">
 <h2>History <?php if ($_SESSION["userPerm"] === '0') { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?> </h2>
-<?php foreach ($medAccomidations as $accomidations): ?>
-		<?php if ($veteran[0]->$accomidations == 1) {
-			if ($accomidations === "med_walk_bus_steps") {
-				echo "Needs help with walking up/down bus steps";
-			}
-			else {
-				echo str_replace('_', ' ',ucfirst(substr($accomidations,4)));
-			}
-			echo '<br>';
-		}
-		?>
-	<?php endforeach ?>
 
-	<?php if ($veteran[0]->med_chair_loc != '') {
-				echo "Medical Chair Location: ".$veteran[0]->med_chair_loc;
-			echo '<br>';
-		}
-		?>
 
 
 </div>
