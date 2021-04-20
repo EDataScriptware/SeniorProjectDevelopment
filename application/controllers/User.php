@@ -188,6 +188,7 @@ class User extends CI_Controller {
 		$id = $this->input->post('id');
 		$this->db->where('event_id', $id);
 		$data =	$this->db->get('event')->result();
+		echo json_encode($data);
 	}
 
 
