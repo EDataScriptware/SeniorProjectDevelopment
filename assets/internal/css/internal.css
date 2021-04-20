@@ -213,19 +213,12 @@
 	text-decoration: none;
 	color: black;
   }
-
-  .content
-{
-    margin-left: 325px;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
 /* USERNAV */
 
 .content
 {
     margin-left: 325px;
+	margin-right: 325px;
     font-family: Arial, Helvetica, sans-serif;
 
 }
