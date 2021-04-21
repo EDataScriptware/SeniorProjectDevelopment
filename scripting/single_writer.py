@@ -6,7 +6,6 @@ import sqlalchemy
 
 now = datetime.datetime.now()
 datetimeString = "Generated On: " + now.strftime("%B %m, %Y - %I:%M:%S %p")
-pdfFileName = "IndividualReport_" + str(now.strftime("%Y-%m-%d")) + ".pdf"
 print("starting single_writer.py")
 passedVeteranNumber = sys.argv[1]
 class PDF(FPDF):
@@ -245,6 +244,7 @@ additionalInformationPdf(pdf, additionalInformation)
 categoryA(pdf, "Guardian Information")
 guardianInformationPdf(pdf, guardianInformationString)
 
+pdfFileName = str(last_name) + str(first_name[0])  + "_IndividualReport_" + str(now.strftime("%Y-%m-%d")) + ".pdf"
 
 pdf.output(pdfFileName)
 print("pdf_writer.py computed")
