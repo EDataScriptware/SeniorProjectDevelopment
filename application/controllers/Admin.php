@@ -423,7 +423,7 @@ class Admin extends CI_Controller {
 	public function updateUser($id) {
 		$postData = $this->input->post();
 
-		echo $postData;
+		echo json_encode($postData);
 
 		// $this->db->where('iduser', $id);
 		// $this->db->update('user', $postData); 
