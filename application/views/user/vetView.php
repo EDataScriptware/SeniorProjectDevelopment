@@ -251,6 +251,7 @@
 
 		<h3>Medical Information</h3>
 
+		<h4> Med Code </h4>
 		<select id="med_code" name="med_code">
         <option value="">None</option>
         <option value="Red">Red</option>
@@ -261,7 +262,7 @@
 		<script>
 			document.getElementById("med_code").value = "<?php echo $veteran[0]->med_code ?>";
 		</script>
-		
+
 	<h4> Conditions </h4>	
 
 	<?php foreach ($medMedication as $medication): ?>
