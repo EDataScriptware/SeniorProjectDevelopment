@@ -52,6 +52,10 @@
   padding-bottom: 10px;
 }
 
+.detailedTeamListElement p {
+  color: black;
+}
+
 .shiftRight {
  float: right;
  right: 10px; 
