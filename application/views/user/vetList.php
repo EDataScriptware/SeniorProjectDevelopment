@@ -72,6 +72,21 @@
 	<?php if ($vet->team_id === $tem->team_id) { ?>
 		<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> </h3>
 
+			<?php
+		$this->db->select("*");
+		$this->db->from('guardian');
+		$this->db->where('guardian_id',$vet->guardian_id);
+
+		$guardian = $this->db->get()->result();
+		?>
+		<p> <b> Name: </b> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p>
+
+		<?php if ($vet->med_code != "") { ?>
+		<p> <b> Med Code: </b> <div class = 'medCircle med<?php echo $vet->med_code ?>' > </div> <?php echo $vet->med_code ?> </p>
+			<?php  } else { ?>
+		<p> <b> Med Code: </b> None </p>
+		<?php } ?>
+
 	</a>
 	<?php  }?>
 <?php endforeach ?>

@@ -185,6 +185,10 @@
 #medRed {background:red;}
 #medYellow{background:yellow;}
 #medGreen{background: green;}
+
+.medRed {background:red;}
+.medYellow{background:yellow;}
+.medGreen{background: green;}
 .medCircle{
 	height: 25px;
 	width: 25px;
