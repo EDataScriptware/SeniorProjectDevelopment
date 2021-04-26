@@ -45,6 +45,7 @@ $(document).ready( function () {
         <tr>
             <th>Hotel Name</th>
             <th>Assigned Veteran</th>
+            <th>Assigned Guardian</th>
             <th>Room Number</th>
             <th>Check-In Time</th>
             <th>Check-Out Time</th>
@@ -56,14 +57,23 @@ $(document).ready( function () {
         <tr>
             <td> <?php echo $hot->name ?>  </td>
             <td> <?php
-            
             $this->db->select("*");
                 $this->db->from('veteran');
                 $this->db->where('veteran_id',$hot->veteran_id);
             
-                $vet= $this->db->get()->result();
+                $vet = $this->db->get()->result();
 
                 if ($vet != null) { echo $vet[0]->first_name." ".$vet[0]->last_name; } else {echo "None";}
+            
+            ?>  </td>
+            <td> <?php
+            $this->db->select("*");
+                $this->db->from('guardian');
+                $this->db->where('guardian_id',$hot->guardian_id);
+            
+                $guard = $this->db->get()->result();
+
+                if ($guard != null) { echo $guard[0]->first_name." ".$guard[0]->last_name; } else {echo "None";}
             
             ?>  </td>
             <td> <?php echo $hot->room ?>  </td>
@@ -88,6 +98,22 @@ $(document).ready( function () {
         <?php }else {} ?>
 <?php endforeach ?>
 </datalist>
+
+
+<!-- GUARDDATALIST -->
+<datalist id ='veterans'>
+<?php foreach ($veteran as $vet): ?>
+    <?php $skip = false; ?>
+    <?php foreach ($hotel as $hot): ?>
+     <?php if ($hot->$veteran_id === $vet->veteran_id) { $skip = true; break;} ?> 
+    <?php endforeach ?>
+
+    <?php if ($skip === false) { ?>
+        <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option>
+        <?php }else {} ?>
+<?php endforeach ?>
+</datalist>
+
 
 <!-- Add Modal -->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" >
@@ -125,7 +151,6 @@ $(document).ready( function () {
             <label for="newArrival_location">Arrival Location:</label>
 
                 <input type="text" id="newArrival_location" name="newArrival_location" required > <br>
-
 
 
         </form>
