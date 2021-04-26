@@ -279,6 +279,7 @@ class Admin extends CI_Controller {
 
 		$this->load->model('Flight_model');
 		$this->load->model('Veteran_model');
+		$this->load->model('Guardian_model');
 
 
 		$this->db->select_max("mission_id");
@@ -293,12 +294,6 @@ class Admin extends CI_Controller {
 		$data['hotel'] = $this->db->get()->result();
 
 		$this->db->select("*");
-		$this->db->from('event');
-		$this->db->where('mission_id', $currMission_id);
-		$data['event'] = $this->db->get()->result();
-
-		
-		$this->db->select("*");
 		$this->db->from('team');
 		$this->db->where('mission_id', $currMission_id);
 
@@ -306,6 +301,7 @@ class Admin extends CI_Controller {
 
 		$data['flight'] = $this->Flight_model->get_mission_flight_data($currMission_id);
 		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
+		$data['guardian'] = $this->Guardian_model->get_mission_guardian_data($currMission_id);
 
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/reservations', $data);
