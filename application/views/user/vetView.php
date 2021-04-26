@@ -103,8 +103,9 @@
 
 <?php if ($gHotel != null) { ?>
 <h3> <b> Guardian Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?> 
+	<?php if  ($hotel != null) { ?>
 	<?php if ($hotel[0] != $gHotel[0]) { ?>
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editGuardianModal"> EDIT </button> <?php } ?>  <?php } ?>  </b> </h3>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editGuardianModal"> EDIT </button> <?php } ?>  <?php } else { ?> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editGuardianModal"> EDIT </button> <?php } ?> <?php } ?>  </b> </h3>
 <p> <b> Name: </b> <?php echo $gHotel[0]->name ?>  </p>
 <p> <b> Room No: </b> <?php echo $gHotel[0]->room ?>  </p>
 <p> <b> Check In: </b> <?php echo date_format(date_create($gHotel[0]->check_in),"Y/m/d h:i A"); ?>  </p>
