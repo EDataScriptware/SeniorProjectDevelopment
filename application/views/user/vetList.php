@@ -79,7 +79,7 @@
 
 		$guardian = $this->db->get()->result();
 		?>
-		<p> <b> Name: </b> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p>
+	<?php if ($guardian != null) { ?>	<p> <b> Gaurdian Name: </b> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p> <?php } ?>
 
 		<?php if ($vet->med_code != "") { ?>
 		<p> <b> Med Code: </b> <div class = 'medCircle med<?php echo $vet->med_code ?>' > </div> <?php echo $vet->med_code ?> </p>
