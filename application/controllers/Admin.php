@@ -20,23 +20,25 @@ class Admin extends CI_Controller {
 	}
 
 	public function busBookView() {
-		$this->load->model('BusBook_model');
+		// $this->load->model('BusBook_model');
+		$this->load->model('Mission_model');
 		$this->load->model('Bus_model');
 
-		$bus_books = $this->BusBook_model->get_all_busbook_data();
+		// $bus_books = $this->BusBook_model->get_all_busbook_data();
+		$missions = $this->Mission_model->get_all_mission_data();
 		
 		$data['bus_book_data'] = [];
 
-		foreach($bus_books as $bus_book) {
+		foreach($missions as $mission) {
 
-			$bus_data = $this->Bus_model->get_mission_bus_data($bus_book->mission_id);
+			$bus_data = $this->Bus_model->get_mission_bus_data($mission->mission_id);
 
 			if($bus_data) {
-				$bus_book->bus = $bus_data;
-				array_push($data['bus_book_data'], $bus_book);
+				$mission->bus = $bus_data;
+				array_push($data['bus_book_data'], $mission);
 			}
 			else {
-				array_push($data['bus_book_data'], $bus_book);
+				array_push($data['bus_book_data'], $mission);
 			}
 			
 		}
