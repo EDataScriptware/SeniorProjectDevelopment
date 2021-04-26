@@ -70,7 +70,7 @@
 
 <?php foreach ($veteran as $vet): ?>
 	<?php if ($vet->team_id === $tem->team_id) { ?>
-		<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> <span class = 'medCircle <?php echo $tem->color ?>' > </span> </h3>
+		<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> <span class = 'medCircle <?php echo strtolower($tem->color) ?>' > </span> </h3>
 
 		<?php
 		$this->db->select("*");
