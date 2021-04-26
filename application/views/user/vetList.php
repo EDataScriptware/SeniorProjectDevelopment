@@ -23,7 +23,11 @@
 	<h2> <b> <?php echo $team->color ?> Team </b> </h2>
 
 <?php foreach ($veteran as $vet): ?>
-	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="teamListElement"><?php echo $vet->first_name ?> <?php echo$vet->last_name?></a>
+	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement">
+
+	<h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> </h3>
+
+	</a>
 <?php endforeach ?>
 
 <!-- IF ID IS NULL -->
