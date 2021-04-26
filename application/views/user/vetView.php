@@ -252,7 +252,18 @@
 		<h3>Medical Information</h3>
 
 	<?php if ($veteran[0]->med_code != "") { ?>
-	<h3> Med Code: <div id = 'med<?php echo $veteran[0]->med_code ?>' class = 'medCircle' > </div> <?php echo $veteran[0]->med_code ?>
+
+		<select id="med_code" name="med_code">
+        <option value="">None</option>
+        <option value="Red">Red</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Green">Green</option>
+        </select>
+
+		<script>
+			document.getElementById("med_code").value = "<?php echo $veteran[0]->med_code ?>";
+		</script>
+		
 		<?php  }?>
 	<h4> Conditions </h4>	
 
