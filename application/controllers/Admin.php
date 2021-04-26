@@ -423,8 +423,6 @@ class Admin extends CI_Controller {
 	public function updateUser($id) {
 		$postData = $this->input->post();
 
-		var_dump($postData);
-
 		$newPass = $postData['pass_reset'];
 		unset($postData['pass_reset']);
 
