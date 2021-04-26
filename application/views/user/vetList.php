@@ -82,7 +82,7 @@
 	<?php if ($guardian != null) { ?>	<p> <b> Gaurdian Name: </b> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p> <?php } ?>
 
 	<?php foreach ($bus as $b): ?>
-	<?php if ($vet->mission_id === $b->mission_id) { ?>
+	<?php if ($team->bus_id === $b->bus_id) { ?>
 		<p> <b> <?php echo $b->name ?> </b>  </p> 
 	<?php break; } ?>
 	<?php endforeach ?>
