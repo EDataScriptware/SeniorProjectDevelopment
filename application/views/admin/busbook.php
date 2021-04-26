@@ -1,4 +1,5 @@
-<script> $(document).ready( function () {  
+<script> 
+$(document).ready( function () {  
     $('#book').addClass('active');
 } ); 
 
@@ -11,22 +12,21 @@
 <h1>Bus Book Management</h1>
 <hr/>
 
-<button type="button" class="btn btn-primary" id="createBook">Create Mission / Bus Book</button>
+<!-- <button type="button" class="btn btn-primary" id="createBook">Create Mission / Bus Book</button> -->
 
 <?php if(isset($bus_book_data)) {
-    foreach($bus_book_data as $book) { ?>
-        <hr/>
-        <h2>Bus Book <?php echo $book->bus_book_id; ?> | Mission ID: <?php echo $book->mission_id; ?></h2>
-        <h4>Start: <?php echo $book->start; ?> | End: <?php echo $book->end; ?></h4>
-        <?php if(isset($book->notes)) { ?>
-                <p><?php echo $book->notes; ?></p>
+    foreach($bus_book_data as $mission) { ?>
+        <h2><?php echo $mission->title; ?> </h2>
+        <h4>Start: <?php echo $mission->start_date; ?> | End: <?php echo $mission->end_date; ?></h4>
+        <?php if(isset($mission->flight_num)) { ?>
+          <h4>Flight Number: <?php echo $mission->flight_num; ?> </h4>
         <?php } ?>
 
-        <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/busForm/'.$book->mission_id); ?>'">Create Bus</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/busForm/'.$mission->mission_id); ?>'">Create Bus</button>
         <br>
         <br>
 
-        <table id="<?php echo $book->bus_book_id; ?>book" class="table table-striped table-bordered">
+        <table id="<?php echo $mission->mission_id; ?>book" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Bus ID</th>
@@ -39,8 +39,8 @@
             <tbody>
                 
             <?php
-                if(isset($book->bus)) {
-                    foreach($book->bus as $bus) { ?>
+                if(isset($mission->bus)) {
+                    foreach($mission->bus as $bus) { ?>
                     <tr>
                         <td><?php echo $bus->bus_id ;?></td>
                         <td><?php echo $bus->name ;?></td>
@@ -52,6 +52,8 @@
                 } ?>
             </tbody>
         </table>
+        <hr/>
+        <br>
     <?php } 
 } ?>
 

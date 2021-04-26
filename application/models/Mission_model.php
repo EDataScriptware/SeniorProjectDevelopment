@@ -12,6 +12,7 @@ class Mission_Model extends CI_Model {
         
         $this->db->select("*");
         $this->db->from('mission');
+        $this->db->order_by('mission_id', 'desc');
 
         $query = $this->db->get()->result();
         
