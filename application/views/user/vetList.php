@@ -23,9 +23,46 @@
 	<h2> <b> <?php echo $team->color ?> Team </b> </h2>
 
 <?php foreach ($veteran as $vet): ?>
-	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> </h3>
+	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> <span class = 'medCircle shiftRight <?php echo strtolower($tem->color) ?>' > </span> </h3>
 
-	</a>
+		<?php
+		$this->db->select("*");
+		$this->db->from('guardian');
+		$this->db->where('guardian_id',$vet->guardian_id);
+		$guardian = $this->db->get()->result();
+		?>
+
+		<?php
+		$this->db->select("*");
+		$this->db->from('hotel_info');
+		$this->db->where('veteran_id',$vet->veteran_id);
+		$vHotel = $this->db->get()->result();
+		?>
+
+		<?php
+		$this->db->select("*");
+		$this->db->from('hotel_info');
+		$this->db->where('guardian_id',$vet->guardian_id);
+		$gHotel = $this->db->get()->result();
+		?>
+
+		<?php if ($guardian != null) { ?>	<p> <b> Gaurdian Name: </b> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p> <?php } ?>
+
+		<?php if ($vHotel != null) { ?>	<p> <b> Veteran Hotel: </b> <?php echo $vHotel[0]->name ?>, <b> Room: </b> <?php echo $vHotel[0]->room ?> </p> <?php } ?>
+		<?php if ($gHotel != null) { ?>	<p> <b> Guardian Hotel: </b> <?php echo $gHotel[0]->name ?>, <b> Room: </b> <?php echo $gHotel[0]->room ?> </p> <?php } ?>
+
+
+		<?php foreach ($bus as $b): ?>
+		<?php if ($tem->bus_id === $b->bus_id) { ?>
+		<p> <b> <?php echo $b->name ?> </b>  </p> 
+		<?php break; } ?>
+		<?php endforeach ?>
+
+		<?php if ($vet->med_code != "") { ?>
+		<p> <b> Med Code: </b> <span class = 'medCircle med<?php echo $vet->med_code ?>' > </span> <?php echo $vet->med_code ?>  <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <i class="fa fa-tint fa-lg"></i>  <?php } ?> </b> </p>
+		<?php  } else { ?><p> <b> Med Code: </b> None  <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <i class="fa fa-tint fa-lg"></i> <?php } ?> </b> </p><?php } ?>
+
+</a>
 <?php endforeach ?>
 
 <!-- IF ID IS NULL -->
@@ -126,7 +163,46 @@
 
 <?php foreach ($veteran as $vet): ?>
 <?php if ($vet->bus_id === $b->bus_id) { ?>
-<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="teamListElement"><?php echo $vet->first_name ?> <?php echo$vet->last_name?></a>
+	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> <span class = 'medCircle shiftRight <?php echo strtolower($tem->color) ?>' > </span> </h3>
+
+		<?php
+		$this->db->select("*");
+		$this->db->from('guardian');
+		$this->db->where('guardian_id',$vet->guardian_id);
+		$guardian = $this->db->get()->result();
+		?>
+
+		<?php
+		$this->db->select("*");
+		$this->db->from('hotel_info');
+		$this->db->where('veteran_id',$vet->veteran_id);
+		$vHotel = $this->db->get()->result();
+		?>
+
+		<?php
+		$this->db->select("*");
+		$this->db->from('hotel_info');
+		$this->db->where('guardian_id',$vet->guardian_id);
+		$gHotel = $this->db->get()->result();
+		?>
+
+	<?php if ($guardian != null) { ?>	<p> <b> Gaurdian Name: </b> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p> <?php } ?>
+
+	<?php if ($vHotel != null) { ?>	<p> <b> Veteran Hotel: </b> <?php echo $vHotel[0]->name ?>, <b> Room: </b> <?php echo $vHotel[0]->room ?> </p> <?php } ?>
+	<?php if ($gHotel != null) { ?>	<p> <b> Guardian Hotel: </b> <?php echo $gHotel[0]->name ?>, <b> Room: </b> <?php echo $gHotel[0]->room ?> </p> <?php } ?>
+
+
+	<?php foreach ($bus as $b): ?>
+	<?php if ($tem->bus_id === $b->bus_id) { ?>
+		<p> <b> <?php echo $b->name ?> </b>  </p> 
+	<?php break; } ?>
+	<?php endforeach ?>
+
+		<?php if ($vet->med_code != "") { ?>
+		<p> <b> Med Code: </b> <span class = 'medCircle med<?php echo $vet->med_code ?>' > </span> <?php echo $vet->med_code ?>  <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <i class="fa fa-tint fa-lg"></i>  <?php } ?> </b> </p>
+		<?php  } else { ?><p> <b> Med Code: </b> None  <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <i class="fa fa-tint fa-lg"></i> <?php } ?> </b> </p><?php } ?>
+
+	</a>
 	<?php  }?>
 	<?php endforeach ?>
 
@@ -153,7 +229,7 @@
 
 
 	<script>
-			function showTeam() {
+	function showTeam() {
 		document.getElementById("teamView").style.display = "block";
 		document.getElementById("busView").style.display = "none";
 		document.getElementById("staffView").style.display = "none";
