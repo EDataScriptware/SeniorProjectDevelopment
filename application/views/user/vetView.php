@@ -15,7 +15,7 @@
 </div>
 
 <div id = "about">
-<h2> <b> About </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
+<h2> <b> About </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 	<p> <b> DOB: </b> <?php echo $veteran[0]->dob ?>  </p>
 
