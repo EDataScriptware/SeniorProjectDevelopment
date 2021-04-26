@@ -76,10 +76,28 @@
 		$this->db->select("*");
 		$this->db->from('guardian');
 		$this->db->where('guardian_id',$vet->guardian_id);
-
 		$guardian = $this->db->get()->result();
 		?>
+
+		<?php
+		$this->db->select("*");
+		$this->db->from('hotel_info');
+		$this->db->where('veteran_id',$vet->veteran_id);
+		$vHotel = $this->db->get()->result();
+		?>
+
+		<?php
+		$this->db->select("*");
+		$this->db->from('hotel_info');
+		$this->db->where('guardian_id',$vet->guardian_id);
+		$gHotel = $this->db->get()->result();
+		?>
+
 	<?php if ($guardian != null) { ?>	<p> <b> Gaurdian Name: </b> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p> <?php } ?>
+
+	<?php if ($vHotel != null) { ?>	<p> <b> Veteran Hotel: </b> <?php echo $vHotel[0]->name ?> room <?php echo $vHotel[0]->room ?> </p> <?php } ?>
+	<?php if ($gHotel != null) { ?>	<p> <b> Guardian Hotel: </b> <?php echo $gHotel[0]->name ?> room <?php echo $gHotel[0]->room ?> </p> <?php } ?>
+
 
 	<?php foreach ($bus as $b): ?>
 	<?php if ($tem->bus_id === $b->bus_id) { ?>
@@ -88,10 +106,8 @@
 	<?php endforeach ?>
 
 		<?php if ($vet->med_code != "") { ?>
-		<p> <b> Med Code: </b> <span class = 'medCircle med<?php echo $vet->med_code ?>' > </span> <?php echo $vet->med_code ?> </p>
-		<?php  } else { ?><p> <b> Med Code: </b> None </p><?php } ?>
-
-		<p> <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <i class="fa fa-tint fa-lg"></i>  <?php } ?> </b>  </p> 
+		<p> <b> Med Code: </b> <span class = 'medCircle med<?php echo $vet->med_code ?>' > </span> <?php echo $vet->med_code ?>  <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <i class="fa fa-tint fa-lg"></i>  <?php } ?> </b> </p>
+		<?php  } else { ?><p> <b> Med Code: </b> None  <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <i class="fa fa-tint fa-lg"></i> <?php } ?> </b> </p><?php } ?>
 
 	</a>
 	<?php  }?>
