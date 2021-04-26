@@ -84,10 +84,9 @@
 	<?php foreach ($bus as $b): ?>
 	<?php foreach ($veteran as $vet): ?>
 	<?php if ($vet->bus_id === $b->bus_id) { ?>
-		<p> <b> <?php echo $b->name ?> </b>  </p> <?php break; } ?>
-	<?php  }?>
+		<p> <b> <?php echo $b->name ?> </b>  </p> 
+	<?php break; } ?>
 	<?php endforeach ?>
-
 	<?php endforeach ?>
 
 		<?php if ($vet->med_code != "") { ?>
