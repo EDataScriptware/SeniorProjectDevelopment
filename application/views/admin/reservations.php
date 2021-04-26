@@ -5,7 +5,6 @@
 $(document).ready( function () {
     $('#flightTable').DataTable();
     $('#hotelTable').DataTable();
-    $('#eventTable').DataTable();
 } );
 
 </script>
