@@ -423,10 +423,12 @@ class Admin extends CI_Controller {
 	public function updateUser($id) {
 		$postData = $this->input->post();
 
-		$this->db->where('iduser', $id);
-		$this->db->update('user', $postData); 
+		echo $postData;
 
-		redirect('users');
+		// $this->db->where('iduser', $id);
+		// $this->db->update('user', $postData); 
+
+		// redirect('users');
 	}
 
 	public function updateVeteran($id) {

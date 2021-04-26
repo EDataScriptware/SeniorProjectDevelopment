@@ -1,4 +1,5 @@
-<script> $(document).ready( function () {  
+<script> 
+$(document).ready( function () {  
     $('#book').addClass('active');
 } ); 
 
@@ -52,6 +53,7 @@
             </tbody>
         </table>
         <hr/>
+        <br>
     <?php } 
 } ?>
 
