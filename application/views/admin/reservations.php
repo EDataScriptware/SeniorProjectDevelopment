@@ -102,7 +102,7 @@ $(document).ready( function () {
 
 <!-- GUARDDATALIST -->
 <datalist id ='guardians'>
-<?php foreach ($veteran as $vet): ?>
+<?php foreach ($guardian as $guard): ?>
     <?php $skip = false; ?>
     <?php foreach ($hotel as $hot): ?>
      <?php if ($hot->$veteran_id === $vet->veteran_id) { $skip = true; break;} ?> 
