@@ -58,7 +58,7 @@
 
 <?php $first = true; ?>
 
-<?php foreach ($team as $tem): ?>
+<?php foreach ($allTeams as $tem): ?>
 	
 	<?php if ($first === true) { ?>
     <div id = "teamCon<?php echo $tem->color ?>"> 
