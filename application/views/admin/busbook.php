@@ -15,7 +15,6 @@
 
 <?php if(isset($bus_book_data)) {
     foreach($bus_book_data as $mission) { ?>
-        <hr/>
         <h2><?php echo $mission->title; ?> | Mission ID: <?php echo $mission->mission_id; ?></h2>
         <h4>Start: <?php echo $mission->start_date; ?> | End: <?php echo $mission->end_date; ?></h4>
 
