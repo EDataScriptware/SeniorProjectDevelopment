@@ -185,7 +185,7 @@ for veteranRow in veteranArray:
     med_diabetes            = veteranRow[52]
     med_seizures            = veteranRow[53]
     med_urostomy            = veteranRow[54]
-    med_dimentia            = veteranRow[55]
+    med_dementia            = veteranRow[55]
     med_nebulizer           = veteranRow[56]
     med_oxygen              = veteranRow[57]
     med_football            = veteranRow[58]

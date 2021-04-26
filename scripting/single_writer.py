@@ -112,7 +112,7 @@ for veteranNameArray in veteranNameArray:
     med_diabetes            = veteranNameArray[52]
     med_seizures            = veteranNameArray[53]
     med_urostomy            = veteranNameArray[54]
-    med_dimentia            = veteranNameArray[55]
+    med_dementia            = veteranNameArray[55]
     med_nebulizer           = veteranNameArray[56]
     med_oxygen              = veteranNameArray[57]
     med_football            = veteranNameArray[58]

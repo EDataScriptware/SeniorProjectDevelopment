@@ -41,7 +41,6 @@
       $("#eventTeam<?php echo $tem->color ?>" ).accordion({heightStyle: "content",collapsible: true,active: false });
   });
     </script>
-</script>
 
 <h3> Team <?php echo $tem->color ?> Events <?php if (in_array($_SESSION["userPerm"], $allowed))  { ?> <button type="button" class="btn btn-primary" onclick = "addBlock('<?php echo $tem->team_id ?>')"  > ADD </button> <?php } ?> </h3>
 <div id="eventTeam<?php echo $tem->color ?>"  class="table table-striped table-bordered">

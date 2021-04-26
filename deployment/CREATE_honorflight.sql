@@ -298,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `veteran` (
   `med_diabetes` TINYINT(1) NULL DEFAULT NULL,
   `med_seizures` TINYINT(1) NULL DEFAULT NULL,
   `med_urostomy` TINYINT(1) NULL DEFAULT NULL,
-  `med_dimentia` TINYINT(1) NULL DEFAULT NULL,
+  `med_dementia` TINYINT(1) NULL DEFAULT NULL,
   `med_nebulizer` TINYINT(1) NULL DEFAULT NULL,
   `med_oxygen` TINYINT(1) NULL DEFAULT NULL,
   `med_football` TINYINT(1) NULL DEFAULT NULL COMMENT 'Problem walking length of football field?',

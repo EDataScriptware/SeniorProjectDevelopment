@@ -9,6 +9,9 @@
 <button  type="button" id = "staffButton" class="btn btn-primary" onClick ="showStaff()"> Staff </button>
 </div>
 </div>
+
+
+
 <?php } ?>
 <div id = "teamView"> 
 
@@ -24,14 +27,46 @@
 <?php foreach ($veteran as $vet): ?>
 	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="teamListElement"><?php echo $vet->first_name ?> <?php echo$vet->last_name?></a>
 <?php endforeach ?>
+
+<!-- IF ID IS NULL -->
 <?php } else { ?>
+	<?php $first = true; ?>
 
 	<script> $(document).ready( function () {  
     $('#home').addClass('active');
 } ); 
 </script>
 
+<div class = "buttonScrollView">
+<?php foreach ($allTeams as $team): ?>
+	<button id = "<?php echo strtolower($team->color) ?>" class = "scrollItem <?php echo strtolower($team->color) ?>" onClick ="show<?php echo $team->color ?>()"> <i class="fa fa-flag fa-3x"></i> <br> <b> <?php echo $team->color ?> </b></button>
+
+    <script>
+        function show<?php echo $team->color ?>() {
+            <?php foreach ($allTeams as $tem): ?>
+                document.getElementById("teamCon<?php echo $tem->color ?>").style.display = "none";
+            <?php endforeach; ?>
+            
+            document.getElementById("teamCon<?php echo $team->color ?>").style.display = "block";
+
+        }
+
+    </script>
+
+    <?php endforeach; ?>
+</div>
+
+<?php $first = true; ?>
+
 <?php foreach ($team as $tem): ?>
+	
+	<?php if ($first === true) { ?>
+    <div id = "teamCon<?php echo $tem->color ?>"> 
+    <?php 
+    $first = false; 
+        } else { ?>
+        <div id = "teamCon<?php echo $tem->color ?>" style='display:none'> 
+    <?php } ?>
 
 	<h2> <b> <?php echo $tem->color ?> Team </b> </h2>
 
@@ -40,9 +75,10 @@
 	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="teamListElement"><?php echo $vet->first_name ?> <?php echo$vet->last_name?></a>
 	<?php  }?>
 <?php endforeach ?>
-
+</div>
 <?php endforeach ?>
 	<?php } ?>
+
 </div>
 
 <?php if ($id === null) { ?>
