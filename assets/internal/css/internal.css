@@ -46,7 +46,7 @@
 	text-align: left;
 	background: #2e353d;
   color: white;
-	width: 108%;
+	width: 110%;
   margin-left: -11px !important;
   margin-top: -1px !important;
   padding-left: 10px;
@@ -63,11 +63,9 @@
 
 .detailedTeamListElement:active {text-decoration: none;}
 
-
-
 .shiftRight {
  float: right;
- right: 10px; 
+ right: 12px; 
 }
 
 
