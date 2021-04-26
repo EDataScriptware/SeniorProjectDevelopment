@@ -23,9 +23,7 @@
 	<h2> <b> <?php echo $team->color ?> Team </b> </h2>
 
 <?php foreach ($veteran as $vet): ?>
-	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement">
-
-	<h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> </h3>
+	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> </h3>
 
 	</a>
 <?php endforeach ?>
@@ -72,9 +70,7 @@
 
 <?php foreach ($veteran as $vet): ?>
 	<?php if ($vet->team_id === $tem->team_id) { ?>
-		<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement">
-
-	<h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> </h3>
+		<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> </h3>
 
 	</a>
 	<?php  }?>
