@@ -8,7 +8,7 @@
 
 <div class = "buttonScrollView">
 	<button id = "aboutBut" class = "scrollItem scrollActive" onClick ="showAbout()"> <i class="fa fa-user fa-3x"></i> <br> <b> About </b></button>
-	<button id = "schBut" class = "scrollItem"  onClick ="showRes()"> <i class="fa fa-plane fa-3x"></i>  <br> <b>  Travel</b></button>
+	<button id = "schBut" class = "scrollItem"  onClick ="showRes()"> <i class="fa fa-bed fa-3x"></i>  <br> <b>  Hotel</b></button>
 	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "medBut" class = "scrollItem" onClick ="showMed()"> <i class="fa fa-medkit fa-3x"></i>  <br> <b> Medical </b></button><?php } ?>
 	<button id = "hisBut" class = "scrollItem" onClick ="showAcc()"> <i class="fa fa-history fa-3x"></i>  <br> <b> History </b></button>
 
@@ -99,17 +99,7 @@
 <p> <b> Check Out: </b> <?php echo date_format(date_create($hotel[0]->check_out),"Y/m/d h:i A"); ?>  </p>
 <hr>
 <?php } ?>
-<?php if ($flight != null) { ?>
-<h2> <b> Flight Info </b> </h2>
-<p> <b> Airline </b> <?php echo $flight[0]->airline ?>  </p>
-<p> <b> Flight No: </b> <?php echo $flight[0]->flight_number ?>  </p>
-<p> <b> Departure Date/Time: </b> <?php echo date_format(date_create($flight[0]->departure),"Y/m/d h:i A");  ?>  </p>
-<p> <b> Departure Location: </b> <?php echo $flight[0]->departure_location ?>  </p>
-<p> <b> Arrival Date/Time: </b> <?php echo date_format(date_create($flight[0]->arrival),"Y/m/d h:i A");  ?>  </p>
-<p> <b> Arrival Location: </b> <?php echo $flight[0]->arrival_location ?>  </p>
 
-<hr>
-<?php } ?>
 </div>
 
 <div id = "medicalInfo">
