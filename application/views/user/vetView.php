@@ -116,7 +116,7 @@
 <h2> <b> Basic Information </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 	<?php if ($veteran[0]->med_code != "") { ?>
-	<p> <b> Med Code: </b> <div id = 'med<?php echo $veteran[0]->med_code ?>' class = 'medCircle' > </div> <?php echo $veteran[0]->med_code ?> </p>
+	<p> <b> Med Code: </b> <span id = 'med<?php echo $veteran[0]->med_code ?>' class = 'medCircle' > </span> <?php echo $veteran[0]->med_code ?> </p>
 		<?php  } else { ?>
 	<p> <b> Med Code: </b> None </p>
 	<?php } ?>

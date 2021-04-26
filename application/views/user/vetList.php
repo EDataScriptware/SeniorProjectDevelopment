@@ -72,7 +72,7 @@
 	<?php if ($vet->team_id === $tem->team_id) { ?>
 		<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> </h3>
 
-			<?php
+		<?php
 		$this->db->select("*");
 		$this->db->from('guardian');
 		$this->db->where('guardian_id',$vet->guardian_id);
