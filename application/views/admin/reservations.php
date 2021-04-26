@@ -165,6 +165,10 @@ $(document).ready( function () {
 
             <input type="text" list='veterans' id="newVeteran_id" name="newVeteran_id" required > <br>
 
+        <label for="newGuardian_id">Guardian:</label>
+
+            <input type="text" list='guardians' id="newGuardian_id" name="newGuardian_id" required > <br>
+
         <label for="newRoom">Room:</label>
  
             <input type="text" id="newRoom" name="newRoom" required > <br>
@@ -182,7 +186,6 @@ $(document).ready( function () {
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary" style='display:none' id='addFlyBut' form ="addFly">Add New Flight Entry</button>
         <button type="submit" class="btn btn-primary" style='display:none' id='addHotelBut' form ="addHotel">Add New Hotel Entry</button>
-        <button type="submit" class="btn btn-primary" style='display:none' id='addEventBut' form ="addEvent">Add New Event Entry</button>
       </div>
     </div>
   </div>
@@ -236,7 +239,11 @@ $(document).ready( function () {
 
         <label for="veteran_id">Veteran:</label>
 
-            <input type="text" list='veterans' id="veteran_id" name="veteran_id" required size="10"> <br>
+            <input type="text" list='veterans' id="veteran_id" name="veteran_id" size="10"> <br>
+
+        <label for="guardian_id">Guardian:</label>
+
+            <input type="text" list='guardians' id="guardian_id" name="guardian_id" size="10"> <br>
 
         <label for="room">Room:</label>
 
