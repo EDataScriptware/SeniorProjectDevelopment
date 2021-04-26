@@ -416,7 +416,7 @@
 		<p>  <label for="service_rank"> Rank: </label> <input type="text" id="service_rank" name="service_rank"  value = '<?php echo $veteran[0]->service_rank ?>'> </p>
 		<h4> Job: </h4><textarea id="service_activity" name="service_activity" ><?php echo $veteran[0]->service_activity; ?></textarea>
 
-		<h4> Wars </h4>
+		<h4> Wars: </h4>
 
 		<?php foreach ($wars as $war): ?>
 		<?php if ($veteran[0]->$war == 1) {
@@ -430,7 +430,7 @@
 
 
 
-		<h4>  <label for="admin_comments"> Admin Comments: </label> <input type="text" id="admin_comments" name="admin_comments"  value = '<?php echo $veteran[0]->admin_comments ?> '> </h4>
+		  <label for="admin_comments"> <h4> Admin Comments: </h4> </label> <input type="text" id="admin_comments" name="admin_comments"  value = '<?php echo $veteran[0]->admin_comments ?> '> 
 		
 
         </form>
