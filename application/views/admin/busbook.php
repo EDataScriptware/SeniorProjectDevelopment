@@ -51,6 +51,7 @@
                 } ?>
             </tbody>
         </table>
+        <hr/>
     <?php } 
 } ?>
 
