@@ -90,7 +90,6 @@
 
 <div id = "reservations">
 
-
 <?php if ($hotel != null) { ?>
 <h2> <b> Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"> EDIT </button>  <?php } ?>  </b> </h2>
 <p> <b> Name: </b> <?php echo $hotel[0]->name ?>  </p>
@@ -99,6 +98,17 @@
 <p> <b> Check Out: </b> <?php echo date_format(date_create($hotel[0]->check_out),"Y/m/d h:i A"); ?>  </p>
 <hr>
 <?php } ?>
+
+
+<?php if ($gHotel != null) { ?>
+<h2> <b> Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"> EDIT </button>  <?php } ?>  </b> </h2>
+<p> <b> Name: </b> <?php echo $gHotel[0]->name ?>  </p>
+<p> <b> Room No: </b> <?php echo $gHotel[0]->room ?>  </p>
+<p> <b> Check In: </b> <?php echo date_format(date_create($gHotel[0]->check_in),"Y/m/d h:i A"); ?>  </p>
+<p> <b> Check Out: </b> <?php echo date_format(date_create($gHotel[0]->check_out),"Y/m/d h:i A"); ?>  </p>
+<hr>
+<?php } ?>
+
 
 </div>
 
