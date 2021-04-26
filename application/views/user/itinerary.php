@@ -12,3 +12,9 @@
     <iframe src="<?php echo base_url("./uploads/itinerary.pdf") ;?>#toolbar=0" width="100%" height="200%">
     </iframe>
 <?php } ?>
+
+<style>
+    .content {
+        height: 50vh;
+    }
+</style>
