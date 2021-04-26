@@ -95,8 +95,8 @@ $(document).ready( function () {
 
 <!-- GUARDDATALIST -->
 <datalist id ='guardians'>
-<?php foreach ($guardian as $guard): ?>
-        <option value='<?php echo $guard->guardian_id ?>'> <?php echo $guard->first_name ?> <?php echo $guard->last_name ?></option>
+<?php foreach ($guardian as $guardy): ?>
+        <option value='<?php echo $guardy->guardian_id ?>'> <?php echo $guardy->first_name ?> <?php echo $guardy->last_name ?></option>
 <?php endforeach ?>
 </datalist>
 
