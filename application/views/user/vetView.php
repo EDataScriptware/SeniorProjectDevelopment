@@ -3,7 +3,8 @@
 <h1 style = 'text-align:center'> <b> <?php echo $veteran[0]->first_name ?> <?php echo $veteran[0]->last_name ?> </b> </h1>
 
 <?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
-<?php $medMedication = array('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dementia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap') ?>
+<?php $medMedication = array('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dementia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap'); ?>
+<?php $wars = array('service_ww2','service_korea','service_cold_war','service_vietnam'); ?>
 
 
 <div class = "buttonScrollView">
@@ -199,7 +200,7 @@
 </div>
 
 <div id = "accommodations">
-<h2> <b> History </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?> </h2>
+<h2> <b> History </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editHistoryModal"> EDIT </button>  <?php } ?> </h2>
 	
 <h2> <b> Veteran History </b> </h2>
 
@@ -216,7 +217,7 @@
 
 	<h2> <b> Infomation History </b> </h2>
 
-<p> <b> Last Updated: </b> <?php echo $veteran[0]->admin_comments ?>  </p>
+	<p> <b> Admin Comments: </b> <?php echo $veteran[0]->admin_comments ?>  </p>
 
 </div>
 
@@ -259,9 +260,7 @@
         <option value="Green">Green</option>
         </select>
 
-		<script>
-			document.getElementById("med_code").value = "<?php echo $veteran[0]->med_code ?>";
-		</script>
+		<script>document.getElementById("med_code").value = "<?php echo $veteran[0]->med_code ?>";</script>
 
 	<h4> Conditions </h4>	
 
@@ -290,12 +289,12 @@
 	<textarea id="med_others" name="med_others" ><?php echo $veteran[0]->med_others; ?></textarea>
 
 	<h3>Accommodations </h3>
-	<?php foreach ($medAccomidations as $accomidations): ?>
-		<?php if ($veteran[0]->$accomidations == 1) {
-				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' class='checker' name='$accomidations' checked='checked' value='1'>"   ;
+	<?php foreach ($wars as $war): ?>
+		<?php if ($veteran[0]->$war == 1) {
+				echo str_replace('_', ' ',ucfirst(substr($war,4))).": <input type='checkbox' id='$war' class='checker' name='$war' checked='checked' value='1'>"   ;
 				echo '<br>';
 		}else {
-			echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' class='checker' name='$accomidations'  value='1'>"   ;
+			echo str_replace('_', ' ',ucfirst(substr($war,4))).": <input type='checkbox' id='$war' class='checker' name='$war'  value='1'>"   ;
 			echo '<br>';
 		}?>
 	<?php endforeach ?>
@@ -397,7 +396,51 @@
 </div>
 <?php } ?>
 
+<!-- Edit History Modal -->
+<div class="modal fade" id="editHistoryModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Edit Veteran History</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 
+        <form id ="editHistory" method='POST' action='<?php echo base_url('User/updateHistory/'.$veteran[0]->veteran_id); ?>' >
+
+
+		
+		<p>  <label for="service_branch"> Service Branch: </label> <input type="text" id="service_branch" name="service_branch"  value = '<?php echo $veteran[0]->service_branch ?>'> </p>
+		<p>  <label for="service_rank"> Rank: </label> <input type="text" id="service_rank" name="service_rank"  value = '<?php echo $veteran[0]->service_rank ?>'> </p>
+		<p> Job: </p><textarea id="service_activity" name="service_activity" ><?php echo $veteran[0]->service_activity; ?></textarea>
+
+		<h4> Wars </h4>
+
+		<?php foreach ($medAccomidations as $accomidations): ?>
+		<?php if ($veteran[0]->$accomidations == 1) {
+				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' class='checker' name='$accomidations' checked='checked' value='1'>"   ;
+				echo '<br>';
+		}else {
+			echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' class='checker' name='$accomidations'  value='1'>"   ;
+			echo '<br>';
+		}?>
+		<?php endforeach ?>
+
+
+
+		<p>  <label for="admin_comments"> Admin Comments: </label> <input type="text" id="admin_comments" name="admin_comments"  value = '<?php echo $veteran[0]->admin_comments ?> '> </p>
+		
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id='editHotelBut' form ="editHistory">Edit Hotel Entry</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 
@@ -405,6 +448,11 @@ $(document).ready(function() {
 
 	  // on form submit
         $("#update").on('submit', function() {
+            // to each unchecked checkbox
+            $(this).find('input[type=checkbox]:not(:checked)').prop('checked', true).val(0);
+        })	
+
+		$("#editHistory").on('submit', function() {
             // to each unchecked checkbox
             $(this).find('input[type=checkbox]:not(:checked)').prop('checked', true).val(0);
         })	
