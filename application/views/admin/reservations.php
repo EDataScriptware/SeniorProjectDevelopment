@@ -105,11 +105,11 @@ $(document).ready( function () {
 <?php foreach ($guardian as $guard): ?>
     <?php $skip = false; ?>
     <?php foreach ($hotel as $hot): ?>
-     <?php if ($hot->$veteran_id === $vet->veteran_id) { $skip = true; break;} ?> 
+     <?php if ($hot->$guardian_id === $guard->guardian_id) { $skip = true; break;} ?> 
     <?php endforeach ?>
 
     <?php if ($skip === false) { ?>
-        <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option>
+        <option value='<?php echo $guard->guardian_id ?>'> <?php echo $guard->first_name ?> <?php echo $guard->last_name ?></option>
         <?php }else {} ?>
 <?php endforeach ?>
 </datalist>
