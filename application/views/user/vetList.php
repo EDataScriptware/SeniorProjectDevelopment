@@ -23,7 +23,7 @@
 	<h2> <b> <?php echo $team->color ?> Team </b> </h2>
 
 <?php foreach ($veteran as $vet): ?>
-	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> <span class = 'medCircle shiftRight <?php echo strtolower($tem->color) ?>' > </span> </h3>
+	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> <span class = 'medCircle shiftRight <?php echo strtolower($team->color) ?>' > </span> </h3>
 
 		<?php
 		$this->db->select("*");
@@ -53,7 +53,7 @@
 
 
 		<?php foreach ($bus as $b): ?>
-		<?php if ($tem->bus_id === $b->bus_id) { ?>
+		<?php if ($team->bus_id === $b->bus_id) { ?>
 		<p> <b> <?php echo $b->name ?> </b>  </p> 
 		<?php break; } ?>
 		<?php endforeach ?>
