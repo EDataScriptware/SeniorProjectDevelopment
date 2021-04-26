@@ -408,7 +408,7 @@
       </div>
       <div class="modal-body">
 
-        <form id ="editHistory" method='POST' action='<?php echo base_url('User/updateHistory/'.$veteran[0]->veteran_id); ?>' >
+        <form id ="editHistory" method='POST' action='<?php echo base_url('User/updateInfo/'.$veteran[0]->veteran_id); ?>'>
 
 
 		

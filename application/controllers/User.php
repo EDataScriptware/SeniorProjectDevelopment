@@ -176,6 +176,18 @@ class User extends CI_Controller {
 
 	}
 
+	public function updateGuardianHotelInfo($vetId) {
+
+		$postData = $this->input->post();
+
+		$this->db->where('veteran_id', $vetId);
+		$this->db->update('hotel_info', $postData); 
+
+		redirect('vetView/'.$vetId);
+
+
+	}
+
 	public function addEvent($team) {
 		$title = $this->input->post('newTitle');
 				$description = $this->input->post('newDescription');
