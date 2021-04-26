@@ -72,7 +72,11 @@
 
 <?php foreach ($veteran as $vet): ?>
 	<?php if ($vet->team_id === $tem->team_id) { ?>
-	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="teamListElement"><?php echo $vet->first_name ?> <?php echo$vet->last_name?></a>
+		<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement">
+
+	<h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> </h3>
+
+	</a>
 	<?php  }?>
 <?php endforeach ?>
 </div>
