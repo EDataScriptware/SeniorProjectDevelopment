@@ -87,6 +87,8 @@
 		<p> <b> Med Code: </b> None </p>
 		<?php } ?>
 
+		<p> <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <i class="fa fa-tint fa-lg"></i>  <?php } ?> </b>  </p> 
+
 	</a>
 	<?php  }?>
 <?php endforeach ?>
