@@ -200,6 +200,8 @@
 	width: 25px;
 	border-radius: 50%;
 	display: inline-block;
+  position: relative;
+  top: 6px;
 }
 
 
