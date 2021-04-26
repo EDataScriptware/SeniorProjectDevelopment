@@ -289,15 +289,15 @@
 	<textarea id="med_others" name="med_others" ><?php echo $veteran[0]->med_others; ?></textarea>
 
 	<h3>Accommodations </h3>
-	<?php foreach ($wars as $war): ?>
-		<?php if ($veteran[0]->$war == 1) {
-				echo str_replace('_', ' ',ucfirst(substr($war,4))).": <input type='checkbox' id='$war' class='checker' name='$war' checked='checked' value='1'>"   ;
+	<?php foreach ($medAccomidations as $accomidations): ?>
+		<?php if ($veteran[0]->$accomidations == 1) {
+				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' class='checker' name='$accomidations' checked='checked' value='1'>"   ;
 				echo '<br>';
 		}else {
-			echo str_replace('_', ' ',ucfirst(substr($war,4))).": <input type='checkbox' id='$war' class='checker' name='$war'  value='1'>"   ;
+			echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' class='checker' name='$accomidations'  value='1'>"   ;
 			echo '<br>';
 		}?>
-	<?php endforeach ?>
+		<?php endforeach ?>
 
 	<h4> Medical Chair Location: </h4>
 	<textarea id="med_chair_loc" name="med_chair_loc" ><?php echo $veteran[0]->med_chair_loc; ?></textarea>
@@ -418,12 +418,12 @@
 
 		<h4> Wars </h4>
 
-		<?php foreach ($medAccomidations as $accomidations): ?>
-		<?php if ($veteran[0]->$accomidations == 1) {
-				echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' class='checker' name='$accomidations' checked='checked' value='1'>"   ;
+		<?php foreach ($wars as $war): ?>
+		<?php if ($veteran[0]->$war == 1) {
+				echo str_replace('_', ' ',ucfirst(substr($war,4))).": <input type='checkbox' id='$war' class='checker' name='$war' checked='checked' value='1'>"   ;
 				echo '<br>';
 		}else {
-			echo str_replace('_', ' ',ucfirst(substr($accomidations,4))).": <input type='checkbox' id='$accomidations' class='checker' name='$accomidations'  value='1'>"   ;
+			echo str_replace('_', ' ',ucfirst(substr($war,4))).": <input type='checkbox' id='$war' class='checker' name='$war'  value='1'>"   ;
 			echo '<br>';
 		}?>
 		<?php endforeach ?>
