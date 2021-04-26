@@ -76,44 +76,6 @@ $(document).ready( function () {
     </tbody>
 </table>
 
-<h2> Event Information <button type="button" class="btn btn-primary" onclick = "addBlock('event')"  > ADD </button>  </h2>
-
-<table id="eventTable"  class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Team</th>
-            <th>Date</th>
-            <th>Start Time</th>
-            <th>End time</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($event as $eve): ?>
-        <tr>
-            <td> <?php echo $eve->title ?>  </td>
-            <td> <?php echo $eve->description ?>  </td>
-            <td> <?php 
-             foreach ($team as $tem):
-                if ($eve->team_id == $tem->team_id) {
-                    echo $tem->color;
-                    break;
-                }
-            endforeach;
-            
-            ?>  </td>
-            <td> <?php echo date_format(date_create($eve->date),"Y/m/d"); ?>  </td>
-            <td> <?php echo date_format(date_create($eve->start),"h:i A"); ?>  </td>
-            <td> <?php echo date_format(date_create($eve->end),"h:i A"); ?>  </td>
-            <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $eve->event_id ?>,'event')"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $eve->event_id ?>,'event')"  > REMOVE </button> </td>
-        </tr>
-        <?php endforeach ?>
-    </tbody>
-</table>
-
-
 <!-- VETDATALIST -->
 <datalist id ='veterans'>
 <?php foreach ($veteran as $vet): ?>
@@ -192,40 +154,6 @@ $(document).ready( function () {
             <input type="datetime-local" id="newCheck_out" name="newCheck_out">  <br>
 
         </form>
-
-        <form id ="addEvent" method='POST' style='display:none' >
-            <label for="newTitle">Title:</label>
- 
-                <input type="text" id="newTitle" name="newTitle" required size="10"> <br>
-
-            <label for="newTeam_id">Team Id:</label>
-            <select id="newTeam_id" name="newTeam_id">
-            <?php foreach($team as $tem): ?>
-            <?php if ($tem->mission_id === $id) { ?>
-            <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color?></option>
-
-            <?php } ?>
-            <?php endforeach ?>
-            </select> <br>
-
-            <label for="newDescription">Description:</label>
-
-                <textarea id="newDescription" name="newDescription" > </textarea>  <br>
-
-            <label for="newDate">Date:</label>
-            
-                <input type="date" id="newDate" name="newDate">  <br>
-
-            <label for="newStart">Start Time:</label>
-            
-                <input type="time" id="newStart" name="newStart">  <br>
-
-            <label for="newEnd">End Time:</label>
-            
-                <input type="time" id="newEnd" name="newEnd">  <br>
-
-        </form>
-        
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary" style='display:none' id='addFlyBut' form ="addFly">Add New Flight Entry</button>
@@ -300,45 +228,10 @@ $(document).ready( function () {
           
         </form>
 
-        <form id ="editEvent" method='POST' style='display:none' >
-
-        <label for="title">Title:</label>
-
-            <input type="text" id="title" name="title" required size="10"> <br>
-
-            <label for="team_id">Team Id:</label>
-            <select id="team_id" name="team_id">
-            <?php foreach($team as $tem): ?>
-            <?php if ($tem->mission_id === $id) { ?>
-            <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color?></option>
-
-            <?php } ?>
-            <?php endforeach ?>
-            </select> <br>
-
-        <label for="description">Description:</label>
-
-            <textarea id="description" name="description" > </textarea>  <br>
-
-        <label for="date">Date:</label>
-
-            <input type="date" id="date" name="date">  <br>
-
-        <label for="start">Start Time:</label>
-
-            <input type="time" id="start" name="start">  <br>
-
-        <label for="end">End Time:</label>
-
-            <input type="time" id="end" name="end">  <br>
-        </form>
-
-
       </div>
       <div class="modal-footer">
       <button type="submit" class="btn btn-primary" style='display:none' id='editFlyBut' form ="editFly">Edit Flight Entry</button>
         <button type="submit" class="btn btn-primary" style='display:none' id='editHotelBut' form ="editHotel">Edit Hotel Entry</button>
-        <button type="submit" class="btn btn-primary" style='display:none' id='editEventBut' form ="editEvent">Edit Event Entry</button>
       </div>
     </div>
   </div>
@@ -359,9 +252,7 @@ function addBlock($type) {
 
             document.getElementById("addHotel").style.display = "none";
             document.getElementById("addHotelBut").style.display = "none";
-            
-            document.getElementById("addEvent").style.display = "none";
-            document.getElementById("addEventBut").style.display = "none";
+
 
         break;
 
@@ -374,21 +265,6 @@ function addBlock($type) {
             document.getElementById("addHotel").style.display = "block";
             document.getElementById("addHotelBut").style.display = "block";
 
-            document.getElementById("addEvent").style.display = "none";
-            document.getElementById("addEventBut").style.display = "none";
-        break;
-
-        case 'event':
-            document.getElementById("addEvent").action = "Admin/addEvent/"+$type;
-
-            document.getElementById("addFly").style.display = "none";
-            document.getElementById("addFlyBut").style.display = "none";
-
-            document.getElementById("addHotel").style.display = "none";
-            document.getElementById("addHotelBut").style.display = "none";
-
-            document.getElementById("addEvent").style.display = "block";
-            document.getElementById("addEventBut").style.display = "block";
         break;
 
     }
@@ -413,9 +289,7 @@ function editBlock($id, $type) {
 
             document.getElementById("editHotel").style.display = "none";
             document.getElementById("editHotelBut").style.display = "none";
-            
-            document.getElementById("editEvent").style.display = "none";
-            document.getElementById("editEventBut").style.display = "none";
+
 
             document.getElementById("arrival").value = $res[0]['arrival'].replace(" ", "T");
             document.getElementById("departure").value = $res[0]['departure'].replace(" ", "T");;
@@ -442,44 +316,12 @@ function editBlock($id, $type) {
 
             document.getElementById("editHotel").style.display = "block";
             document.getElementById("editHotelBut").style.display = "block";
-
-            document.getElementById("editEvent").style.display = "none";
-            document.getElementById("editEventBut").style.display = "none";
             
             document.getElementById("veteran_id").value = $res[0]['veteran_id'];
             document.getElementById("name").value = $res[0]['name'];
             document.getElementById("room").value = $res[0]['room'];
             document.getElementById("check_in").value = $res[0]['check_in'].replace(" ", "T");
             document.getElementById("check_out").value = $res[0]['check_out'].replace(" ", "T");
-
-        });
-
-        break;
-
-        case 'event':
-
-            document.getElementById("editEvent").action = "Admin/editEvent/"+$id+'/'+$type;
-
-            $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
-                var $res = JSON.parse(result);
-                console.log($res[0]);
-
-
-            document.getElementById("editFly").style.display = "none";
-            document.getElementById("editFlyBut").style.display = "none";
-
-            document.getElementById("editHotel").style.display = "none";
-            document.getElementById("editHotelBut").style.display = "none";
-
-            document.getElementById("editEvent").style.display = "block";
-            document.getElementById("editEventBut").style.display = "block";
-
-
-            document.getElementById("description").value = $res[0]['description'];
-            document.getElementById("start").value = $res[0]['start'];
-            document.getElementById("end").value = $res[0]['end'];
-            document.getElementById("date").value = $res[0]['date'];
-            document.getElementById("title").value = $res[0]['title'];
 
         });
 
@@ -504,13 +346,6 @@ function removeBlock($id, $type) {
         $.post('Admin/removeEvent', {id: $id, type: $type}, function () {
         location.reload();
          }); } else {}
-        break;
-
-        case 'event':
-            if (confirm("Are you sure you want to remove this event from the mission?"  )) {
-        $.post('Admin/removeEvent', {id: $id, type: $type}, function () {
-        location.reload();
-        });} else {}
         break;
 
     }

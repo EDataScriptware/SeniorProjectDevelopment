@@ -680,27 +680,6 @@ class Admin extends CI_Controller {
 				$this->db->insert('hotel_info', $data); 
 
 				break;
-			case 'event':
-				$title = $this->input->post('newTitle');
-				$description = $this->input->post('newDescription');
-				$date = $this->input->post('newDate');
-				$start = $this->input->post('newStart');
-				$end = $this->input->post('newEnd');
-				$team_id = $this->input->post('newTeam_id');
-				
-				$data = array(
-					'title' => $title,
-					'team_id' => $team_id,
-					'description' => $description,
-					'date' => $date,
-					'start' => $start,
-					'end' => $end,
-					'mission_id' => $currMission_id,
-				);
-
-				$this->db->insert('event', $data); 
-
-				break;
 		}
 		redirect('reservations');
 	}
@@ -715,10 +694,6 @@ class Admin extends CI_Controller {
 			case 'hotel':
 				$this->db->where('hotel_id', $id);
 				$this->db->update('hotel_info',$postData);
-				break;
-			case 'event':
-				$this->db->where('event_id', $id);
-				$this->db->update('event',$postData);
 				break;
 		}
 		redirect('reservations');
@@ -737,10 +712,6 @@ class Admin extends CI_Controller {
 			case 'hotel':
 				$this->db->where('hotel_id', $id);
 				$data =	$this->db->get('hotel_info')->result();
-				break;
-			case 'event':
-				$this->db->where('event_id', $id);
-				$data =	$this->db->get('event')->result();
 				break;
 		}
 
@@ -762,10 +733,6 @@ class Admin extends CI_Controller {
 			case 'hotel':
 				$this->db->where('hotel_id', $id);
 				$this->db->delete('hotel_info');
-				break;
-			case 'event':
-				$this->db->where('event_id', $id);
-				$this->db->delete('event');
 				break;
 		}
 		redirect('reservations');
