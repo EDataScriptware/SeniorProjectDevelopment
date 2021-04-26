@@ -82,7 +82,7 @@
 	<?php if ($guardian != null) { ?>	<p> <b> Gaurdian Name: </b> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p> <?php } ?>
 
 		<?php if ($vet->med_code != "") { ?>
-		<p> <b> Med Code: </b> <div class = 'medCircle med<?php echo $vet->med_code ?>' > </div> <?php echo $vet->med_code ?> </p>
+		<p> <b> Med Code: </b> <span class = 'medCircle med<?php echo $vet->med_code ?>' > </span> <?php echo $vet->med_code ?> </p>
 			<?php  } else { ?>
 		<p> <b> Med Code: </b> None </p>
 		<?php } ?>
