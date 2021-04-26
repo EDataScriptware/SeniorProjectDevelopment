@@ -95,8 +95,8 @@
 
 	<?php if ($guardian != null) { ?>	<p> <b> Gaurdian Name: </b> <?php echo $guardian[0]->first_name ?> <?php echo $guardian[0]->last_name ?> </p> <?php } ?>
 
-	<?php if ($vHotel != null) { ?>	<p> <b> Veteran Hotel: </b> <?php echo $vHotel[0]->name ?> room <?php echo $vHotel[0]->room ?> </p> <?php } ?>
-	<?php if ($gHotel != null) { ?>	<p> <b> Guardian Hotel: </b> <?php echo $gHotel[0]->name ?> room <?php echo $gHotel[0]->room ?> </p> <?php } ?>
+	<?php if ($vHotel != null) { ?>	<p> <b> Veteran Hotel: </b> <?php echo $vHotel[0]->name ?>, <b> Room: </b> <?php echo $vHotel[0]->room ?> </p> <?php } ?>
+	<?php if ($gHotel != null) { ?>	<p> <b> Guardian Hotel: </b> <?php echo $gHotel[0]->name ?>, <b> Room: </b> <?php echo $gHotel[0]->room ?> </p> <?php } ?>
 
 
 	<?php foreach ($bus as $b): ?>
