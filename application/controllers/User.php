@@ -83,7 +83,7 @@ class User extends CI_Controller {
 
 		$this->db->select("*");
 		$this->db->from('hotel_info');
-		$this->db->where('guardian_id', $data['veteran']->guardian_id);
+		$this->db->where('guardian_id', $data['veteran'][0]->guardian_id);
 		$data['gHotel'] = $this->db->get()->result();
 
 		$this->db->select_max("mission_id");
