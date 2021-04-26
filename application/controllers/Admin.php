@@ -427,7 +427,7 @@ class Admin extends CI_Controller {
 		unset($postData['pass_reset']);
 
 		if(strlen($newPass) >= 4) {
-			$postData->password = password_hash($newPass, PASSWORD_DEFAULT);
+			$postData['password'] = password_hash($newPass, PASSWORD_DEFAULT);
 		}
 
 		var_dump($postData);
