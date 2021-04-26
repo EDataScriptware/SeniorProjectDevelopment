@@ -90,15 +90,6 @@
 </div>
 
 <div id = "reservations">
-	
-<?php if (($hotel != null && $gHotel != null) && $hotel[0] === $gHotel[0]) { ?>
-<h3> <b> Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"> EDIT </button>  <?php } ?>  </b> </h3>
-<p> <b> Name: </b> <?php echo $hotel[0]->name ?>  </p>
-<p> <b> Room No: </b> <?php echo $hotel[0]->room ?>  </p>
-<p> <b> Check In: </b> <?php echo date_format(date_create($hotel[0]->check_in),"Y/m/d h:i A"); ?>  </p>
-<p> <b> Check Out: </b> <?php echo date_format(date_create($hotel[0]->check_out),"Y/m/d h:i A"); ?>  </p>
-
-<?php } else { ?>
 
 <?php if ($hotel != null) { ?>
 <h3> <b> Veteran Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"> EDIT </button>  <?php } ?>  </b> </h3>
@@ -111,7 +102,9 @@
 
 
 <?php if ($gHotel != null) { ?>
-<h3> <b> Guardian Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editGuardianModal"> EDIT </button>  <?php } ?>  </b> </h3>
+<h3> <b> Guardian Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?> 
+	<?php if ($hotel[0] != $gHotel[0]) { ?>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editGuardianModal"> EDIT </button> <?php } ?>  <?php } ?>  </b> </h3>
 <p> <b> Name: </b> <?php echo $gHotel[0]->name ?>  </p>
 <p> <b> Room No: </b> <?php echo $gHotel[0]->room ?>  </p>
 <p> <b> Check In: </b> <?php echo date_format(date_create($gHotel[0]->check_in),"Y/m/d h:i A"); ?>  </p>
@@ -119,7 +112,7 @@
 <hr>
 <?php } ?>
 
-<?php } ?>
+
 
 </div>
 
