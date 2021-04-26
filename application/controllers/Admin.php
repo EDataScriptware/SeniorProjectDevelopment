@@ -425,10 +425,17 @@ class Admin extends CI_Controller {
 
 		var_dump($postData);
 
-		// $this->db->where('iduser', $id);
-		// $this->db->update('user', $postData); 
+		$newPass = $postData['pass_reset'];
+		unset($postData['pass_reset']);
 
-		// redirect('users');
+		if(strlen($newPass) >= 4) {
+			$postData->password = password_hash($newPass, PASSWORD_DEFAULT);
+		}
+
+		$this->db->where('iduser', $id);
+		$this->db->update('user', $postData); 
+
+		redirect('users');
 	}
 
 	public function updateVeteran($id) {

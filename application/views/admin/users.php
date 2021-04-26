@@ -83,7 +83,7 @@
     
     <p id = "passAdd"> Password:  <input type="text" id="password" name="password"> </p>
     <!-- <p id = "passBlock"> Password:  <button type="button" class="btn btn-primary" id ="reset"  > Reset</button> </p> -->
-    <p id = "passBlock"> Password:  <input type="text" id="pass_reset" name="pass_reset"> </p>
+    <p id = "passBlock"> New Password:  <input type="text" id="pass_reset" name="pass_reset" minlength="4"> </p>
 
     <p> <label for="user_type">User Type:</label><input type="text" id="user_type" name="user_type"><br> </p>
 
