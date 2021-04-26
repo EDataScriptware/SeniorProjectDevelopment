@@ -348,7 +348,7 @@
 
 
 <!-- Edit Guardian Modal -->
-<?php if ($hotel != null) { ?>
+<?php if ($gHotel != null) { ?>
 <div class="modal fade" id="editGuardianModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
   <div class="modal-dialog" >
     <div class="modal-content">
