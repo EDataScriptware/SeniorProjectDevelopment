@@ -7,8 +7,8 @@
 <hr/>
 <?php if(!file_exists('./uploads/itinerary.pdf')) { ?>
     <h3>No itinerary found.</h3>
-    <p>Admin must upload a pdf file named: "itinerary" to have it display here.</p>
+    <p><b>Admin must upload a pdf file named: "itinerary" to have it display here.</b></p>
 <?php } else { ?>
-    <iframe src=<?php echo base_url("./uploads/itinerary.pdf") ;?> width="100%" height="100%">
+    <iframe src="<?php echo base_url("./uploads/itinerary.pdf") ;?>#toolbar=0" width="100%" height="1000px">
     </iframe>
 <?php } ?>
