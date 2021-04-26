@@ -10,8 +10,6 @@
 </div>
 </div>
 
-
-
 <?php } ?>
 <div id = "teamView"> 
 
@@ -115,7 +113,7 @@
 
 	<script>
 			function showTeam() {
-		document.getElementById("teamView").style.display = "inline-block";
+		document.getElementById("teamView").style.display = "block";
 		document.getElementById("busView").style.display = "none";
 		document.getElementById("staffView").style.display = "none";
 
@@ -123,7 +121,7 @@
 
 	function showBus() {
 		document.getElementById("teamView").style.display = "none";
-		document.getElementById("busView").style.display = "inline-block";
+		document.getElementById("busView").style.display = "block";
 		document.getElementById("staffView").style.display = "none";
 
 	}
@@ -131,7 +129,7 @@
 	function showStaff() {
 		document.getElementById("teamView").style.display = "none";
 		document.getElementById("busView").style.display = "none";
-		document.getElementById("staffView").style.display = "inline-block";
+		document.getElementById("staffView").style.display = "block";
 
 	}
 
