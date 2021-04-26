@@ -414,7 +414,7 @@
 		
 		<p>  <label for="service_branch"> Service Branch: </label> <input type="text" id="service_branch" name="service_branch"  value = '<?php echo $veteran[0]->service_branch ?>'> </p>
 		<p>  <label for="service_rank"> Rank: </label> <input type="text" id="service_rank" name="service_rank"  value = '<?php echo $veteran[0]->service_rank ?>'> </p>
-		<p> Job: </p><textarea id="service_activity" name="service_activity" ><?php echo $veteran[0]->service_activity; ?></textarea>
+		<h4> Job: </h4><textarea id="service_activity" name="service_activity" ><?php echo $veteran[0]->service_activity; ?></textarea>
 
 		<h4> Wars </h4>
 
@@ -430,7 +430,7 @@
 
 
 
-		<p>  <label for="admin_comments"> Admin Comments: </label> <input type="text" id="admin_comments" name="admin_comments"  value = '<?php echo $veteran[0]->admin_comments ?> '> </p>
+		<h4>  <label for="admin_comments"> Admin Comments: </label> <input type="text" id="admin_comments" name="admin_comments"  value = '<?php echo $veteran[0]->admin_comments ?> '> </h4>
 		
 
         </form>
