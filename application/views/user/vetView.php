@@ -89,7 +89,8 @@
 </div>
 
 <div id = "reservations">
-<?php if ($hotel[0] === $gHotel[0]) { ?>
+	
+<?php if ($hotel != null && $gHotel != null && $hotel[0] === $gHotel[0]) { ?>
 <h3> <b> Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"> EDIT </button>  <?php } ?>  </b> </h3>
 <p> <b> Name: </b> <?php echo $hotel[0]->name ?>  </p>
 <p> <b> Room No: </b> <?php echo $hotel[0]->room ?>  </p>
