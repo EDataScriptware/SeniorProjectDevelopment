@@ -62,9 +62,7 @@
 	
 	<?php if ($first === true) { ?>
     <div id = "teamCon<?php echo $tem->color ?>"> 
-    <?php 
-    $first = false; 
-        } else { ?>
+    <?php $first = false; } else { ?>
         <div id = "teamCon<?php echo $tem->color ?>" style='display:none'> 
     <?php } ?>
 
