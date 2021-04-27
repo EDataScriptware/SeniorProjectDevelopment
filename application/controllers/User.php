@@ -101,7 +101,7 @@ class User extends CI_Controller {
 	}
 
 	public function sendEmail() {
-		$this->load->library('email');
+		// $this->load->library('email');
 
 		$postData = $this->input->post();
 
@@ -112,19 +112,21 @@ class User extends CI_Controller {
 
 		// $this->email->initialize($config);
 
-		$this->email->from('HonorFlight_Incident@rwby.student.rit.edu', $postData['name']);
-		$this->email->to('zpe4421@g.rit.edu');
-		// $this->email->cc('another@another-example.com');
-		// $this->email->bcc('them@their-example.com');
+		// $this->email->from('HonorFlight_Incident@rwby.student.rit.edu', $postData['name']);
+		// $this->email->to('zpe4421@g.rit.edu');
+		// // $this->email->cc('another@another-example.com');
+		// // $this->email->bcc('them@their-example.com');
 
-		$this->email->subject($postData['subject']);
-		$this->email->message($postData['description']);
+		// $this->email->subject($postData['subject']);
+		// $this->email->message($postData['description']);
 
-		$this->email->send();
+		// $test = $this->email->send();
 
-		// $msg = "Submitted By: ".$postData["name"]."\n\n".$postData["description"];
+		
 
-		// $msg = wordwrap($msg, 80);
+		$msg = "Submitted By: ".$postData["name"]."\n\n".$postData["description"];
+
+		$msg = wordwrap($msg, 80);
 
 		// $headers = "MIME-Version: 1.0" . "\r\n";
 		// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -132,11 +134,18 @@ class User extends CI_Controller {
 		// // More headers
 		// $headers .= 'From: <HonorFlight_Incident@rwby.student.rit.edu>' . "\r\n";
 
-		// mail("zacheas@outlook.com", $postData["subject"], $msg, $headers);
+		// $test = mail("zacheas@outlook.com", $postData["subject"], $msg, $headers);
+
+		$success = mail('example@example.com','Test Email',$msg);
+		if (!$success) {
+			print_r(error_get_last()['message']);
+		}
+
+		var_dump($success) ;
 		
-		$this->load->view('user/template/header');
-		$this->load->view('user/incident_sent');
-		$this->load->view('user/template/footer');
+		// $this->load->view('user/template/header');
+		// $this->load->view('user/incident_sent');
+		// $this->load->view('user/template/footer');
 
 	}
 
