@@ -60,6 +60,7 @@ $route['vetList/:num'] = 'User/vetList';
 $route['vetView/:num'] = 'User/vetView'; 
 $route['mission_documents'] = 'User/fileView'; 
 $route['mission_itinerary'] = 'User/itineraryView'; 
+$route['incident'] = 'User/incident' ;
 
 //Admin Routes
 // $route['admin'] = 'Admin'; //admin home screen

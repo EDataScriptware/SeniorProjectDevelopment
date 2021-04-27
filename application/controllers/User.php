@@ -100,6 +100,15 @@ class User extends CI_Controller {
 		$this->load->view('user/template/footer');
 	}
 
+	public function sendEmail() {
+		$this->load->library('email');
+
+		$postData = $this->input->post();
+
+		var_dump($postData) ;
+
+	}
+
     public function fileView() //all important files can be viewed here View
 	{
 		$data['allTeams'] = $this->Index_model->get_TeamList();
