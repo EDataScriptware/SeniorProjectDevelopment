@@ -6,7 +6,7 @@
     <input type="text" id="subject" name="subject"><br><br>
 
     <label for="description">Incident Description:</label><br>
-    <textarea id="description" name="description" rows="10" cols="100"></textarea><br><br>
+    <textarea id="description" name="description" rows="15" cols="30"></textarea><br><br>
 
     <button input type='submit' class="btn btn-primary" name='submit' value='submit'>Create</button>
 </form>
