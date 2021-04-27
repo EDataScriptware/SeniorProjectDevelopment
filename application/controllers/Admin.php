@@ -301,7 +301,7 @@ class Admin extends CI_Controller {
 
 		$data['flight'] = $this->Flight_model->get_mission_flight_data($currMission_id);
 		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
-		$data['guardian'] = $this->Guardian_model->get_mission_guardian_data($currMission_id);
+		$data['guardian'] = $this->Guardian_model->get_all_guardian_data();
 
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/reservations', $data);
