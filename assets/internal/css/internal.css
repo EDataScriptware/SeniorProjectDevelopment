@@ -86,6 +86,9 @@
 	display: none;
   }
   
+.blueSpan {
+  color: lightblue;
+}
 
 .scrollItem {
 	display: inline-block;

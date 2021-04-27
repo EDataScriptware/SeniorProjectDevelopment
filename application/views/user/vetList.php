@@ -199,8 +199,8 @@
 	<?php endforeach ?>
 
 		<?php if ($vet->med_code != "") { ?>
-		<p> <b> Med Code: </b> <span class = 'medCircle med<?php echo $vet->med_code ?>' > </span> <?php echo $vet->med_code ?>  <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <i class="fa fa-tint fa-lg"></i>  <?php } ?> </b> </p>
-		<?php  } else { ?><p> <b> Med Code: </b> None  <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <i class="fa fa-tint fa-lg"></i> <?php } ?> </b> </p><?php } ?>
+		<p> <b> Med Code: </b> <span class = 'medCircle med<?php echo $vet->med_code ?>' > </span> <?php echo $vet->med_code ?>  <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <span class ='blueSpan'> <i class="fa fa-tint fa-lg"></i> </span>  <?php } ?> </b> </p>
+		<?php  } else { ?><p> <b> Med Code: </b> None  <b><?php if ($vet->med_oxygen != 0) { ?> O2 <?php } ?></b>  <b><?php if ($vet->med_cpap != 0) { ?> <span class ='blueSpan'> <i class="fa fa-tint fa-lg"></i> </span> <?php } ?> </b> </p><?php } ?>
 
 	</a>
 	<?php  }?>
