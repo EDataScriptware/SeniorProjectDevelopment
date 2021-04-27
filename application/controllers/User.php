@@ -141,7 +141,7 @@ class User extends CI_Controller {
 			print_r(error_get_last()['message']);
 		}
 
-		var_dump($test) ;
+		var_dump($success) ;
 		
 		// $this->load->view('user/template/header');
 		// $this->load->view('user/incident_sent');
