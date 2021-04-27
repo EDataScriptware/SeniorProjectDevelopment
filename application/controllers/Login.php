@@ -31,7 +31,7 @@ class Login extends CI_Controller {
 			if($userObj && password_verify($postData['password'], $userObj->password)) {
 				$data['confirm'] = true;
 				
-				session_start();
+				// session_start();
 
 				$currMission_id = $_SESSION["mission"];
 
