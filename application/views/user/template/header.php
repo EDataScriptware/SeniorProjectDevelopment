@@ -88,18 +88,16 @@
 <select style='display:inline;' name="mission_id" id="mission_id" onchange='swap()'>
 <?php foreach ($mission as $miss): ?>
         <option value="<?php echo $miss->mission_id ?>"><?php echo $miss->title ?></option>
-        <?php endforeach ?>
+<?php endforeach ?>
 </select>
 
 <script>
-  $( document ).ready(function() {
-    document.getElementById("mission_id").value = <?php echo $_SESSION['mission']; ?>
-});
+  $( document ).ready(function() {document.getElementById("mission_id").value = <?php echo $_SESSION['mission']; ?>});
 
 function swap() {
   var id = document.getElementById("mission_id").value;
-  $.post('Admin/changeMission', {id: id}, function (result) {
-    location.reload();
-                });
+  $.post('Admin/changeMission', {id: id}, function () { location.reload();});
 
 }
+
+</script>
