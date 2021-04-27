@@ -24,11 +24,7 @@ class User extends CI_Controller {
 		$this->load->model('Veteran_model');
 		$this->load->model('User_model');
 		
-
-		$this->db->select_max("mission_id");
-		$this->db->from('mission');
-
-		$currMission_id = implode($this->db->get()->row_array());
+		$currMission_id = $_SESSION["mission"];
 
 		if ($id != null) {
 			$data['id'] = $id;
@@ -86,10 +82,7 @@ class User extends CI_Controller {
 		$this->db->where('guardian_id', $data['veteran'][0]->guardian_id);
 		$data['gHotel'] = $this->db->get()->result();
 
-		$this->db->select_max("mission_id");
-		$this->db->from('mission');
-
-		$currMission_id = implode($this->db->get()->row_array());
+		$currMission_id = $_SESSION["mission"];
 
 		$data['flight'] = $this->Flight_model->get_mission_flight_data($currMission_id);
 
@@ -158,10 +151,7 @@ class User extends CI_Controller {
 	{
 		$data['allTeams'] = $this->Index_model->get_TeamList();
 
-		$this->db->select_max("mission_id");
-		$this->db->from('mission');
-
-		$currMission_id = implode($this->db->get()->row_array());
+		$currMission_id = $_SESSION["mission"];
 
 		$this->db->select("*");
 		$this->db->from('event');
@@ -217,10 +207,7 @@ class User extends CI_Controller {
 				$start = $this->input->post('newStart');
 				$end = $this->input->post('newEnd');
 
-				$this->db->select_max("mission_id");
-				$this->db->from('mission');
-		
-				$currMission_id = implode($this->db->get()->row_array());
+				$currMission_id = $_SESSION["mission"];
 				
 				$data = array(
 					'title' => $title,

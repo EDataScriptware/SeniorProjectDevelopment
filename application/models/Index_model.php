@@ -9,10 +9,7 @@ class index_model extends CI_Model {
 
 	public function get_TeamList() {
 
-		$this->db->select_max("mission_id");
-		$this->db->from('team');
-
-		$currMission_id = $this->db->get()->row_array();
+		$currMission_id = $_SESSION["mission"];
 
 		$this->db->select("*");
 		$this->db->from('team');

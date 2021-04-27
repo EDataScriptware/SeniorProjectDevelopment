@@ -58,11 +58,7 @@ class Admin extends CI_Controller {
 
 	public function docView() //Document View
 	{
-
-		$this->db->select_max("mission_id");
-		$this->db->from('mission');
-
-		$currMission_id = implode($this->db->get()->row_array());
+		$currMission_id = $_SESSION["mission"];
 
 		$map = directory_map('./uploads/', 1);
 
@@ -232,10 +228,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Veteran_model');
 		$this->load->model('Bus_model');
 
-		$this->db->select_max("mission_id");
-		$this->db->from('mission');
-
-		$currMission_id = implode($this->db->get()->row_array());
+		$currMission_id = $_SESSION["mission"];
 
 		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
 		$data['bus'] = $this->Bus_model->get_mission_bus_data($currMission_id);
@@ -259,11 +252,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Team_model');
 		$this->load->model('Bus_model');
 		
-
-		$this->db->select_max("mission_id");
-		$this->db->from('mission');
-
-		$currMission_id = implode($this->db->get()->row_array());
+		$currMission_id = $_SESSION["mission"];
 
 		$data['user'] = $this->User_model->get_all_user_data();
 		$data['bus'] = $this->Bus_model->get_all_bus_data();
@@ -281,12 +270,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Veteran_model');
 		$this->load->model('Guardian_model');
 
-
-		$this->db->select_max("mission_id");
-		$this->db->from('team');
-
-		$currMission_id = implode($this->db->get()->row_array());
-		$data['id'] = $currMission_id;
+		$currMission_id = $_SESSION["mission"];
 
 		$this->db->select("*");
 		$this->db->from('hotel_info');
@@ -314,10 +298,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Veteran_model');
 		$this->load->model('Team_model');
 
-		$this->db->select_max("mission_id");
-		$this->db->from('mission');
-
-		$currMission_id = implode($this->db->get()->row_array());
+		$currMission_id = $_SESSION["mission"];
 
 		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
 		$data['team'] = $this->Team_model->get_all_team_data();
@@ -335,10 +316,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Guardian_model');
 		$this->load->model('Team_model');
 
-		$this->db->select_max("mission_id");
-		$this->db->from('mission');
-
-		$currMission_id = implode($this->db->get()->row_array());
+		$currMission_id = $_SESSION["mission"];
 
 		$data['guardian'] = $this->Guardian_model->get_all_guardian_data();
 		$data['team'] = $this->Team_model->get_all_team_data();
@@ -539,10 +517,7 @@ class Admin extends CI_Controller {
 
 	public function newBus() {
 
-		$this->db->select_max("mission_id");
-		$this->db->from('team');
-
-		$currMission_id = implode($this->db->get()->row_array());
+		$currMission_id = $_SESSION["mission"];
 
 		$name = $this->input->post('name');
 
@@ -556,10 +531,7 @@ class Admin extends CI_Controller {
 
 	public function newTeam() {
 
-		$this->db->select_max("mission_id");
-		$this->db->from('team');
-
-		$currMission_id = implode($this->db->get()->row_array());
+		$currMission_id = $_SESSION["mission"];
 
 		$color = $this->input->post('color');
 		$bus_id = $this->input->post('bus_id');

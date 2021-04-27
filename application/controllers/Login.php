@@ -33,9 +33,12 @@ class Login extends CI_Controller {
 				
 				session_start();
 
+				$currMission_id = $_SESSION["mission"];
+
 				// Start a session here
 				$_SESSION["userId"] = $userObj->iduser;
 				$_SESSION["userPerm"] = $userObj->user_permissions;
+				$_SESSION["mission"] = $currMission_id;
 				
 				if ($_SESSION["userPerm"] === '0') {
 					redirect('busbook');
