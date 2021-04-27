@@ -100,7 +100,7 @@
 
 <p> Mission: </p>
 
-<select style='display:inline;' name="mission_id" id="mission_id" onchange=swap()>
+<select style='display:inline;' name="mission_id" id="mission_id" onchange='swap()'>
 <?php foreach ($mission as $miss): ?>
         <option value="<?php echo $miss->mission_id ?>"><?php echo $miss->title ?></option>
         <?php endforeach ?>
