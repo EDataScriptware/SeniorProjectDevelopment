@@ -91,3 +91,29 @@
 
 
   <div id = "main"> 
+
+  <?php
+		$this->db->select("*");
+		$this->db->from('mission');
+		$mission = $this->db->get()->result();
+		?>
+
+<p> Mission: </p>
+
+<select name="mission_id" id="mission_id" onchange=swap()>
+<?php foreach ($mission as $miss): ?>
+        <option value="<?php echo $miss->mission_id ?>"><?php echo $miss->title ?></option>
+        <?php endforeach ?>
+</select>
+
+<script>
+function swap() {
+  var id = document.getElementById("mission_id").value;
+  $.post('Admin/changeMission', {id: id}, function (result) {
+    location.reload();
+                });
+                });
+
+}
+
+</script>

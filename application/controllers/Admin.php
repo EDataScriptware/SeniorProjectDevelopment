@@ -705,6 +705,9 @@ class Admin extends CI_Controller {
 		redirect('reservations');
 	}
 
-
+	public function changeMission() {
+		$id = $this->input->post('id');
+		$_SESSION['mission'] = $id;
+	}
 
 }
