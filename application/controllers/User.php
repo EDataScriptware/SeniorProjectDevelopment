@@ -111,7 +111,26 @@ class User extends CI_Controller {
 
 		$postData = $this->input->post();
 
-		var_dump($postData) ;
+		$config['protocol'] = 'sendmail';
+		$config['mailpath'] = '/usr/sbin/sendmail';
+		$config['charset'] = 'iso-8859-1';
+		$config['wordwrap'] = TRUE;
+
+		$this->email->initialize($config);
+
+		$this->email->from('HonorFlight_Incident@rwby.student.rit.edu', $postData['name']);
+		$this->email->to('zpe4421@g.rit.edu');
+		// $this->email->cc('another@another-example.com');
+		// $this->email->bcc('them@their-example.com');
+
+		$this->email->subject($postData['subject']);
+		$this->email->message($postData['description']);
+
+		$this->email->send();
+		
+		$this->load->view('user/template/header');
+		$this->load->view('user/incident_sent');
+		$this->load->view('user/template/footer');
 
 	}
 

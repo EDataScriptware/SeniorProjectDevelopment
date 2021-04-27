@@ -5,6 +5,9 @@
     <label for="subject">Subject:</label><br>
     <input type="text" id="subject" name="subject"><br><br>
 
+    <label for="name">My Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
     <label for="description">Incident Description:</label><br>
     <textarea id="description" name="description" rows="12" cols="30"></textarea><br>
 
