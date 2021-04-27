@@ -1,5 +1,5 @@
 <?php
-	session_start(); 
+	// session_start(); 
 
     if(isset($_SESSION["userPerm"]) && $_SESSION["userPerm"] == 0) {
       // display this page

@@ -6,7 +6,7 @@
 	<title>Honor Flight - User</title>
 
   <?php 
-    session_start(); 
+    // session_start(); 
     
 
     if(isset($_SESSION["userPerm"])) {
