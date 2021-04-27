@@ -1,15 +1,14 @@
 <script> $(document).ready( function () {  $('#rez').addClass('active');} ); </script>
 
 <script>
-
-    <?php var_dump($_SESSION); ?>
-
 $(document).ready( function () {
     $('#flightTable').DataTable();
     $('#hotelTable').DataTable();
 } );
 
 </script>
+
+<?php var_dump($_SESSION); ?>
 
 <h2> Flight Information <button type="button" class="btn btn-primary" onclick = "addBlock('fly')"  > ADD </button>  </h2>
 
