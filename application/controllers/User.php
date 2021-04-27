@@ -95,7 +95,8 @@ class User extends CI_Controller {
 	}
 
 	public function incident() {
-		$this->load->view('user/template/header');
+		$data['allTeams'] = $this->Index_model->get_TeamList();
+		$this->load->view('user/template/header',$data);
 		$this->load->view('user/incident');
 		$this->load->view('user/template/footer');
 	}
