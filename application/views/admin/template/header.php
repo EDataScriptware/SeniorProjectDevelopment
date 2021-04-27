@@ -116,7 +116,6 @@ function swap() {
   $.post('Admin/changeMission', {id: id}, function (result) {
     location.reload();
                 });
-                });
 
 }
 
