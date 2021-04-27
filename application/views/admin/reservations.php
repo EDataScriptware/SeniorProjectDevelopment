@@ -227,6 +227,11 @@ $(document).ready( function () {
 
             <input type="text" list='veterans' id="veteran_id" name="veteran_id" size="10"> <br>
 
+
+        <label for="guardian_id">Guardian:</label>
+
+            <input type="text" list='guardians' id="guardian_id" name="guardian_id" size="10"> <br>
+
             <script>
             
             $("#veteran_id").on('input', function () {
@@ -235,15 +240,14 @@ $(document).ready( function () {
             $.post('Admin/getVet', {id: val}, function (result) {
     
                 var $res = JSON.parse(result);
-                 console.log($res[0]['guardian_id']);
+                console.log($res[0]['guardian_id']);
+                document.getElementById("guardian_id").value = $res[0]['guardian_id'];
+                 
                 });
                 });
 
             </script>
 
-        <label for="guardian_id">Guardian:</label>
-
-            <input type="text" list='guardians' id="guardian_id" name="guardian_id" size="10"> <br>
 
         <label for="room">Room:</label>
 
