@@ -132,7 +132,13 @@ class User extends CI_Controller {
 
 		$msg = wordwrap($msg, 80);
 
-		mail("zpe4421@g.rit.edu", $postData["subject"], $msg,"From: HonorFlight_Incident@rwby.student.rit.edu");
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+		// More headers
+		$headers .= 'From: <HonorFlight_Incident@rwby.student.rit.edu>' . "\r\n";
+
+		mail("zpe4421@g.rit.edu", $postData["subject"], $msg, $headers);
 		
 		$this->load->view('user/template/header');
 		$this->load->view('user/incident_sent');
