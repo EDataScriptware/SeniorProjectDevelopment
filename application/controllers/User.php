@@ -107,26 +107,32 @@ class User extends CI_Controller {
 	}
 
 	public function sendEmail() {
-		$this->load->library('email');
+		// $this->load->library('email');
 
 		$postData = $this->input->post();
 
-		$config['protocol'] = 'sendmail';
-		$config['mailpath'] = '/usr/sbin/sendmail';
-		$config['charset'] = 'iso-8859-1';
-		$config['wordwrap'] = TRUE;
+		// $config['protocol'] = 'sendmail';
+		// $config['mailpath'] = '/usr/sbin/sendmail';
+		// $config['charset'] = 'iso-8859-1';
+		// $config['wordwrap'] = TRUE;
 
-		$this->email->initialize($config);
+		// $this->email->initialize($config);
 
-		$this->email->from('HonorFlight_Incident@rwby.student.rit.edu', $postData['name']);
-		$this->email->to('zpe4421@g.rit.edu');
+		// $this->email->from('HonorFlight_Incident@rwby.student.rit.edu', $postData['name']);
+		// $this->email->to('zpe4421@g.rit.edu');
 		// $this->email->cc('another@another-example.com');
 		// $this->email->bcc('them@their-example.com');
 
-		$this->email->subject($postData['subject']);
-		$this->email->message($postData['description']);
+		// $this->email->subject($postData['subject']);
+		// $this->email->message($postData['description']);
 
-		$this->email->send();
+		// $this->email->send();
+
+		$msg = "Submitted By: ".$postData["name"]."\n\n".$postData["description"];
+
+		$msg = wordwrap($msg, 80);
+
+		mail("zpe4421@g.rit.edu", $postData["subject"], $msg,"From: HonorFlight_Incident@rwby.student.rit.edu");
 		
 		$this->load->view('user/template/header');
 		$this->load->view('user/incident_sent');
