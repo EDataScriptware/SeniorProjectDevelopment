@@ -269,7 +269,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Flight_model');
 		$this->load->model('Veteran_model');
 		$this->load->model('Guardian_model');
-
+		var_dump($_SESSION);
 		$currMission_id = $_SESSION["mission"];
 
 		$this->db->select("*");
