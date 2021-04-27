@@ -111,7 +111,7 @@ class User extends CI_Controller {
 
 		$postData = $this->input->post();
 
-		$this->email->from('HonorFlight_Incident@ruby.com', $postData['name']);
+		$this->email->from('HonorFlight_Incident@rwby.student.rit.edu', $postData['name']);
 		$this->email->to('zpe4421@g.rit.edu');
 		// $this->email->cc('another@another-example.com');
 		// $this->email->bcc('them@their-example.com');
