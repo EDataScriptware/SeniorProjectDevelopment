@@ -128,13 +128,18 @@ class User extends CI_Controller {
 
 		$msg = wordwrap($msg, 80);
 
-		$headers = "MIME-Version: 1.0" . "\r\n";
-		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+		// $headers = "MIME-Version: 1.0" . "\r\n";
+		// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-		// More headers
-		$headers .= 'From: <HonorFlight_Incident@rwby.student.rit.edu>' . "\r\n";
+		// // More headers
+		// $headers .= 'From: <HonorFlight_Incident@rwby.student.rit.edu>' . "\r\n";
 
-		$test = mail("zacheas@outlook.com", $postData["subject"], $msg, $headers);
+		// $test = mail("zacheas@outlook.com", $postData["subject"], $msg, $headers);
+
+		$success = mail('zpe4421@rit.edu','Test Email',$msg);
+		if (!$success) {
+			print_r(error_get_last()['message']);
+		}
 
 		var_dump($test) ;
 		
