@@ -2,6 +2,8 @@
 
 <script>
 
+    <?php var_dump($_SESSION); ?>
+
 $(document).ready( function () {
     $('#flightTable').DataTable();
     $('#hotelTable').DataTable();
