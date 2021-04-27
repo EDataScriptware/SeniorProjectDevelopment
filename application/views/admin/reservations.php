@@ -165,7 +165,7 @@ $(document).ready( function () {
                 try {
                 var $res = JSON.parse(result);
                 console.log($res[0]['guardian_id']);
-                document.getElementById("newGuardian_id").value = $res[0]['newGuardian_id'];
+                document.getElementById("newGuardian_id").value = $res[0]['guardian_id'];
                 }
                 catch(e) {}
                 });
