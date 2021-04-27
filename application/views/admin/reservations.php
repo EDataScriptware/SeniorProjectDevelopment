@@ -88,29 +88,15 @@ $(document).ready( function () {
 <!-- VETDATALIST -->
 <datalist id ='veterans'>
 <?php foreach ($veteran as $vet): ?>
-    <?php $skip = false; ?>
-    <?php foreach ($hotel as $hot): ?>
-     <?php if ($hot->$veteran_id === $vet->veteran_id) { $skip = true; break;} ?> 
-    <?php endforeach ?>
-
-    <?php if ($skip === false) { ?>
         <option value='<?php echo $vet->veteran_id ?>'> <?php echo $vet->first_name ?> <?php echo $vet->last_name ?></option>
-        <?php }else {} ?>
 <?php endforeach ?>
 </datalist>
 
 
 <!-- GUARDDATALIST -->
 <datalist id ='guardians'>
-<?php foreach ($guardian as $guard): ?>
-    <?php $skip = false; ?>
-    <?php foreach ($hotel as $hot): ?>
-     <?php if ($hot->$guardian_id === $guard->guardian_id) { $skip = true; break;} ?> 
-    <?php endforeach ?>
-
-    <?php if ($skip === false) { ?>
-        <option value='<?php echo $guard->guardian_id ?>'> <?php echo $guard->first_name ?> <?php echo $guard->last_name ?></option>
-        <?php }else {} ?>
+<?php foreach ($guardian as $guardy): ?>
+        <option value='<?php echo $guardy->guardian_id ?>'> <?php echo $guardy->first_name ?> <?php echo $guardy->last_name ?></option>
 <?php endforeach ?>
 </datalist>
 
@@ -349,6 +335,7 @@ function editBlock($id, $type) {
             document.getElementById("editHotelBut").style.display = "block";
             
             document.getElementById("veteran_id").value = $res[0]['veteran_id'];
+            document.getElementById("guardian_id").value = $res[0]['guardian_id'];
             document.getElementById("name").value = $res[0]['name'];
             document.getElementById("room").value = $res[0]['room'];
             document.getElementById("check_in").value = $res[0]['check_in'].replace(" ", "T");
