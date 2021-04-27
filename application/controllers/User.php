@@ -136,7 +136,7 @@ class User extends CI_Controller {
 
 		// $test = mail("zacheas@outlook.com", $postData["subject"], $msg, $headers);
 
-		$success = mail('zpe4421@rit.edu','Test Email',$msg);
+		$success = mail('example@example.com','Test Email',$msg);
 		if (!$success) {
 			print_r(error_get_last()['message']);
 		}
