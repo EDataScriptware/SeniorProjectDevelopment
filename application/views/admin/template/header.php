@@ -107,6 +107,10 @@
 </select>
 
 <script>
+  $( document ).ready(function() {
+    document.getElementById("mission_id").value = $_SESSION['mission'];
+});
+
 function swap() {
   var id = document.getElementById("mission_id").value;
   $.post('Admin/changeMission', {id: id}, function (result) {
