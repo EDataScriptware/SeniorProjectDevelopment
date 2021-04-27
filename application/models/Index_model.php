@@ -13,7 +13,7 @@ class index_model extends CI_Model {
 
 		$this->db->select("*");
 		$this->db->from('team');
-		$this->db->where('mission_id', implode($currMission_id));
+		$this->db->where('mission_id', $currMission_id);
 
 		$query = $this->db->get()->result();
 
