@@ -167,7 +167,7 @@
 	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> <span class = 'medCircle shiftRight 
 	<?php foreach ($allTeams as $temo): ?>
 	<?php if ($temo->team_id === $vet->team_id) { ?>
-		<?php echo strtolower($tem->color) ?>' > 
+		<?php echo strtolower($temo->color) ?>' > 
 	<?php break; } ?>
 	<?php endforeach ?>
 	</span> </h3>
