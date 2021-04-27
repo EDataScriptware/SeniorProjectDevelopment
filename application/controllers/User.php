@@ -100,6 +100,12 @@ class User extends CI_Controller {
 		$this->load->view('user/template/footer');
 	}
 
+	public function incident() {
+		$this->load->view('user/template/header');
+		$this->load->view('user/incident');
+		$this->load->view('user/template/footer');
+	}
+
 	public function sendEmail() {
 		$this->load->library('email');
 
