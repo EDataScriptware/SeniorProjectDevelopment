@@ -108,7 +108,7 @@
 
 <script>
   $( document ).ready(function() {
-    document.getElementById("mission_id").value = $_SESSION['mission'];
+    document.getElementById("mission_id").value = <?php echo $_SESSION['mission']; ?>
 });
 
 function swap() {
