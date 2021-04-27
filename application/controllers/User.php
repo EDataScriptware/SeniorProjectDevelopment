@@ -7,7 +7,7 @@ class User extends CI_Controller {
 		parent::__construct();
 		$this->load->helper(array('url_helper', 'form', 'url', 'directory', 'download'));
 		$this->load->model('Index_model');
-		session_start();
+
 	}
 
 	public function index()
