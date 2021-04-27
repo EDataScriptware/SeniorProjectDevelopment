@@ -90,6 +90,10 @@
   color: lightblue;
 }
 
+.greenSpan {
+  color: lightgreen;
+}
+
 .scrollItem {
 	display: inline-block;
 	background: #d4d4d4;
