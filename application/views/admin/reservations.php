@@ -155,6 +155,24 @@ $(document).ready( function () {
 
             <input type="text" list='guardians' id="newGuardian_id" name="newGuardian_id" required > <br>
 
+            <script>
+            
+            $("#newVeteran_id").on('input', function () {
+            var val = this.value;
+                
+            $.post('Admin/getVet', {id: val}, function (result) {
+                
+                try {
+                var $res = JSON.parse(result);
+                console.log($res[0]['guardian_id']);
+                document.getElementById("newGuardian_id").value = $res[0]['guardian_id'];
+                }
+                catch(e) {}
+                });
+                });
+
+            </script>
+
         <label for="newRoom">Room:</label>
  
             <input type="text" id="newRoom" name="newRoom" required > <br>
@@ -238,11 +256,13 @@ $(document).ready( function () {
             var val = this.value;
                 
             $.post('Admin/getVet', {id: val}, function (result) {
-    
+                
+                try {
                 var $res = JSON.parse(result);
                 console.log($res[0]['guardian_id']);
                 document.getElementById("guardian_id").value = $res[0]['guardian_id'];
-                 
+                }
+                catch(e) {}
                 });
                 });
 
