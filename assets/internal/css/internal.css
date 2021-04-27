@@ -87,11 +87,11 @@
   }
   
 .blueSpan {
-  color: lightblue;
+  color: rgb(119, 119, 255);
 }
 
 .greenSpan {
-  color: lightgreen;
+  color: rgb(62, 247, 62);
 }
 
 .scrollItem {
