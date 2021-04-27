@@ -161,9 +161,9 @@
 	<?php foreach ($bus as $b): ?>
 
 <h2> <b>  <?php echo $b->name ?></b> </h2>
-
+<?php foreach ($allTeams as $aTem): ?>
 <?php foreach ($veteran as $vet): ?>
-<?php if ($vet->bus_id === $b->bus_id) { ?>
+<?php if ($aTem->bus_id === $b->bus_id && $aTem->team_id === $vet->team_id ) { ?>
 	<a href="<?php echo base_url('vetView'. '/'. $vet->veteran_id) ?>" class="detailedTeamListElement"><h3> <?php echo $vet->first_name ?> <?php echo$vet->last_name?> <span class = 'medCircle shiftRight 
 	<?php foreach ($allTeams as $temo): ?>
 	<?php if ($temo->team_id === $vet->team_id) { ?>
@@ -209,7 +209,7 @@
 </a>
 	<?php  }?>
 	<?php endforeach ?>
-
+	<?php endforeach ?>
 	<?php endforeach ?>
 
 	</div>
