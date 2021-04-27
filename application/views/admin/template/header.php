@@ -98,7 +98,7 @@
 		$mission = $this->db->get()->result();
 		?>
 
-<p> Mission: </p>
+<label for="mission_id"> Mission </label>
 
 <select style='display:inline;' name="mission_id" id="mission_id" onchange='swap()'>
 <?php foreach ($mission as $miss): ?>

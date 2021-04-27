@@ -8,8 +8,6 @@ $(document).ready( function () {
 
 </script>
 
-<?php var_dump($_SESSION); ?>
-
 <h2> Flight Information <button type="button" class="btn btn-primary" onclick = "addBlock('fly')"  > ADD </button>  </h2>
 
 <table id="flightTable"  class="table table-striped table-bordered">

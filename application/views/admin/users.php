@@ -49,7 +49,7 @@
                         foreach ($team as $tem):
                             if ($use->team_id == $tem->team_id) {
                                 echo $tem->color;
-                                if ($tem->mission_id != $id) { echo "(Outdated)"; }
+                                if ($tem->mission_id != $id) { echo "(Diff Mission)"; }
                                 break;
                             }
                         endforeach; 
@@ -58,7 +58,7 @@
                         foreach ($bus as $bub):
                             if ($use->bus_id == $bub->bus_id) {
                                 echo $bub->name;
-                                if ($tem->mission_id != $id) { echo "(Outdated)"; }
+                                if ($tem->mission_id != $id) { echo "(Diff Mission)"; }
                                 break;
                             }
                         endforeach; 
