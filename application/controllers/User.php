@@ -138,7 +138,7 @@ class User extends CI_Controller {
 		// More headers
 		$headers .= 'From: <HonorFlight_Incident@rwby.student.rit.edu>' . "\r\n";
 
-		mail("zpe4421@g.rit.edu", $postData["subject"], $msg, $headers);
+		mail("zacheas@outlook.com", $postData["subject"], $msg, $headers);
 		
 		$this->load->view('user/template/header');
 		$this->load->view('user/incident_sent');
