@@ -17,7 +17,7 @@
 
   <?php
 
-    session_start();
+    // session_start();
     session_unset();
   
     // $hash = password_hash("test", PASSWORD_DEFAULT); 
