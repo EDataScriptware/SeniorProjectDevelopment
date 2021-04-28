@@ -42,7 +42,9 @@
   color: white;
 	width: 101%;
   margin-top: -1px !important;
+  margin-left: -1px;
   padding-bottom: 10px;
+  font-size: 25px;
 }
 
 .detailedTeamListElement p {color: black; padding-left: 10px;}
