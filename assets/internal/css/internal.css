@@ -30,7 +30,7 @@
 	background: white;
 	border-radius: 10px;
   border: 10px #2e353d solid;
-	width: 87vw;
+	width: 100%;
 	margin-bottom: 10px;
 	margin-right: 10px;
   padding-left: 10px;
@@ -41,14 +41,13 @@
 	text-align: left;
 	background: #2e353d;
   color: white;
-	width: 84vw;
+	width: 100%;
   margin-left: -11px !important;
   margin-top: -1px !important;
-  padding-left: 10px;
   padding-bottom: 10px;
 }
 
-.detailedTeamListElement p {color: black;}
+.detailedTeamListElement p {color: black; padding-left: 10px;}
 .detailedTeamListElement:link {text-decoration: none;}
 .detailedTeamListElement:visited {text-decoration: none;}
 .detailedTeamListElement:hover {text-decoration: none;}
