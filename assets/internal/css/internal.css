@@ -33,7 +33,6 @@
 	width: 100%;
 	margin-bottom: 10px;
 	margin-right: 10px;
-  padding-left: 10px;
   padding-bottom: 10px;
 }
 
@@ -42,7 +41,6 @@
 	background: #2e353d;
   color: white;
 	width: 100%;
-  margin-left: -11px !important;
   margin-top: -1px !important;
   padding-bottom: 10px;
 }
