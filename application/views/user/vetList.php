@@ -222,9 +222,8 @@
 		
 			<?php foreach ($user as $use): ?>
 			<?php if ($use->bus_id === $b->bus_id) { ?>
-			<a href="" class="teamListElement"></a>
 
-			<p class="detailedTeamListElement"><h3> <?php echo $use->first_name ?> <?php echo$use->last_name?> <?php if ($use->team_id != null) { ?> <span class = 'medCircle shiftRight 
+			<a class="detailedTeamListElement"><h3> <?php echo $use->first_name ?> <?php echo$use->last_name?> <?php if ($use->team_id != null) { ?> <span class = 'medCircle shiftRight 
 			<?php foreach ($allTeams as $temo): ?>
 			<?php if ($temo->team_id === $vet->team_id) { ?>
 				<?php echo strtolower($temo->color) ?>' > 
@@ -242,7 +241,7 @@
 
 				<p> <b> <?php echo $b->name ?> </b>  </p> 
 
-				</p>
+				</a>
 
 
 				<?php  }?>
