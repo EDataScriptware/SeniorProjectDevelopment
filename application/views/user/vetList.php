@@ -50,6 +50,7 @@
 		<?php if ($vHotel != null) { ?>	<p> <b> Veteran Hotel: </b> <?php echo $vHotel[0]->name ?>, <b> Room: </b> <?php echo $vHotel[0]->room ?> </p> <?php } ?>
 		<?php if ($gHotel != null) { ?>	<p> <b> Guardian Hotel: </b> <?php echo $gHotel[0]->name ?>, <b> Room: </b> <?php echo $gHotel[0]->room ?> </p> <?php } ?>
 
+		<p> <b> Team: </b> <?php echo $team->color ?>  </p> 
 
 		<?php foreach ($bus as $b): ?>
 		<?php if ($team->bus_id === $b->bus_id) { ?>
@@ -132,7 +133,8 @@
 
 	<?php if ($vHotel != null) { ?>	<p> <b> Veteran Room Number: </b> <?php echo $vHotel[0]->room ?> </p> <?php } ?>
 	<?php if ($gHotel != null) { ?>	<p> <b> Guardian Room Number: </b> <?php echo $gHotel[0]->room ?> </p> <?php } ?>
-
+	
+	<p> <b> Team: </b> <?php echo $tem->color ?>  </p> 
 
 	<?php foreach ($bus as $b): ?>
 	<?php if ($tem->bus_id === $b->bus_id) { ?>
@@ -197,6 +199,13 @@
 		<?php if ($vHotel != null) { ?>	<p> <b> Veteran Room Number: </b> <?php echo $vHotel[0]->room ?> </p> <?php } ?>
 		<?php if ($gHotel != null) { ?>	<p> <b> Guardian Room Number: </b> <?php echo $gHotel[0]->room ?> </p> <?php } ?>
 
+
+		<?php foreach ($allTeams as $temo): ?>
+					<?php if ($temo->team_id === $vet->team_id) { ?>
+						<?php echo "<b> Team: </b>".$temo->color ?>
+					<?php break; } ?>
+		<?php endforeach ?>
+
 		<p> <b> <?php echo $b->name ?> </b>  </p> 
 
 
@@ -212,7 +221,7 @@
 
 	</div>
 <?php } ?>
-
+<!-- STAFF VIEW -->
 	<div style="display:none" id = "staffView">
 
 		<?php foreach ($bus as $b): ?>
@@ -238,6 +247,18 @@
 
 				<p> <b> Cell Phone: </b> <?php echo $use->cell_phone ?> </p> 
 
+				<p> <b> Hotel Room No: </b> <?php echo $use->room ?>  </p> 
+
+				<?php if ($use->team_id != null) { ?>
+				
+					<?php foreach ($allTeams as $temo): ?>
+					<?php if ($temo->team_id === $vet->team_id) { ?>
+						<?php echo "<b> Team: </b>".$temo->color ?>
+					<?php break; } ?>
+					<?php endforeach ?>
+	
+				
+					<?php } ?> 
 				<p> <b> <?php echo $b->name ?> </b>  </p> 
 
 				</a>
