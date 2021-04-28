@@ -40,7 +40,7 @@
 	text-align: left;
 	background: #2e353d;
   color: white;
-	width: 100%;
+	width: 101%;
   margin-top: -1px !important;
   padding-bottom: 10px;
 }
@@ -266,6 +266,7 @@
 .content
 {
     margin-left: 325px;
+    margin-right: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
