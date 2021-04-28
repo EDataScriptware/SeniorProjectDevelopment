@@ -82,8 +82,15 @@
     <p> <label for="username">Username:</label> <input type="text" id="username" name="username"> </p>
     
     <p id = "passAdd"> Password:  <input type="text" id="password" name="password"> </p>
-    <!-- <p id = "passBlock"> Password:  <button type="button" class="btn btn-primary" id ="reset"  > Reset</button> </p> -->
     <p id = "passBlock"> New Password:  <input type="text" id="pass_reset" name="pass_reset" minlength="4"> </p>
+
+    <p> <label for="first_name">First Name:</label> <input type="text" id="first_name" name="first_name"> </p>
+
+    <p> <label for="last_name">Last Name:</label> <input type="text" id="last_name" name="last_name"> </p>
+
+    <p> <label for="day_phone">Day Phone:</label> <input type="text" id="day_phone" name="day_phone"> </p>
+
+<p> <label for="cell_phone">Cell Phone:</label> <input type="text" id="cell_phone" name="cell_phone"> </p>
 
     <p> <label for="user_type">User Type:</label><input type="text" id="user_type" name="user_type"><br> </p>
 
@@ -104,6 +111,17 @@
 
     <?php } ?>
     <?php endforeach ?>
+    </select> <br>
+
+    <label for="bus_id">Bus Id:</label>
+    <select id="bus_id" name="bus_id">
+    <?php foreach ($bus as $buss):
+      if ($buss->bus_id == $id) {?>
+      <option value="<?php echo $buss->bus_id ?>"><?php echo $buss->name?></option>
+    <?php } ?>
+    <?php endforeach ?>
+
+
     </select> <br>
 
     <p>Notes: </p>
@@ -129,6 +147,8 @@
             
             document.getElementById("username").value = $result[0].username;
             document.getElementById("user_type").value = $result[0].user_type;
+            document.getElementById("first_name").value = $result[0].first_name;
+            document.getElementById("last_name").value = $result[0].last_name;
             if ($result[0].user_permissions != '0') { 
             document.getElementById("user_permissions").value = $result[0].user_permissions;
             document.getElementById("adminButton").style.display = 'none';
@@ -141,6 +161,12 @@
              
             }
             document.getElementById("team_id").value = $result[0].team_id;
+            document.getElementById("bus_id").value = $result[0].bus_id;
+
+            document.getElementById("day_phone").value = $result[0].day_phone;
+            document.getElementById("cell_phone").value = $result[0].cell_phone;
+
+
             document.getElementById("notes").value = $result[0].notes;
             document.getElementById("update").action = "Admin/updateUser/"+$result[0].iduser;
             document.getElementById("passBlock").style.display = "block";

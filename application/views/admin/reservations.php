@@ -251,7 +251,6 @@ $(document).ready( function () {
             <input type="text" id="room" name="room" required size="10"> <br>
           
         </form>
-
       </div>
       <div class="modal-footer">
       <button type="submit" class="btn btn-primary" style='display:none' id='editFlyBut' form ="editFly">Edit Flight Entry</button>
@@ -260,8 +259,6 @@ $(document).ready( function () {
     </div>
   </div>
 </div>
-
-
 
 <script>
 
