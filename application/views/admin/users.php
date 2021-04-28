@@ -17,6 +17,7 @@
             <th>User Name</th>
             <th>Name</th>
             <th>Contact</th>
+            <th>Room Number</th>
             <th>Team</th>
             <th>Bus</th>
             <th>Notes</th>
@@ -45,6 +46,7 @@
             <td> <?php echo $use->username ?>  </td>
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name ?>  </td>
             <td> <?php echo 'Day Phone: '.$use->day_phone ?> <br> <?php echo 'Cell Phone: '.$use->cell_phone ?>  </td>
+            <td> <?php echo $use->room ?>  </td>
             <td> <?php
                         foreach ($team as $tem):
                             if ($use->team_id == $tem->team_id) {
@@ -90,7 +92,9 @@
 
     <p> <label for="day_phone">Day Phone:</label> <input type="text" id="day_phone" name="day_phone"> </p>
 
-<p> <label for="cell_phone">Cell Phone:</label> <input type="text" id="cell_phone" name="cell_phone"> </p>
+    <p> <label for="cell_phone">Cell Phone:</label> <input type="text" id="cell_phone" name="cell_phone"> </p>
+
+    <p> <label for="room">Hotel Room No:</label> <input type="text" id="room" name="room"> </p>
 
     <p> <label for="user_type">User Type:</label><input type="text" id="user_type" name="user_type"><br> </p>
 
