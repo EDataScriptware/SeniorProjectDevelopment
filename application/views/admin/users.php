@@ -116,7 +116,7 @@
     <label for="bus_id">Bus Id:</label>
     <select id="bus_id" name="bus_id">
     <?php foreach ($bus as $buss):
-      if ($buss->bus_id == $id) {?>
+      if ($buss->mission_id == $id) {?>
       <option value="<?php echo $buss->bus_id ?>"><?php echo $buss->name?></option>
     <?php } ?>
     <?php endforeach ?>

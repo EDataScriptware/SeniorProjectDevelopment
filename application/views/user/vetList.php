@@ -85,7 +85,6 @@
             <?php endforeach; ?>
             
             document.getElementById("teamCon<?php echo $team->color ?>").style.display = "block";
-
         }
 
     </script>

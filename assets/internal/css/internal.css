@@ -3,9 +3,7 @@
     font-size: 4vh;
 }
 
-.brand {
-	padding-bottom: 10px;
-}
+.brand {padding-bottom: 10px;}
 
 .teamListView {
 	max-width: 85%;
@@ -26,7 +24,6 @@
 	font-size: 200%;
 }
 
-
 .detailedTeamListElement {
 	display: inline-block;
 	text-align: justify;
@@ -39,7 +36,6 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
-  
 }
 
 .detailedTeamListElement h3 {
@@ -54,13 +50,9 @@
 }
 
 .detailedTeamListElement p {color: black;}
-
 .detailedTeamListElement:link {text-decoration: none;}
-
 .detailedTeamListElement:visited {text-decoration: none;}
-
 .detailedTeamListElement:hover {text-decoration: none;}
-
 .detailedTeamListElement:active {text-decoration: none;}
 
 .shiftRight {
@@ -82,17 +74,10 @@
   	  scrollbar-width: none;  /* Firefox */
 }
 
-.buttonScrollView:-webkit-scrollbar {
-	display: none;
-  }
+.buttonScrollView:-webkit-scrollbar {display: none;}
   
-.blueSpan {
-  color: rgb(119, 119, 255);
-}
-
-.greenSpan {
-  color: rgb(0, 214, 0);
-}
+.blueSpan {color: rgb(119, 119, 255);}
+.greenSpan {color: rgb(0, 214, 0);}
 
 .scrollItem {
 	display: inline-block;
@@ -190,9 +175,7 @@
 
 }
 
-.teamCube p {
-	text-align: center;
-}
+.teamCube p {text-align: center;}
 
 /*Box Colors*/
 #red {background: #F03434 !important; color: white !important; }
@@ -207,7 +190,7 @@
 #grey {background: lightgrey !important;  color: white !important;}
 #white {background: white !important;  color: white !important;}
 
-
+/*Box Colors, for team circles*/
 .red {background: #F03434 !important;}
 .blue {background: #1E8BC3 !important;}
 .green {background: #00B16A !important;}
@@ -221,15 +204,16 @@
 .white {background: white !important;}
 
 
-
 /*Med Colors*/
 #medRed {background:red;}
 #medYellow{background:yellow;}
 #medGreen{background: green;}
 
+/*Med Colors, class*/
 .medRed {background:red;}
 .medYellow{background:yellow;}
 .medGreen{background: green;}
+
 .medCircle{
 	height: 25px;
 	width: 25px;
@@ -254,11 +238,6 @@
 	padding: 10px;
   }
 
-  .scrunch {
-	  /* width: 80%; */
-  }
-
-
   .whiteEdit {
 	height: 100%; 
 	width: 0; 
@@ -271,15 +250,11 @@
 	padding-top: 60px; 
 	overflow-y: scroll;
 	transition: 0.5s; 
-
 	-ms-overflow-style: none;  /* IE and Edge */
 	scrollbar-width: none;  /* Firefox */
-
   }
 
-  .whiteEdit:-webkit-scrollbar {
-	display: none;
-  }
+  .whiteEdit:-webkit-scrollbar {display: none;}
 
   .whiteEdit .closebtn {
 	position: absolute;
@@ -297,7 +272,6 @@
     margin-left: 325px;
 	margin-right: 325px;
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .nav-side-menu {
@@ -319,9 +293,7 @@
   text-align: center;
   font-size: 14px;
 }
-.nav-side-menu .toggle-btn {
-  display: none;
-}
+.nav-side-menu .toggle-btn {display: none;}
 .nav-side-menu ul,
 .nav-side-menu li {
   list-style: none;
@@ -440,10 +412,8 @@
   }
 
 .content {
-	
 	margin-left: 25px;
 	margin-right: 25px;
-
 }
 
 }
