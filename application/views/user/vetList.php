@@ -158,9 +158,35 @@
 <?php if ($id === null) { ?>
 <!-- BUS VIEW -->
 <div id = "busView">
+<?php $first = true; ?>
+<div class = "buttonScrollView">
+<?php foreach ($bus as $b): ?>
+	<button id = "<?php echo $b->bus_id ?>"  class = "scrollItem <?php if ($first = true) { echo 'scrollActive'; $first = false; }  ?>" onClick ="show<?php echo $b->bus_id ?>()"> <i class="fa fa-bus fa-3x"></i> <br> <b> <?php echo $b->name ?> </b></button>
+
+    <script>
+        function show<?php echo $b->bus_id ?>() {
+            <?php foreach ($bus as $buss): ?>
+                document.getElementById("busCon<?php echo $buss->bus_id ?>").style.display = "none";
+            <?php endforeach; ?>
+            
+            document.getElementById("busCon<?php echo $buss->bus_id ?>").style.display = "block";
+        }
+
+    </script>
+
+    <?php endforeach; ?>
+</div>
+
+<?php $first = true; ?>
 	<?php foreach ($bus as $b): ?>
 
-<h2> <b>  <?php echo $b->name ?></b> </h2>
+	<?php if ($first === true) { ?>
+    <div id = "busCon<?php echo $b->bus_id ?>"> 
+    <?php $first = false; } else { ?>
+        <div id = "busCon<?php echo $b->bus_id ?>" style='display:none'> 
+    <?php } ?>
+
+<h2> <b> <?php echo $b->name ?></b> </h2>
 <?php foreach ($allTeams as $aTem): ?>
 <?php foreach ($veteran as $vet): ?>
 <?php if ($aTem->bus_id === $b->bus_id && $aTem->team_id === $vet->team_id ) { ?>
@@ -217,6 +243,8 @@
 	<?php  }?>
 	<?php endforeach ?>
 	<?php endforeach ?>
+
+	</div>
 	<?php endforeach ?>
 
 	</div>
