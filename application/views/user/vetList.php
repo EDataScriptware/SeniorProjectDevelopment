@@ -253,7 +253,7 @@
 				
 					<?php foreach ($allTeams as $temo): ?>
 					<?php if ($temo->team_id === $vet->team_id) { ?>
-						<?php echo "<p><b> Team: </b></p>".$temo->color ?>
+						<p>	<?php echo "<b> Team: </b>".$temo->color ?> </p>
 					<?php break; } ?>
 					<?php endforeach ?>
 	
