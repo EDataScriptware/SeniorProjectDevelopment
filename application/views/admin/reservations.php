@@ -42,19 +42,15 @@ $(document).ready( function () {
 <table id="hotelTable"  class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>Hotel Name</th>
             <th>Assigned Veteran</th>
             <th>Assigned Guardian</th>
             <th>Room Number</th>
-            <th>Check-In Time</th>
-            <th>Check-Out Time</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
     <?php foreach ($hotel as $hot): ?>
         <tr>
-            <td> <?php echo $hot->name ?>  </td>
             <td> <?php
             $this->db->select("*");
                 $this->db->from('veteran');
@@ -76,8 +72,6 @@ $(document).ready( function () {
             
             ?>  </td>
             <td> <?php echo $hot->room ?>  </td>
-            <td> <?php echo date_format(date_create($hot->check_in),"Y/m/d h:i A"); ?>  </td>
-            <td> <?php echo date_format(date_create($hot->check_out),"Y/m/d h:i A"); ?>  </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $hot->hotel_id ?>,'hotel')"  > EDIT </button> <button type="button" class="btn btn-danger" onclick = "removeBlock(<?php echo $hot->hotel_id ?>,'hotel')"  > REMOVE </button> </td>
         </tr>
         <?php endforeach ?>
@@ -142,10 +136,6 @@ $(document).ready( function () {
 
         <form id ="addHotel" method='POST' style='display:none' >
 
-        <label for="newName">Hotel Name:</label>
- 
-            <input type="text" id="newName" name="newName" required > <br>
-
         <label for="newVeteran_id">Veteran:</label>
 
             <input type="text" list='veterans' id="newVeteran_id" name="newVeteran_id" required > <br>
@@ -175,14 +165,6 @@ $(document).ready( function () {
         <label for="newRoom">Room:</label>
  
             <input type="text" id="newRoom" name="newRoom" required > <br>
-
-        <label for="newCheck_in">Check-In Time:</label>
- 
-            <input type="datetime-local" id="newCheck_in" name="newCheck_in">  <br>
-
-        <label for="newCheck_out">Check-Out Time:</label>
- 
-            <input type="datetime-local" id="newCheck_out" name="newCheck_out">  <br>
 
         </form>
       </div>
@@ -236,10 +218,6 @@ $(document).ready( function () {
 
         <form id ="editHotel" method='POST' style='display:none' >
 
-        <label for="name">Hotel Name:</label>
- 
-            <input type="text" id="name" name="name" required size="10"> <br>
-
         <label for="veteran_id">Veteran:</label>
 
             <input type="text" list='veterans' id="veteran_id" name="veteran_id" size="10"> <br>
@@ -271,14 +249,6 @@ $(document).ready( function () {
         <label for="room">Room:</label>
 
             <input type="text" id="room" name="room" required size="10"> <br>
-
-        <label for="check_in">Check-In Time:</label>
-
-            <input type="datetime-local" id="check_in" name="check_in">  <br>
-
-        <label for="check_out">Check-Out Time:</label>
-
-            <input type="datetime-local" id="check_out" name="check_out">  <br>
           
         </form>
 
