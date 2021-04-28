@@ -167,9 +167,11 @@
         function show<?php echo $b->bus_id ?>() {
             <?php foreach ($bus as $buss): ?>
                 document.getElementById("busCon<?php echo $buss->bus_id ?>").style.display = "none";
+				document.getElementById("<?php echo $buss->bus_id ?>").classList.remove("scrollActive");
             <?php endforeach; ?>
             
             document.getElementById("busCon<?php echo $b->bus_id ?>").style.display = "block";
+			document.getElementById("<?php echo $b->bus_id ?>").classList.add("scrollActive");
         }
 
     </script>
