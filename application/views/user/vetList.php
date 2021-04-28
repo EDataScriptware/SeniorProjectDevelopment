@@ -161,7 +161,7 @@
 <?php $first = true; ?>
 <div class = "buttonScrollView">
 <?php foreach ($bus as $b): ?>
-	<button id = "<?php echo $b->bus_id ?>"  class = "scrollItem <?php if ($first = true) { ?> scrollActive <?php $first = false;  } ?> ?>" onClick ="show<?php echo $b->bus_id ?>()"> <i class="fa fa-bus fa-3x"></i> <br> <b> <?php echo $b->name ?> </b></button>
+	<button id = "<?php echo $b->bus_id ?>"  class = "scrollItem <?php if ($first = true) { ?> scrollActive <?php $first = false;  } ?>" onClick ="show<?php echo $b->bus_id ?>()"> <i class="fa fa-bus fa-3x"></i> <br> <b> <?php echo $b->name ?> </b></button>
 
     <script>
         function show<?php echo $b->bus_id ?>() {
