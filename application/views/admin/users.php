@@ -45,7 +45,7 @@
             }?>  </td>
             <td> <?php echo $use->username ?>  </td>
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name ?>  </td>
-            <td> <?php echo 'Day Phone: '.$use->day_phone ?> <br> <?php echo 'Cell Phone: '.$use->cell_phone ?>  </td>
+            <td><?php echo 'Cell Phone: '.$use->cell_phone ?>  </td>
             <td> <?php echo $use->room ?>  </td>
             <td> <?php
                         foreach ($team as $tem):
@@ -89,8 +89,6 @@
     <p> <label for="first_name">First Name:</label> <input type="text" id="first_name" name="first_name"> </p>
 
     <p> <label for="last_name">Last Name:</label> <input type="text" id="last_name" name="last_name"> </p>
-
-    <p> <label for="day_phone">Day Phone:</label> <input type="text" id="day_phone" name="day_phone"> </p>
 
     <p> <label for="cell_phone">Cell Phone:</label> <input type="text" id="cell_phone" name="cell_phone"> </p>
 

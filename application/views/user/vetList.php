@@ -243,8 +243,6 @@
 
 				<p> <b> User Type: </b> <?php echo $use->user_type ?> </p> 
 
-				<p> <b> Day Phone: </b> <?php echo $use->day_phone ?> </p> 
-
 				<p> <b> Cell Phone: </b> <?php echo $use->cell_phone ?> </p> 
 
 				<p> <b> Hotel Room No: </b> <?php echo $use->room ?>  </p> 
