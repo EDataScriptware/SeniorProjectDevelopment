@@ -169,7 +169,7 @@
                 document.getElementById("busCon<?php echo $buss->bus_id ?>").style.display = "none";
             <?php endforeach; ?>
             
-            document.getElementById("busCon<?php echo $buss->bus_id ?>").style.display = "block";
+            document.getElementById("busCon<?php echo $b->bus_id ?>").style.display = "block";
         }
 
     </script>
