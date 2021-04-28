@@ -200,7 +200,6 @@
 	<?php endforeach ?>
 	</span> </h3>
 	
-
 		<?php
 		$this->db->select("*");
 		$this->db->from('guardian');
@@ -254,9 +253,39 @@
 <!-- STAFF VIEW -->
 	<div style="display:none" id = "staffView">
 
-		<?php foreach ($bus as $b): ?>
+	<?php $first = true; ?>
 
-		<h2> <b>  <?php echo $b->name ?> Staff </b> </h2>
+
+	<div class = "buttonScrollView">
+		<?php foreach ($bus as $b): ?>
+			<button id = "staff<?php echo $b->bus_id ?>"  class = "scrollItem <?php if ($first === true) { ?> scrollActive <?php $first = false;  } ?>" onClick ="showStaff<?php echo $b->bus_id ?>()"> <i class="fa fa-bus fa-3x"></i> <br> <b> <?php echo $b->name ?> </b></button>
+
+			<script>
+				function showStaff<?php echo $b->bus_id ?>() {
+					<?php foreach ($bus as $buss): ?>
+						document.getElementById("staffBusCon<?php echo $buss->bus_id ?>").style.display = "none";
+						document.getElementById("staff<?php echo $buss->bus_id ?>").classList.remove("scrollActive");
+					<?php endforeach; ?>
+					
+					document.getElementById("staffBusCon<?php echo $b->bus_id ?>").style.display = "block";
+					document.getElementById("staff<?php echo $b->bus_id ?>").classList.add("scrollActive");
+				}
+
+			</script>
+
+			<?php endforeach; ?>
+		</div>
+
+		<?php $first = true; ?>
+			<?php foreach ($bus as $b): ?>
+
+			<?php if ($first === true) { ?>
+			<div id = "staffBusCon<?php echo $b->bus_id ?>"> 
+			<?php $first = false; } else { ?>
+				<div id = "staffBusCon<?php echo $b->bus_id ?>" style='display:none'> 
+			<?php } ?>
+		
+				<h2> <b>  <?php echo $b->name ?> Staff </b> </h2>
 		
 			<?php foreach ($user as $use): ?>
 			<?php if ($use->bus_id === $b->bus_id) { ?>
@@ -294,6 +323,7 @@
 
 				<?php  }?>
 				<?php endforeach ?>
+			</div>
 		<?php endforeach ?>
 
 
