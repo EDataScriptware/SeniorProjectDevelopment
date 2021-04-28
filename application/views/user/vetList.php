@@ -222,7 +222,29 @@
 		
 			<?php foreach ($user as $use): ?>
 			<?php if ($use->bus_id === $b->bus_id) { ?>
-			<a href="" class="teamListElement"><?php echo $use->first_name ?> <?php echo$use->last_name?></a>
+			<a href="" class="teamListElement"></a>
+
+			<p class="detailedTeamListElement"><h3> <?php echo $use->first_name ?> <?php echo$use->last_name?> <?php if ($use->team_id != null) { ?> <span class = 'medCircle shiftRight 
+			<?php foreach ($allTeams as $temo): ?>
+			<?php if ($temo->team_id === $vet->team_id) { ?>
+				<?php echo strtolower($temo->color) ?>' > 
+			<?php break; } ?>
+			<?php endforeach ?>
+			</span>
+			<?php } ?> 
+			 </h3>
+
+				<p> <b> User Type: </b> <?php echo $use->user_type ?> </p> 
+
+				<p> <b> Day Phone: </b> <?php echo $use->day_phone ?> </p> 
+
+				<p> <b> Cell Phone: </b> <?php echo $use->cell_phone ?> </p> 
+
+				<p> <b> <?php echo $b->name ?> </b>  </p> 
+
+				</p>
+
+
 				<?php  }?>
 				<?php endforeach ?>
 		<?php endforeach ?>
