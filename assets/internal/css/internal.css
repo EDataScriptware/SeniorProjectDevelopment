@@ -34,6 +34,9 @@
 	margin-bottom: 10px;
 	margin-right: 10px;
   padding-bottom: 10px;
+
+  
+
 }
 
 .detailedTeamListElement h3 {
@@ -70,6 +73,11 @@
   text-align: center;
 	  -ms-overflow-style: none;  /* IE and Edge */
   	  scrollbar-width: none;  /* Firefox */
+
+      -webkit-user-select: none;  /* Chrome all / Safari all */
+      -moz-user-select: none;     /* Firefox all */
+      -ms-user-select: none;      /* IE 10+ */
+      user-select: none;          /* Likely future */    
 }
 
 .buttonScrollView:-webkit-scrollbar {display: none;}
