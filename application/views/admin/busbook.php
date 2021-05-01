@@ -1,6 +1,6 @@
 <script> 
 $(document).ready( function () {  
-    $('#book').addClass('active');
+    $('#bookNav').addClass('active');
 } ); 
 
 <?php foreach($bus_book_data as $bus) { ?>
