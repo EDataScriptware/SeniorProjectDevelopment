@@ -63,35 +63,5 @@ class Team_Model extends CI_Model {
         return $bool; // failed or successful
     }
 
-    public function deleteTeam($tid) {
-        $this->db->where('team_id', $tid);
-        $this->db->delete('team');
-    }
 
-    public function createTeam($mission_id, $bus_id, $leader_id, $hs_id, $color) {
-
-        $data = array(
-            'mission_id' => intval($mission_id),
-            'bus_id' => intval($bus_id),
-            'color' => $color
-        );
-
-        if($leader_id != '') {
-            $leader_id = intval($leader_id);
-            $data['leader_id'] = $leader_id;
-        }
-
-        if($hs_id != '') {
-            $hs_id = intval($hs_id);
-            $data['hs_id'] = $hs_id;
-        }
-
-        $this->db->insert('team', $data) ;
-
-        $insert_id = $this->db->insert_id();
-
-        return $insert_id ;
-    }
-    
-
-}
+} // Model
