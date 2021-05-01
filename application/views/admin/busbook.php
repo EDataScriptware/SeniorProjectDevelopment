@@ -14,8 +14,8 @@ $(document).ready( function () {
 
 <?php if(isset($bus_book_data)) {
     foreach($bus_book_data as $mission) { ?>
-      <div style="display: inline;">
-        <h2><?php echo $mission->title; ?> | </h2>
+      <div style="display: inline-flex;">
+        <h2><?php echo $mission->title; ?> |&#9;</h2>
         <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/setMission/'.$mission->mission_id); ?>'">Set As Current Mission</button>
       </div>
         <h4>Start: <?php echo $mission->start_date; ?> | End: <?php echo $mission->end_date; ?></h4>
