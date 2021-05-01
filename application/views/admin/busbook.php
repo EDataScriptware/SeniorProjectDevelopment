@@ -12,17 +12,16 @@ $(document).ready( function () {
 <h1>Bus Book Management</h1>
 <hr/>
 
-<!-- <button type="button" class="btn btn-primary" id="createBook">Create Mission / Bus Book</button> -->
-
 <?php if(isset($bus_book_data)) {
     foreach($bus_book_data as $mission) { ?>
-        <h2><?php echo $mission->title; ?> </h2>
+      <div style="display: inline;">
+        <h2><?php echo $mission->title; ?> | </h2>
+        <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/setMission/'.$mission->mission_id); ?>'">Set As Current Mission</button>
+      </div>
         <h4>Start: <?php echo $mission->start_date; ?> | End: <?php echo $mission->end_date; ?></h4>
         <?php if(isset($mission->flight_num)) { ?>
           <h4>Flight Number: <?php echo $mission->flight_num; ?> </h4>
         <?php } ?>
-
-        <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/setMission/'.$mission->mission_id); ?>'">Current Mission</button>
         <br>
         <br>
 

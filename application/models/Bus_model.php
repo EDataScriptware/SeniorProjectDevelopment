@@ -48,15 +48,6 @@ class Bus_model extends CI_Model {
         return $query->result();
     }
 
-    public function deleteBus($bus_id) {
-        // delete underlying teams for the bus thats being removed
-        $this->db->where('bus_id', $bus_id);
-        $this->db->delete('team') ;
-
-        $this->db->where('bus_id', $bus_id);
-        $this->db->delete('bus');
-    }
-
     # GET
     public function getFields() {
 

@@ -78,67 +78,11 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	// set the selected mission as the "Current Mission"
 	public function setMission($mission_id) {
 		echo "set current mission: ".$mission_id ;
 	}
 
-	public function deleteBus($bus_id) {
-		if(isset($bus_id)) {
-			$this->load->model('Bus_model');
-
-			$this->Bus_model->deleteBus(intval($bus_id)) ;
-		}
-
-		redirect('busbook') ;
-	}
-
-	public function createTeam($busid) {
-		if($this->input->post('submit') != NULL) {
-			$postData = $this->input->post();
-
-			$this->load->model('Team_model') ;
-
-			if(isset($postData["submit"])) {
-				unset($postData["submit"]) ;
-			}
-
-			$color = null ;
-			$leader_id = null ;
-			$hs_id = null ;
-			$mission_id = null ;
-
-			foreach($postData as $key => $value) {
-				switch ($key) {
-					case "color":
-						$color = $value;
-						break;
-
-					case "leader_id":
-						$leader_id = $value;
-						break;
-
-					case "hs_id":
-						$hs_id = $value;
-						break;
-
-					case "mission_id":
-						$mission_id = $value;
-						break;
-				}
-			}
-
-			$this->Team_model->createTeam($mission_id, $busid, $leader_id, $hs_id, $color);
-		}
-		redirect('admin/editBus/'.$busid) ;
-	}
-
-	public function deleteTeam($tid, $busid) {
-		$this->load->model("Team_model");
-
-		$this->Team_model->deleteTeam(intval($tid));
-		
-		redirect('admin/editBus/'.$busid) ;
-	}
 	//Handles file upload
 	public function do_upload() {
 
