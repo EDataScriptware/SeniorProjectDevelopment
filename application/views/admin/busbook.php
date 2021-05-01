@@ -23,7 +23,6 @@ $(document).ready( function () {
           <h4>Flight Number: <?php echo $mission->flight_num; ?> </h4>
         <?php } ?>
         <br>
-        <br>
 
         <table id="<?php echo $mission->mission_id; ?>book" class="table table-striped table-bordered">
             <thead>
