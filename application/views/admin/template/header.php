@@ -77,7 +77,7 @@
       </a>
   
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="<?php echo base_url('busbook')?>" id = "book" class="nav-link">Bus Book</a></li>
+        <li class="nav-item"><a href="<?php echo base_url('busbook')?>" id = "bookNav" class="nav-link">Bus Book</a></li>
         <li class="nav-item"><a href="<?php echo base_url('teams')?>" id = "team" class="nav-link">Teams</a></li>
         <li class="nav-item"><a href="<?php echo base_url('documents')?>" id = "doc" class="nav-link">Documents</a></li>
         <li class="nav-item"><a href="<?php echo base_url('reservations')?>" id = "rez" class="nav-link">Reservations</a></li>
