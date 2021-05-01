@@ -5,26 +5,16 @@ class Admin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		//Helpers are little libraries that make some things easier, it's a bit difficult to explain in text so go here https://codeigniter.com/userguide3/general/helpers.html
 		$this->load->helper(array('url_helper', 'form', 'url', 'directory', 'download'));
 	}
 
-	public function index() // Bus book View
+	
+	public function busBookView()  //generates the busBookView
 	{
-		$this->load->model('Veteran_model');
-		$data['queryData'] = $this->Veteran_model->get_all_veteran_data(); //3700
-		$data['vetFields'] = $this->Veteran_model->getFields();
-
-        $this->load->view('admin/template/header');
-		$this->load->view('admin/index', $data);
-		$this->load->view('admin/template/footer');
-	}
-
-	public function busBookView() {
-		// $this->load->model('BusBook_model');
 		$this->load->model('Mission_model');
 		$this->load->model('Bus_model');
 
-		// $bus_books = $this->BusBook_model->get_all_busbook_data();
 		$missions = $this->Mission_model->get_all_mission_data();
 		
 		$data['bus_book_data'] = [];
@@ -48,6 +38,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/footer');
 	}
 
+	//generates the mission PDF based on a python script.
 	public function buildVetPdf() {
 		$cmd = "python3 scripting/pdf_writer.py";
 
@@ -56,7 +47,7 @@ class Admin extends CI_Controller {
 		redirect('documents') ;
 	}
 
-	public function docView() //Document View
+	public function docView() //Generates the Document View
 	{
 		$currMission_id = $_SESSION["mission"];
 
@@ -137,7 +128,8 @@ class Admin extends CI_Controller {
 		redirect('admin/editBus/'.$busid) ;
 	}
 
-	public function busForm($mission_id) {
+	public function busForm($mission_id) //generates the bus creation view
+	 {
 		$data['mission_id'] = $mission_id ;
 
 		$this->load->view('admin/template/header');
@@ -182,7 +174,7 @@ class Admin extends CI_Controller {
 		
 		redirect('admin/editBus/'.$busid) ;
 	}
-
+	//Handles file upload
 	public function do_upload() {
 
 		$config['upload_path'] = './uploads/';
@@ -207,13 +199,13 @@ class Admin extends CI_Controller {
 				$this->load->view('admin/template/footer');
 		}
 	}
-
+	//locates the selected file and downloads it for you
 	public function download ($filename) {
 		$file_path = "./uploads/";
 
 		force_download(''.$file_path.$filename, NULL);                     
 	}
-
+	//locates the selected file and deletes it for you
 	public function deleteFile($filename) {
 		$directory = "./uploads/" ;
 
@@ -228,7 +220,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Veteran_model');
 		$this->load->model('Bus_model');
 
-		$currMission_id = $_SESSION["mission"];
+		$currMission_id = $_SESSION["mission"]; 
 
 		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
 		$data['bus'] = $this->Bus_model->get_mission_bus_data($currMission_id);
@@ -326,89 +318,8 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/footer');
 	}
 
-	public function vetQueryView() {
-		$this->load->model('Veteran_model');
 
-		if($this->input->post('submit') != NULL) {
-			$postData = $this->input->post();
-
-
-			if(isset($postData["submit"])) {
-				unset($postData["submit"]) ;
-			}
-
-			$fields = [];
-			$mission_id = null;
-			$team_id = null;
-
-			foreach($postData as $key => $value) {
-				if($key == "mission_query") {
-					if(is_numeric($value)) {
-						$mission_id = $value;
-					}
-				} else if($key == "team_query") {
-					if(is_numeric($value)) {
-						$team_id = $value;
-					}
-				}
-				else {
-					array_push($fields, $key);
-				}
-			}
-
-			$data['vetData'] = $this->Veteran_model->get_veterans_by_fields($fields, $mission_id, $team_id);
-			$data['fields'] = $fields;
-
-			$this->load->view('admin/template/header');
-			$this->load->view('admin/vetQuery', $data);
-			$this->load->view('admin/template/footer');
-
-		} else {
-			$this->load->view('admin/template/header');
-			$this->load->view('admin/index');
-			$this->load->view('admin/template/footer');
-		}
-	}
-
-	public function updateVet() {
-		$this->load->model('Veteran_model');
-
-		if($this->input->post('submit') != NULL) {
-			$postData = $this->input->post();
-
-
-			if(isset($postData["submit"])) {
-				unset($postData["submit"]) ;
-			}
-
-			echo json_encode($postData);
-
-			if($this->Veteran_model->updateVetEntry($postData)) {
-				echo "Veteran Updated Successfully |  Route Admin Somewhere.";
-			}
-			else {
-				echo "Veteran Updated Unsuccessfully | Route Admin Somewhere.";
-			}
-		}
-
-	}
-
-	public function updateUser($id) {
-		$postData = $this->input->post();
-
-		$newPass = $postData['pass_reset'];
-		unset($postData['pass_reset']);
-
-		if(strlen($newPass) >= 4) {
-			$postData['password'] = password_hash($newPass, PASSWORD_DEFAULT);
-		}
-
-		$this->db->where('iduser', $id);
-		$this->db->update('user', $postData); 
-
-		redirect('users');
-	}
-
+	//updates a specific veteran entry, and updates the last time it was edited
 	public function updateVeteran($id) {
 		$postData = $this->input->post();
 		$currTime = date("Y-m-d h:i:s");
@@ -423,6 +334,7 @@ class Admin extends CI_Controller {
 		redirect('veterans');
 	}
 
+	//updates a specific Guardian entry, and updates the last time it was edited
 	public function updateGuard($id) {
 		$postData = $this->input->post();
 		$currTime = date("Y-m-d h:i:s"); 
@@ -437,6 +349,9 @@ class Admin extends CI_Controller {
 		redirect('guardians');
 	}
 
+	//BEGIN - USER RELATED FUNCTIONS
+
+	//Creates a new user
 	public function addUser() {
 		$postData = $this->input->post();
 
@@ -455,6 +370,33 @@ class Admin extends CI_Controller {
 
 	}
 
+	//Deletes a specific user
+	public function  deleteUser() {
+		$id = $this->input->post('id');
+
+		$this->db->where('iduser', $id);
+		$this->db->delete('team');
+	}
+
+	//Updates user entry
+	public function updateUser($id) {
+		$postData = $this->input->post();
+
+		$newPass = $postData['pass_reset'];
+		unset($postData['pass_reset']);
+
+		if(strlen($newPass) >= 4) {
+			$postData['password'] = password_hash($newPass, PASSWORD_DEFAULT);
+		}
+
+		$this->db->where('iduser', $id);
+		$this->db->update('user', $postData); 
+
+		redirect('users');
+	}
+
+
+	//gets a specific user for editing purposes
 	public function getUser() {
 		$this->load->model('User_model');
 		$id = $this->input->post('id');
@@ -463,7 +405,11 @@ class Admin extends CI_Controller {
         echo json_encode($data);
 	}
 
+	//END USER RELAATED FUNCTIONS
 
+	//GETTERS
+	 
+	//gets a specific veteran for editing purposes
 	public function getVet() {
 		$this->load->model('Veteran_model');
 		$id = $this->input->post('id');
@@ -473,6 +419,7 @@ class Admin extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	//gets a specific Guardian for editing purposes
 	public function getGuard() {
 		$this->load->model('Guardian_model');
 		$id = $this->input->post('id');
@@ -482,6 +429,11 @@ class Admin extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	//END GETTERS
+
+	//MOVERS
+	
+	//Moves a user to a specific bus
 	public function moveUser($id) {
 		$bus_id = $this->input->post('bus_id');
 
@@ -492,7 +444,7 @@ class Admin extends CI_Controller {
 		redirect('teams');
 
 	}
-
+	//Moves a user to a specific team
 	public function moveVeteran($id) {
 		
 		$team_id = $this->input->post('team_id');
@@ -503,7 +455,7 @@ class Admin extends CI_Controller {
 		$this->db->update('veteran', $data); 
 		redirect('teams');
 	}
-
+	//Moves a team to a specific bus
 	public function moveTeam($id) {
 		$bus_id = $this->input->post('bus_id');
 
@@ -514,63 +466,12 @@ class Admin extends CI_Controller {
 		redirect('teams');
 	}
 
-	public function newBus() {
+	//END MOVERS
 
-		$currMission_id = $_SESSION["mission"];
-
-		$name = $this->input->post('name');
-
-		$data = array ('mission_id' => $currMission_id,
-						'name' => $name);
-
-		$this->db->insert('bus', $data);
-		redirect('teams'); 			
-
-	}
-
-	public function newTeam() {
-
-		$currMission_id = $_SESSION["mission"];
-
-		$color = $this->input->post('color');
-		$bus_id = $this->input->post('bus_id');
-
-		$data = array ('mission_id' => $currMission_id,
-		'color' => $color,
-		'bus_id' => $bus_id);
-
-		$this->db->insert('team', $data); 	
-		redirect('teams');
-	}
-
-	public function  removeTeam() {
-		$id = $this->input->post('team_id');
-		$data = array('team_id' => null);
-
-		$this->db->where('team_id', $id);
-		$this->db->update('veteran', $data); 
-
-		$this->db->where('team_id', $id);
-		$this->db->update('user', $data); 
-
-		$this->db->where('team_id', $id);
-		$this->db->delete('team');
-	}
-
-	public function removeBus() {
-		$id = $this->input->post('bus_id');
-		$data = array('bus_id' => null);
-
-		$this->db->where('bus_id', $id);
-		$this->db->update('veteran', $data); 
-
-		$this->db->where('bus_id', $id);
-		$this->db->update('user', $data); 
-
-		$this->db->where('bus_id', $id);
-		$this->db->delete('bus');
-	}
-
+	//Depending on the type passed over in the AJAX query it'll either remove:
+	//A User from their bus
+	//A Veteran from their team
+	//And then send them to the "uncatigorized" section
 	public function removeType() {
 		$id = $this->input->post('id');
 		$type = $this->input->post('type');
@@ -588,17 +489,11 @@ class Admin extends CI_Controller {
 			$this->db->where('veteran_id', $id);
 			$this->db->update('veteran', $data); 
 		}
-
-
 	}
 
-	public function  deleteUser() {
-		$id = $this->input->post('id');
+	//RESERVATIONS RELATED FUNCTIONS
 
-		$this->db->where('iduser', $id);
-		$this->db->delete('team');
-	}
-
+	//Takes in a specific $type and will either add a new Hotel entry, or add a new flight entry
 	public function addEvent($type) {
 
 		$this->db->select_max("mission_id");
@@ -651,6 +546,7 @@ class Admin extends CI_Controller {
 		redirect('reservations');
 	}
 
+	//Takes in a specific $type and will either edit a flight or Hotel entry	
 	public function editEvent($id,$type) {
 		$postData = $this->input->post();
 		switch ($type) {
@@ -686,7 +582,7 @@ class Admin extends CI_Controller {
 		
 	}
 
-
+	//Takes in a specific $type and will either remove a flight or Hotel entry
 	public function removeEvent() {
 		$id = $this->input->post('id');
 		$type = $this->input->post('type');
@@ -705,6 +601,7 @@ class Admin extends CI_Controller {
 		redirect('reservations');
 	}
 
+	//Changes the mission you're currently browsing.
 	public function changeMission() {
 		$id = $this->input->post('id');
 		$_SESSION['mission'] = $id;

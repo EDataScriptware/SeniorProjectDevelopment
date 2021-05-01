@@ -1,3 +1,25 @@
+# IMPORTANT INFORMATION FOR DEV USE
+For starters I'd recommend familiarizing yourself Codeigniter 3 (found here https://www.codeigniter.com/)
+But for a basic brakedown
+
+familiarize yourself with
+Config folder:
+- Autoload
+- Config
+- Database
+- routes (extremely important as it's how you set individual links)
+
+Controllers: Handles what information is loaded in to each route, and allows you to write relevant functions for it's designated section
+
+Models: Individual sets of functions you can load in through the controller
+
+Views: Load in individual views to build each section.
+
+GO TO LOGIN CONTROLLER FOR DETAILED WALKTHROUGH
+AND THE GUARDIAN VIEW TO EXPLAIN CERTAIN MINOR FUNCTIONS LIKE HOW TO INITIATE DATATABLES
+
+For how to add new colors for team views, go to assets/interal/css/internal.css and scroll to the specified section
+
 # Senior Project Development - Rochester Honor Flight
 ## The Raspberry Pi 4 Server Requirement Specifications
 
@@ -36,3 +58,4 @@ mysql -u insert_username -p < CREATE_honorflight.sql
 ```
 
 When the script is completed, you will receive a message `deployment.sh execution complete!`
+

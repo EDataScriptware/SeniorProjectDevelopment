@@ -49,13 +49,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+//Sets the "index" controller, aka what's loaded in first (in this case it's the login controller)
 $route['default_controller'] = 'Login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //User Routes
+
+//Route['what you want the link to be called'] = "controller-name (in this case User) / function in controller (in this case vetList)
 $route['user'] = 'User/vetList'; //User Home screen
-// $route['vetList'] = 'User/vetList';
 $route['vetList/:num'] = 'User/vetList';
 $route['vetView/:num'] = 'User/vetView'; 
 $route['mission_documents'] = 'User/fileView'; 
@@ -63,8 +65,8 @@ $route['mission_itinerary'] = 'User/itineraryView';
 $route['incident'] = 'User/incident' ;
 
 //Admin Routes
-// $route['admin'] = 'Admin'; //admin home screen
-$route['teams'] = 'Admin/teamView';
+
+$route['teams'] = 'Admin/teamView'; //admin home screen
 $route['documents'] = 'Admin/docView';
 $route['reservations'] = 'Admin/resView';
 $route['users'] = 'Admin/userView';

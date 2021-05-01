@@ -1,13 +1,13 @@
-<script> $(document).ready( function () {  $('#rez').addClass('active');} ); </script>
+<script> $(document).ready( function () {  $('#rez').addClass('active');} ); </script> <!-- sets relevant nav button to active -->
 
 <script>
 $(document).ready( function () {
-    $('#flightTable').DataTable();
+    $('#flightTable').DataTable(); 
     $('#hotelTable').DataTable();
 } );
 
 </script>
-
+<!-- Flight information table -->
 <h2> Flight Information <button type="button" class="btn btn-primary" onclick = "addBlock('fly')"  > ADD </button>  </h2>
 
 <table id="flightTable"  class="table table-striped table-bordered">
@@ -37,6 +37,7 @@ $(document).ready( function () {
     </tbody>
 </table>
 
+<!-- Hotel information table  -->
 <h2> Hotel Information <button type="button" class="btn btn-primary" onclick = "addBlock('hotel')"  > ADD </button> </h2>
 
 <table id="hotelTable"  class="table table-striped table-bordered">
@@ -105,6 +106,7 @@ $(document).ready( function () {
         </button>
       </div>
       <div class="modal-body">
+      <!-- Flight info form -->
         <form method='POST' id ="addFly" style='display:none' >
 
             <label for="newAirline">Airline:</label>
@@ -133,7 +135,7 @@ $(document).ready( function () {
 
 
         </form>
-
+         <!-- Forms will hot swap in these divs depending on what button you pick, this is the hotel form  -->
         <form id ="addHotel" method='POST' style='display:none' >
 
         <label for="newVeteran_id">Veteran:</label>
@@ -177,6 +179,7 @@ $(document).ready( function () {
 </div>
 
 <!-- Edit Modal -->
+<!-- Same general functionality as the adding section  -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" >
   <div class="modal-dialog" >
     <div class="modal-content">
@@ -187,7 +190,7 @@ $(document).ready( function () {
         </button>
       </div>
       <div class="modal-body">
-
+                <!-- Flight edit form -->
         <form id ="editFly" method='POST' style='display:none' >
 
         <label for="airline">Airline:</label>
@@ -215,7 +218,7 @@ $(document).ready( function () {
             <input type="text" id="arrival_location" name="arrival_location" required size="10">  <br>
 
         </form>
-
+                <!-- Hotel edit form -->
         <form id ="editHotel" method='POST' style='display:none' >
 
         <label for="veteran_id">Veteran:</label>
@@ -261,7 +264,7 @@ $(document).ready( function () {
 </div>
 
 <script>
-
+//Function displays the adding info block and hides other forms depending on the type you selected
 function addBlock($type) {
     
     switch ($type) {
@@ -293,13 +296,14 @@ function addBlock($type) {
     $('#addModal').modal('show');
 }
 
+//function displays the edit modal and all relevant information based on what you selected, also hotswaps
 function editBlock($id, $type) {
 
     switch ($type) {
         case 'fly':
 
             document.getElementById("editFly").action = 'Admin/editEvent/'+$id+'/'+$type;
-
+            //This post is how it gets the relevant information it points to the Admin controller, and the event getter function
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
     
                 var $res = JSON.parse(result);
@@ -326,7 +330,7 @@ function editBlock($id, $type) {
         case 'hotel':
 
             document.getElementById("editHotel").action = "Admin/editEvent/"+$id+'/'+$type;
-
+            //same as the previous post, just focused on events
             $.post('Admin/getEvent', {id: $id, type: $type}, function (result) {
                 var $res = JSON.parse(result);
                 console.log($res[0]);
@@ -353,7 +357,7 @@ function editBlock($id, $type) {
 
     $('#editModal').modal('show');
 }
-
+//pops up with a confirmation if you really want to get rid of something specific.
 function removeBlock($id, $type) {
     switch ($type) {
         case 'fly':

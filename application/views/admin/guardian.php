@@ -1,11 +1,13 @@
 <script>
     $(document).ready( function () {
-    $('#vetTable').DataTable();
-} );
-    </script>
+    $('#vetTable').DataTable(); // This is how you activate a the datatable library for a specific table.
+    } );
+</script>
 
-<script> $(document).ready( function () {  $('#gau').addClass('active');} ); </script>   
+<script> $(document).ready( function () {  $('#gau').addClass('active');} ); </script>  <!-- Sets the relevant nav button to Active -->
 
+<!-- These arrays are correlated to specific database fields, if you add a new field, place it in whichever element you thing is relevant -->
+<!-- If you see one that isn't listed in here, that's probably because it's unable to be easily generalized with the rest, and needs it's own unique editing interface -->
 <?php $about = array('dob','gender','occupation','shirt_size','city','state','zip','day_phone','cell_phone','email','shirt_size', 'branch'); ?>
 <?php $extra = array ('how_heard','why_volunteering','prior_experience','med_training','med_conditions','diet_restrictions', 'administrative_comments'); ?>
 <?php $references = array('ref_name','ref_day_phone','ref_evening_phone','ref_address','ref_relationship','ref_email'); ?>
@@ -13,7 +15,8 @@
 <?php $particularVet = array ('vet_name','vet_relationship'); ?>
 
 
-<div class = "scrunch"> 
+<div class = "scrunch"> <!-- These scrunch divs don't actually do anything specific, I'm just terrified of removing them at this point  -->
+<!-- This table iterates through every relevant guardian -->
 <table id="vetTable" class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -27,8 +30,6 @@
     </thead>
     <tbody>
     <?php foreach ($guardian as $guard): ?>
-
-        <?php $getter = ""; ?>
 
         <tr>
             <td><?php echo $guard->first_name ?> <?php echo $guard->last_name?></td>
@@ -51,7 +52,7 @@
 
 <hr>
         </div>
-
+        <!-- This is the div that allows you to edit or view specific information, it's also what each PHP array is for. -->
         <div id="whiteEdit" class="whiteEdit">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <h2 id = "bigName"> </h2>
@@ -59,7 +60,7 @@
     <form id = "update" method = "POST">
 
         <h3>About</h3>
-
+        <!-- if you have a new set of inputs, create a new array with the specified fields and then just copy one of these for each loops -->
 	<?php foreach ($about as $aboot): ?>
 		<?php 
 			echo str_replace('_', ' ',ucfirst($aboot)).": <input type='text' id='$aboot' name='$aboot' class = 'infoInput'>";
@@ -86,6 +87,7 @@
         <?php endforeach ?>
 
         <div id = 'parVet' style = 'display:none'> 
+
         <h3> Specific Vet: </h3>
             
         <?php foreach ($particularVet as $pet): ?>
@@ -94,7 +96,6 @@
 			echo '<br>';
 	        ?>
         <?php endforeach ?>
-
 
         </div>
 
@@ -113,18 +114,14 @@
         
     </form>
 
-    <form id = "updateGuard">
-
-    </form>
-
-
 </div>
 
 
         <script>
 
         $(document).ready(function() {
-
+    
+    //IF YOU WONDER WHY EVERY UN CHECKED CHECKBOX TURNS ON WHEN YOU SUBMIT THE FORM THIS IS WHY, to make sure all the values properly pass, un checked values are defaulted to zero and then checked.
 	  // on form submit
         $("#update").on('submit', function() {
             // to each unchecked checkbox
@@ -132,20 +129,20 @@
         })	
  
     });
-
+        //loads up the whiteedit box for editing
         function editBlock($id) {
         $.post('Admin/getGuard', {id: $id}, function (data) {
             var $result = JSON.parse(data);
             console.log($result[0]);
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 0px 0px 60px";
-            
+            //performs the update guardian function in the admin controler, you can add additional fields into the URL to pass them to the function.
             document.getElementById("update").action = "Admin/updateGuard/"+$result[0].guardian_id;
 
             document.getElementById("bigName").innerHTML = $result[0]['first_name'] + " " + $result[0]['last_name'];
             document.getElementById("tinyId").innerHTML = "{" + $result[0]['guardian_id'] + '}';
         
-
+            //utilizes a similar looping system to display required information
             <?php foreach ($about as $aboot): ?>
                 document.getElementById('<?php echo $aboot ?>').value = $result[0]['<?php echo $aboot ?>'];
             <?php endforeach ?>
@@ -166,9 +163,7 @@
                 <?php endforeach ?>
 
              } 
-             else {
-                document.getElementById("parVet").style.display = "none";
-             }
+             else {document.getElementById("parVet").style.display = "none";}
 
             <?php foreach ($extra as $ex): ?>
                 document.getElementById('<?php echo $ex ?>').value = $result[0]['<?php echo $ex ?>'];
@@ -176,8 +171,7 @@
 
         });       
         }
-
-
+        //Just closes the nav for you.
         function closeNav() {
         document.getElementById("whiteEdit").style.width = "0";
         document.getElementById("whiteEdit").style.padding = "0px 0px 0px 0px";

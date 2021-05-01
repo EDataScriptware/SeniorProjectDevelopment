@@ -10,16 +10,10 @@ class User extends CI_Controller {
 
 	}
 
-	public function index()
-	{
-		$this->load->model('Index_model');
-		$data['teams'] = $this->Index_model->get_TeamList();
-        $this->load->view('user/template/header');
-		$this->load->view('user/index', $data);
-		$this->load->view('user/template/footer');
-	}
-
-    public function vetList() //Veterins List
+	//Acts as the index function for the user side
+	//if an ID is in the URI it'll show you information relevant to a specific team (AKA clicking on the team color in the dropdown)
+	//If it isn't, it'll give you a detailed view that has all pertinant mission information
+    public function vetList() 
 	{
 		$id = $this->uri->segment(2);
 		$this->load->model('Veteran_model');
@@ -62,8 +56,8 @@ class User extends CI_Controller {
 		$this->load->view('user/vetList', $data);
 		$this->load->view('user/template/footer');
 	}
-
-    public function vetView() //Individual Veterin View
+	//Grabs veteran ID from the URL and will display a detailed veteran view
+    public function vetView() 
 	{
 		$id = $this->uri->segment(2);
 		// $id = $_GET["vet_id"];
@@ -73,11 +67,13 @@ class User extends CI_Controller {
 		$data['veteran'] = $this->Veteran_model->get_one_veteran($id);
 		$data['allTeams'] = $this->Index_model->get_TeamList();
 
+		//gets their hotel info
 		$this->db->select("*");
 		$this->db->from('hotel_info');
 		$this->db->where('veteran_id', $id);
 		$data['hotel'] = $this->db->get()->result();
 
+		//gets the guardian hotel info
 		$this->db->select("*");
 		$this->db->from('hotel_info');
 		$this->db->where('guardian_id', $data['veteran'][0]->guardian_id);
@@ -163,7 +159,7 @@ class User extends CI_Controller {
 		$this->load->view('user/fileView', array('error' => ' ', 'files' => $map));
 		$this->load->view('user/template/footer');
 	}
-
+	//allows you to download a file
 	public function download ($filename) {
 		$file_path = "./uploads/";
 
@@ -187,6 +183,7 @@ class User extends CI_Controller {
 		$this->load->view('user/template/footer');
 	}
 
+	//updates a veterans information of the fly, because of how generic it is you can load it into veteran info editing form
 	public function updateInfo($vetId) {
 
 		$postData = $this->input->post();
@@ -199,6 +196,7 @@ class User extends CI_Controller {
 
 	}
 
+	//updates a veterans hotel info
 	public function updateHotelInfo($vetId) {
 
 		$postData = $this->input->post();
@@ -208,9 +206,8 @@ class User extends CI_Controller {
 
 		redirect('vetView/'.$vetId);
 
-
 	}
-
+	//updates a Guardians hotel info
 	public function updateGuardianHotelInfo($guardId) {
 
 		$postData = $this->input->post();
@@ -222,50 +219,5 @@ class User extends CI_Controller {
 
 
 	}
-
-	public function addEvent($team) {
-		$title = $this->input->post('newTitle');
-				$description = $this->input->post('newDescription');
-				$date = $this->input->post('newDate');
-				$start = $this->input->post('newStart');
-				$end = $this->input->post('newEnd');
-
-				$currMission_id = $_SESSION["mission"];
-				
-				$data = array(
-					'title' => $title,
-					'team_id' => $team,
-					'description' => $description,
-					'date' => $date,
-					'start' => $start,
-					'end' => $end,
-					'mission_id' => $currMission_id,
-				);
-
-				$this->db->insert('event', $data); 
-				redirect('mission_itinerary');
-	}
-
-	public function getEvent() {
-		$id = $this->input->post('id');
-		$this->db->where('event_id', $id);
-		$data =	$this->db->get('event')->result();
-		echo json_encode($data);
-	}
-
-
-	public function editEvent($id) {
-		$postData = $this->input->post();
-		$this->db->where('event_id', $id);
-		$this->db->update('event',$postData);
-		redirect('mission_itinerary');
-	}
-
-	public function deleteEvent() {
-		$id = $this->input->post('id');
-		$this->db->where('event_id', $id);
-		$this->db->delete('event');
-	}
-
 
 }

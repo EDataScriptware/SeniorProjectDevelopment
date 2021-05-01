@@ -6,6 +6,8 @@
 
 <script> $(document).ready( function () {  $('#vet').addClass('active');} ); </script>
 
+<!-- These arrays are correlated to specific database fields, if you add a new field, place it in whichever element you thing is relevant -->
+<!-- If you see one that isn't listed in here, that's probably because it's unable to be easily generalized with the rest, and needs it's own unique editing interface -->
 <?php $about = array('dob','gender','weight','city','state','zip','day_phone','cell_phone','email','shirt_size'); ?>
 <?php $emergency = array ('emergency_name','emergency_relationship','emergency_address', 'emergency_day_phone', 'emergency_cell_phone') ?>
 <?php $comments = array ('add_comments','admin_comments') ?>
@@ -20,15 +22,15 @@
             <th>Name</th>
             <th>War(s)</th>
             <th>Date Of Birth</th>
-            <th>On Current Mission?</th>
-            <th>Current Team</th>
+            <th>On This Mission?</th>
+            <th> Team</th>
             <th> Action </th>
         </tr>
     </thead>
     <tbody>
     <?php foreach ($veteran as $vet): ?>
-
-        <?php $getter = ""; ?>
+    <!-- iterates through each veteran, supplies a bit of vet information but everything is available in the editing side menu -->
+        <?php $getter = ""; ?> <!-- Getter is how the war column is populated -->
 
         <tr>
             <td><?php echo $vet->first_name ?> <?php echo$vet->last_name?></td>
@@ -49,7 +51,6 @@
             ?>
             </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $vet->veteran_id ?>)" > EDIT </button> 
-                 <!-- <button type="button" class="btn btn-primary" onclick = "editGuardBlock(<?php // echo $vet->guardian_id ?>)" > GUARDIAN EDIT </button> </td> -->
         </tr>
         <?php endforeach ?>
     </tbody>
@@ -57,7 +58,7 @@
 
 <hr>
         </div>
-
+        <!-- Edit box  -->
         <div id="whiteEdit" class="whiteEdit">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <h2 id = "bigName"> </h2>
@@ -76,7 +77,7 @@
     </select> <br>
 
         <h3>About</h3>
-
+     <!-- if you have a new set of inputs, create a new array with the specified fields and then just copy one of these for each loops -->
 	<?php foreach ($about as $aboot): ?>
 		<?php 
 			echo str_replace('_', ' ',ucfirst($aboot)).": <input type='text' id='$aboot' name='$aboot' class = 'infoInput'>";
@@ -156,14 +157,9 @@
         <h4> Medical Chair Location: </h4>
 	    <textarea id="med_chair_loc" name="med_chair_loc" rows="4" cols="50"></textarea>
         
-
         <hr>
-
             <button type="submit" class="btn btn-primary" form="update">Save changes</button>
-        
     </form>
-
-
 </div>
 
 
@@ -171,14 +167,16 @@
 
         $(document).ready(function() {
 
+    //IF YOU WONDER WHY EVERY UN CHECKED CHECKBOX TURNS ON WHEN YOU SUBMIT THE FORM THIS IS WHY, to make sure all the values properly pass, un checked values are defaulted to zero and then checked.
 	  // on form submit
         $("#update").on('submit', function() {
             // to each unchecked checkbox
             $(this).find('input[type=checkbox]:not(:checked)').prop('checked', true).val(0);
         })	
- 
     });
 
+        //populates the edit block
+         //utilizes a similar looping system to display required information
         function editBlock($id) {
         $.post('Admin/getVet', {id: $id}, function (data) {
             var $result = JSON.parse(data);
@@ -226,7 +224,7 @@
         });       
         }
 
-
+        //closes the nav
         function closeNav() {
         document.getElementById("whiteEdit").style.width = "0";
         document.getElementById("whiteEdit").style.padding = "0px 0px 0px 0px";

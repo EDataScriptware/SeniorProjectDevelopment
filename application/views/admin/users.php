@@ -9,6 +9,7 @@
 
 <h2> System Users <button type="button" class="btn btn-primary" onclick = "addNew()"  > ADD </button> </h2>
 
+<!-- User table -->
 <table id="userTable"  class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -29,6 +30,7 @@
         <tr>
             <td> <?php echo $use->user_type ?> </td>
             <td> <?php
+            //handles how specific user permissions are displayed
             switch ($use->user_permissions) {
                 case 0:
                     echo "Administrator";
@@ -76,7 +78,7 @@
 <hr>
 
 </div>
-
+<!-- User editing div -->
 <div id="whiteEdit" class="whiteEdit">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <form id = "update" method = "POST">
@@ -139,8 +141,9 @@
 
 
     <script>
-
+    //Populates the editing block with specific information
         function editBlock($id) {
+            //getter post functionality
         $.post('Admin/getUser', {id: $id}, function (data) {
             var $result = JSON.parse(data);
             console.log($result[0]);
@@ -177,7 +180,7 @@
             document.getElementById("reset").addEventListener("click", passwordReset($result[0].iduser));
         });       
         }
-
+        //pops up the edit box for editing
         function addNew() {
             document.getElementById("whiteEdit").style.width = "550px";
             document.getElementById("whiteEdit").style.padding = "60px 90px 0px 60px";
@@ -187,10 +190,7 @@
             document.getElementById("password").name = 'password';
         }
 
-        function passwordReset($id) {
-
-        }
-
+        //closes the nav
         function closeNav() {
         document.getElementById("whiteEdit").style.width = "0";
         document.getElementById("whiteEdit").style.padding = "0px 0px 0px 0px";
@@ -203,6 +203,7 @@
 
         }
 
+        //makes sure you want to delete a specific user
         function deleteBlock($id) {
 
         if (confirm("Are you sure you want to delete this user? "  )) {

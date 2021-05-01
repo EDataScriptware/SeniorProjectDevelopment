@@ -1,14 +1,15 @@
 <?php 
+//This makes absolutely sure if there are any uncatagorised Veterans or Users, so that the tables are only displayed if neccessary
 $unUserCheck = false;
 $unVetCheck = false;
-
 ?>
 <div class = "scrunch"> 
+<!-- Iterates through each bus and pulls any relevant users and teams that are associated with it -->
 <?php foreach ($bus as $bub): ?>
 
     <script>
     $(document).ready( function () {
-    // $('#<?php // echo $tem->color ?>Vet').DataTable();
+    //programmtically activates each individual user bus table
     $('#<?php echo $bub->bus_id ?>User').DataTable();
 } );
     </script>
@@ -17,6 +18,7 @@ $unVetCheck = false;
 <h2><?php echo $bub->name?> </h2>
 
   <br>  
+<!-- As an example this might be the Bus 1 Staff table -->
 <h3> <?php echo $bub->name?> Staff </h3>
 
 
@@ -43,11 +45,12 @@ $unVetCheck = false;
         <?php endforeach ?>
     </tbody>
 </table>
-
+<!-- Gets all teams relevant to a specific bus and displays each one out as a seperate table (ex: Team Blue Veterans) -->
 <?php foreach ($team as $tem): ?>
     <?php if ($tem->bus_id == $bub->bus_id) { ?>
 
         <script>
+    //Programmatically activates each table
     $(document).ready( function () {
     $('#<?php echo $tem->color ?>Vet').DataTable();
     } );
@@ -70,6 +73,7 @@ $unVetCheck = false;
         <?php if ($vet->team_id == $tem->team_id) { ?>
 
     <?php
+    //Inline PHP gets relevant guardian info
 	$this->db->select("*");
 	$this->db->from('guardian');
 	$this->db->where('guardian_id',$vet->guardian_id);
@@ -95,15 +99,13 @@ $unVetCheck = false;
 
 <?php endforeach ?>
 
-
-
 <script>
     $(document).ready( function () {
      $('#unVet').DataTable();
     $('#unUser').DataTable();
 } );
     </script>
-
+<!-- Uncatigorized staff view, if their on the mission but they don't have an assigned team or bus  -->
 <?php if ($unUserCheck == true || $unVetCheck == true) { ?> 
 <h2> Uncatagorized Members</h2>
 
@@ -258,20 +260,18 @@ $unVetCheck = false;
 </div>
 
 <script> 
-var $holdBusID = null;
-var $holdTeamID = null;
-var $holdUID = null;
-var $holdType = '';
+
 
 //Moving functions
+
+//lets you move a team to a different bus
 function moveTeam($id) {
 document.getElementById("movingTeam").action = "Admin/moveTeam/"+$id
 $('#moveTeam').modal('show');
 }
 
+//rigs the team modal to either move a veteran or staff member depending on which button pressed
 function moveBlock($id, $type) {
-$holdType = $type;
-
  
 if ($type === "veteran") {
     document.getElementById("veteranMoving").action = "Admin/moveVeteran/"+$id;
@@ -296,7 +296,7 @@ else {
 $('#moveUser').modal('show');
 }
 
-//Removing Functions
+//Allows you to remove a specified user OR Veteran, and will return them to the uncatagorized section
 function removeBlock($id, $type) {
 
     if (confirm("Are you sure you want to remove this " + $type + " from the mission? "  )) {

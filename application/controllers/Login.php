@@ -1,23 +1,34 @@
 <?php
 
+// Use this section to familiarize with CI's general order of operation
+// the controller acts as the basis for each route
+//
 class Login extends CI_Controller {
 
 
 	public function __construct()
 	{
 		parent::__construct();
+		//if you look at the models folder you'll see Login_model, loading in those models is how you get access to those functions.
 		$this->load->model('Login_model');
 		$this->load->helper('url_helper');
 	}
 
-
+	//The index function is the default view for that controller
+	//if you go into routes and just set the URL as the controller name, it will default to the index function (if it exists).
 	public function index()
 	{
+		//If you go to views you'll see a template folder with the relevant header and footer as well as login.php, this is how you build your view
+		//Views will load in based on the order you set them, so follow this general structure when building them
+		//if your view is in a folder, make sure to reference the folder in the view URL, header.php is in the template folder, so reference it as 'template/header'
 		$this->load->view('template/header');
 		$this->load->view('login');
 		$this->load->view('template/footer');
 	}
 
+	//This function is thrown upon a login attempt
+	//it first grabs the posted information, sees if the URL exists and then checks if the submitted password is the same as the usernames database entry.
+	//If it's successful, it'll create a few universal variables, and will then redirect you based on what the accounts permissions level is.
 	public function loginCheck() {
 
 		if($this->input->post('submit') != NULL) {
