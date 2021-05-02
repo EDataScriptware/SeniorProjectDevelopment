@@ -50,6 +50,7 @@ class Login extends CI_Controller {
 				$this->db->select("mission_id");
 				$this->db->where("show_on_front", 1);
 				$this->db->from('mission');
+
 				$currMission_id = $this->db->get()->result();
 
 				if(count($currMission_id) == 0) {
@@ -66,12 +67,23 @@ class Login extends CI_Controller {
 
 				var_dump($_SESSION) ;
 				
-				// if ($_SESSION["userPerm"] === '0') {
-				// 	redirect('busbook');
-				// }
-				// else {
-				// 	redirect('user');
-				// }
+				if ($_SESSION["userPerm"] === '0') {
+					if($currMission_id == null) {
+						$this->db->select_max("mission_id");
+						$this->db->from('mission');
+				
+						$currMission_id = implode($this->db->get()->row_array());
+					}
+					redirect('busbook');
+				}
+				else {
+					if($currMission_id == null) {
+						echo '<script>alert("No mission data available.")</script>';
+					}
+					else {
+						redirect('user');
+					}
+				}
 				
 			}
 			else {
