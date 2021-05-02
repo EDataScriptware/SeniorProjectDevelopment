@@ -13,7 +13,7 @@ $(document).ready( function () {
 <hr/>
 
 <?php if(isset($bus_book_data)) {
-    foreach($bus_book_data as $mission) { ?>
+    foreach($bus_book_data as $mission) { var_dump($mission);?>
       <div style="display: inline-flex;">
         <h2><?php echo $mission->title; ?> |&#9;</h2>
         <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/setMission/'.$mission->mission_id); ?>'">Set As Current Mission</button>
