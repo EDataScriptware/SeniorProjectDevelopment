@@ -64,8 +64,6 @@ class Login extends CI_Controller {
 				$_SESSION["userId"] = $userObj->iduser;
 				$_SESSION["userPerm"] = $userObj->user_permissions;
 				$_SESSION["mission"] = $currMission_id;
-
-				var_dump($_SESSION) ;
 				
 				if ($_SESSION["userPerm"] === '0') {
 					if($currMission_id == null) {
@@ -79,6 +77,7 @@ class Login extends CI_Controller {
 				else {
 					if($currMission_id == null) {
 						echo '<script>alert("No mission data available.")</script>';
+						redirect('');
 					}
 					else {
 						redirect('user');
