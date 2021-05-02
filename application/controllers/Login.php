@@ -50,7 +50,7 @@ class Login extends CI_Controller {
 				$this->db->select("mission_id");
 				$this->db->where("show_on_front", 1);
 				$this->db->from('mission');
-				$currMission_id = $this->db->get()->result()[0];
+				$currMission_id = $this->db->get()->result();
 
 				// Start a session here
 				$_SESSION["userId"] = $userObj->iduser;
