@@ -66,12 +66,11 @@ class Login extends CI_Controller {
 				$_SESSION["mission"] = $currMission_id;
 				
 				if ($_SESSION["userPerm"] === '0') {
-					if($currMission_id == null) {
-						$this->db->select_max("mission_id");
-						$this->db->from('mission');
-				
-						$currMission_id = implode($this->db->get()->row_array());
-					}
+					$this->db->select_max("mission_id");
+					$this->db->from('mission');
+			
+					$currMission_id = implode($this->db->get()->row_array());
+					
 					redirect('busbook');
 				}
 				else {
