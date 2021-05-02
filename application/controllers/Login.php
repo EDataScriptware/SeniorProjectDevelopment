@@ -84,7 +84,7 @@ class Login extends CI_Controller {
 					session_destroy();
 				}
 
-				echo '<script>alert("No mission data available."); window.location.href="'.base_url('').'";</script>';
+				echo '<script>alert("Password Incorrect"); window.location.href="'.base_url('').'";</script>';
 			}
 		} // check form data not null
 
