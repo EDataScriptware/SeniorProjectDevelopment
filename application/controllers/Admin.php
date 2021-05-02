@@ -85,6 +85,8 @@ class Admin extends CI_Controller {
 		$this->load->model("Mission_model");
 
 		$this->Mission_model->setCurrentMission($mission_id);
+
+		redirect('busbook') ;
 	}
 
 	// unmarks mission from being listed as the "current mission"
@@ -94,6 +96,8 @@ class Admin extends CI_Controller {
 		$this->load->model("Mission_model");
 
 		$this->Mission_model->unsetCurrentMission();
+
+		redirect('busbook') ;
 	}
 
 	//Handles file upload

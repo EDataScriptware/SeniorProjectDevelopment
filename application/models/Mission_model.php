@@ -70,7 +70,7 @@ class Mission_Model extends CI_Model {
     }
 
     public function setCurrentMission($mission_id) {
-        unsetCurrentMission();
+        $this->unsetCurrentMission();
 
         $this->db->set('show_on_front', 1);
         $this->db->where('mission_id', $mission_id) ;
