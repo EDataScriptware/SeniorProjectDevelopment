@@ -4,7 +4,6 @@
 } );
     </script>
 
-<?php var_dump($_SESSION) ?>
 <div class = "scrunch"> 
 
 <script> $(document).ready( function () {  $('#use').addClass('active');} ); </script>
