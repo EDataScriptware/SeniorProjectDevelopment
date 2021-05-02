@@ -47,7 +47,7 @@ class Login extends CI_Controller {
 		
 				// $currMission_id = implode($this->db->get()->row_array());
 
-				$this->db->select("mission_id");
+				$this->db->select("*");
 				$this->db->where("show_on_front", 1);
 				$this->db->from('mission');
 
@@ -70,7 +70,7 @@ class Login extends CI_Controller {
 					$this->db->from('mission');
 			
 					$currMission_id = implode($this->db->get()->row_array());
-					
+
 					redirect('busbook');
 				}
 				else {
