@@ -42,22 +42,28 @@ class Login extends CI_Controller {
 			if($userObj && password_verify($postData['password'], $userObj->password)) {
 				$data['confirm'] = true;
 
-				$this->db->select_max("mission_id");
-				$this->db->from('mission');
+				// $this->db->select_max("mission_id");
+				// $this->db->from('mission');
 		
-				$currMission_id = implode($this->db->get()->row_array());
+				// $currMission_id = implode($this->db->get()->row_array());
+
+				$this->db->select("mission_id");
+				$this->db->where("show_on_front", 1);
+				$currentMission_id = implode($this->db->get()->row_array());
 
 				// Start a session here
 				$_SESSION["userId"] = $userObj->iduser;
 				$_SESSION["userPerm"] = $userObj->user_permissions;
 				$_SESSION["mission"] = $currMission_id;
+
+				var_dump($_SESSION) ;
 				
-				if ($_SESSION["userPerm"] === '0') {
-					redirect('busbook');
-				}
-				else {
-					redirect('user');
-				}
+				// if ($_SESSION["userPerm"] === '0') {
+				// 	redirect('busbook');
+				// }
+				// else {
+				// 	redirect('user');
+				// }
 				
 			}
 			else {
