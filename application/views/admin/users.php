@@ -112,7 +112,7 @@
     <label for="team_id">Team Id:</label>
     <select id="team_id" name="team_id">
     <?php foreach($team as $tem): ?>
-    <?php if ($tem->mission_id === $id) { ?>
+    <?php if ($tem->mission_id == $id) { ?>
     <option value="<?php echo $tem->team_id ?>"><?php echo $tem->color?></option>
 
     <?php } ?>
