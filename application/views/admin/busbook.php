@@ -16,7 +16,11 @@ $(document).ready( function () {
     foreach($bus_book_data as $mission) { var_dump($mission);?>
       <div style="display: inline-flex;">
         <h2><?php echo $mission->title; ?> |&#9;</h2>
+        <?php if($mission->show_on_front != 1) { ?>
         <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/setMission/'.$mission->mission_id); ?>'">Set As Current Mission</button>
+        <?php } else { ?>
+          <h2>Current Mission</h2>
+        <?php } ?>
       </div>
         <h4>Start: <?php echo $mission->start_date; ?> | End: <?php echo $mission->end_date; ?></h4>
         <?php if(isset($mission->flight_num)) { ?>
