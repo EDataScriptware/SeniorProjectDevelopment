@@ -52,6 +52,13 @@ class Login extends CI_Controller {
 				$this->db->from('mission');
 				$currMission_id = $this->db->get()->result();
 
+				if(count($currMission_id) == 0) {
+					$currMission_id = null;
+				}
+				else {
+					$currMission_id = $currMission_id[0];
+				}
+
 				// Start a session here
 				$_SESSION["userId"] = $userObj->iduser;
 				$_SESSION["userPerm"] = $userObj->user_permissions;
