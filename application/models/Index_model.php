@@ -6,7 +6,7 @@ class index_model extends CI_Model {
 	{
 		parent::__construct();
 	}
-
+	//Gets team list
 	public function get_TeamList() {
 
 		$currMission_id = $_SESSION["mission"];

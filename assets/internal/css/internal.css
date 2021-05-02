@@ -1,9 +1,6 @@
-#userList {
-   width: auto;
-    font-size: 4vh;
-}
-
 .brand {padding-bottom: 10px;}
+
+/* Detailed Veteran/User information */
 
 .detailedTeamListElement {
 	display: inline-block;
@@ -40,6 +37,7 @@
  right: 12px; 
 }
 
+/* Scroll information */
 
 .buttonScrollView{
 	overflow-x: scroll;
@@ -84,10 +82,7 @@
 	filter: drop-shadow(0 0 0.75rem lightgrey);
 }
 
-.cnter{
-	margin: auto;
-  	width: 50%;
-}
+/* Stretches out the modal so it fits the screen better */
 
 .modal-xl {
 	width: auto;
@@ -95,72 +90,15 @@
 	z-index: 100;
 }
 
-.teamListElement:link {
-	color: white;
-	text-decoration: none;
-}
+/* THIS IS HOW YOU CREATE NEW TEAM COLORS
+Lets say you're creating a team SPECIFICALLY labeled Indigo
+Copy both an ID (#) and CLASS (.) color, and change the name and hex value to the EXACT color of the team
 
-.teamListElement:visited {
-	color: white;
-	text-decoration: none;
-}
+Finished example:
 
-.teamListElement:hover {
-	color: white;
-	text-decoration: none;
-}
-
-.teamListElement:active {
-	color: white;
-	text-decoration: none;
-}
-
-#teamBox {
-	margin: 0 auto;
-	width: 100%;
-	text-align: center;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select:none;
-	user-select:none;
-	-o-user-select:none;
-}
-
-#teamBox a:link {
-	color: black;
-	text-decoration: none;
-}
-
-#teamBox a:visited {
-	color: black;
-	text-decoration: none;
-}
-
-#teamBox a:hover {
-	color: black;
-	text-decoration: none;
-}
-
-#teamBox a:active {
-	color: black;
-	text-decoration: none;
-}
-
-.teamCube {
-	border-radius: 10px;
-	border: 1px black solid;
-	height: 15vh;
-	width: 15vh;
-	background-color: grey;
-	display: inline-block;
-	font-size: 2.0vh;
-	line-height: 14vh;
-	margin: 1vh;
-	cursor: pointer;
-
-}
-
-.teamCube p {text-align: center;}
+#indigo {background: indigo !important;  color: white !important;}
+.indigo {background: indigo !important;}
+*/
 
 /*Box Colors*/
 #red {background: #F03434 !important; color: white !important; }
@@ -199,6 +137,7 @@
 .medYellow{background:yellow;}
 .medGreen{background: green;}
 
+/*Med Circle is used for both the team colors in the detailed view and the medicial circles*/
 .medCircle{
 	height: 25px;
 	width: 25px;
@@ -250,7 +189,9 @@
 	text-decoration: none;
 	color: black;
   }
-/* USERNAV */
+
+
+/* USER SIDE NAV */
 
 .content
 {
@@ -286,19 +227,6 @@
   margin: 0px;
   line-height: 35px;
   cursor: pointer;
-  /*    
-    .collapsed{
-       .arrow:before{
-                 font-family: FontAwesome;
-                 content: "\f053";
-                 display: inline-block;
-                 padding-left:10px;
-                 padding-right: 10px;
-                 vertical-align: middle;
-                 float:right;
-            }
-     }
-*/
 }
 .nav-side-menu ul :not(collapsed) .arrow:before,
 .nav-side-menu li :not(collapsed) .arrow:before {
@@ -561,3 +489,5 @@ body {
 	  text-align: center;
 	}
   }
+
+  /*END OF NAV*/
