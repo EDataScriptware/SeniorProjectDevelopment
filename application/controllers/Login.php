@@ -76,8 +76,8 @@ class Login extends CI_Controller {
 				}
 				else {
 					if($currMission_id == null) {
-						echo '<script>alert("No mission data available.")</script>';
 						redirect('');
+						echo '<script>alert("No mission data available.")</script>';
 					}
 					else {
 						redirect('user');
