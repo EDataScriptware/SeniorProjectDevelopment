@@ -168,7 +168,6 @@
             document.getElementById("team_id").value = $result[0].team_id;
             document.getElementById("bus_id").value = $result[0].bus_id;
 
-            document.getElementById("day_phone").value = $result[0].day_phone;
             document.getElementById("cell_phone").value = $result[0].cell_phone;
 
 
