@@ -43,38 +43,6 @@ CREATE TABLE IF NOT EXISTS `bus` (
 
 
 -- -----------------------------------------------------
--- Table `bus_book`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `bus_book` ;
-
-CREATE TABLE IF NOT EXISTS `bus_book` (
-  `bus_book_id` INT(11) NOT NULL,
-  `mission_id` INT(10) NOT NULL,
-  `start` DATETIME NULL DEFAULT NULL,
-  `end` DATETIME NULL DEFAULT NULL,
-  `notes` VARCHAR(255) NULL DEFAULT NULL,
-  PRIMARY KEY (`bus_book_id`));
-
-
--- -----------------------------------------------------
--- Table `event`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `event` ;
-
-CREATE TABLE IF NOT EXISTS `event` (
-  `event_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `team_id` INT(10) UNSIGNED NULL DEFAULT NULL,
-  `description` VARCHAR(255) NULL DEFAULT NULL,
-  `start` DATETIME NULL DEFAULT NULL,
-  `end` DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (`event_id`),
-  INDEX `event_team_team_id_fk` (`team_id` ASC) VISIBLE,
-  CONSTRAINT `event_team_team_id_fk`
-    FOREIGN KEY (`team_id`)
-    REFERENCES `team` (`team_id`));
-
-
--- -----------------------------------------------------
 -- Table `flight`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `flight` ;

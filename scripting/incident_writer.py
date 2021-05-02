@@ -186,6 +186,6 @@ phoneGuardianPdf(pdf, "Phone #: " + phoneGuardian)
 formWorkerPdf(pdf, "Person filling out form: " + formWorker)
 phoneWorkerPdf(pdf, "Phone #: " + phoneWorker)
 
-pdfFileName = "uploads/incident_report/Incident_Report_" + nameReporter + "_"+ str(now.strftime("%Y-%m-%d")) + ".pdf"
+pdfFileName = "incident_report/Incident_Report_" + nameReporter + "_"+ str(now.strftime("%Y-%m-%d")) + ".pdf"
 pdf.output(pdfFileName)
 print("pdf_writer.py computed")

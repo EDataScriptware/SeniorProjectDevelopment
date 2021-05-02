@@ -42,11 +42,6 @@ class Login extends CI_Controller {
 			if($userObj && password_verify($postData['password'], $userObj->password)) {
 				$data['confirm'] = true;
 
-				// $this->db->select_max("mission_id");
-				// $this->db->from('mission');
-		
-				// $currMission_id = implode($this->db->get()->row_array());
-
 				$this->db->select("*");
 				$this->db->where("show_on_front", 1);
 				$this->db->from('mission');
@@ -76,7 +71,6 @@ class Login extends CI_Controller {
 				else {
 					if($currMission_id == null) {
 						echo '<script>alert("No mission data available."); window.location.href="'.base_url('').'";</script>';
-						// redirect('');
 					}
 					else {
 						redirect('user');
@@ -90,7 +84,7 @@ class Login extends CI_Controller {
 					session_destroy();
 				}
 
-				echo "Password Incorrect.";
+				echo '<script>alert("Incorrect username or password"); window.location.href="'.base_url('').'";</script>';
 			}
 		} // check form data not null
 
