@@ -57,7 +57,7 @@ class Login extends CI_Controller {
 					$currMission_id = null;
 				}
 				else {
-					$currMission_id = intval($currMission_id[0]);
+					$currMission_id = intval($currMission_id[0]->mission_id);
 				}
 
 				// Start a session here
