@@ -9,38 +9,33 @@
     
     if(isset($_SESSION["userPerm"])) {
       // display this page
+      // makes sure you aren't logged in
     }
     else {
       redirect("");
     }
   ?>
 
-
+<!-- Loads in Bootstrap CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.css')?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap-grid.css')?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap-reboot.css')?>" />
-
+<!-- Loads in Jquery and Bootstrap -->
 <script src="<?php echo base_url('assets/internal/js/jquery-3.5.1.js')?>"> </script>
 <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.js')?>"> </script>
 <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.js')?>"> </script>
-
+<!-- Loads in Font awsome icons -->
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
+<!-- Loads in internal CSS and JS -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets\internal\css\internal.css')?>" />
 <script src="<?php echo base_url('assets\internal\js\internal.js')?>"> </script>
-
+<!-- Loads in Datatables library -->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/DataTables/datatables.css')?>" />
 <script src="<?php echo base_url('assets/DataTables/datatables.js')?>"> </script>
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/jquery-ui/jquery-ui.css')?>" />
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/jquery-ui/jquery-ui.structure.css')?>" />
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/jquery-ui/jquery-ui.theme.css')?>" />
-<script src="<?php echo base_url('assets/jquery-ui/jquery-ui.js')?>"> </script>
-
-
 </head>
 <body>
-
+<!-- User nav -->
 <div class="nav-side-menu">
         <div class="brand"><img style="padding-top:10px;" src="<?php echo base_url('assets/internal/img/logo.png')?>" alt="Rochester Honor Flight"> </div>
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>

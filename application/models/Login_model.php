@@ -6,7 +6,7 @@ class Login_model extends CI_Model {
 	{
 		parent::__construct();
 	}
-    
+    //gets user login info
 	public function get_loginInfo($username) {
         
         $this->db->select("*");

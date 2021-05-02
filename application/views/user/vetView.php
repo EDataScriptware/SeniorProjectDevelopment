@@ -1,21 +1,23 @@
 
-<?php $allowed = array(0,1); ?>
+<?php $allowed = array(0,1); ?> <!-- Sets permissions for who can look and edit certain content, currently just limited to the admin and team leaders  -->
 <h1 style = 'text-align:center'> <b> <?php echo $veteran[0]->first_name ?> <?php echo $veteran[0]->last_name ?> </b> </h1>
 
+<!-- If you add a new feild that's related to the medical accomidations/medication place them here-->
+<!-- If there's a field not listed below, there's a chance it needs a more detailed input -->
 <?php $medAccomidations = array("med_cane","med_walker","med_wheelchair","med_scooter",'med_transport_airport','med_transport_trip','med_stairs','med_stand_30min','med_walk_bus_steps','med_use_mobility'); ?>
 <?php $medMedication = array('med_emphysema','med_falls','med_heart_disease','med_pacemaker','med_colostomy','med_cancer','med_dnr','med_hbp','med_joint_replacement','med_kidney', 'med_diabetes','med_seizures','med_urostomy','med_dementia','med_nebulizer','med_oxygen','med_football','med_stroke','med_urinary','med_cpap'); ?>
 <?php $wars = array('service_ww2','service_korea','service_cold_war','service_vietnam'); ?>
 
-
+<!-- Scroll view that shows each section  -->
 <div class = "buttonScrollView">
 	<button id = "aboutBut" class = "scrollItem scrollActive" onClick ="showAbout()"> <i class="fa fa-user fa-3x"></i> <br> <b> About </b></button>
 	<button id = "schBut" class = "scrollItem"  onClick ="showRes()"><i class="fa fa-building fa-3x" aria-hidden="true"></i>  <br> <b>  Hotel</b></button>
 	<?php if (in_array($_SESSION["userPerm"], $allowed)) { ?><button id = "medBut" class = "scrollItem" onClick ="showMed()"> <i class="fa fa-medkit fa-3x"></i>  <br> <b> Medical </b></button><?php } ?>
 	<button id = "hisBut" class = "scrollItem" onClick ="showAcc()"> <i class="fa fa-history fa-3x"></i>  <br> <b> History </b></button>
-
 </div>
-
+<!-- About section  -->
 <div id = "about">
+	<!-- General vet info  -->
 <h2> <b> About </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 	<p> <b> DOB: </b> <?php echo $veteran[0]->dob ?>  </p>
@@ -33,7 +35,7 @@
 	<p> <b> Shirt: </b> <?php echo $veteran[0]->shirt_size ?>  </p>
 
 	<hr>
-
+<!-- Guardian info -->
 	<h2> <b> Guardian </b> </h2>
 	<?php
 	$this->db->select("*");
@@ -55,7 +57,7 @@
 	<p> <b> Cell Phone: </b> <?php echo $guardian[0]->cell_phone ?>  </p>
 
 	<hr>
-
+<!-- Emergency contact info -->
 	<h2> <b> Emergency Contact </b> </h2>
 
 	<p> <b> Name: </b> <?php echo $veteran[0]->emergency_name ?>  </p>
@@ -76,7 +78,7 @@
 	<p> <b> Admin Comments:  </b> <?php echo $veteran[0]->admin_comments?>  </p>
 
 	<hr> 
-
+	<!-- Alternate info  -->
 	<h2> <b> Alt Info </b> </h2>
 
 	<p> <b> Alt Name: </b> <?php echo $veteran[0]->alt_name ?>  </p>
@@ -88,8 +90,10 @@
 	<p> <b> Alt Email: </b> <?php echo $veteran[0]->alt_relationship ?>  </p>
 
 </div>
-
+<!-- Specifically Hotel info, the div ID is currently outdated and I'm terrified of changing it at the moment  -->
 <div id = "reservations">
+
+<!-- Veteran Hotel info  -->
 
 <?php if ($hotel != null) { ?>
 <h3> <b> Veteran Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"> EDIT </button>  <?php } ?>  </b> </h3>
@@ -100,6 +104,7 @@
 <hr>
 <?php } ?>
 
+<!-- Guardian Hotel info  -->
 
 <?php if ($gHotel != null) { ?>
 <h3> <b> Guardian Hotel Info <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?> 
@@ -113,11 +118,14 @@
 <hr>
 <?php } ?>
 
-
-
 </div>
 
+<!-- Veteran Medical Info -->
+
 <div id = "medicalInfo">
+
+<!-- Basic medical info -->
+
 <h2> <b> Basic Information </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> EDIT </button>  <?php } ?>  </h2>
 
 	<?php if ($veteran[0]->med_code != "") { ?>
@@ -133,6 +141,8 @@
 	<?php } ?>
 
 	<hr>
+
+<!-- Medication information -->
 
 	<h2> <b> Medication </b> </h2>
 
@@ -158,6 +168,8 @@
 
 	<hr>
 
+		<!-- Mobility information  -->
+
 		<h2> <b> Mobility </b> </h2>
 
 		<?php foreach ($medAccomidations as $accomidations): ?>
@@ -180,7 +192,9 @@
 		?>
 
 	<hr>
-
+	
+	<!-- Conditions/Medication information -->
+	
 	<h2> <b> Conditions </b> </h2>
 
 	<?php foreach ($medMedication as $medication): ?>
@@ -192,6 +206,8 @@
 	<?php endforeach ?>
 
 </div>
+
+<!-- This is actually veteran history, if your wondering why it's still accomidations see the previous note about being afraid to change anything  -->
 
 <div id = "accommodations">
 <h2> <b> History </b> <?php if (in_array($_SESSION["userPerm"], $allowed)) { ?>	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editHistoryModal"> EDIT </button>  <?php } ?> </h2>
@@ -215,7 +231,7 @@
 
 </div>
 
-<!-- Modal -->
+<!-- Veteran modification mobile -->
 <div class="modal fade " id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
@@ -307,7 +323,7 @@
   </div>
 </div>
 
-<!-- Edit Modal -->
+<!-- Hotel information editing Modal -->
 <?php if ($hotel != null) { ?>
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
   <div class="modal-dialog" >
@@ -349,7 +365,7 @@
 <?php } ?>
 
 
-<!-- Edit Guardian Modal -->
+<!-- Edit Guardian Hotel Modal -->
 <?php if ($gHotel != null) { ?>
 <div class="modal fade" id="editGuardianModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
   <div class="modal-dialog" >
@@ -404,8 +420,6 @@
 
         <form id ="editHistory" method='POST' action='<?php echo base_url('User/updateInfo/'.$veteran[0]->veteran_id); ?>'>
 
-
-		
 		<p>  <label for="service_branch"> Service Branch: </label> <input type="text" id="service_branch" name="service_branch"  value = '<?php echo $veteran[0]->service_branch ?>'> </p>
 		<p>  <label for="service_rank"> Rank: </label> <input type="text" id="service_rank" name="service_rank"  value = '<?php echo $veteran[0]->service_rank ?>'> </p>
 		<h4> Job: </h4><textarea id="service_activity" name="service_activity" ><?php echo $veteran[0]->service_activity; ?></textarea>
@@ -440,6 +454,8 @@
 
 $(document).ready(function() {
 
+	 //IF YOU WONDER WHY EVERY UN CHECKED CHECKBOX TURNS ON WHEN YOU SUBMIT THE FORM THIS IS WHY, to make sure all the values properly pass, un checked values are defaulted to zero and then checked.
+
 	  // on form submit
         $("#update").on('submit', function() {
             // to each unchecked checkbox
@@ -453,6 +469,7 @@ $(document).ready(function() {
  
     });
 
+	//Shows the about section
 
 	function showAbout() {
 		document.getElementById("about").style.display = "inline-block";
@@ -469,6 +486,8 @@ $(document).ready(function() {
 
 	}
 
+	//Shows Hotel information
+
 	function showRes() {
 		document.getElementById("about").style.display = "none";
 		document.getElementById("reservations").style.display = "inline-block";
@@ -484,6 +503,8 @@ $(document).ready(function() {
 
 	}
 
+	//Shows Medical Information
+
 	function showMed() {
 		document.getElementById("about").style.display = "none";
 		document.getElementById("reservations").style.display = "none";
@@ -498,6 +519,8 @@ $(document).ready(function() {
 		$("#medBut").addClass("scrollActive");
 
 	}
+
+	//Shows History information
 
 	function showAcc() {
 		document.getElementById("about").style.display = "none";
