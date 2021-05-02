@@ -176,7 +176,6 @@
             document.getElementById("passBlock").style.display = "block";
             document.getElementById("passAdd").style.display = "none";
             document.getElementById("password").removeAttribute('name');
-            document.getElementById("reset").addEventListener("click", passwordReset($result[0].iduser));
         });       
         }
         //pops up the edit box for editing
