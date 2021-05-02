@@ -2,7 +2,7 @@
 apt-get update
 apt-get -y install < requirements.txt 
 
-# Installs the python3 
+# Installs the python3 pip3 packages.
 pip3 install -r python_requirements.txt
 
 # Can be git clone once the repository is public
@@ -12,7 +12,7 @@ git clone https://github.com/EDataScriptware/SeniorProjectDevelopment.git
 cp apache2.conf /etc/apache2/apache2.conf
 service apache2 restart
 
-# Creates directories.
+# Creates two directories.
 mkdir ../upload
 mkdir ../incident_report
 

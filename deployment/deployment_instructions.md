@@ -8,7 +8,11 @@
     sudo bash deployment.sh 
 ```
 
-When the script is completed, you will receive a message `deployment.sh execution complete!`
+When the script is completed, you will receive a message `deployment.sh execution complete!` It will perform the following actions:
+- Installs requirements
+- Installs the python3 pip3 packages.
+- Rewrites apache2.conf file and restarts the apache2 service.
+- Creates two directories.
 
 - This CREATE_honorflight.sql set you up the database structure and keys for the project. Chose the method below that works best for your system and run the command:
 METHOD #1 (Running the script without logging in):
