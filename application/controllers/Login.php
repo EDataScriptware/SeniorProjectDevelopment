@@ -47,7 +47,7 @@ class Login extends CI_Controller {
 		
 				// $currMission_id = implode($this->db->get()->row_array());
 
-				$this->db->select("*");
+				$this->db->select("mission_id");
 				$this->db->where("show_on_front", 1);
 				$this->db->from('mission');
 
@@ -57,7 +57,7 @@ class Login extends CI_Controller {
 					$currMission_id = null;
 				}
 				else {
-					$currMission_id = intval($currMission_id[0]->mission_id);
+					$currMission_id = intval($currMission_id[0]);
 				}
 
 				// Start a session here
