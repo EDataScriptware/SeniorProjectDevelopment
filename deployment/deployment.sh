@@ -9,5 +9,9 @@ git clone https://github.com/EDataScriptware/SeniorProjectDevelopment.git
 cp deployment/apache2.conf /etc/apache2/apache2.conf
 service apache2 restart
 
+# Creates directories.
+mkdir ../upload
+mkdir ../incident_report
+
 # Notice of Completion
 echo "deployment.sh execution complete!"
