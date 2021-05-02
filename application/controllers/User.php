@@ -172,15 +172,16 @@ class User extends CI_Controller {
 
 		$currMission_id = $_SESSION["mission"];
 
-		$this->db->select("*");
-		$this->db->from('event');
-		$this->db->where('mission_id', $currMission_id);
-		$data['event'] = $this->db->get()->result();
+		// $this->db->select("*");
+		// $this->db->from('event');
+		// $this->db->where('mission_id', $currMission_id);
+		// $data['event'] = $this->db->get()->result();
 
 
         $this->load->view('user/template/header',$data);
 		$this->load->view('user/itinerary',$data);
 		$this->load->view('user/template/footer');
+		
 	}
 
 	//updates a veterans information of the fly, because of how generic it is you can load it into veteran info editing form
