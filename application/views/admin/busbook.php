@@ -11,18 +11,28 @@ $(document).ready( function () {
 
 <h1>Bus Book Management</h1>
 <hr/>
+<p>
+  Setting a mission as the "current mission" will display it to staff on the "user portal".  
+  If no mission is set as "current", no mission will be displayed to staff.  
+  Unsetting the "current mission" will not remove any of the mission's data.  
+  Only one mission can be set as the "current mission".
+</p>
+<hr/>
 
 <?php if(isset($bus_book_data)) {
     foreach($bus_book_data as $mission) { ?>
       <div style="display: inline-flex;">
-        <h2><?php echo $mission->title; ?> |&#9;</h2>
-        <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/setMission/'.$mission->mission_id); ?>'">Set As Current Mission</button>
+        <h2><?php echo $mission->title; ?> | &#9;</h2>
+        <?php if($mission->show_on_front != 1) { ?>
+        <button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url('Admin/setMission/'.$mission->mission_id); ?>'">Set As "Current Mission"</button>
+        <?php } else { ?>
+          <button type="button" class="btn btn-danger" onclick="location.href='<?php echo base_url('Admin/unsetCurrentMission/'); ?>'">Unset "Current Mission"</button>
+        <?php } ?>
       </div>
         <h4>Start: <?php echo $mission->start_date; ?> | End: <?php echo $mission->end_date; ?></h4>
         <?php if(isset($mission->flight_num)) { ?>
           <h4>Flight Number: <?php echo $mission->flight_num; ?> </h4>
         <?php } ?>
-        <br>
         <br>
 
         <table id="<?php echo $mission->mission_id; ?>book" class="table table-striped table-bordered">

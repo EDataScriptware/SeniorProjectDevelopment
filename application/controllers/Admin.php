@@ -81,6 +81,23 @@ class Admin extends CI_Controller {
 	// set the selected mission as the "Current Mission"
 	public function setMission($mission_id) {
 		echo "set current mission: ".$mission_id ;
+
+		$this->load->model("Mission_model");
+
+		$this->Mission_model->setCurrentMission($mission_id);
+
+		redirect('busbook') ;
+	}
+
+	// unmarks mission from being listed as the "current mission"
+	public function unsetCurrentMission() {
+		echo "unset current mission." ;
+
+		$this->load->model("Mission_model");
+
+		$this->Mission_model->unsetCurrentMission();
+
+		redirect('busbook') ;
 	}
 
 	//Handles file upload

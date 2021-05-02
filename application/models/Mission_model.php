@@ -51,7 +51,7 @@ class Mission_Model extends CI_Model {
         try
         {
             $this->db->where('mission_id', $missionID);
-            $this->db->update('mission', $mission); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
+            $this->db->update('mission', $mission);
             $bool = true;
         }
         catch (Exception $e)
@@ -62,6 +62,19 @@ class Mission_Model extends CI_Model {
         }
         
         return $bool; // failed or successful
+    }
+
+    public function unsetCurrentMission() {
+        $this->db->set('show_on_front', 0);
+        $this->db->update('mission') ;
+    }
+
+    public function setCurrentMission($mission_id) {
+        $this->unsetCurrentMission();
+
+        $this->db->set('show_on_front', 1);
+        $this->db->where('mission_id', $mission_id) ;
+        $this->db->update('mission') ;
     }
     
 
