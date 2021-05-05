@@ -7,7 +7,6 @@
 
 <h1>Incident Reports</h1>
 <hr/>
-<br/>
 <p>Here is where any reported incidents will appear.  Click on a report to download and view it.</p>
 
 <?php if(isset($files)) { ?>
