@@ -146,12 +146,20 @@ class User extends CI_Controller {
 
 	}
 
+	//generates the incident report PDF based on a python script.
+	public function buildIncidentPdf() {
+		$postData = $this->input->post();
+
+		$cmd = "python3 scripting/pdf_writer.py";
+
+		$test = exec($cmd);
+
+		redirect('incident_sent') ;
+	}
+
     public function fileView() //all important files can be viewed here View
 	{
 		$data['allTeams'] = $this->Index_model->get_TeamList();
-        // $this->load->view('user/template/header',$data);
-		// $this->load->view('user/fileView');
-		// $this->load->view('user/template/footer');
 
 		$map = directory_map('./uploads/', 1);
 

@@ -73,6 +73,7 @@ $route['users'] = 'Admin/userView';
 $route['veterans'] = 'Admin/vetView';
 $route['guardians'] = 'Admin/guardView';
 $route['busbook'] = 'Admin/busBookView';
+$route['incident_reports'] = 'Admin/incidentView' ;
 
 
 

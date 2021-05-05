@@ -59,6 +59,32 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/footer');
 	}
 
+	public function incidentView() {
+		$currMission_id = $_SESSION["mission"];
+
+		$map = directory_map('./incident_report/', 1);
+
+
+		$this->load->view('admin/template/header');
+		$this->load->view('admin/incident_reports', array('error' => ' ', 'files' => $map));
+		$this->load->view('admin/template/footer');
+	}
+
+	//locates the selected file and downloads it for you
+	public function downloadIncident ($filename) {
+		$file_path = "./incident_report/";
+
+		force_download(''.$file_path.$filename, NULL);                     
+	}
+	//locates the selected file and deletes it for you
+	public function deleteFileIncident($filename) {
+		$directory = "./incident_report/" ;
+
+		unlink($directory.''.$filename) ;
+
+		redirect('incident_reports') ;
+	}
+
 	public function editBus($busid) {
 		if(isset($busid)) {
 			$this->load->model('Bus_model');
