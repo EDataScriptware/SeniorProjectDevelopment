@@ -80,7 +80,6 @@
         <li class="nav-item"><a href="<?php echo base_url('busbook')?>" id = "bookNav" class="nav-link">Bus Book</a></li>
         <li class="nav-item"><a href="<?php echo base_url('teams')?>" id = "team" class="nav-link">Teams</a></li>
         <li class="nav-item"><a href="<?php echo base_url('documents')?>" id = "doc" class="nav-link">Documents</a></li>
-        <li class="nav-item"><a href="<?php echo base_url('incident_reports')?>" id = "incident" class="nav-link">Incidents</a></li>
         <li class="nav-item"><a href="<?php echo base_url('reservations')?>" id = "rez" class="nav-link">Reservations</a></li>
         <li class="nav-item"><a href="<?php echo base_url('users')?>" id = "use" class="nav-link">Users</a></li>
         <li class="nav-item"><a href="<?php echo base_url('veterans')?>" id = "vet" class="nav-link">Veterans</a></li>

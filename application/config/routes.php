@@ -62,7 +62,6 @@ $route['vetList/:num'] = 'User/vetList';
 $route['vetView/:num'] = 'User/vetView'; 
 $route['mission_documents'] = 'User/fileView'; 
 $route['mission_itinerary'] = 'User/itineraryView'; 
-$route['incident'] = 'User/incident' ;
 
 //Admin Routes
 
@@ -73,7 +72,6 @@ $route['users'] = 'Admin/userView';
 $route['veterans'] = 'Admin/vetView';
 $route['guardians'] = 'Admin/guardView';
 $route['busbook'] = 'Admin/busBookView';
-$route['incident_reports'] = 'Admin/incidentView' ;
 
 
 
