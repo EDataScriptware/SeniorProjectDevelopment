@@ -5,10 +5,7 @@ import sys, os
 # import sqlalchemy
 
 # Python3 execution
-#  python3 incident_writer.py '05/01/2021' '6000 Reynolds Dr.' '6:55 PM'  'Rochester, NY 14623' 
-#        'A murder happened.' 'Y' 'State Farms' 'Edward Riley' 'Veteran' 'University Commons Address Rochester, NY 14623'
-#        '05/01/1999' '(123) 456-7890' 'Zachary Easley' '(098) 654-4321'
-#        'Justin Acroraci' '911'
+#  python3 incident_writer.py '05/01/2021' '6000 Reynolds Dr.' '6:55 PM'  'Rochester, NY 14623' 'A murder happened.' 'Y' 'State Farms' 'Edward Riley' 'Veteran' 'University Commons Address Rochester, NY 14623' '05/01/1999' '(123) 456-7890' 'Zachary Easley' '(098) 654-4321' 'Justin Acroraci' '911'
 
 dateIncident                = sys.argv[1]
 addressIncident             = sys.argv[2]

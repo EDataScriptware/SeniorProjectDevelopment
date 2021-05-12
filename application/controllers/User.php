@@ -90,68 +90,9 @@ class User extends CI_Controller {
 		$this->load->view('user/template/footer');
 	}
 
-	public function incident() {
-		$data['allTeams'] = $this->Index_model->get_TeamList();
-		$this->load->view('user/template/header',$data);
-		$this->load->view('user/incident');
-		$this->load->view('user/template/footer');
-	}
-
-	public function sendEmail() {
-		// $this->load->library('email');
-
-		$postData = $this->input->post();
-
-		// $config['protocol'] = 'sendmail';
-		// $config['mailpath'] = '/usr/sbin/sendmail';
-		// $config['charset'] = 'iso-8859-1';
-		// $config['wordwrap'] = TRUE;
-
-		// $this->email->initialize($config);
-
-		// $this->email->from('HonorFlight_Incident@rwby.student.rit.edu', $postData['name']);
-		// $this->email->to('zpe4421@g.rit.edu');
-		// // $this->email->cc('another@another-example.com');
-		// // $this->email->bcc('them@their-example.com');
-
-		// $this->email->subject($postData['subject']);
-		// $this->email->message($postData['description']);
-
-		// $test = $this->email->send();
-
-		
-
-		$msg = "Submitted By: ".$postData["name"]."\n\n".$postData["description"];
-
-		$msg = wordwrap($msg, 80);
-
-		// $headers = "MIME-Version: 1.0" . "\r\n";
-		// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-		// // More headers
-		// $headers .= 'From: <HonorFlight_Incident@rwby.student.rit.edu>' . "\r\n";
-
-		// $test = mail("zacheas@outlook.com", $postData["subject"], $msg, $headers);
-
-		$success = mail('example@example.com','Test Email',$msg);
-		if (!$success) {
-			print_r(error_get_last()['message']);
-		}
-
-		var_dump($success) ;
-		
-		// $this->load->view('user/template/header');
-		// $this->load->view('user/incident_sent');
-		// $this->load->view('user/template/footer');
-
-	}
-
     public function fileView() //all important files can be viewed here View
 	{
 		$data['allTeams'] = $this->Index_model->get_TeamList();
-        // $this->load->view('user/template/header',$data);
-		// $this->load->view('user/fileView');
-		// $this->load->view('user/template/footer');
 
 		$map = directory_map('./uploads/', 1);
 

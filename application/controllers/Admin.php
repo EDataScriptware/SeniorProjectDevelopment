@@ -59,6 +59,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/footer');
 	}
 
+
 	public function editBus($busid) {
 		if(isset($busid)) {
 			$this->load->model('Bus_model');
