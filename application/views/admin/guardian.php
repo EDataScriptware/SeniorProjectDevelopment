@@ -35,7 +35,7 @@
             	$this->db->select("*");
                 $this->db->from('veteran');
                 $this->db->where('guardian_id',$guard->guardian_id);
-                $thisVet= $this->db->get()->result();
+                $thisVet[0]= $this->db->get()->result();
 
         ?>
 
