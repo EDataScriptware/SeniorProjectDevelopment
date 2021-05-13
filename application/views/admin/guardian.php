@@ -31,6 +31,16 @@
     <tbody>
     <?php foreach ($guardian as $guard): ?>
 
+        <?php 
+            	$this->db->select("*");
+                $this->db->from('veteran');
+                $this->db->where('guardian_id',$guard->guardian_id);
+                $thisVet= $this->db->get()->result();
+
+        ?>
+
+        <?php if ($thisVet->mission_id == $id) { ?>
+
         <tr>
             <td><?php echo $guard->first_name ?> <?php echo $guard->last_name?></td>
             <td>  <?php 
@@ -46,6 +56,8 @@
             <td><?php echo $guard->med_training ?> </td>
             <td> <button type="button" class="btn btn-primary" onclick = "editBlock(<?php echo $guard->guardian_id ?>)" > EDIT </button> 
         </tr>
+
+        <?php } ?>
         <?php endforeach ?>
     </tbody>
 </table>
