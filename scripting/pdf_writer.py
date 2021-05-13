@@ -8,7 +8,14 @@ missionIdentfier = str(sys.argv[1])
 
 now = datetime.datetime.now()
 datetimeString = "Generated On: " + now.strftime("%B %m, %Y - %I:%M:%S %p")
-pdfFileName = "uploads/" + str(missionIdentfier) + "_Mission_Report_" + str(now.strftime("%Y-%m-%d")) + ".pdf"
+
+missionTitle = ""
+missionArray = data_retrieval.getMissionID(missionIdentfier)
+for missionValue in missionArray:
+    missionTitle = missionValue[0]
+
+
+pdfFileName = "uploads/" + str(missionTitle) + "_Mission_Report_" + str(now.strftime("%Y-%m-%d")) + ".pdf"
 print("starting pdf_writer.py")
 
 
@@ -58,6 +65,8 @@ def borderLines(self):
     self.line(5.0,5.0,5.0,292.0)     # left one
     self.line(205.0,5.0,205.0,292.0) # right one
 
+
+
 mission_idPdf(pdf, "Mission " + str(missionIdentfier))
 borderLines(pdf)
 titles(pdf, "Rochester Honor Flights Team Report")
@@ -68,7 +77,6 @@ subtitle(pdf, datetimeString)
 
 
 veteranNameArray = data_retrieval.getVeteranNames(missionIdentfier)
-# veteranNameArray_sort = veteranNameArray[veteranNameArray[:,2].argsort()]
 
 teamArray = []
 counter=0

@@ -40,3 +40,7 @@ def getSpecificVeteran(veteran_id):
 def matchSpecificGuardianAndVet(guardian_Id):
     data = pd.read_sql_query("SELECT guardian.first_name, guardian.middle_initial, guardian.last_name, guardian.address, guardian.city, guardian.state, guardian.zip, guardian.nickname, guardian.day_phone, guardian.cell_phone from veteran JOIN guardian ON veteran.guardian_id = guardian.guardian_id WHERE guardian.guardian_id = " + str(guardian_Id), conn)
     return data.to_numpy()
+
+def getMissionID(mission_id):
+    data = pd.read_sql_query("SELECT title from mission where mission_id = " + str(mission_id) + ";", conn)
+    return data.to_numpy()
