@@ -40,7 +40,7 @@ class Admin extends CI_Controller {
 
 	//generates the mission PDF based on a python script.
 	public function buildVetPdf() {
-		$cmd = "python3 scripting/pdf_writer.py";
+		$cmd = "python3 scripting/pdf_writer.py ".$_SESSION["mission"];
 
 		$test = exec($cmd);
 
