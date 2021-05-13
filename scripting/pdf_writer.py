@@ -38,7 +38,7 @@ def subtitle(self, string):
 
 def mission_idPdf(self, string):
     self.set_xy(0.0,85.0)
-    self.set_font('Times', 'B', 24)
+    self.set_font('Times', 'B', 32)
     self.set_text_color(0, 0, 0)
     self.cell(w=210.0, h=30.0, align='C', txt=string, border=0)
 
@@ -58,7 +58,7 @@ def borderLines(self):
     self.line(5.0,5.0,5.0,292.0)     # left one
     self.line(205.0,5.0,205.0,292.0) # right one
 
-mission_idPdf(pdf, "Mission ID: " + str(missionIdentfier))
+mission_idPdf(pdf, "Mission " + str(missionIdentfier))
 borderLines(pdf)
 titles(pdf, "Rochester Honor Flights Team Report")
 logoImage(pdf, "scripting/TeamRuby.png")
