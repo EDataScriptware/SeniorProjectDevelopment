@@ -26,7 +26,7 @@ def getVeteranNames(missionIdentfier):
     return data.to_numpy()
 
 def getAllVeteran(missionIdentfier):
-    data = pd.read_sql_query("SELECT * FROM veteran ORDER BY team_id, last_name WHERE mission_id = " +  missionIdentfier  + ";", conn)
+    data = pd.read_sql_query("SELECT * FROM veteran WHERE mission_id = " +  missionIdentfier  +  " ORDER BY team_id, last_name;", conn)
     return data.to_numpy()
 
 def matchGuardianAndVet(guardianId):
