@@ -21,6 +21,20 @@ class Guardian_Model extends CI_Model {
         return $query;
 	}
 
+    # GET MISSION SPECIFIC
+	public function get_mission_guardian_data($mission) {
+        
+        $this->db->select("*");
+        $this->db->from('guardian');
+        $this->db->where('mission_id',$mission);
+
+        $query = $this->db->get()->result();
+        
+        // echo json_encode($query);
+
+        return $query;
+	}
+
     # GET SPECIFIC
     public function get_one_guardian($id) {
         $this->db->select("*");

@@ -218,7 +218,7 @@ class Admin extends CI_Controller {
 
 		$currMission_id = $_SESSION["mission"];
 
-		$data['veteran'] = $this->Veteran_model->get_all_veteran_data();
+		$data['veteran'] = $this->Veteran_model->get_mission_veteran_data($currMission_id);
 		$data['team'] = $this->Team_model->get_all_team_data();
 		$data['id'] = $currMission_id;
 
@@ -236,7 +236,7 @@ class Admin extends CI_Controller {
 
 		$currMission_id = $_SESSION["mission"];
 
-		$data['guardian'] = $this->Guardian_model->get_all_guardian_data();
+		$data['guardian'] = $this->Guardian_model->get_mission_guardian_data($currMission_id);
 		$data['team'] = $this->Team_model->get_all_team_data();
 		$data['id'] = $currMission_id;
 
