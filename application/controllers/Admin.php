@@ -45,6 +45,7 @@ class Admin extends CI_Controller {
 		$test = exec($cmd);
 
 		echo $_SESSION["mission"] ;
+		echo $test ;
 		// redirect('documents') ;
 	}
 
