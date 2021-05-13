@@ -12,7 +12,7 @@ datetimeString = "Generated On: " + now.strftime("%B %m, %Y - %I:%M:%S %p")
 missionTitle = ""
 missionArray = data_retrieval.getMissionID(missionIdentfier)
 for missionValue in missionArray:
-    missionTitle = missionValue[0]
+    missionTitle = missionValue[0].strip()
 
 
 pdfFileName = "uploads/" + str(missionTitle) + "_Mission_Report_" + str(now.strftime("%Y-%m-%d")) + ".pdf"
