@@ -33,7 +33,7 @@ $unVetCheck = false;
     </thead>
     <tbody>
     <?php foreach ($user as $use): ?>
-        <?php if ($use->bus_id == $bus[0]->bus_id) { ?>
+        <?php if ($use->bus_id == $bub->bus_id) { ?>
     
         <tr>
             <td> <?php echo $use->first_name ?> <?php echo $use->last_name?></td>
