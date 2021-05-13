@@ -45,8 +45,8 @@ class Admin extends CI_Controller {
 		$test = exec($cmd);
 
 		// echo $_SESSION["mission"] ;
-		echo $test ;
-		// redirect('documents') ;
+		// echo $test ;
+		redirect('documents') ;
 	}
 
 	public function docView() //Generates the Document View
