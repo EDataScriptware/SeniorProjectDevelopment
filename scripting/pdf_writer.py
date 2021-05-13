@@ -67,7 +67,7 @@ def borderLines(self):
 
 
 
-mission_idPdf(pdf, "Mission " + str(missionIdentfier))
+mission_idPdf(pdf, str(missionTitle))
 borderLines(pdf)
 titles(pdf, "Rochester Honor Flights Team Report")
 logoImage(pdf, "scripting/TeamRuby.png")
