@@ -9,6 +9,8 @@ datetimeString = "Generated On: " + now.strftime("%B %m, %Y - %I:%M:%S %p")
 pdfFileName = "uploads/Mission_Report_" + str(now.strftime("%Y-%m-%d")) + ".pdf"
 print("starting pdf_writer.py")
 
+missionIdentfier = str(sys.argv[1])
+
 class PDF(FPDF):
    pass
 
@@ -57,7 +59,7 @@ subtitle(pdf, datetimeString)
 ## DATA PAGE
 
 
-veteranNameArray = data_retrieval.getVeteranNames()
+veteranNameArray = data_retrieval.getVeteranNames(missionIdentfier)
 # veteranNameArray_sort = veteranNameArray[veteranNameArray[:,2].argsort()]
 
 teamArray = []
@@ -84,7 +86,7 @@ for teamVal in teamArray:
             nameString += str(counter) + " " + arrayVal[0] + " " + arrayVal[1] + " " + arrayVal[2] + "\n"
     veteranNameList(pdf, nameString)
 
-veteranArray = data_retrieval.getAllVeteran()
+veteranArray = data_retrieval.getAllVeteran(missionIdentfier)
 
 pdf.add_page()
 titles(pdf, "Rochester Honor Flight Individual Veteran Report")

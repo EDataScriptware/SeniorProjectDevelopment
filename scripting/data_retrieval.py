@@ -21,12 +21,12 @@ print(local_port)
 
 conn = pymysql.connect(host='127.0.0.1', user=username, passwd=password, port=tunnel.local_bind_port, database="honor_flight") 
 
-def getVeteranNames():
-    data = pd.read_sql_query("SELECT first_name, middle_initial, last_name, team_id FROM veteran ORDER BY team_id, last_name;", conn)
+def getVeteranNames(missionIdentfier):
+    data = pd.read_sql_query("SELECT first_name, middle_initial, last_name, team_id FROM veteran ORDER BY team_id, last_name WHERE mission_id =" +  missionIdentfier  + ";", conn)
     return data.to_numpy()
 
-def getAllVeteran():
-    data = pd.read_sql_query("SELECT * FROM veteran ORDER BY team_id, last_name;", conn)
+def getAllVeteran(missionIdentfier):
+    data = pd.read_sql_query("SELECT * FROM veteran ORDER BY team_id, last_name WHERE mission_id =" +  missionIdentfier  + ";", conn)
     return data.to_numpy()
 
 def matchGuardianAndVet(guardianId):
@@ -34,7 +34,6 @@ def matchGuardianAndVet(guardianId):
     return data.to_numpy()
 
 def getSpecificVeteran(veteran_id):
-
     data = pd.read_sql("SELECT * FROM veteran WHERE veteran_id = " + str(veteran_id), conn)
     return data.to_numpy()
 
