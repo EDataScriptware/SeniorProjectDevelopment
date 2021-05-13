@@ -35,11 +35,11 @@
             	$this->db->select("*");
                 $this->db->from('veteran');
                 $this->db->where('guardian_id',$guard->guardian_id);
-                $thisVet[0]= $this->db->get()->result();
-
+                $thisVet= $this->db->get()->result();
+            
         ?>
 
-        <?php if ($thisVet->mission_id == $id) { ?>
+        <?php if ($thisVet[0]->mission_id == $id) { ?>
 
         <tr>
             <td><?php echo $guard->first_name ?> <?php echo $guard->last_name?></td>
